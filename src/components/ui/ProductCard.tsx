@@ -89,10 +89,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group bg-white rounded-[32px] shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 p-3 flex flex-col relative w-full max-w-[420px] mx-auto md:max-w-none"
+      className="group bg-white rounded-[32px] shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 p-4 flex flex-col relative w-full max-w-[420px] mx-auto md:max-w-none"
     >
       {/* Top Image Area */}
-      <div className="relative aspect-[4/5] w-full bg-[#f4f4f4] rounded-[24px] overflow-hidden mb-4">
+      <div className="relative aspect-[4/3] w-full bg-[#f4f4f4] rounded-[24px] overflow-hidden mb-4">
         
         {/* Animated Carousel Container */}
         <div className="relative w-full h-full overflow-hidden">
@@ -134,7 +134,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           </AnimatePresence>
         </div>
         
-
 
         {/* Navigation Arrows */}
         {product.images.length > 1 && (
@@ -182,10 +181,10 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Heart Icon Button - placed outside overflow-hidden to allow particles to burst outward */}
       <button
         onClick={handleLike}
-        className={`absolute top-[28px] right-[28px] p-2.5 rounded-full shadow-sm cursor-pointer transition-all duration-300 backdrop-blur-sm z-20 border flex items-center justify-center outline-none ${
+        className={`absolute top-[28px] left-[28px] p-2.5 rounded-full shadow-sm cursor-pointer transition-all duration-300 backdrop-blur-sm z-20 border flex items-center justify-center outline-none ${
           isLiked
             ? "bg-white border-white text-[#ff4b6e] scale-105"
-            : "bg-black/30 hover:bg-black/45 border-white/10 text-white hover:scale-105"
+            : "bg-white/50 hover:bg-white/70 border-white/30 text-white hover:scale-105"
         }`}
       >
         <motion.div
@@ -244,20 +243,40 @@ export default function ProductCard({ product }: ProductCardProps) {
       </button>
 
       {/* Content Area */}
-      <div className="px-2 flex-grow flex flex-col justify-between">
+      <div className="px-1 flex-grow flex flex-col justify-between">
         <div>
-          <h3 className="text-[#012d1d] text-[22px] font-bold mb-1 tracking-wide">
-            {product.brand}
-          </h3>
-          <div className="text-[16px] font-medium text-gray-500 mb-5">
-            Enquire for Price
+          {/* Color Selection Dots */}
+          <div className="flex gap-2 mb-3 mt-1 px-0.5">
+            {product.colorVariants?.map((c) => (
+              <span
+                key={c.slug}
+                className="w-3 h-3 rounded-full border border-black/10 inline-block shadow-sm"
+                style={{ backgroundColor: c.hex }}
+                title={c.name}
+              />
+            ))}
           </div>
+
+          {/* Title & Price Row */}
+          <div className="flex justify-between items-baseline mb-1">
+            <h3 className="text-gray-900 text-[18px] md:text-[20px] font-bold tracking-tight">
+              {product.shortName}
+            </h3>
+            <span className="text-[#012d1d] text-[18px] md:text-[20px] font-bold whitespace-nowrap">
+              Enquire
+            </span>
+          </div>
+
+          {/* Short Description */}
+          <p className="text-gray-500 text-[14px] leading-relaxed line-clamp-2 min-h-[40px] mt-1.5">
+            {product.shortDescription}
+          </p>
         </div>
 
-        {/* CTA */}
-        <div className="mt-auto pb-1">
+        {/* CTA Button */}
+        <div className="mt-4 pb-1">
           <div
-            className="w-full bg-[#2a2a2a] text-white py-[14px] rounded-[24px] text-[15px] font-medium hover:bg-black transition-colors text-center"
+            className="w-full bg-[#18181b] hover:bg-black text-white py-3.5 rounded-2xl text-[14px] font-semibold text-center transition-all duration-200 shadow-sm hover:scale-[1.01] active:scale-[0.99]"
           >
             Buy Now
           </div>

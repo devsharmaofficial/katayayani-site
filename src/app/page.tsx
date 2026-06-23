@@ -103,7 +103,7 @@ export default function HomePage() {
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <Image 
-                        src={`/hero-slider/slide-${currentSlide + 1}.png`} 
+                        src={`/hero-slider/slide-${currentSlide + 1}.avif`} 
                         alt={`Featured Banner ${currentSlide + 1}`}
                         fill
                         className="object-contain"
@@ -154,11 +154,12 @@ export default function HomePage() {
             baseVelocity={-1.5}
             className="text-[22px] md:text-[26px] font-extrabold text-white/90 px-[20px] uppercase tracking-widest"
           >
-            <span className="text-[#ffc641]">🔥 INDIA'S #1 SELLING TRACTOR FIBER ROOF</span> &nbsp; • &nbsp; 
-            <span>PREMIUM QUALITY</span> &nbsp; • &nbsp; 
-            <span className="text-[#ffc641]">BEST PRICE GUARANTEED</span> &nbsp; • &nbsp; 
-            <span>HIGH DURABILITY</span> &nbsp; • &nbsp; 
-            <span className="text-[#ffc641]">WEATHER RESISTANT</span> &nbsp; • &nbsp;
+            <span className="text-[#ffc641]">🔥 BEST PRICE TRACTOR FIBER HOOD IN INDIA</span> &nbsp; • &nbsp; 
+            <span>PUNJABI TRACTOR HOOD</span> &nbsp; • &nbsp; 
+            <span className="text-[#ffc641]">FIBER CHATRI — ALL BRANDS</span> &nbsp; • &nbsp; 
+            <span>SWARAJ 744/855 • MAHINDRA • SONALIKA</span> &nbsp; • &nbsp; 
+            <span className="text-[#ffc641]">HOME DELIVERY ALL OVER INDIA</span> &nbsp; • &nbsp;
+            <span>3-YEAR WARRANTY</span> &nbsp; • &nbsp;
           </TextMarquee>
         </section>
 
@@ -202,18 +203,23 @@ export default function HomePage() {
             <ScrollReveal>
               <div className="text-center mb-[24px]">
                 <h2 className="text-headline-md text-primary">
-                  Featured Canopies
+                  Tractor <span className="font-semibold text-secondary">Fiber Hood</span> — All Brands
                 </h2>
+                <p className="text-sm text-gray-500 mt-2">Punjabi Hood | Fiber Chatri | Best Price in India</p>
               </div>
             </ScrollReveal>
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-              {featuredProducts.slice(0, 6).map((product) => (
-                <StaggerItem key={product.id}>
-                  <ProductCard product={product} />
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+            <ScrollReveal delay={0.2}>
+              <div className="relative w-full py-4 overflow-hidden">
+                <InfiniteSlider gap={24} duration={35} durationOnHover={300} className="py-4">
+                  {featuredProducts.map((product) => (
+                    <div key={product.id} className="w-[290px] min-[375px]:w-[320px] sm:w-[350px] md:w-[370px] shrink-0">
+                      <ProductCard product={product} />
+                    </div>
+                  ))}
+                </InfiniteSlider>
+              </div>
+            </ScrollReveal>
 
           <ScrollReveal>
             <div className="text-center mt-[48px]">

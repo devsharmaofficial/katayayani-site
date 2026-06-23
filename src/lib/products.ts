@@ -4,12 +4,12 @@ const products: Product[] = [
   {
     id: "swaraj-frp-canopy",
     slug: "swaraj-frp-canopy",
-    name: "Swaraj FRP Fiber Roof Canopy",
-    shortName: "Swaraj Canopy",
+    name: "Swaraj Tractor Fiber Hood (Punjabi Hood)",
+    shortName: "Swaraj Fiber Hood",
     description:
-      "Premium FRP fiber roof canopy designed to fit Swaraj series tractors. Engineered for maximum durability and weather protection, this canopy features a gel-coated surface for long-lasting color retention and UV resistance. The lightweight yet incredibly strong construction reduces vehicle load while providing complete overhead protection for the operator. Available in standard matching colors.",
+      "Premium Swaraj tractor fiber hood (punjabi hood / fiber chatri) — India's most trusted fiber roof for Swaraj 744 FE, Swaraj 855 FE, and all Swaraj series. Engineered for maximum durability and weather protection with a UV-resistant gel-coated surface for long-lasting color retention. The lightweight yet incredibly strong FRP construction reduces vehicle load while providing complete overhead protection. Available in standard matching colors. Best tractor fiber hood price — call for quote.",
     shortDescription:
-      "Durable FRP canopy for Swaraj tractors with UV protection and gel-coat finish.",
+      "Best price Swaraj tractor fiber hood & fiber chatri. Fits Swaraj 744 FE, 855 FE & all models. UV resistant, 3-year warranty.",
     brand: "Swaraj",
     brandSlug: "swaraj",
     compatibleModels: [
@@ -23,14 +23,14 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/swaraj/swaraj-frp-canopy-hero-main.png", alt: "Swaraj FRP Fiber Roof Canopy - Premium Quality Main View", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-side-view.png", alt: "Swaraj FRP Canopy Side View - Durable Fiber Roof for Swaraj Tractors", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-angle-view.png", alt: "Swaraj FRP Canopy Angle View - UV Resistant Tractor Roof", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-back-view.png", alt: "Swaraj FRP Canopy Back View - Weather Proof Fiber Canopy", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-installation-guide.png", alt: "Swaraj FRP Canopy Easy Installation - Bolt-On Fitting Guide", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-field-protection-view.png", alt: "Swaraj Tractor Canopy Field Protection - All Weather Shield", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-detail-close-up.png", alt: "Swaraj FRP Canopy Gel-Coat Detail Close-Up - Premium Finish", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj-frp-canopy-product-render.png", alt: "Swaraj FRP Canopy Product Render - White Background", width: 800, height: 800 },
+ { src: "/products/swaraj/dikp1u5xr13hwkysthje.avif", alt: "Swaraj Tractor Fiber Hood - Punjabi Hood - View 1", width: 800, height: 800 },
+      { src: "/products/swaraj/mzf1wbqh4100owuarwtj.avif", alt: "Swaraj Fiber Hood Price - View 2", width: 800, height: 800 },
+      { src: "/products/swaraj/qp4lyo5f2uaymjplv8a6.avif", alt: "Swaraj FRP Fiber Roof Canopy - View 3", width: 800, height: 800 },
+      { src: "/products/swaraj/s6ali1jfpdrf6zjuerjk.avif", alt: "Swaraj Fiber Chatri - View 4", width: 800, height: 800 },
+      { src: "/products/swaraj/sia2vwlwayly35om0h1m.avif", alt: "Swaraj 744 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/swaraj/tlyufzymbrvay4xzov7k.avif", alt: "Swaraj 855 Fiber Hood - View 6", width: 800, height: 800 },
+      { src: "/products/swaraj/zmnpdywvlaspy0sm35vf.avif", alt: "Swaraj Punjabi Hood - View 7", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -46,27 +46,34 @@ const products: Product[] = [
       "Weather-resistant gel-coat finish for long-lasting protection",
       "Double-layer FRP for enhanced thermal insulation",
       "UV-stabilized material prevents yellowing and cracking",
-      "Precision-molded for exact Swaraj series fitment",
+      "Precision-molded for exact Swaraj 744 FE & 855 FE fitment",
       "Easy bolt-on installation — no welding required",
-      "Aerodynamic design minimizes wind resistance",
+      "Aerodynamic punjabi hood design minimizes wind resistance",
     ],
     featureTags: ["FRP", "Lightweight", "UV Resistant", "Double-Layer"],
     category: "FRP Canopies",
     seo: {
-      title: "Swaraj FRP Fiber Roof Canopy | Best Price Meerut | Katyayani Enterprises",
+      title: "Swaraj Tractor Fiber Hood Price | Swaraj 744 855 Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy premium Swaraj FRP fiber roof canopy at best price. Fits Swaraj 855, 744 FE, 963 FE & all models. UV resistant, 3-year warranty. Manufacturer in Meerut, UP. Call +91-9358273054 for quote.",
+        "Buy Swaraj tractor fiber hood at best price. Swaraj 744 fiber hood price, Swaraj 855 fiber chatri price — all models available. Punjab tractor hood / fiber chatri with UV protection, 3-year warranty. Manufacturer in Meerut, UP. Call +91-9358273054.",
       keywords: [
-        "swaraj canopy",
-        "swaraj FRP canopy",
-        "swaraj tractor canopy",
-        "swaraj fiber roof",
-        "swaraj 744 canopy",
-        "swaraj 855 canopy",
-        "FRP tractor roof",
-        "tractor canopy Meerut",
-        "fiber roof for swaraj tractor",
-        "swaraj tractor roof price",
+        "swaraj tractor fiber hood price",
+        "swaraj fiber hood price",
+        "swaraj 744 fiber hood price",
+        "swaraj 855 fiber hood price",
+        "swaraj 744 tractor fiber chatri price",
+        "swaraj 855 fiber chatri price",
+        "swaraj fiber chatri",
+        "swaraj fiber hood",
+        "swaraj tractor fiber chatri price",
+        "fiber hood for tractor swaraj",
+        "fiber hood for tractor price swaraj",
+        "punjabi hood swaraj",
+        "swaraj tractor punjabi hood",
+        "swaraj tractor fiber roof price",
+        "swaraj 744 tractor fiber hood price",
+        "swaraj fiber canopy price",
+        "tractor fiber hood price swaraj",
       ],
     },
     galleryImages: [],
@@ -77,12 +84,12 @@ const products: Product[] = [
   {
     id: "mahindra-frp-canopy",
     slug: "mahindra-frp-canopy",
-    name: "Mahindra FRP Fiber Roof Canopy",
-    shortName: "Mahindra Canopy",
+    name: "Mahindra Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Mahindra Fiber Hood",
     description:
-      "Aerodynamically designed FRP canopy designed to fit Mahindra series tractors. Features an advanced heat shield layer that significantly reduces cabin temperature, keeping operators comfortable during long working hours. The multi-layer composite construction provides superior strength-to-weight ratio. Available in standard matching colors.",
+      "Best price Mahindra tractor fiber hood (fiber chatri / punjabi hood) — aerodynamic and heat-shield equipped fiber roof for Mahindra 575 DI, Mahindra 475 DI, Arjun Novo & all Mahindra series. Features an advanced heat shield layer that significantly reduces cabin temperature, keeping operators comfortable during long working hours. Multi-layer FRP composite construction. Available in standard matching colors. Call now for Mahindra tractor fiber hood price.",
     shortDescription:
-      "Aerodynamic FRP canopy with heat shield for Mahindra tractors.",
+      "Mahindra tractor fiber hood & fiber chatri at best price. Heat shield, fits Mahindra 575, 475 DI & all models.",
     brand: "Mahindra",
     brandSlug: "mahindra",
     compatibleModels: [
@@ -98,13 +105,14 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/mahindra/mahindra-frp-canopy-hero-main.png", alt: "Mahindra FRP Fiber Roof Canopy - Premium Quality Main View", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-angle-view.png", alt: "Mahindra FRP Canopy Angle View - Aerodynamic Tractor Roof", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-field-protection-view.png", alt: "Mahindra Tractor FRP Canopy in Field - All Weather Protection", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-side-view.png", alt: "Mahindra FRP Canopy Side View - Heat Shield Fiber Roof", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-front-view.png", alt: "Mahindra FRP Canopy Front View - UV Resistant Roof", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-detail-close-up.png", alt: "Mahindra FRP Canopy Gel-Coat Detail - Premium Surface Finish", width: 800, height: 800 },
-      { src: "/products/mahindra/mahindra-frp-canopy-product-render.png", alt: "Mahindra FRP Canopy Product Render - White Background", width: 800, height: 800 },
+ { src: "/products/mahindra/ehgbiq2ts92ishq5kkf8.avif", alt: "Mahindra Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/mahindra/kkcebd7ebtt6zn2rirby.avif", alt: "Mahindra Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/mahindra/rnd8po6bnd1leuvjf1ry.avif", alt: "Mahindra Fiber Hood - View 3", width: 800, height: 800 },
+      { src: "/products/mahindra/svinhpxwxhfeecub8qmp.avif", alt: "Mahindra FRP Fiber Roof - View 4", width: 800, height: 800 },
+      { src: "/products/mahindra/uj3ux1arampag4wkfykt.avif", alt: "Mahindra 575 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/mahindra/wzxqbim3v4tcwovaekhp.avif", alt: "Mahindra Tractor Fiber Chatri - View 6", width: 800, height: 800 },
+      { src: "/products/mahindra/y4ulh8oilg8vudlrxs9e.avif", alt: "Mahindra Punjabi Hood - View 7", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -118,7 +126,7 @@ const products: Product[] = [
     ],
     features: [
       "Integrated heat shield reduces cabin temperature by up to 15°C",
-      "Aerodynamic profile engineered for reduced wind drag",
+      "Aerodynamic punjabi hood profile engineered for reduced wind drag",
       "Multi-layer FRP composite for superior impact resistance",
       "Color-matched to Mahindra's official paint codes",
       "Reinforced mounting points for vibration dampening",
@@ -127,19 +135,23 @@ const products: Product[] = [
     featureTags: ["FRP", "Aerodynamic", "Heat Shield", "Field-Ready"],
     category: "FRP Canopies",
     seo: {
-      title: "Mahindra FRP Fiber Roof Canopy | Best Price | Katyayani Enterprises",
+      title: "Mahindra Tractor Fiber Hood Price | Mahindra Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Mahindra FRP fiber roof canopy with integrated heat shield. Fits Mahindra 575 DI, 475 DI, Arjun Novo & all models. Aerodynamic design, 3-year warranty. Manufacturer in Meerut. Call +91-9358273054.",
+        "Buy Mahindra tractor fiber hood at best price. Mahindra tractor fiber chatri, Mahindra 575 DI fiber hood price — fits all Mahindra models. Heat shield, 3-year warranty. Punjabi hood style. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
-        "mahindra canopy",
-        "mahindra FRP canopy",
-        "mahindra tractor roof",
-        "mahindra fiber roof",
-        "mahindra 575 canopy",
-        "mahindra 475 canopy",
-        "heat shield canopy",
-        "mahindra tractor canopy Meerut",
-        "mahindra tractor roof price",
+        "mahindra tractor fiber hood price",
+        "mahindra tractor fiber chatri price",
+        "mahindra fiber hood",
+        "mahindra fiber chatri",
+        "fiber hood for mahindra tractor",
+        "mahindra 575 tractor fiber hood price",
+        "mahindra tractor fiber hood",
+        "mahindra 275 tractor fiber hood price",
+        "mahindra punjabi hood",
+        "mahindra tractor fiber roof price",
+        "mahindra fiber hood price",
+        "tractor fiber hood price mahindra",
+        "mahindra FRP fiber hood",
       ],
     },
     galleryImages: [],
@@ -150,12 +162,12 @@ const products: Product[] = [
   {
     id: "john-deere-frp-canopy",
     slug: "john-deere-frp-canopy",
-    name: "John Deere FRP Fiber Roof Canopy",
-    shortName: "John Deere Canopy",
+    name: "John Deere Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "John Deere Fiber Hood",
     description:
-      "Precision-molded elite FRP canopy designed to fit John Deere series tractors. This weatherproof canopy is engineered with tri-layer high-impact FRP composite material that withstands heavy weather, sun exposure, and field vibrations. Features optional LED work light mounting ports and the classic green and yellow glossy finish.",
+      "Premium John Deere tractor fiber hood (fiber chatri / punjabi hood) — precision-molded tri-layer FRP fiber roof for John Deere 5050D, 5045D, 5310 & all John Deere series. This weatherproof fiber hood is engineered with tri-layer high-impact FRP composite material that withstands heavy weather, sun exposure, and field vibrations. Features optional LED work light mounting ports and the classic green and yellow glossy finish. Best John Deere tractor fiber hood price in India.",
     shortDescription:
-      "Weatherproof, high-impact tri-layer FRP canopy for John Deere tractors.",
+      "Best price John Deere tractor fiber hood & fiber chatri. Tri-layer FRP, fits 5050D, 5310 & all models.",
     brand: "John Deere",
     brandSlug: "john-deere",
     compatibleModels: [
@@ -169,9 +181,10 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/john-deere/john-deere-frp-canopy-hero-main.png", alt: "John Deere FRP Fiber Roof Canopy - Premium Quality Main View", width: 800, height: 800 },
-      { src: "/products/john-deere/john-deere-frp-canopy-angle-view.png", alt: "John Deere FRP Canopy Angle View - Tri-Layer Weather Proof Roof", width: 800, height: 800 },
-      { src: "/products/john-deere/john-deere-frp-canopy-side-view.png", alt: "John Deere FRP Canopy Side View - Green Yellow Fiber Roof", width: 800, height: 800 },
+ { src: "/products/john-deere/a8x6rvdo9yr7befgufku.avif", alt: "John Deere Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/john-deere/bud6qukzw1otsyjjixez.avif", alt: "John Deere Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/john-deere/dlqghowgelsufucedvhn.avif", alt: "John Deere 5050D Fiber Hood - View 3", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Tri-Layer FRP Composite" },
@@ -184,7 +197,7 @@ const products: Product[] = [
       { label: "Temperature Range", value: "-20°C to 95°C" },
     ],
     features: [
-      "Tri-layer FRP construction — our most advanced canopy",
+      "Tri-layer FRP construction — most advanced fiber hood",
       "High-impact FRP withstands hailstones up to 35mm diameter",
       "Double-wall construction for superior thermal insulation",
       "Integrated LED work light mounting ports (2×)",
@@ -194,19 +207,22 @@ const products: Product[] = [
     featureTags: ["FRP", "Tri-Layer", "Weatherproof", "LED Ready"],
     category: "FRP Canopies",
     seo: {
-      title: "John Deere FRP Fiber Roof Canopy | 5 Year Warranty | Katyayani Enterprises",
+      title: "John Deere Tractor Fiber Hood Price | JD Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy John Deere FRP fiber roof canopy - high-impact tri-layer construction. Fits John Deere 5050D, 5045D, 5310 & all models. LED light mounts, 5-year warranty. Factory color-matched. Meerut manufacturer.",
+        "Buy John Deere tractor fiber hood at best price. John Deere 5050D fiber hood price, 5310 fiber chatri — tri-layer FRP, LED mounts, 5-year warranty. Meerut manufacturer. Call +91-9358273054 for price.",
       keywords: [
-        "john deere canopy",
-        "john deere FRP canopy",
-        "john deere tractor roof",
-        "JD tractor canopy",
-        "john deere fiber roof",
-        "john deere 5050 canopy",
-        "john deere 5310 canopy",
-        "FRP canopy with LED mounts",
-        "john deere tractor roof price",
+        "john deere tractor fiber hood price",
+        "john deere fiber hood",
+        "john deere tractor fiber hood",
+        "john deere fiber chatri",
+        "john deere 5050d fiber hood price",
+        "john deere 5310 fiber hood price",
+        "tractor fiber hood price john deere",
+        "john deere tractor fiber hood top",
+        "john deere tractor fiber hood price in india",
+        "JD fiber hood",
+        "john deere punjabi hood",
+        "john deere FRP fiber hood",
       ],
     },
     galleryImages: [],
@@ -217,12 +233,12 @@ const products: Product[] = [
   {
     id: "sonalika-frp-canopy",
     slug: "sonalika-frp-canopy",
-    name: "Sonalika FRP Fiber Roof Canopy",
-    shortName: "Sonalika Canopy",
+    name: "Sonalika Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Sonalika Fiber Hood",
     description:
-      "Robust FRP canopy designed specifically for Sonalika series tractors. Built with reinforced composite materials for maximum field endurance, high wind resistance, and operator protection. Includes Orchard/Vineyard compact profile options with anti-vibration mount systems.",
+      "Best price Sonalika tractor fiber hood (fiber chatri / punjabi hood) — robust FRP fiber roof specifically for Sonalika DI 750, DI 60, Tiger 50, Tiger 55 & all Sonalika series. Built with reinforced composite materials for maximum field endurance, high wind resistance, and operator protection. Includes anti-vibration mount systems. Call for Sonalika tractor fiber hood price today.",
     shortDescription:
-      "Robust, reinforced FRP canopy for Sonalika tractors.",
+      "Best price Sonalika tractor fiber hood & fiber chatri. Fits DI 750, Tiger 50 & all Sonalika models.",
     brand: "Sonalika",
     brandSlug: "sonalika",
     compatibleModels: [
@@ -237,15 +253,16 @@ const products: Product[] = [
       { name: "Green", hex: "#15803d", slug: "green" },
     ],
     images: [
-      { src: "/products/sonalika/sonalika-frp-canopy-hero-main.png", alt: "Sonalika FRP Fiber Roof Canopy - Premium Quality Main View", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-side-view.png", alt: "Sonalika FRP Canopy Side View - Reinforced Fiber Roof", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-field-view.png", alt: "Sonalika Tractor FRP Canopy Field View - All Weather Shield", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-front-view.png", alt: "Sonalika FRP Canopy Front View - UV Resistant Tractor Roof", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-top-view.png", alt: "Sonalika FRP Canopy Top View - Gel Coat Finish", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-underhood-view.png", alt: "Sonalika FRP Canopy Underhood View - Interior Mounting", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-installation-guide.png", alt: "Sonalika FRP Canopy Installation Guide - Easy Bolt-On", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-detail-close-up.png", alt: "Sonalika FRP Canopy Detail Close-Up - Surface Quality", width: 800, height: 800 },
-      { src: "/products/sonalika/sonalika-frp-canopy-product-render.png", alt: "Sonalika FRP Canopy Product Render - White Background", width: 800, height: 800 },
+ { src: "/products/sonalika/dpqspudvwd8knl1xvseu.avif", alt: "Sonalika Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/sonalika/ibxrb0yo5bigemcbnryt.avif", alt: "Sonalika Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/sonalika/jy9kujsidlgeiiq2ztfj.avif", alt: "Sonalika Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/sonalika/m04b0f7tgymywst7d4so.avif", alt: "Sonalika FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/sonalika/mpyf3wyafelh53nesdhn.avif", alt: "Sonalika DI 750 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/sonalika/pn8zkztwj955hzz4asin.avif", alt: "Sonalika Tiger Fiber Hood - View 6", width: 800, height: 800 },
+      { src: "/products/sonalika/rrku0zgcttvygzn6m2on.avif", alt: "Sonalika Punjabi Hood - View 7", width: 800, height: 800 },
+      { src: "/products/sonalika/v4lhippqeckcj43s2kka.avif", alt: "Sonalika Tractor Fiber Chatri - View 8", width: 800, height: 800 },
+      { src: "/products/sonalika/zxnmfqihsjywrael3pkr.avif", alt: "Sonalika Fiber Hood Cover - View 9", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Reinforced FRP Composite" },
@@ -262,24 +279,28 @@ const products: Product[] = [
       "Custom-molded for exact Sonalika tractor models fitment",
       "Anti-vibration mounting system included",
       "Scratch-resistant gel-coat surface finish",
-      "Lightweight design — easy single-person installation",
+      "Lightweight punjabi hood design — easy single-person installation",
       "All-weather protection against sun, rain, and hail",
     ],
     featureTags: ["FRP", "Reinforced", "All-Weather", "Compact Option"],
     category: "FRP Canopies",
     seo: {
-      title: "Sonalika FRP Fiber Roof Canopy | Best Price India | Katyayani Enterprises",
+      title: "Sonalika Tractor Fiber Hood Price | Sonalika Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Sonalika FRP fiber roof canopy at best price. Fits Sonalika DI 750, DI 60, Tiger 50 & all models. Anti-vibration mount, reinforced composite, 3-year warranty. Meerut manufacturer. Get quote today.",
+        "Buy Sonalika tractor fiber hood at best price. Sonalika fiber chatri price, Sonalika tractor fiber chatri — fits DI 750, Tiger 50/55 & all models. Anti-vibration, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
-        "sonalika canopy",
-        "sonalika FRP canopy",
-        "sonalika tractor roof",
-        "sonalika fiber roof",
-        "sonalika DI 750 canopy",
-        "sonalika tiger canopy",
-        "tractor canopy India",
-        "sonalika tractor roof price",
+        "sonalika tractor fiber hood price",
+        "sonalika fiber hood price",
+        "sonalika fiber chatri price",
+        "sonalika tractor fiber chatri price",
+        "sonalika fiber hood",
+        "fiber hood for sonalika tractor",
+        "chatri sonalika tractor fiber hood price",
+        "sonalika tractor fiber hood",
+        "sonalika punjabi hood",
+        "sonalika fiber hood price in india",
+        "sonalika FRP fiber hood",
+        "tractor fiber hood price sonalika",
       ],
     },
     galleryImages: [],
@@ -290,12 +311,12 @@ const products: Product[] = [
   {
     id: "eicher-frp-canopy",
     slug: "eicher-frp-canopy",
-    name: "Eicher FRP Fiber Roof Canopy",
-    shortName: "Eicher Canopy",
+    name: "Eicher Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Eicher Fiber Hood",
     description:
-      "All-weather FRP canopy engineered specifically for Eicher tractors. Tested under extreme conditions including tropical heat, heavy monsoon rains, and high winds. Features an anti-corrosion stainless steel mounting system.",
+      "All-weather Eicher tractor fiber hood (fiber chatri / punjabi hood) — engineered specifically for Eicher 380, 485, 551 & all Eicher tractors. Tested under extreme conditions including tropical heat, heavy monsoon rains, and high winds. Features an anti-corrosion stainless steel mounting system. Get Eicher tractor fiber hood price online — call now.",
     shortDescription:
-      "All-weather FRP canopy for Eicher tractors, tested in extreme conditions.",
+      "Eicher tractor fiber hood & fiber chatri at best price. Fits Eicher 380, 485, 551 & all models.",
     brand: "Eicher",
     brandSlug: "eicher",
     compatibleModels: [
@@ -307,10 +328,11 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/eicher/eicher-frp-canopy-hero-main.png", alt: "Eicher FRP Fiber Roof Canopy - All Weather Protection Main View", width: 800, height: 800 },
-      { src: "/products/eicher/eicher-frp-canopy-side-view.png", alt: "Eicher FRP Canopy Side View - Wind Resistant Tractor Roof", width: 800, height: 800 },
-      { src: "/products/eicher/eicher-frp-canopy-front-view.png", alt: "Eicher FRP Canopy Front View - UV Resistant Fiber Roof", width: 800, height: 800 },
-      { src: "/products/eicher/eicher-frp-canopy-detail-close-up.png", alt: "Eicher FRP Canopy Detail - Anti-Corrosion Mounting Hardware", width: 800, height: 800 },
+ { src: "/products/eicher/nuta1tnzorq5yp4ylfgb.avif", alt: "Eicher Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/eicher/qjozuvofcbofhxbzs7nq.avif", alt: "Eicher Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/eicher/uyekew7cdguandqrrrmw.avif", alt: "Eicher Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/eicher/xtr5abzcmxqdxfg5l3qb.avif", alt: "Eicher FRP Fiber Hood - View 4", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "All-Weather FRP Composite" },
@@ -333,18 +355,21 @@ const products: Product[] = [
     featureTags: ["FRP", "All-Weather", "Wind Resistant"],
     category: "FRP Canopies",
     seo: {
-      title: "Eicher FRP Fiber Roof Canopy | 140km/h Wind Rated | Katyayani Enterprises",
+      title: "Eicher Tractor Fiber Hood Price | Eicher Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Eicher FRP fiber roof canopy - extreme condition tested. Fits Eicher 380, 485, 551, 380 & all models. 140 km/h wind certified, stainless steel mounts, 3-year warranty. Made in Meerut.",
+        "Buy Eicher tractor fiber hood at best price. Eicher tractor fiber chatri, fiber hood — fits Eicher 380, 485, 551 & all models. 140 km/h wind rated, stainless mounts, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
-        "eicher canopy",
-        "eicher FRP canopy",
-        "eicher tractor roof",
-        "eicher fiber roof",
-        "eicher 380 canopy",
-        "eicher 485 canopy",
-        "wind resistant canopy",
-        "eicher tractor roof price",
+        "eicher tractor fiber hood price",
+        "eicher tractor fiber hood",
+        "eicher fiber chatri",
+        "eicher fiber hood",
+        "eicher tractor fiber hood price in india",
+        "eicher 380 fiber hood",
+        "eicher 485 fiber hood",
+        "eicher punjabi hood",
+        "eicher tractor fiber hood price",
+        "fiber hood for eicher tractor",
+        "eicher FRP fiber hood",
       ],
     },
     galleryImages: [],
@@ -355,12 +380,12 @@ const products: Product[] = [
   {
     id: "new-holland-frp-canopy",
     slug: "new-holland-frp-canopy",
-    name: "New Holland FRP Fiber Roof Canopy",
-    shortName: "New Holland Canopy",
+    name: "New Holland Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "New Holland Fiber Hood",
     description:
-      "High-performance FRP canopy built specifically for New Holland tractors. Features New Holland's iconic blue color with a premium gel-coat finish for lasting protection and reinforced rib structure for maximum rigidity.",
+      "High-performance New Holland tractor fiber hood (fiber chatri / punjabi hood) — built specifically for New Holland 3630 TX, 3630 TX Plus, 5620 TX & all New Holland series. Features iconic blue color with premium gel-coat finish for lasting protection and reinforced rib structure for maximum rigidity. Get New Holland tractor fiber hood price online — call now.",
     shortDescription:
-      "High-performance FRP canopy for New Holland tractors.",
+      "New Holland tractor fiber hood & fiber chatri at best price. Fits 3630 TX, 5620 TX & all models.",
     brand: "New Holland",
     brandSlug: "new-holland",
     compatibleModels: [
@@ -373,11 +398,12 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/new-holland/new-holland-frp-canopy-hero-main.png", alt: "New Holland FRP Fiber Roof Canopy - Premium Quality Main View", width: 800, height: 800 },
-      { src: "/products/new-holland/new-holland-frp-canopy-front-view.png", alt: "New Holland FRP Canopy Front View - Blue OEM Color Matched", width: 800, height: 800 },
-      { src: "/products/new-holland/new-holland-frp-canopy-side-view.png", alt: "New Holland FRP Canopy Side View - Reinforced Rib Structure", width: 800, height: 800 },
-      { src: "/products/new-holland/new-holland-frp-canopy-angle-view.png", alt: "New Holland FRP Canopy Angle View - Premium Gel-Coat Finish", width: 800, height: 800 },
-      { src: "/products/new-holland/new-holland-frp-canopy-installation-guide.png", alt: "New Holland FRP Canopy Installation - OEM Mount Compatible", width: 800, height: 800 },
+ { src: "/products/new-holland/cmfkh5ewaoeh9wsuesv6.avif", alt: "New Holland Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/new-holland/i1jqexye9p8nmcquouum.avif", alt: "New Holland Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/new-holland/kggfoknspdrvmmjlho6x.avif", alt: "New Holland Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/new-holland/n6y7ggmmrz9skjxbwpc4.avif", alt: "New Holland 3630 Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/new-holland/vachimeqid2z72iu3bgm.avif", alt: "New Holland FRP Fiber Hood - View 5", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -400,17 +426,20 @@ const products: Product[] = [
     featureTags: ["FRP", "Premium Finish", "OEM Compatible"],
     category: "FRP Canopies",
     seo: {
-      title: "New Holland FRP Fiber Roof Canopy | OEM Compatible | Katyayani Enterprises",
+      title: "New Holland Tractor Fiber Hood Price | NH Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy New Holland FRP fiber roof canopy - OEM compatible, no drilling needed. Fits NH 3630 TX, 3630 TX Plus, 5620 TX & all models. Premium gel-coat, color matched, 3-year warranty. Meerut manufacturer.",
+        "Buy New Holland tractor fiber hood at best price. New Holland 3630 TX fiber hood, fiber chatri — OEM compatible, no drilling needed. Fits NH 3630 TX, 5620 TX & all models. 3-year warranty. Meerut manufacturer.",
       keywords: [
-        "new holland canopy",
-        "new holland FRP canopy",
-        "new holland tractor roof",
-        "new holland fiber roof",
-        "new holland 3630 canopy",
-        "OEM compatible canopy",
-        "new holland tractor roof price",
+        "new holland tractor fiber hood price",
+        "new holland tractor fiber hood",
+        "new holland fiber chatri",
+        "new holland fiber hood",
+        "3630 new holland tractor fiber hood price",
+        "roof new holland tractor fiber hood price",
+        "new holland punjabi hood",
+        "fiber hood for new holland tractor",
+        "new holland tractor fiber hood price in india",
+        "new holland FRP fiber hood",
       ],
     },
     galleryImages: [],
@@ -421,12 +450,12 @@ const products: Product[] = [
   {
     id: "massey-ferguson-frp-canopy",
     slug: "massey-ferguson-frp-canopy",
-    name: "Massey Ferguson FRP Fiber Roof Canopy",
-    shortName: "MF Canopy",
+    name: "Massey Ferguson Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Massey Fiber Hood",
     description:
-      "Heritage-inspired FRP canopy for Massey Ferguson series tractors. Combines classic Massey Ferguson styling with modern FRP technology for the ultimate blend of tradition and innovation. Built-in cable routing channels for accessories are integrated.",
+      "Best price Massey Ferguson tractor fiber hood (fiber chatri / punjabi hood) — heritage-inspired FRP fiber roof for Massey 1035 DI, MF 241 DI, 7250 PowerUp & all Massey Ferguson series. Combines classic Massey Ferguson styling with modern FRP technology. Built-in cable routing channels for accessories are integrated. Call for Massey tractor fiber hood price.",
     shortDescription:
-      "Heritage FRP canopy for Massey Ferguson series tractors.",
+      "Massey Ferguson tractor fiber hood & fiber chatri at best price. Fits MF 1035 DI, 241 DI & all models.",
     brand: "Massey Ferguson",
     brandSlug: "massey-ferguson",
     compatibleModels: [
@@ -439,11 +468,12 @@ const products: Product[] = [
       { name: "Grey", hex: "#6b7280", slug: "grey" },
     ],
     images: [
-      { src: "/products/massey-ferguson/massey-ferguson-frp-canopy-hero-main.png", alt: "Massey Ferguson FRP Fiber Roof Canopy - Heritage Design Main View", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/massey-ferguson-frp-canopy-side-view.png", alt: "Massey Ferguson FRP Canopy Side View - MF Red Color Matched", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/massey-ferguson-frp-canopy-front-view.png", alt: "Massey Ferguson FRP Canopy Front View - Quick Mount System", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/massey-ferguson-frp-canopy-field-view.png", alt: "Massey Ferguson FRP Canopy Field View - All Weather Protection", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/massey-ferguson-frp-canopy-angle-view.png", alt: "Massey Ferguson FRP Canopy Angle View - Heritage Silhouette Design", width: 800, height: 800 },
+ { src: "/products/massey-ferguson/ft98tfplf5vf6jyrcglm.avif", alt: "Massey Ferguson Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/gcehdupahpa0j5c2scwq.avif", alt: "Massey Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/khzfkbhvckvyqmrvzusk.avif", alt: "Massey Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/lwqz1nyazkodgit1hwqm.avif", alt: "Massey FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/rd1kd9mrbs19ysivbhe9.avif", alt: "Massey 1035 Fiber Hood - View 5", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -456,7 +486,7 @@ const products: Product[] = [
       { label: "Temperature Range", value: "-10°C to 80°C" },
     ],
     features: [
-      "Heritage-inspired design honoring MF's iconic silhouette",
+      "Heritage-inspired punjabi hood design honoring MF's iconic silhouette",
       "Massey Ferguson red color-matched to factory standards",
       "Ergonomic profile provides maximum headroom for operator",
       "Built-in cable routing channels for accessories",
@@ -466,17 +496,21 @@ const products: Product[] = [
     featureTags: ["FRP", "Heritage Design", "Quick-Mount"],
     category: "FRP Canopies",
     seo: {
-      title: "Massey Ferguson FRP Fiber Roof Canopy | Quick Mount | Katyayani Enterprises",
+      title: "Massey Tractor Fiber Hood Price | Massey Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Massey Ferguson FRP fiber roof canopy - 30-min quick mount. Fits MF 1035 DI, 241 DI, 7250 PowerUp & all models. MF red color-matched, heritage design, 3-year warranty. Made in Meerut, UP.",
+        "Buy Massey Ferguson tractor fiber hood at best price. Massey tractor fiber chatri, fiber hood — fits MF 1035 DI, 241 DI, 7250 PowerUp. 30-min quick mount, MF red color-matched, 3-year warranty. Meerut manufacturer.",
       keywords: [
-        "massey ferguson canopy",
-        "massey ferguson FRP canopy",
-        "MF tractor roof",
-        "massey ferguson fiber roof",
-        "MF 1035 canopy",
-        "massey ferguson tractor roof price",
-        "quick mount canopy",
+        "massey tractor fiber hood price",
+        "massey tractor fiber hood",
+        "massey ferguson fiber hood",
+        "massey fiber chatri",
+        "massey 1035 fiber hood",
+        "massey ferguson tractor fiber chatri price",
+        "massey 1035 tractor fiber hood price",
+        "massey punjabi hood",
+        "fiber hood for massey tractor",
+        "massey FRP fiber hood",
+        "massey tractor fiber hood price in india",
       ],
     },
     galleryImages: [],
@@ -487,12 +521,12 @@ const products: Product[] = [
   {
     id: "deutz-fahr-frp-canopy",
     slug: "deutz-fahr-frp-canopy",
-    name: "Deutz Fahr FRP Fiber Roof Canopy",
-    shortName: "Deutz Fahr Canopy",
+    name: "Deutz Fahr Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Deutz Fahr Fiber Hood",
     description:
-      "German engineering meets Indian agriculture with this precision-molded Deutz Fahr FRP canopy. Specifically designed for Deutz Fahr's robust design aesthetics and models. Offers premium double-wall insulation and high weather endurance.",
+      "German engineering meets Indian agriculture with this precision-molded Deutz Fahr tractor fiber hood (fiber chatri / punjabi hood). Specifically designed for Deutz Fahr Agromaxx 55, Agrolux 70 & 80 tractor models. Offers premium double-wall insulation and high weather endurance at the best price. Call for Deutz Fahr tractor fiber hood price.",
     shortDescription:
-      "Precision-fit German-engineered FRP canopy for Deutz Fahr tractors.",
+      "Deutz Fahr tractor fiber hood & fiber chatri at best price. Precision German-engineered FRP, fits all Deutz Fahr models.",
     brand: "Deutz Fahr",
     brandSlug: "deutz-fahr",
     compatibleModels: ["Deutz Fahr Agromaxx 55", "Deutz Fahr Agrolux 70", "Deutz Fahr Agrolux 80"],
@@ -501,10 +535,11 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/deutz-fahr/deutz-fahr-frp-canopy-hero-main.png", alt: "Deutz Fahr FRP Fiber Roof Canopy - German Engineering Main View", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/deutz-fahr-frp-canopy-side-view.png", alt: "Deutz Fahr FRP Canopy Side View - Double-Wall Insulation", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/deutz-fahr-frp-canopy-front-view.png", alt: "Deutz Fahr FRP Canopy Front View - Premium High-Gloss Gel Coat", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/deutz-fahr-frp-canopy-angle-view.png", alt: "Deutz Fahr FRP Canopy Angle View - UV Stabilized Green Finish", width: 800, height: 800 }
+ { src: "/products/deutz-fahr/ChatGPT Image Jun 22, 2026, 12_37_42 PM.avif", alt: "Deutz Fahr Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/ChatGPT Image Jun 22, 2026, 12_44_49 PM.avif", alt: "Deutz Fahr Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz fahr hero image (1).avif", alt: "Deutz Fahr Fiber Hood - View 3", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz fahr hero image.avif", alt: "Deutz Fahr FRP Fiber Hood - View 4", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "German-Spec FRP Composite" },
@@ -526,10 +561,10 @@ const products: Product[] = [
     featureTags: ["FRP", "German Engineered", "UV Resistant", "Heavy Duty"],
     category: "FRP Canopies",
     seo: {
-      title: "Deutz Fahr FRP Fiber Roof Canopy | German Engineered | Katyayani Enterprises",
+      title: "Deutz Fahr Tractor Fiber Hood Price | Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Deutz Fahr FRP fiber roof canopy - German precision engineering. Fits Deutz Fahr Agromaxx 55, Agrolux 70 & all models. Double-wall thermal insulation, UV-stabilized, 3-year warranty. India manufacturer.",
-      keywords: ["deutz fahr canopy", "deutz fahr FRP canopy", "deutz fahr tractor roof", "deutz fahr fiber roof", "deutz fahr agromaxx canopy", "FRP canopy India", "tractor canopy price"]
+        "Buy Deutz Fahr tractor fiber hood at best price. Fiber chatri for Deutz Fahr Agromaxx 55, Agrolux 70 & all models. Double-wall thermal insulation, UV-stabilized, 3-year warranty. India manufacturer.",
+      keywords: ["deutz fahr tractor fiber hood", "deutz fahr fiber chatri", "deutz fahr fiber hood price", "deutz fahr agromaxx fiber hood", "fiber hood for deutz fahr tractor", "deutz fahr FRP fiber hood", "tractor fiber hood price deutz fahr"]
     },
     galleryImages: [],
     isFeatured: false,
@@ -539,12 +574,12 @@ const products: Product[] = [
   {
     id: "farmtrac-frp-canopy",
     slug: "farmtrac-frp-canopy",
-    name: "Farmtrac FRP Fiber Roof Canopy",
-    shortName: "Farmtrac Canopy",
+    name: "Farmtrac Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Farmtrac Fiber Hood",
     description:
-      "All-weather durable FRP canopy engineered specifically for Farmtrac operators. Combining Farmtrac's legacy of dependability with modern composite engineering, this fiber roof provides maximum sun and rain protection with reinforced support structure.",
+      "All-weather Farmtrac tractor fiber hood (fiber chatri / punjabi hood) — engineered specifically for Farmtrac 60, 45, 6055 & all Farmtrac series. Combining Farmtrac's legacy of dependability with modern FRP composite engineering, this fiber hood provides maximum sun and rain protection with reinforced support structure. Call for Farmtrac tractor fiber hood price.",
     shortDescription:
-      "All-weather dependable FRP canopy for Farmtrac tractors.",
+      "Farmtrac tractor fiber hood & fiber chatri at best price. All-weather FRP, fits Farmtrac 60, 45, 6055 & all models.",
     brand: "Farmtrac",
     brandSlug: "farmtrac",
     compatibleModels: ["Farmtrac 60", "Farmtrac 45", "Farmtrac 6055", "Farmtrac 50", "Farmtrac Atom 26"],
@@ -553,11 +588,12 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/farmtrac/farmtrac-frp-canopy-hero-main.png", alt: "Farmtrac FRP Fiber Roof Canopy - All Weather Protection Main View", width: 800, height: 800 },
-      { src: "/products/farmtrac/farmtrac-frp-canopy-side-view.png", alt: "Farmtrac FRP Canopy Side View - Classic Blue Fiber Roof", width: 800, height: 800 },
-      { src: "/products/farmtrac/farmtrac-frp-canopy-front-view.png", alt: "Farmtrac FRP Canopy Front View - Vibration Resistant Mounts", width: 800, height: 800 },
-      { src: "/products/farmtrac/farmtrac-frp-canopy-angle-view.png", alt: "Farmtrac FRP Canopy Angle View - Durable Construction", width: 800, height: 800 },
-      { src: "/products/farmtrac/farmtrac-frp-canopy-installed-view.png", alt: "Farmtrac FRP Canopy Installed on Tractor - Field Ready View", width: 800, height: 800 }
+ { src: "/products/farmtrac/fkbuz55dqr401srbh84p.avif", alt: "Farmtrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/farmtrac/gmfzei6vminlikfeqfvu.avif", alt: "Farmtrac Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/farmtrac/hlzbexc8nmkohgrzkj6n.avif", alt: "Farmtrac Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/farmtrac/vtcqborcajv1bmcotk4o.avif", alt: "Farmtrac FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/farmtrac/xhlbpydr7a3dtubvzge9.avif", alt: "Farmtrac Punjabi Hood - View 5", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "High Strength FRP" },
@@ -571,17 +607,17 @@ const products: Product[] = [
     features: [
       "Custom-molded to fit Farmtrac's official chassis setup",
       "Vibrant classic blue color matching Farmtrac factory paint",
-      "Super-lightweight yet robust rib structure design",
+      "Super-lightweight yet robust punjabi hood rib structure design",
       "Vibration-resistant mounts prevent noise and loosening in the field",
       "Complete protection from weather elements"
     ],
     featureTags: ["FRP", "Dependable", "Classic Fit", "Vibration Dampened"],
     category: "FRP Canopies",
     seo: {
-      title: "Farmtrac FRP Fiber Roof Canopy | Dependable Quality | Katyayani Enterprises",
+      title: "Farmtrac Tractor Fiber Hood Price | Farmtrac Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Farmtrac FRP fiber roof canopy - lightweight and all-weather dependable. Fits Farmtrac 60, 45, 6055 & all models. Classic blue color, vibration-dampened mounts, 3-year warranty. Meerut manufacturer.",
-      keywords: ["farmtrac canopy", "farmtrac FRP canopy", "farmtrac tractor roof", "farmtrac fiber roof", "farmtrac 60 canopy", "all weather canopy", "tractor roof price India"]
+        "Buy Farmtrac tractor fiber hood at best price. Farmtrac fiber chatri, fiber hood — fits Farmtrac 60, 45, 6055 & all models. Classic blue, vibration-dampened, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
+      keywords: ["farmtrac tractor fiber hood", "farmtrac fiber hood price", "farmtrac fiber chatri", "farmtrac 60 fiber hood", "farmtrac punjabi hood", "fiber hood for farmtrac tractor", "farmtrac FRP fiber hood", "tractor fiber hood price farmtrac"]
     },
     galleryImages: [],
     isFeatured: false,
@@ -591,12 +627,12 @@ const products: Product[] = [
   {
     id: "solis-frp-canopy",
     slug: "solis-frp-canopy",
-    name: "Solis FRP Fiber Roof Canopy",
-    shortName: "Solis Canopy",
+    name: "Solis Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Solis Fiber Hood",
     description:
-      "Modern design FRP canopy customized for Solis's nimble and stylish compact tractor frames. Built with premium lightweight composite materials, it preserves Solis's high power-to-weight performance while ensuring complete comfort.",
+      "Modern design Solis tractor fiber hood (fiber chatri) customized for Solis's nimble compact tractor frames (Solis 5015, 4515, 4215 & more). Built with premium lightweight FRP composite materials, preserves Solis's high power-to-weight performance while ensuring complete operator comfort. Call for Solis tractor fiber hood price.",
     shortDescription:
-      "Lightweight, stylish FRP canopy custom-fit for Solis compact tractors.",
+      "Solis tractor fiber hood & fiber chatri at best price. Lightweight FRP, fits Solis 5015, 4515, 4215 & all models.",
     brand: "Solis",
     brandSlug: "solis",
     compatibleModels: ["Solis 5015", "Solis 4515", "Solis 4215", "Solis 3016", "Solis 2516"],
@@ -606,9 +642,10 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/solis/solis-frp-canopy-hero-main.png", alt: "Solis FRP Fiber Roof Canopy - Modern Compact Tractor Main View", width: 800, height: 800 },
-      { src: "/products/solis/solis-frp-canopy-angle-view.png", alt: "Solis FRP Canopy Angle View - Low Profile Orchard Design", width: 800, height: 800 },
-      { src: "/products/solis/solis-frp-canopy-side-view.png", alt: "Solis FRP Canopy Side View - Lightweight Compact Fiber Roof", width: 800, height: 800 }
+ { src: "/products/solis/jqasjqithjxn5mfcnsd9.avif", alt: "Solis Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/solis/mluq0jn08wty1ipmnata.avif", alt: "Solis Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/solis/t4qr1nxceooabu3fst8z.avif", alt: "Solis Fiber Hood Price - View 3", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Lightweight FRP Composite" },
@@ -627,10 +664,10 @@ const products: Product[] = [
     featureTags: ["FRP", "Orchard Friendly", "Lightweight", "Modern Style"],
     category: "FRP Canopies",
     seo: {
-      title: "Solis FRP Fiber Roof Canopy | Compact Tractor | Katyayani Enterprises",
+      title: "Solis Tractor Fiber Hood Price | Solis Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Solis FRP fiber roof canopy - designed for compact tractors. Fits Solis 5015, 4515, 4215 & all models. Low-profile orchard design, lightweight, premium gel-coat finish, 3-year warranty. Meerut.",
-      keywords: ["solis canopy", "solis FRP canopy", "solis tractor roof", "compact tractor canopy", "solis 5015 canopy", "orchard tractor roof", "lightweight FRP canopy"]
+        "Buy Solis tractor fiber hood at best price. Solis fiber chatri for compact tractors — fits Solis 5015, 4515, 4215 & all models. Low-profile orchard design, lightweight, 3-year warranty. Meerut manufacturer.",
+      keywords: ["solis tractor fiber hood", "solis fiber chatri", "solis fiber hood price", "solis compact tractor fiber hood", "solis 5015 fiber hood", "fiber hood for solis tractor", "solis FRP fiber hood"]
     },
     galleryImages: [],
     isFeatured: false,
@@ -640,12 +677,12 @@ const products: Product[] = [
   {
     id: "powertrac-frp-canopy",
     slug: "powertrac-frp-canopy",
-    name: "Powertrac FRP Fiber Roof Canopy",
-    shortName: "Powertrac Canopy",
+    name: "Powertrac Tractor Fiber Hood (Fiber Chatri)",
+    shortName: "Powertrac Fiber Hood",
     description:
-      "Affordable and extremely durable FRP canopy built to withstand the most demanding agricultural conditions. Specifically designed for Powertrac Euro and standard tractor series, this canopy combines strength and reliability.",
+      "Affordable and extremely durable Powertrac tractor fiber hood (fiber chatri / punjabi hood) — built to withstand the most demanding agricultural conditions. Specifically designed for Powertrac Euro 50, Euro 60, Powertrac 439 & all Powertrac series. Call for Powertrac tractor fiber hood price today.",
     shortDescription:
-      "Heavy-duty durable FRP canopy for Powertrac series tractors.",
+      "Powertrac tractor fiber hood & fiber chatri at best price. Heavy-duty FRP, fits Euro 50, Euro 60, 439 & all models.",
     brand: "Powertrac",
     brandSlug: "powertrac",
     compatibleModels: ["Powertrac 439", "Powertrac Euro 50", "Powertrac Euro 60", "Powertrac 434", "Powertrac PowerHouse"],
@@ -654,11 +691,12 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/powertrac/powertrac-frp-canopy-hero-main.png", alt: "Powertrac FRP Fiber Roof Canopy - Heavy Duty Main View", width: 800, height: 800 },
-      { src: "/products/powertrac/powertrac-frp-canopy-front-view.png", alt: "Powertrac FRP Canopy Front View - Vibrant Blue Gel-Coat", width: 800, height: 800 },
-      { src: "/products/powertrac/powertrac-frp-canopy-side-view.png", alt: "Powertrac FRP Canopy Side View - Heavy Duty Construction", width: 800, height: 800 },
-      { src: "/products/powertrac/powertrac-frp-canopy-angle-view.png", alt: "Powertrac FRP Canopy Angle View - Reinforced Frame Layout", width: 800, height: 800 },
-      { src: "/products/powertrac/powertrac-frp-canopy-field-protection-view.png", alt: "Powertrac FRP Canopy Field Protection View - All Weather Ready", width: 800, height: 800 }
+ { src: "/products/powertrac/dzvc2l4v9koujmygrhw1.avif", alt: "Powertrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/powertrac/jprbgxhb0vrwe48dunjv.avif", alt: "Powertrac Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/powertrac/ltiiybrzluwzzh1srr79.avif", alt: "Powertrac Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/powertrac/ozjvj9cvinxczv6j4zup.avif", alt: "Powertrac FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/powertrac/sb98navqkkuspvuceyf2.avif", alt: "Powertrac Punjabi Hood - View 5", width: 800, height: 800 },
+
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -678,10 +716,10 @@ const products: Product[] = [
     featureTags: ["FRP", "Heavy Duty", "Field Ready", "High Durability"],
     category: "FRP Canopies",
     seo: {
-      title: "Powertrac FRP Fiber Roof Canopy | Heavy Duty | Katyayani Enterprises",
+      title: "Powertrac Tractor Fiber Hood Price | Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Powertrac FRP fiber roof canopy - heavy duty field protection. Fits Powertrac 439, Euro 50, Euro 60 & all models. High fade-resistance blue gel-coat, 3-year warranty. Meerut manufacturer. Best price.",
-      keywords: ["powertrac canopy", "powertrac FRP canopy", "powertrac tractor roof", "powertrac fiber roof", "powertrac euro canopy", "heavy duty tractor canopy", "powertrac tractor roof price"]
+        "Buy Powertrac tractor fiber hood at best price. Fiber chatri for Powertrac 439, Euro 50, Euro 60 & all models. High fade-resistance blue gel-coat, 3-year warranty. Meerut manufacturer. Best price guaranteed.",
+      keywords: ["powertrac tractor fiber hood", "powertrac fiber chatri", "powertrac fiber hood price", "powertrac euro fiber hood", "powertrac punjabi hood", "fiber hood for powertrac tractor", "powertrac FRP fiber hood", "powertrac tractor fiber hood price"]
     },
     galleryImages: [],
     isFeatured: false,
