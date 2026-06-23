@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python virtual environments
+/venv/
+/.venv/
+/env/
+__pycache__/
+*.py[cod]
+
+# Python scripts (development only)
+enhance_image.py
+remove_bg.py
+
+# Stitch/design files (development only)
+fetch_stitch_screens.mjs
+stitch_design_system.md
+
+# Hero section source files
+/hero section/

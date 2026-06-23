@@ -1,65 +1,234 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  ArrowUpRight
+} from "lucide-react";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import FloatingActions from "@/components/layout/FloatingActions";
+import ProductCard from "@/components/ui/ProductCard";
+
+import { TextMarquee } from "@/components/ui/text-marque";
+import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
+import ScrollReveal, {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/ScrollReveal";
+import { getFeaturedProducts } from "@/lib/products";
+import { getAllBrands } from "@/lib/brands";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { Testimonials } from "@/components/ui/testimonials-columns-1";
+import { GetStartedButton } from "@/components/ui/get-started-button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+
+const indianStates = [
+  "Maharashtra", "Andhra Pradesh", "Rajasthan", "Tamil Nadu", "Bihar", 
+  "Uttar Pradesh", "Mizoram", "Assam", "Karnataka", "Kerala", 
+  "Madhya Pradesh", "Telangana", "Chhattisgarh", "Gujarat", "Punjab", 
+  "Haryana", "West Bengal", "Odisha", "Jharkhand", "Uttarakhand", 
+  "Himachal Pradesh", "Goa", "Tripura", "Meghalaya", "Manipur", 
+  "Nagaland", "Arunachal Pradesh", "Sikkim"
+];
+
+const circularRevealItems = [
+  {
+    text: "PREMIUM QUALITY",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&h=600&q=80",
+  },
+  {
+    text: "HEAVY DUTY FRP",
+    image: "https://images.unsplash.com/photo-1599873979606-2f63e5e7ed8c?auto=format&fit=crop&w=600&h=600&q=80",
+  },
+  {
+    text: "ALL WEATHER SHIELD",
+    image: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?auto=format&fit=crop&w=600&h=600&q=80",
+  },
+  {
+    text: "OEM PRECISION FIT",
+    image: "https://images.unsplash.com/photo-1589923188900-85dae4400f7e?auto=format&fit=crop&w=600&h=600&q=80",
+  },
+];
+
+const circularCenterText = (
+  <div className="text-center select-none">
+    <div className="text-[10px] uppercase tracking-widest text-[#795900] font-black mb-1">
+      Katyayani
     </div>
+    <div className="text-xl font-black text-[#012d1d] leading-none">
+      FIBRE ROOFS
+    </div>
+    <div className="text-[9px] text-[#414844] uppercase font-bold mt-1.5 tracking-wider">
+      Premium Canopies
+    </div>
+  </div>
+);
+
+export default function HomePage() {
+  const featuredProducts = getFeaturedProducts();
+  const brands = getAllBrands();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 5);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <main className="flex-grow pt-0">
+        <section className="relative w-full bg-white pt-[96px] md:pt-[100px] pb-[40px] overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
+             
+             {/* Full Width Auto-scrolling Image Frame with Action Bar */}
+             <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
+                
+                {/* Image Section */}
+                <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentSlide}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <Image 
+                        src={`/hero-slider/slide-${currentSlide + 1}.png`} 
+                        alt={`Featured Banner ${currentSlide + 1}`}
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+                
+                {/* Bottom Bar: Pagination and Buttons */}
+                <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
+                    {/* Pagination dashes */}
+                    <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
+                      {[0, 1, 2, 3, 4].map((idx) => (
+                        <button 
+                          key={idx} 
+                          onClick={() => setCurrentSlide(idx)}
+                          className={`h-[5px] cursor-pointer transition-all duration-300 rounded-full ${idx === currentSlide ? 'w-10 sm:w-12 bg-[#012d1d]' : 'w-5 sm:w-6 bg-black/10 hover:bg-black/20'}`} 
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex items-center justify-center gap-4 w-full md:w-auto z-10">
+                        <InteractiveHoverButton 
+                          href="/products" 
+                          text="Buy Now" 
+                          className="w-full md:w-auto justify-center"
+                        />
+                        <Link href="/contact" className="flex-1 md:flex-none text-center px-6 md:px-8 py-3 md:py-[13px] bg-white text-[#012d1d] font-bold border-2 border-[#012d1d]/10 rounded-full hover:bg-black/5 transition-all shadow-sm text-[15px] tracking-wide">
+                            Request Quote
+                        </Link>
+                    </div>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            MARQUEE SECTION
+            ================================================================ */}
+        <section className="bg-gradient-to-r from-[#012d1d] via-[#104e33] to-[#012d1d] py-[22px] overflow-hidden border-y border-[#795900]/25 shadow-md relative">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none" />
+          <TextMarquee
+            baseVelocity={-1.5}
+            className="text-[22px] md:text-[26px] font-extrabold text-white/90 px-[20px] uppercase tracking-widest"
+          >
+            <span className="text-[#ffc641]">🔥 INDIA'S #1 SELLING TRACTOR FIBER ROOF</span> &nbsp; • &nbsp; 
+            <span>PREMIUM QUALITY</span> &nbsp; • &nbsp; 
+            <span className="text-[#ffc641]">BEST PRICE GUARANTEED</span> &nbsp; • &nbsp; 
+            <span>HIGH DURABILITY</span> &nbsp; • &nbsp; 
+            <span className="text-[#ffc641]">WEATHER RESISTANT</span> &nbsp; • &nbsp;
+          </TextMarquee>
+        </section>
+
+
+
+        {/* ================================================================
+            SUPPLY NETWORK / STATES SLIDER
+            ================================================================ */}
+        <section className="relative py-[36px] md:py-[48px] overflow-hidden bg-transparent">
+          <div className="max-w-[1280px] mx-auto px-[24px]">
+            <ScrollReveal>
+              <div className="text-center mb-[24px]">
+                <h2 className="text-headline-md text-primary">
+                  We Supply <span className="font-semibold text-secondary">All Over India</span>
+                </h2>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.2}>
+            <div className="relative w-full py-2.5 md:py-4 border-y border-primary/10">
+              <InfiniteSlider gap={40} duration={50} durationOnHover={20}>
+                {indianStates.map((state) => (
+                  <span
+                    key={state}
+                    className="text-lg md:text-3xl font-bold tracking-tight text-black/90 uppercase whitespace-nowrap hover:opacity-75 transition-opacity duration-300 select-none"
+                  >
+                    {state}
+                  </span>
+                ))}
+              </InfiniteSlider>
+            </div>
+          </ScrollReveal>
+        </section>
+
+        {/* ================================================================
+            FEATURED PRODUCTS
+            ================================================================ */}
+        <section className="py-[48px] bg-transparent">
+          <div className="max-w-[1280px] mx-auto px-[24px]">
+            <ScrollReveal>
+              <div className="text-center mb-[24px]">
+                <h2 className="text-headline-md text-primary">
+                  Featured Canopies
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+              {featuredProducts.slice(0, 6).map((product) => (
+                <StaggerItem key={product.id}>
+                  <ProductCard product={product} />
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+
+          <ScrollReveal>
+            <div className="text-center mt-[48px]">
+              <GetStartedButton href="/products" text="View All Products" />
+            </div>
+          </ScrollReveal>
+          </div>
+        </section>
+
+
+        {/* ================================================================
+            TESTIMONIALS SECTION
+            ================================================================ */}
+        <Testimonials />
+      </main>
+      <Footer />
+      <FloatingActions />
+    </>
   );
 }
