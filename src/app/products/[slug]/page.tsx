@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -38,16 +38,9 @@ export default function ProductDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // Unwrap params synchronously since this is a client component
-  // In production, this would be a server component with await
-  const [resolvedParams, setResolvedParams] = useState<{ slug: string } | null>(null);
-  
-  if (!resolvedParams) {
-    params.then(setResolvedParams);
-    return null;
-  }
+  const { slug } = use(params);
 
-  return <ProductDetailContent slug={resolvedParams.slug} />;
+  return <ProductDetailContent slug={slug} />;
 }
 
 function ProductDetailContent({ slug }: { slug: string }) {
@@ -97,6 +90,63 @@ function ProductDetailContent({ slug }: { slug: string }) {
   return (
     <>
       <Navbar />
+      {/* JSON-LD Product Schema — tells Google exactly what this product is */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `${product.brand} Tractor Fiber Hood (Punjabi Hood / Fiber Chatri)`,
+            alternateName: [
+              `${product.brand} fiber hood`,
+              `${product.brand} fiber chatri`,
+              `${product.brand} punjabi hood`,
+              `${product.brand} tractor fiber hood price`,
+            ],
+            description: product.description,
+            image: product.images.map((img) => `https://katayayani-site.vercel.app${img.src}`),
+            brand: {
+              "@type": "Brand",
+              name: product.brand,
+            },
+            manufacturer: {
+              "@type": "Organization",
+              name: "Katyayani Enterprises",
+              url: "https://katayayani-site.vercel.app",
+              telephone: "+91-9358273054",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Meerut",
+                addressRegion: "Uttar Pradesh",
+                addressCountry: "IN",
+              },
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "INR",
+              availability: "https://schema.org/InStock",
+              url: `https://katayayani-site.vercel.app/products/${product.slug}`,
+              seller: {
+                "@type": "Organization",
+                name: "Katyayani Enterprises",
+                telephone: "+91-9358273054",
+              },
+              areaServed: "IN",
+              deliveryLeadTime: {
+                "@type": "QuantitativeValue",
+                minValue: 4,
+                maxValue: 5,
+                unitCode: "DAY",
+              },
+            },
+            additionalProperty: [
+              { "@type": "PropertyValue", name: "Material", value: "Fiber Reinforced Plastic (FRP)" },
+              { "@type": "PropertyValue", name: "Compatible Brand", value: product.brand },
+            ],
+          }),
+        }}
+      />
       <main className="flex-grow pt-32">
         <div className="max-w-[1280px] mx-auto px-[24px] py-[48px]">
           {/* Breadcrumb */}
@@ -107,10 +157,10 @@ function ProductDetailContent({ slug }: { slug: string }) {
                 className="hover:text-primary transition-colors flex items-center gap-1"
               >
                 <ChevronLeft className="w-4 h-4" />
-                Products
+                Tractor Fiber Hood
               </Link>
               <span>/</span>
-              <span className="text-on-surface">{product.shortName}</span>
+              <span className="text-on-surface">{product.brand} Fiber Hood Price</span>
             </nav>
           </ScrollReveal>
 
@@ -330,7 +380,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                       WhatsApp Us
                     </Link>
                     <Link
-                      href="tel:+919876543210"
+                      href="tel:+919358273054"
                       className="w-full flex items-center justify-center gap-2 border border-secondary text-secondary text-label-md px-[24px] py-[14px] rounded-lg hover:bg-secondary/5 transition-colors"
                     >
                       <Phone className="w-[18px] h-[18px]" />
@@ -498,7 +548,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               <ScrollReveal>
                 <div className="divider-gold mb-[32px]" />
                 <h2 className="text-headline-sm text-primary mb-[24px]">
-                  You May Also Like
+                  More Tractor Fiber Hood Options
                 </h2>
               </ScrollReveal>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
@@ -510,6 +560,28 @@ function ProductDetailContent({ slug }: { slug: string }) {
               </div>
             </section>
           )}
+          {/* ── SEO CONTENT BLOCK — Keyword-rich visible text for Google ── */}
+          <ScrollReveal>
+            <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-8">
+              <h2 className="text-[20px] font-black text-[#012d1d] mb-3">
+                {product.brand} Tractor Fiber Hood Price — Katyayani Enterprises
+              </h2>
+              <p className="text-[14px] text-gray-600 leading-relaxed">
+                Buy <strong>{product.brand} tractor fiber hood</strong> (fiber chatri / punjabi hood)
+                at the best factory-direct price from Katyayani Enterprises, Meerut. Our{" "}
+                <strong>{product.brand} fiber chatri</strong> is made from premium FRP (Fiber
+                Reinforced Plastic) — UV resistant. For the latest{" "}
+                <strong>{product.brand} tractor fiber hood price</strong>, call{" "}
+                <a href="tel:+919358273054" className="text-[#012d1d] font-bold hover:underline">
+                  +91-9358273054
+                </a>
+                . Home delivery available all over India — order{" "}
+                <strong>tractor fiber hood online</strong> via WhatsApp or call. Also available:
+                Swaraj 744 fiber hood, Mahindra fiber chatri, Sonalika fiber hood, John Deere
+                5050D fiber hood — all at best price with pan-India delivery.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </main>
       <Footer />

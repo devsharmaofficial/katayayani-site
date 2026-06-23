@@ -14,7 +14,6 @@ import FloatingActions from "@/components/layout/FloatingActions";
 import ProductCard from "@/components/ui/ProductCard";
 
 import { TextMarquee } from "@/components/ui/text-marque";
-import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
 import ScrollReveal, {
   StaggerContainer,
   StaggerItem,
@@ -26,6 +25,7 @@ import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { Testimonials } from "@/components/ui/testimonials-columns-1";
 import { GetStartedButton } from "@/components/ui/get-started-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import HomepageSEOContent from "@/components/seo/HomepageSEOContent";
 
 const indianStates = [
   "Maharashtra", "Andhra Pradesh", "Rajasthan", "Tamil Nadu", "Bihar", 
@@ -36,38 +36,30 @@ const indianStates = [
   "Nagaland", "Arunachal Pradesh", "Sikkim"
 ];
 
-const circularRevealItems = [
-  {
-    text: "PREMIUM QUALITY",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-  {
-    text: "HEAVY DUTY FRP",
-    image: "https://images.unsplash.com/photo-1599873979606-2f63e5e7ed8c?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-  {
-    text: "ALL WEATHER SHIELD",
-    image: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-  {
-    text: "OEM PRECISION FIT",
-    image: "https://images.unsplash.com/photo-1589923188900-85dae4400f7e?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-];
 
-const circularCenterText = (
-  <div className="text-center select-none">
-    <div className="text-[10px] uppercase tracking-widest text-[#795900] font-black mb-1">
-      Katyayani
-    </div>
-    <div className="text-xl font-black text-[#012d1d] leading-none">
-      FIBRE ROOFS
-    </div>
-    <div className="text-[9px] text-[#414844] uppercase font-bold mt-1.5 tracking-wider">
-      Premium Canopies
-    </div>
-  </div>
-);
+
+const heroBanners = [
+  {
+    src: "/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif",
+    alt: "Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
+  },
+  {
+    src: "/hero-slider/best-tractor-fiber-chatri-price-banner-2.avif",
+    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut"
+  },
+  {
+    src: "/hero-slider/punjabi-hood-canopy-manufacturer-banner-3.avif",
+    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory"
+  },
+  {
+    src: "/hero-slider/premium-frp-canopy-factory-banner-4.avif",
+    alt: "High Quality FRP Canopy Roof for All Tractor Models"
+  },
+  {
+    src: "/hero-slider/heavy-duty-tractor-fiber-hood-banner-5.avif",
+    alt: "Weatherproof Heavy Duty Tractor Fiber Hood and Roof"
+  }
+];
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
@@ -103,10 +95,11 @@ export default function HomePage() {
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <Image 
-                        src={`/hero-slider/slide-${currentSlide + 1}.avif`} 
-                        alt={`Featured Banner ${currentSlide + 1}`}
+                        src={heroBanners[currentSlide].src} 
+                        alt={heroBanners[currentSlide].alt}
                         fill
                         className="object-contain"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
                         priority
                       />
                     </motion.div>
@@ -159,11 +152,8 @@ export default function HomePage() {
             <span className="text-[#ffc641]">FIBER CHATRI — ALL BRANDS</span> &nbsp; • &nbsp; 
             <span>SWARAJ 744/855 • MAHINDRA • SONALIKA</span> &nbsp; • &nbsp; 
             <span className="text-[#ffc641]">HOME DELIVERY ALL OVER INDIA</span> &nbsp; • &nbsp;
-            <span>3-YEAR WARRANTY</span> &nbsp; • &nbsp;
           </TextMarquee>
         </section>
-
-
 
         {/* ================================================================
             SUPPLY NETWORK / STATES SLIDER
@@ -173,8 +163,9 @@ export default function HomePage() {
             <ScrollReveal>
               <div className="text-center mb-[24px]">
                 <h2 className="text-headline-md text-primary">
-                  We Supply <span className="font-semibold text-secondary">All Over India</span>
+                  Tractor Fiber Hood Supply <span className="font-semibold text-secondary">All Over India</span>
                 </h2>
+
               </div>
             </ScrollReveal>
           </div>
@@ -205,7 +196,7 @@ export default function HomePage() {
                 <h2 className="text-headline-md text-primary">
                   Tractor <span className="font-semibold text-secondary">Fiber Hood</span> — All Brands
                 </h2>
-                <p className="text-sm text-gray-500 mt-2">Punjabi Hood | Fiber Chatri | Best Price in India</p>
+
               </div>
             </ScrollReveal>
 
@@ -223,7 +214,7 @@ export default function HomePage() {
 
           <ScrollReveal>
             <div className="text-center mt-[48px]">
-              <GetStartedButton href="/products" text="View All Products" />
+              <GetStartedButton href="/products" text="View All Fiber Hoods" />
             </div>
           </ScrollReveal>
           </div>
@@ -234,6 +225,12 @@ export default function HomePage() {
             TESTIMONIALS SECTION
             ================================================================ */}
         <Testimonials />
+
+        {/* ================================================================
+            SEO CONTENT — H1, Brand Grid, About, FAQ
+            Placed at bottom so it doesn't interrupt the visual flow
+            ================================================================ */}
+        <HomepageSEOContent />
       </main>
       <Footer />
       <FloatingActions />

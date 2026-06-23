@@ -9,7 +9,7 @@ const products: Product[] = [
     description:
       "Premium Swaraj tractor fiber hood (punjabi hood / fiber chatri) — India's most trusted fiber roof for Swaraj 744 FE, Swaraj 855 FE, and all Swaraj series. Engineered for maximum durability and weather protection with a UV-resistant gel-coated surface for long-lasting color retention. The lightweight yet incredibly strong FRP construction reduces vehicle load while providing complete overhead protection. Available in standard matching colors. Best tractor fiber hood price — call for quote.",
     shortDescription:
-      "Best price Swaraj tractor fiber hood & fiber chatri. Fits Swaraj 744 FE, 855 FE & all models. UV resistant, 3-year warranty.",
+      "Best price Swaraj tractor fiber hood & fiber chatri. Fits Swaraj 744 FE, 855 FE & all models. UV resistant.",
     brand: "Swaraj",
     brandSlug: "swaraj",
     compatibleModels: [
@@ -23,13 +23,13 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
- { src: "/products/swaraj/dikp1u5xr13hwkysthje.avif", alt: "Swaraj Tractor Fiber Hood - Punjabi Hood - View 1", width: 800, height: 800 },
-      { src: "/products/swaraj/mzf1wbqh4100owuarwtj.avif", alt: "Swaraj Fiber Hood Price - View 2", width: 800, height: 800 },
-      { src: "/products/swaraj/qp4lyo5f2uaymjplv8a6.avif", alt: "Swaraj FRP Fiber Roof Canopy - View 3", width: 800, height: 800 },
-      { src: "/products/swaraj/s6ali1jfpdrf6zjuerjk.avif", alt: "Swaraj Fiber Chatri - View 4", width: 800, height: 800 },
-      { src: "/products/swaraj/sia2vwlwayly35om0h1m.avif", alt: "Swaraj 744 Fiber Hood - View 5", width: 800, height: 800 },
-      { src: "/products/swaraj/tlyufzymbrvay4xzov7k.avif", alt: "Swaraj 855 Fiber Hood - View 6", width: 800, height: 800 },
-      { src: "/products/swaraj/zmnpdywvlaspy0sm35vf.avif", alt: "Swaraj Punjabi Hood - View 7", width: 800, height: 800 },
+ { src: "/products/swaraj/swaraj-tractor-fiber-hood.avif", alt: "Swaraj Tractor Fiber Hood - Punjabi Hood - View 1", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-fiber-hood-price.avif", alt: "Swaraj Fiber Hood Price - View 2", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-744-fiber-hood-price.avif", alt: "Swaraj FRP Fiber Roof Canopy - View 3", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-855-fiber-hood-price.avif", alt: "Swaraj Fiber Chatri - View 4", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-744-tractor-fiber-chatri.avif", alt: "Swaraj 744 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-855-fiber-chatri-price.avif", alt: "Swaraj 855 Fiber Hood - View 6", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj-punjabi-hood-tractor-roof.avif", alt: "Swaraj Punjabi Hood - View 7", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -38,7 +38,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1230 × 970 × 195 mm" },
       { label: "UV Protection", value: "99.9% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Thermal Insulation", value: "Double-Wall Layer" },
       { label: "Temperature Range", value: "-15°C to 85°C" },
     ],
@@ -55,7 +54,7 @@ const products: Product[] = [
     seo: {
       title: "Swaraj Tractor Fiber Hood Price | Swaraj 744 855 Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Swaraj tractor fiber hood at best price. Swaraj 744 fiber hood price, Swaraj 855 fiber chatri price — all models available. Punjab tractor hood / fiber chatri with UV protection, 3-year warranty. Manufacturer in Meerut, UP. Call +91-9358273054.",
+        "Buy Swaraj tractor fiber hood at best price. Swaraj 744 fiber hood price, Swaraj 855 fiber chatri price — all models available. Punjab tractor hood / fiber chatri with UV protection. Manufacturer in Meerut, UP. Call +91-9358273054.",
       keywords: [
         "swaraj tractor fiber hood price",
         "swaraj fiber hood price",
@@ -105,13 +104,13 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
- { src: "/products/mahindra/ehgbiq2ts92ishq5kkf8.avif", alt: "Mahindra Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/mahindra/kkcebd7ebtt6zn2rirby.avif", alt: "Mahindra Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/mahindra/rnd8po6bnd1leuvjf1ry.avif", alt: "Mahindra Fiber Hood - View 3", width: 800, height: 800 },
-      { src: "/products/mahindra/svinhpxwxhfeecub8qmp.avif", alt: "Mahindra FRP Fiber Roof - View 4", width: 800, height: 800 },
-      { src: "/products/mahindra/uj3ux1arampag4wkfykt.avif", alt: "Mahindra 575 Fiber Hood - View 5", width: 800, height: 800 },
-      { src: "/products/mahindra/wzxqbim3v4tcwovaekhp.avif", alt: "Mahindra Tractor Fiber Chatri - View 6", width: 800, height: 800 },
-      { src: "/products/mahindra/y4ulh8oilg8vudlrxs9e.avif", alt: "Mahindra Punjabi Hood - View 7", width: 800, height: 800 },
+ { src: "/products/mahindra/mahindra-tractor-fiber-hood.avif", alt: "Mahindra Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-tractor-fiber-chatri-price.avif", alt: "Mahindra Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-fiber-hood-price.avif", alt: "Mahindra Fiber Hood - View 3", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-fiber-chatri-canopy.avif", alt: "Mahindra FRP Fiber Roof - View 4", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-575-tractor-fiber-hood-price.avif", alt: "Mahindra 575 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-275-tractor-fiber-hood-price.avif", alt: "Mahindra Tractor Fiber Chatri - View 6", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra-punjabi-hood-roof.avif", alt: "Mahindra Punjabi Hood - View 7", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -120,7 +119,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1250 × 980 × 200 mm" },
       { label: "UV Protection", value: "99.8% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Matte/Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Heat Shield", value: "Integrated Thermal Layer" },
       { label: "Temperature Range", value: "-10°C to 85°C" },
     ],
@@ -137,7 +135,7 @@ const products: Product[] = [
     seo: {
       title: "Mahindra Tractor Fiber Hood Price | Mahindra Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Mahindra tractor fiber hood at best price. Mahindra tractor fiber chatri, Mahindra 575 DI fiber hood price — fits all Mahindra models. Heat shield, 3-year warranty. Punjabi hood style. Meerut manufacturer. Call +91-9358273054.",
+        "Buy Mahindra tractor fiber hood at best price. Mahindra tractor fiber chatri, Mahindra 575 DI fiber hood price — fits all Mahindra models. Heat shield. Punjabi hood style. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
         "mahindra tractor fiber hood price",
         "mahindra tractor fiber chatri price",
@@ -181,9 +179,9 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
- { src: "/products/john-deere/a8x6rvdo9yr7befgufku.avif", alt: "John Deere Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/john-deere/bud6qukzw1otsyjjixez.avif", alt: "John Deere Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/john-deere/dlqghowgelsufucedvhn.avif", alt: "John Deere 5050D Fiber Hood - View 3", width: 800, height: 800 },
+ { src: "/products/john-deere/john-deere-tractor-fiber-hood-price.avif", alt: "John Deere Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/john-deere/john-deere-fiber-chatri-roof.avif", alt: "John Deere Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/john-deere/john-deere-5050d-fiber-hood-price.avif", alt: "John Deere 5050D Fiber Hood - View 3", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -192,7 +190,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1350 × 1050 × 215 mm" },
       { label: "UV Protection", value: "99.9% UV Block" },
       { label: "Surface Finish", value: "Premium Gel-Coat Glossy" },
-      { label: "Warranty", value: "5 Years" },
       { label: "LED Mounts", value: "2× Integrated Ports" },
       { label: "Temperature Range", value: "-20°C to 95°C" },
     ],
@@ -202,14 +199,13 @@ const products: Product[] = [
       "Double-wall construction for superior thermal insulation",
       "Integrated LED work light mounting ports (2×)",
       "Sound-dampening inner layer reduces cabin noise",
-      "5-year extended warranty — industry leading",
     ],
     featureTags: ["FRP", "Tri-Layer", "Weatherproof", "LED Ready"],
     category: "FRP Canopies",
     seo: {
       title: "John Deere Tractor Fiber Hood Price | JD Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy John Deere tractor fiber hood at best price. John Deere 5050D fiber hood price, 5310 fiber chatri — tri-layer FRP, LED mounts, 5-year warranty. Meerut manufacturer. Call +91-9358273054 for price.",
+        "Buy John Deere tractor fiber hood at best price. John Deere 5050D fiber hood price, 5310 fiber chatri — tri-layer FRP, LED mounts. Meerut manufacturer. Call +91-9358273054 for price.",
       keywords: [
         "john deere tractor fiber hood price",
         "john deere fiber hood",
@@ -253,15 +249,15 @@ const products: Product[] = [
       { name: "Green", hex: "#15803d", slug: "green" },
     ],
     images: [
- { src: "/products/sonalika/dpqspudvwd8knl1xvseu.avif", alt: "Sonalika Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/sonalika/ibxrb0yo5bigemcbnryt.avif", alt: "Sonalika Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/sonalika/jy9kujsidlgeiiq2ztfj.avif", alt: "Sonalika Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/sonalika/m04b0f7tgymywst7d4so.avif", alt: "Sonalika FRP Fiber Hood - View 4", width: 800, height: 800 },
-      { src: "/products/sonalika/mpyf3wyafelh53nesdhn.avif", alt: "Sonalika DI 750 Fiber Hood - View 5", width: 800, height: 800 },
-      { src: "/products/sonalika/pn8zkztwj955hzz4asin.avif", alt: "Sonalika Tiger Fiber Hood - View 6", width: 800, height: 800 },
-      { src: "/products/sonalika/rrku0zgcttvygzn6m2on.avif", alt: "Sonalika Punjabi Hood - View 7", width: 800, height: 800 },
-      { src: "/products/sonalika/v4lhippqeckcj43s2kka.avif", alt: "Sonalika Tractor Fiber Chatri - View 8", width: 800, height: 800 },
-      { src: "/products/sonalika/zxnmfqihsjywrael3pkr.avif", alt: "Sonalika Fiber Hood Cover - View 9", width: 800, height: 800 },
+ { src: "/products/sonalika/sonalika-tractor-fiber-hood-price.avif", alt: "Sonalika Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-fiber-chatri-price.avif", alt: "Sonalika Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-fiber-hood-canopy.avif", alt: "Sonalika Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-frp-fiber-hood.avif", alt: "Sonalika FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-di-750-fiber-hood.avif", alt: "Sonalika DI 750 Fiber Hood - View 5", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-tiger-fiber-hood.avif", alt: "Sonalika Tiger Fiber Hood - View 6", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-punjabi-hood-roof.avif", alt: "Sonalika Punjabi Hood - View 7", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-tractor-fiber-chatri-price.avif", alt: "Sonalika Tractor Fiber Chatri - View 8", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika-fiber-hood-cover.avif", alt: "Sonalika Fiber Hood Cover - View 9", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -270,7 +266,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1220 × 960 × 190 mm" },
       { label: "UV Protection", value: "99.7% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Impact Resistance", value: "High Grade" },
       { label: "Temperature Range", value: "-10°C to 80°C" },
     ],
@@ -287,7 +282,7 @@ const products: Product[] = [
     seo: {
       title: "Sonalika Tractor Fiber Hood Price | Sonalika Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Sonalika tractor fiber hood at best price. Sonalika fiber chatri price, Sonalika tractor fiber chatri — fits DI 750, Tiger 50/55 & all models. Anti-vibration, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
+        "Buy Sonalika tractor fiber hood at best price. Sonalika fiber chatri price, Sonalika tractor fiber chatri — fits DI 750, Tiger 50/55 & all models. Anti-vibration. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
         "sonalika tractor fiber hood price",
         "sonalika fiber hood price",
@@ -328,10 +323,10 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
- { src: "/products/eicher/nuta1tnzorq5yp4ylfgb.avif", alt: "Eicher Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/eicher/qjozuvofcbofhxbzs7nq.avif", alt: "Eicher Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/eicher/uyekew7cdguandqrrrmw.avif", alt: "Eicher Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/eicher/xtr5abzcmxqdxfg5l3qb.avif", alt: "Eicher FRP Fiber Hood - View 4", width: 800, height: 800 },
+ { src: "/products/eicher/eicher-tractor-fiber-hood-price.avif", alt: "Eicher Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/eicher/eicher-fiber-chatri-price.avif", alt: "Eicher Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/eicher/eicher-fiber-hood-canopy.avif", alt: "Eicher Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/eicher/eicher-punjabi-hood-frp-roof.avif", alt: "Eicher FRP Fiber Hood - View 4", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -340,7 +335,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1200 × 950 × 190 mm" },
       { label: "UV Protection", value: "99.8% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Matte/Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Wind Resistance", value: "140 km/h Rated" },
       { label: "Temperature Range", value: "-20°C to 90°C" },
     ],
@@ -357,7 +351,7 @@ const products: Product[] = [
     seo: {
       title: "Eicher Tractor Fiber Hood Price | Eicher Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Eicher tractor fiber hood at best price. Eicher tractor fiber chatri, fiber hood — fits Eicher 380, 485, 551 & all models. 140 km/h wind rated, stainless mounts, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
+        "Buy Eicher tractor fiber hood at best price. Eicher tractor fiber chatri, fiber hood — fits Eicher 380, 485, 551 & all models. 140 km/h wind rated, stainless mounts. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
         "eicher tractor fiber hood price",
         "eicher tractor fiber hood",
@@ -398,11 +392,11 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
- { src: "/products/new-holland/cmfkh5ewaoeh9wsuesv6.avif", alt: "New Holland Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/new-holland/i1jqexye9p8nmcquouum.avif", alt: "New Holland Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/new-holland/kggfoknspdrvmmjlho6x.avif", alt: "New Holland Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/new-holland/n6y7ggmmrz9skjxbwpc4.avif", alt: "New Holland 3630 Fiber Hood - View 4", width: 800, height: 800 },
-      { src: "/products/new-holland/vachimeqid2z72iu3bgm.avif", alt: "New Holland FRP Fiber Hood - View 5", width: 800, height: 800 },
+ { src: "/products/new-holland/new-holland-tractor-fiber-hood-price.avif", alt: "New Holland Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/new-holland/new-holland-fiber-chatri-canopy.avif", alt: "New Holland Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/new-holland/new-holland-fiber-hood-price.avif", alt: "New Holland Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/new-holland/new-holland-3630-fiber-hood-roof.avif", alt: "New Holland 3630 Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/new-holland/new-holland-frp-fiber-hood.avif", alt: "New Holland FRP Fiber Hood - View 5", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -411,7 +405,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1280 × 1000 × 200 mm" },
       { label: "UV Protection", value: "99.8% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Impact Resistance", value: "High Grade" },
       { label: "Temperature Range", value: "-10°C to 85°C" },
     ],
@@ -428,7 +421,7 @@ const products: Product[] = [
     seo: {
       title: "New Holland Tractor Fiber Hood Price | NH Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy New Holland tractor fiber hood at best price. New Holland 3630 TX fiber hood, fiber chatri — OEM compatible, no drilling needed. Fits NH 3630 TX, 5620 TX & all models. 3-year warranty. Meerut manufacturer.",
+        "Buy New Holland tractor fiber hood at best price. New Holland 3630 TX fiber hood, fiber chatri — OEM compatible, no drilling needed. Fits NH 3630 TX, 5620 TX & all models. Meerut manufacturer.",
       keywords: [
         "new holland tractor fiber hood price",
         "new holland tractor fiber hood",
@@ -468,11 +461,11 @@ const products: Product[] = [
       { name: "Grey", hex: "#6b7280", slug: "grey" },
     ],
     images: [
- { src: "/products/massey-ferguson/ft98tfplf5vf6jyrcglm.avif", alt: "Massey Ferguson Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/gcehdupahpa0j5c2scwq.avif", alt: "Massey Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/khzfkbhvckvyqmrvzusk.avif", alt: "Massey Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/lwqz1nyazkodgit1hwqm.avif", alt: "Massey FRP Fiber Hood - View 4", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/rd1kd9mrbs19ysivbhe9.avif", alt: "Massey 1035 Fiber Hood - View 5", width: 800, height: 800 },
+ { src: "/products/massey-ferguson/massey-tractor-fiber-hood-price.avif", alt: "Massey Ferguson Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/massey-ferguson-fiber-hood-canopy.avif", alt: "Massey Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/massey-fiber-chatri-price.avif", alt: "Massey Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/massey-1035-fiber-hood-roof.avif", alt: "Massey FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/massey-ferguson-punjabi-hood.avif", alt: "Massey 1035 Fiber Hood - View 5", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -481,7 +474,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1190 × 930 × 180 mm" },
       { label: "UV Protection", value: "99.7% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Impact Resistance", value: "Standard Grade" },
       { label: "Temperature Range", value: "-10°C to 80°C" },
     ],
@@ -491,14 +483,13 @@ const products: Product[] = [
       "Ergonomic profile provides maximum headroom for operator",
       "Built-in cable routing channels for accessories",
       "Quick-mount system reduces installation time to 30 minutes",
-      "Backed by Katyayani's 3-year comprehensive warranty",
     ],
     featureTags: ["FRP", "Heritage Design", "Quick-Mount"],
     category: "FRP Canopies",
     seo: {
       title: "Massey Tractor Fiber Hood Price | Massey Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Massey Ferguson tractor fiber hood at best price. Massey tractor fiber chatri, fiber hood — fits MF 1035 DI, 241 DI, 7250 PowerUp. 30-min quick mount, MF red color-matched, 3-year warranty. Meerut manufacturer.",
+        "Buy Massey Ferguson tractor fiber hood at best price. Massey tractor fiber chatri, fiber hood — fits MF 1035 DI, 241 DI, 7250 PowerUp. 30-min quick mount, MF red color-matched. Meerut manufacturer.",
       keywords: [
         "massey tractor fiber hood price",
         "massey tractor fiber hood",
@@ -535,10 +526,10 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
- { src: "/products/deutz-fahr/ChatGPT Image Jun 22, 2026, 12_37_42 PM.avif", alt: "Deutz Fahr Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/ChatGPT Image Jun 22, 2026, 12_44_49 PM.avif", alt: "Deutz Fahr Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/deutz fahr hero image (1).avif", alt: "Deutz Fahr Fiber Hood - View 3", width: 800, height: 800 },
-      { src: "/products/deutz-fahr/deutz fahr hero image.avif", alt: "Deutz Fahr FRP Fiber Hood - View 4", width: 800, height: 800 },
+ { src: "/products/deutz-fahr/deutz-fahr-tractor-fiber-hood.avif", alt: "Deutz Fahr Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz-fahr-fiber-chatri-price.avif", alt: "Deutz Fahr Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz-fahr-fiber-hood-price.avif", alt: "Deutz Fahr Fiber Hood - View 3", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz-fahr-frp-fiber-hood-canopy.avif", alt: "Deutz Fahr FRP Fiber Hood - View 4", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -547,7 +538,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1240 × 980 × 195 mm" },
       { label: "UV Protection", value: "99.9% UV Block" },
       { label: "Surface Finish", value: "Premium High Gloss Gel-Coat" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Heat Insulation", value: "Double-Layer Shield" },
       { label: "Temperature Range", value: "-15°C to 90°C" }
     ],
@@ -563,7 +553,7 @@ const products: Product[] = [
     seo: {
       title: "Deutz Fahr Tractor Fiber Hood Price | Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Deutz Fahr tractor fiber hood at best price. Fiber chatri for Deutz Fahr Agromaxx 55, Agrolux 70 & all models. Double-wall thermal insulation, UV-stabilized, 3-year warranty. India manufacturer.",
+        "Buy Deutz Fahr tractor fiber hood at best price. Fiber chatri for Deutz Fahr Agromaxx 55, Agrolux 70 & all models. Double-wall thermal insulation, UV-stabilized. India manufacturer.",
       keywords: ["deutz fahr tractor fiber hood", "deutz fahr fiber chatri", "deutz fahr fiber hood price", "deutz fahr agromaxx fiber hood", "fiber hood for deutz fahr tractor", "deutz fahr FRP fiber hood", "tractor fiber hood price deutz fahr"]
     },
     galleryImages: [],
@@ -588,11 +578,11 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
- { src: "/products/farmtrac/fkbuz55dqr401srbh84p.avif", alt: "Farmtrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/farmtrac/gmfzei6vminlikfeqfvu.avif", alt: "Farmtrac Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/farmtrac/hlzbexc8nmkohgrzkj6n.avif", alt: "Farmtrac Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/farmtrac/vtcqborcajv1bmcotk4o.avif", alt: "Farmtrac FRP Fiber Hood - View 4", width: 800, height: 800 },
-      { src: "/products/farmtrac/xhlbpydr7a3dtubvzge9.avif", alt: "Farmtrac Punjabi Hood - View 5", width: 800, height: 800 },
+ { src: "/products/farmtrac/farmtrac-tractor-fiber-hood.avif", alt: "Farmtrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/farmtrac/farmtrac-fiber-hood-price.avif", alt: "Farmtrac Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/farmtrac/farmtrac-fiber-chatri-price.avif", alt: "Farmtrac Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/farmtrac/farmtrac-60-fiber-hood-canopy.avif", alt: "Farmtrac FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/farmtrac/farmtrac-punjabi-hood-roof.avif", alt: "Farmtrac Punjabi Hood - View 5", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -601,7 +591,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1210 × 960 × 190 mm" },
       { label: "UV Protection", value: "99.8% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Vibration Dampening", value: "Anti-Shock Washers Included" }
     ],
     features: [
@@ -616,7 +605,7 @@ const products: Product[] = [
     seo: {
       title: "Farmtrac Tractor Fiber Hood Price | Farmtrac Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Farmtrac tractor fiber hood at best price. Farmtrac fiber chatri, fiber hood — fits Farmtrac 60, 45, 6055 & all models. Classic blue, vibration-dampened, 3-year warranty. Meerut manufacturer. Call +91-9358273054.",
+        "Buy Farmtrac tractor fiber hood at best price. Farmtrac fiber chatri, fiber hood — fits Farmtrac 60, 45, 6055 & all models. Classic blue, vibration-dampened. Meerut manufacturer. Call +91-9358273054.",
       keywords: ["farmtrac tractor fiber hood", "farmtrac fiber hood price", "farmtrac fiber chatri", "farmtrac 60 fiber hood", "farmtrac punjabi hood", "fiber hood for farmtrac tractor", "farmtrac FRP fiber hood", "tractor fiber hood price farmtrac"]
     },
     galleryImages: [],
@@ -642,9 +631,9 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
- { src: "/products/solis/jqasjqithjxn5mfcnsd9.avif", alt: "Solis Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/solis/mluq0jn08wty1ipmnata.avif", alt: "Solis Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/solis/t4qr1nxceooabu3fst8z.avif", alt: "Solis Fiber Hood Price - View 3", width: 800, height: 800 },
+ { src: "/products/solis/solis-tractor-fiber-hood.avif", alt: "Solis Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/solis/solis-fiber-chatri-canopy.avif", alt: "Solis Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/solis/solis-fiber-hood-price.avif", alt: "Solis Fiber Hood Price - View 3", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -652,8 +641,7 @@ const products: Product[] = [
       { label: "Weight", value: "8.5 kg" },
       { label: "Dimensions", value: "1180 × 940 × 185 mm" },
       { label: "UV Protection", value: "99.9% UV Block" },
-      { label: "Surface Finish", value: "Premium Gel-Coat Glossy" },
-      { label: "Warranty", value: "3 Years" }
+      { label: "Surface Finish", value: "Premium Gel-Coat Glossy" }
     ],
     features: [
       "Specially designed for compact frames to maintain agility in orchard fields",
@@ -666,7 +654,7 @@ const products: Product[] = [
     seo: {
       title: "Solis Tractor Fiber Hood Price | Solis Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Solis tractor fiber hood at best price. Solis fiber chatri for compact tractors — fits Solis 5015, 4515, 4215 & all models. Low-profile orchard design, lightweight, 3-year warranty. Meerut manufacturer.",
+        "Buy Solis tractor fiber hood at best price. Solis fiber chatri for compact tractors — fits Solis 5015, 4515, 4215 & all models. Low-profile orchard design, lightweight. Meerut manufacturer.",
       keywords: ["solis tractor fiber hood", "solis fiber chatri", "solis fiber hood price", "solis compact tractor fiber hood", "solis 5015 fiber hood", "fiber hood for solis tractor", "solis FRP fiber hood"]
     },
     galleryImages: [],
@@ -691,11 +679,11 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
- { src: "/products/powertrac/dzvc2l4v9koujmygrhw1.avif", alt: "Powertrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
-      { src: "/products/powertrac/jprbgxhb0vrwe48dunjv.avif", alt: "Powertrac Fiber Chatri Price - View 2", width: 800, height: 800 },
-      { src: "/products/powertrac/ltiiybrzluwzzh1srr79.avif", alt: "Powertrac Fiber Hood Price - View 3", width: 800, height: 800 },
-      { src: "/products/powertrac/ozjvj9cvinxczv6j4zup.avif", alt: "Powertrac FRP Fiber Hood - View 4", width: 800, height: 800 },
-      { src: "/products/powertrac/sb98navqkkuspvuceyf2.avif", alt: "Powertrac Punjabi Hood - View 5", width: 800, height: 800 },
+ { src: "/products/powertrac/powertrac-tractor-fiber-hood.avif", alt: "Powertrac Tractor Fiber Hood - View 1", width: 800, height: 800 },
+      { src: "/products/powertrac/powertrac-fiber-chatri-price.avif", alt: "Powertrac Fiber Chatri Price - View 2", width: 800, height: 800 },
+      { src: "/products/powertrac/powertrac-fiber-hood-price.avif", alt: "Powertrac Fiber Hood Price - View 3", width: 800, height: 800 },
+      { src: "/products/powertrac/powertrac-euro-fiber-hood.avif", alt: "Powertrac FRP Fiber Hood - View 4", width: 800, height: 800 },
+      { src: "/products/powertrac/powertrac-punjabi-hood-canopy.avif", alt: "Powertrac Punjabi Hood - View 5", width: 800, height: 800 },
 
     ],
     specifications: [
@@ -704,7 +692,6 @@ const products: Product[] = [
       { label: "Dimensions", value: "1220 × 970 × 195 mm" },
       { label: "UV Protection", value: "99.8% UV Block" },
       { label: "Surface Finish", value: "Gel-Coated Matte/Glossy" },
-      { label: "Warranty", value: "3 Years" },
       { label: "Impact Grade", value: "High Field-Impact Rating" }
     ],
     features: [
@@ -718,7 +705,7 @@ const products: Product[] = [
     seo: {
       title: "Powertrac Tractor Fiber Hood Price | Fiber Chatri | Katyayani Enterprises",
       description:
-        "Buy Powertrac tractor fiber hood at best price. Fiber chatri for Powertrac 439, Euro 50, Euro 60 & all models. High fade-resistance blue gel-coat, 3-year warranty. Meerut manufacturer. Best price guaranteed.",
+        "Buy Powertrac tractor fiber hood at best price. Fiber chatri for Powertrac 439, Euro 50, Euro 60 & all models. High fade-resistance blue gel-coat. Meerut manufacturer. Best price guaranteed.",
       keywords: ["powertrac tractor fiber hood", "powertrac fiber chatri", "powertrac fiber hood price", "powertrac euro fiber hood", "powertrac punjabi hood", "fiber hood for powertrac tractor", "powertrac FRP fiber hood", "powertrac tractor fiber hood price"]
     },
     galleryImages: [],

@@ -141,7 +141,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Tractor Fiber Hood | Punjabi Hood Price | ${BUSINESS_NAME}`,
     description:
-      "Best price tractor fiber hood, punjabi hood & fiber chatri for Swaraj, Mahindra, Sonalika, JD & all brands. India's #1 manufacturer in Meerut. Low price, 3-year warranty.",
+      "Best price tractor fiber hood, punjabi hood & fiber chatri for Swaraj, Mahindra, Sonalika, JD & all brands. India's #1 manufacturer in Meerut. Low price.",
     images: [`${SITE_URL}/og-image.jpg`],
     creator: "@katyayanienterprises",
     site: "@katyayanienterprises",

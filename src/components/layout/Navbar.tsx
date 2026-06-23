@@ -64,17 +64,18 @@ export default function Navbar() {
           >
             <div className={cn(
               "relative transition-all duration-300 ease-in-out group-hover:scale-[1.03] flex-shrink-0",
-              scrolled ? "w-9 h-9" : "w-11 h-11"
+              scrolled ? "w-8 h-8 min-[360px]:w-9 min-[360px]:h-9" : "w-9 h-9 min-[360px]:w-11 min-[360px]:h-11"
             )}>
               <Image
                 src="/katyayani-enterprises-logo.png"
                 alt="Katayayani Enterprises Logo"
                 fill
                 className="object-contain"
+                sizes="44px"
                 priority
               />
             </div>
-            <div className="text-[17px] min-[360px]:text-[19px] md:text-[22px] font-bold font-heading text-[#012d1d] tracking-tight transition-all duration-300">
+            <div className="text-[14px] min-[340px]:text-[16px] min-[380px]:text-[19px] md:text-[22px] font-bold font-heading text-[#012d1d] tracking-tight transition-all duration-300">
               Katayayani Enterprises
             </div>
           </Link>
@@ -129,7 +130,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="relative text-body-lg px-[16px] py-[10px] rounded-xl transition-colors duration-300 block"
+                    className="relative text-body-lg px-[16px] py-[12px] rounded-xl transition-colors duration-300 block"
                   >
                     {active && (
                       <motion.div

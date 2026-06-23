@@ -276,7 +276,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* CTA Button */}
         <div className="mt-4 pb-1">
           <div
-            className="w-full bg-[#18181b] hover:bg-black text-white py-3.5 rounded-2xl text-[14px] font-semibold text-center transition-all duration-200 shadow-sm hover:scale-[1.01] active:scale-[0.99]"
+            onClick={handleWhatsAppClick}
+            className="w-full bg-[#18181b] hover:bg-black text-white py-3.5 rounded-2xl text-[14px] font-semibold text-center transition-all duration-200 shadow-sm hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
           >
             Buy Now
           </div>
