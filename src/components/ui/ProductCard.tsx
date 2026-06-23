@@ -256,12 +256,11 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* CTA */}
         <div className="mt-auto pb-1">
-          <button
-            onClick={handleWhatsAppClick}
-            className="w-full bg-[#2a2a2a] text-white py-[14px] rounded-[24px] text-[15px] font-medium hover:bg-black transition-colors"
+          <div
+            className="w-full bg-[#2a2a2a] text-white py-[14px] rounded-[24px] text-[15px] font-medium hover:bg-black transition-colors text-center"
           >
             Buy Now
-          </button>
+          </div>
         </div>
       </div>
     </Link>
