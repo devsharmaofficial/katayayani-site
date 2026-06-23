@@ -55,16 +55,16 @@ export default function Navbar() {
 
         <div className={cn(
           "max-w-[1280px] mx-auto px-[24px] flex justify-between items-center transition-all duration-300 ease-in-out",
-          scrolled ? "h-16" : "h-24 md:h-24"
+          scrolled ? "h-16" : "h-20 md:h-24"
         )}>
           {/* Brand Logo & Details */}
           <Link
             href="/"
-            className="group flex items-center gap-3"
+            className="group flex items-center gap-2 sm:gap-3"
           >
             <div className={cn(
-              "relative transition-all duration-300 ease-in-out group-hover:scale-105",
-              scrolled ? "w-11 h-11" : "w-14 h-14 md:w-16 md:h-16"
+              "relative transition-all duration-300 ease-in-out group-hover:scale-105 flex-shrink-0",
+              scrolled ? "w-10 h-10" : "w-12 h-12 md:w-16 md:h-16"
             )}>
               <Image
                 src="/katyayani-enterprises-logo.png"
@@ -74,16 +74,16 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <div className="text-[1.25rem] sm:text-[1.35rem] md:text-3xl text-black font-black leading-none tracking-tight">
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="text-base min-[360px]:text-lg min-[390px]:text-xl sm:text-2xl md:text-3xl text-black font-black leading-none tracking-tight truncate sm:whitespace-normal">
                 Katayayani Enterprises
               </div>
               <div className={cn(
                 "flex flex-wrap items-center gap-2 md:gap-4 opacity-80 transition-all duration-300 overflow-hidden", 
-                scrolled ? "h-0 opacity-0 mt-0" : "h-auto opacity-100 mt-2"
+                scrolled ? "h-0 opacity-0 mt-0" : "h-auto opacity-100 mt-1 md:mt-2"
               )}>
-                <span className="text-[9px] md:text-[11px] font-bold text-gray-600 flex items-center gap-1 tracking-wide">
-                  <BadgeCheck className="w-3 h-3 text-green-600" /> Govt. Reg GST: 09***********1ZL
+                <span className="text-[8px] md:text-[11px] font-bold text-gray-600 flex items-center gap-1 tracking-wide">
+                  <BadgeCheck className="w-2.5 h-2.5 md:w-3 md:h-3 text-green-600" /> Govt. Reg GST: 09***********1ZL
                 </span>
                 <span className="hidden sm:flex text-[9px] md:text-[11px] font-bold text-gray-600 items-center gap-1 tracking-wide">
                   <Award className="w-3 h-3 text-[#ffc641]" /> 10+ Yrs Excellence
@@ -129,7 +129,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: [0.2, 0, 0, 1] }}
-            className="fixed inset-x-0 top-20 z-40 bg-surface/95 backdrop-blur-lg border-b border-secondary/30 shadow-lg md:hidden"
+            className={cn(
+              "fixed inset-x-0 z-40 bg-surface/95 backdrop-blur-lg border-b border-secondary/30 shadow-lg md:hidden transition-all duration-300",
+              scrolled ? "top-16" : "top-20"
+            )}
           >
             <nav className="max-w-[1280px] mx-auto px-[24px] py-[24px] flex flex-col gap-[8px]">
               {navItems.map((item) => {

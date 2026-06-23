@@ -129,12 +129,14 @@ export default function HomePage() {
 
                     {/* Action Buttons */}
                     <div className="flex items-center justify-center gap-4 w-full md:w-auto z-10">
-                        <InteractiveHoverButton 
-                          href="/products" 
-                          text="Buy Now" 
-                          className="w-full md:w-auto justify-center"
-                        />
-                        <Link href="/contact" className="flex-1 md:flex-none text-center px-6 md:px-8 py-3 md:py-[13px] bg-white text-[#012d1d] font-bold border-2 border-[#012d1d]/10 rounded-full hover:bg-black/5 transition-all shadow-sm text-[15px] tracking-wide">
+                        <div className="flex-1 md:flex-none flex justify-center">
+                          <InteractiveHoverButton 
+                            href="/products" 
+                            text="Buy Now" 
+                            className="w-full justify-center"
+                          />
+                        </div>
+                        <Link href="/contact" className="flex-1 md:flex-none text-center px-6 md:px-8 py-3 bg-white text-[#012d1d] font-bold border-2 border-[#012d1d]/10 rounded-full hover:bg-black/5 transition-all shadow-sm text-[15px] tracking-wide h-[54px] flex items-center justify-center">
                             Request Quote
                         </Link>
                     </div>

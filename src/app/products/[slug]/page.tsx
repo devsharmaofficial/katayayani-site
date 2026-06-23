@@ -201,7 +201,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
                 {/* Thumbnail Strip */}
                 {product.images.length > 1 && (
-                  <div className="flex gap-[8px]">
+                  <div className="flex gap-[8px] overflow-x-auto pb-2 scrollbar-none snap-x">
                     {product.images.map((img, idx) => (
                       <button
                         key={idx}
@@ -210,7 +210,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                           setSelectedImage(idx);
                           setAutoplayKey((k) => k + 1);
                         }}
-                        className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 snap-start ${
                           idx === selectedImage
                             ? "border-primary"
                             : "border-transparent hover:border-outline-variant"
@@ -392,31 +392,31 @@ function ProductDetailContent({ slug }: { slug: string }) {
                     <table className="w-full text-left border-collapse relative z-10">
                       <tbody className="divide-y divide-outline-variant/10">
                         <tr className="group/row hover:bg-white/60 transition-colors">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider w-1/3 group-hover/row:text-primary transition-colors">Brand</th>
-                          <td className="py-5 px-8 text-title-md text-primary font-black">{product.brand}</td>
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider w-1/3 group-hover/row:text-primary transition-colors">Brand</th>
+                          <td className="py-4 px-4 sm:px-8 text-title-md text-primary font-black">{product.brand}</td>
                         </tr>
                         <tr className="group/row hover:bg-white/60 transition-colors">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Frame Material</th>
-                          <td className="py-5 px-8 text-body-lg text-on-surface font-semibold">Mild Steel</td>
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Frame Material</th>
+                          <td className="py-4 px-4 sm:px-8 text-body-lg text-on-surface font-semibold">Mild Steel</td>
                         </tr>
                         <tr className="group/row hover:bg-white/60 transition-colors">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Type Of Part</th>
-                          <td className="py-5 px-8 text-body-lg text-on-surface font-semibold">Tractor Roof Fibre Canopy</td>
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Type Of Part</th>
+                          <td className="py-4 px-4 sm:px-8 text-body-lg text-on-surface font-semibold">Tractor Roof Fibre Canopy</td>
                         </tr>
                         <tr className="group/row hover:bg-white/60 transition-colors">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Country of Origin</th>
-                          <td className="py-5 px-8 text-body-lg text-on-surface font-semibold flex items-center gap-2">
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Country of Origin</th>
+                          <td className="py-4 px-4 sm:px-8 text-body-lg text-on-surface font-semibold flex items-center gap-2">
                             <span>Made in India</span>
                             <span className="text-xl leading-none">🇮🇳</span>
                           </td>
                         </tr>
                         <tr className="group/row hover:bg-white/60 transition-colors">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Surface Finish</th>
-                          <td className="py-5 px-8 text-body-lg text-on-surface font-semibold">Paint Coated</td>
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Surface Finish</th>
+                          <td className="py-4 px-4 sm:px-8 text-body-lg text-on-surface font-semibold">Paint Coated</td>
                         </tr>
                         <tr className="group/row hover:bg-white/60 transition-colors border-none">
-                          <th className="py-5 px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors">Available For</th>
-                          <td className="py-5 px-8 text-body-md text-on-surface font-bold leading-relaxed">
+                          <th className="py-4 px-4 sm:px-8 text-label-md text-on-surface-variant font-bold uppercase tracking-wider group-hover/row:text-primary transition-colors border-none">Available For</th>
+                          <td className="py-4 px-4 sm:px-8 text-body-md text-on-surface font-bold leading-relaxed">
                             <span className="inline-block mb-1 opacity-60 text-sm tracking-wider">ALL MODELS —</span><br />
                             <span className="text-primary font-black tracking-wide">
                               YUVO TECH + | ARJUN NOVO | OJA | YUVRAJ | JIVO | XP PLUS | SP PLUS

@@ -49,7 +49,7 @@ export default function ScrollReveal({
   delay = 0,
   duration = 0.6,
   once = true,
-  amount = 0.15,
+  amount = 0.02,
 }: ScrollRevealProps) {
   return (
     <motion.div
@@ -83,7 +83,7 @@ export function StaggerContainer({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.02 }}
       transition={{ staggerChildren: staggerDelay }}
       className={className}
     >

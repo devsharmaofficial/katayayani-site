@@ -69,7 +69,7 @@ export default function GalleryPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-36 w-full max-w-[1280px] mx-auto px-[24px] pb-24">
+      <main className="flex-grow pt-28 md:pt-36 w-full max-w-[1280px] mx-auto px-[24px] pb-24">
         {/* Gallery Grid */}
         <StaggerContainer className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           {galleryItems.map((item, idx) => (

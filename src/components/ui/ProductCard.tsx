@@ -89,7 +89,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group bg-white rounded-[32px] shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 p-3 flex flex-col relative"
+      className="group bg-white rounded-[32px] shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 p-3 flex flex-col relative w-full max-w-[420px] mx-auto md:max-w-none"
     >
       {/* Top Image Area */}
       <div className="relative aspect-[4/5] w-full bg-[#f4f4f4] rounded-[24px] overflow-hidden mb-4">
