@@ -136,16 +136,9 @@ export const Testimonials = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[600px] mx-auto mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-label-md text-primary font-bold mb-4">
-            Testimonials
-          </div>
-
           <h2 className="text-headline-md text-primary">
             What Farmers Say <span className="font-semibold text-secondary">About Us</span>
           </h2>
-          <p className="text-body-md text-on-surface-variant mt-[8px]">
-            Hear from tractor owners all over India about their experience with Katayayani FRP canopies.
-          </p>
         </motion.div>
 
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden">
