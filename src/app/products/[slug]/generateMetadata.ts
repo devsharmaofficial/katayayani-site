@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getProductBySlug, getProductSlugs } from "@/lib/products";
 
-const SITE_URL = "https://katyayanienterprises.com";
+const SITE_URL = "https://katayayani-site.vercel.app";
 
 export async function generateMetadata({
   params,

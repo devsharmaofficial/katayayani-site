@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katyayanienterprises.com";
+const SITE_URL = "https://katayayani-site.vercel.app";
 
 export const metadata: Metadata = {
   title: "Request FRP Canopy Quote | Fast Response | Katyayani Enterprises",

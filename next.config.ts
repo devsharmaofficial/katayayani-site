@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const SITE_URL = "https://katyayanienterprises.com";
+const SITE_URL = "https://katayayani-site.vercel.app";
 
 const nextConfig: NextConfig = {
   // Compression for Core Web Vitals improvement

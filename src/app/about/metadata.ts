@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katyayanienterprises.com";
+const SITE_URL = "https://katayayani-site.vercel.app";
 
 export const metadata: Metadata = {
   title: "About Katyayani Enterprises | FRP Tractor Canopy Manufacturer Meerut",
