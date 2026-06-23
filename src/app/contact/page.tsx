@@ -48,7 +48,7 @@ export default function ContactPage() {
       formSchema.parse(formData);
       setIsSubmitting(true);
       
-      const whatsappMessage = `Hello Katyayani Enterprises! 👋\n\nI am interested in your FRP tractor canopies and would like to get more information.\n\nHere are my details:\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n\n📝 My Message / Requirements:\n${formData.message}\n\nLooking forward to your response!`;
+      const whatsappMessage = `Hello Katayayani Enterprises! 👋\n\nI am interested in your FRP tractor canopies and would like to get more information.\n\nHere are my details:\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n\n📝 My Message / Requirements:\n${formData.message}\n\nLooking forward to your response!`;
       const whatsappUrl = `https://wa.me/919358273054?text=${encodeURIComponent(whatsappMessage)}`;
       
       // Redirect to WhatsApp

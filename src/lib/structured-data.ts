@@ -11,7 +11,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Katyayani Enterprises",
+    name: "Katayayani Enterprises",
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`, // Placeholder for actual logo
     contactPoint: {

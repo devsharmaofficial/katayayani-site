@@ -112,7 +112,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
             },
             manufacturer: {
               "@type": "Organization",
-              name: "Katyayani Enterprises",
+              name: "Katayayani Enterprises",
               url: "https://katayayani-site.vercel.app",
               telephone: "+91-9358273054",
               address: {
@@ -129,7 +129,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               url: `https://katayayani-site.vercel.app/products/${product.slug}`,
               seller: {
                 "@type": "Organization",
-                name: "Katyayani Enterprises",
+                name: "Katayayani Enterprises",
                 telephone: "+91-9358273054",
               },
               areaServed: "IN",
@@ -564,11 +564,11 @@ function ProductDetailContent({ slug }: { slug: string }) {
           <ScrollReveal>
             <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-8">
               <h2 className="text-[20px] font-black text-[#012d1d] mb-3">
-                {product.brand} Tractor Fiber Hood Price — Katyayani Enterprises
+                {product.brand} Tractor Fiber Hood Price — Katayayani Enterprises
               </h2>
               <p className="text-[14px] text-gray-600 leading-relaxed">
                 Buy <strong>{product.brand} tractor fiber hood</strong> (fiber chatri / punjabi hood)
-                at the best factory-direct price from Katyayani Enterprises, Meerut. Our{" "}
+                at the best factory-direct price from Katayayani Enterprises, Meerut. Our{" "}
                 <strong>{product.brand} fiber chatri</strong> is made from premium FRP (Fiber
                 Reinforced Plastic) — UV resistant. For the latest{" "}
                 <strong>{product.brand} tractor fiber hood price</strong>, call{" "}

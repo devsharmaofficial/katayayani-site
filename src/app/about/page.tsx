@@ -70,7 +70,7 @@ export default function AboutPage() {
                     {/* The Certificate Image */}
                     <div className="relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100">
                       <Image
-                        src="/katyayani-enterprises-indiamart-trust-certificate.png"
+                        src="/katayayani-enterprises-indiamart-trust-certificate.png"
                         alt="IndiaMART Trust Seal Certificate of Trust - Katayayani Enterprises"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -321,7 +321,7 @@ export default function AboutPage() {
               </button>
               <div className="relative w-full h-full rounded-lg overflow-hidden">
                 <Image
-                  src="/katyayani-enterprises-indiamart-trust-certificate.png"
+                  src="/katayayani-enterprises-indiamart-trust-certificate.png"
                   alt="IndiaMART Certificate of Trust"
                   fill
                   className="object-contain"

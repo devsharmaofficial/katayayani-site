@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 const SITE_URL = "https://katayayani-site.vercel.app";
-const BUSINESS_NAME = "Katyayani Enterprises";
+const BUSINESS_NAME = "Katayayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "Buy tractor fiber hood at best price in India. Punjabi tractor hood, fiber chatri for Mahindra, Swaraj, Sonalika, John Deere, Eicher & all brands. Katyayani Enterprises — India's #1 tractor fiber hood manufacturer in Meerut, UP. Call +91-9358273054 for price.",
+    "Buy tractor fiber hood at best price in India. Punjabi tractor hood, fiber chatri for Mahindra, Swaraj, Sonalika, John Deere, Eicher & all brands. Katayayani Enterprises — India's #1 tractor fiber hood manufacturer in Meerut, UP. Call +91-9358273054 for price.",
   keywords: [
     // TIER 1 — Highest priority keywords (720–590 search volume)
     "tractor fiber hood price",
@@ -108,8 +108,8 @@ export const metadata: Metadata = {
     "tractor fiber hood accessories",
     "tractor u pipe and fiber hood",
     // Business
-    "Katyayani Enterprises",
-    "katyayani fiber hood",
+    "Katayayani Enterprises",
+    "katayayani fiber hood",
   ],
   authors: [{ name: BUSINESS_NAME, url: SITE_URL }],
   creator: BUSINESS_NAME,
@@ -126,13 +126,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: `Tractor Fiber Hood Price | Punjabi Tractor Hood | ${BUSINESS_NAME}`,
     description:
-      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Katyayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
+      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Katayayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Katyayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
+        alt: "Katayayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
         type: "image/jpeg",
       },
     ],
@@ -143,8 +143,8 @@ export const metadata: Metadata = {
     description:
       "Best price tractor fiber hood, punjabi hood & fiber chatri for Swaraj, Mahindra, Sonalika, JD & all brands. India's #1 manufacturer in Meerut. Low price.",
     images: [`${SITE_URL}/og-image.jpg`],
-    creator: "@katyayanienterprises",
-    site: "@katyayanienterprises",
+    creator: "@katayayanienterprises",
+    site: "@katayayanienterprises",
   },
   robots: {
     index: true,
@@ -175,18 +175,18 @@ const jsonLd = {
       "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: BUSINESS_NAME,
-      alternateName: ["Katyayani Agro Industries", "Katayayani Enterprises"],
+      alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises"],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/katyayani-enterprises-logo.png`,
+        url: `${SITE_URL}/katayayani-enterprises-logo.png`,
         width: 200,
         height: 200,
-        caption: "Katyayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
+        caption: "Katayayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
       },
       image: `${SITE_URL}/og-image.jpg`,
       description:
-        "Katyayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
+        "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
       foundingDate: "2010",
       telephone: BUSINESS_PHONE_PRIMARY,
       email: BUSINESS_EMAIL,

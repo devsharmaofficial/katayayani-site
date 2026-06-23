@@ -77,7 +77,7 @@ export default function ProductsPage() {
             <p className="text-[14px] md:text-[16px] text-gray-600 max-w-[680px] mx-auto">
               Buy <strong>tractor fiber hood</strong> (punjabi hood / fiber chatri) online at best price.{" "}
               <strong>Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey, Farmtrac</strong> —
-              all brands available. Factory direct from <strong>Katyayani Enterprises, Meerut</strong>.
+              all brands available. Factory direct from <strong>Katayayani Enterprises, Meerut</strong>.
             </p>
             {/* Keyword anchor links — help Google understand keyword relevance per brand */}
             <div className="flex flex-wrap justify-center gap-2 mt-4 text-[12px]">
@@ -150,7 +150,7 @@ export default function ProductsPage() {
               India&apos;s Best Tractor Fiber Hood Manufacturer
             </h2>
             <p className="text-[14px] text-gray-600 max-w-[720px] mx-auto leading-relaxed mb-4">
-              Katyayani Enterprises — Meerut (UP) — India's #1 <strong>tractor fiber hood</strong> (punjabi
+              Katayayani Enterprises — Meerut (UP) — India's #1 <strong>tractor fiber hood</strong> (punjabi
               hood / fiber chatri) manufacturer. <strong>Swaraj 744 fiber hood price</strong>,{" "}
               <strong>Mahindra tractor fiber chatri price</strong>,{" "}
               <strong>Sonalika fiber hood price</strong>,{" "}

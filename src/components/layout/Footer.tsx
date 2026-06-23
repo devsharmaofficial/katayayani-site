@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left md:flex-1">
           <Link href="/" className="group flex items-baseline gap-1">
             <span className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-[#012d1d] via-[#104e33] to-[#795900] bg-clip-text text-transparent group-hover:opacity-90 transition-opacity duration-300">
-              Katyayani Enterprises
+              Katayayani Enterprises
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#795900] animate-pulse"></span>
           </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="w-full py-2.5 border-t border-gray-100 text-center text-[12px] text-gray-400 bg-white">
-        © {currentYear} Katyayani Enterprises. All Rights Reserved.
+        © {currentYear} Katayayani Enterprises. All Rights Reserved.
       </div>
     </footer>
   );
