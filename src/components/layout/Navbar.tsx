@@ -55,16 +55,16 @@ export default function Navbar() {
 
         <div className={cn(
           "max-w-[1280px] mx-auto px-[24px] flex justify-between items-center transition-all duration-300 ease-in-out",
-          scrolled ? "h-16" : "h-20 md:h-24"
+          scrolled ? "h-16" : "h-20"
         )}>
-          {/* Brand Logo & Details */}
+          {/* Brand Logo & Name */}
           <Link
             href="/"
-            className="group flex items-center gap-2 sm:gap-3"
+            className="group flex items-center gap-2.5 sm:gap-3"
           >
             <div className={cn(
-              "relative transition-all duration-300 ease-in-out group-hover:scale-105 flex-shrink-0",
-              scrolled ? "w-10 h-10" : "w-12 h-12 md:w-16 md:h-16"
+              "relative transition-all duration-300 ease-in-out group-hover:scale-[1.03] flex-shrink-0",
+              scrolled ? "w-9 h-9" : "w-11 h-11"
             )}>
               <Image
                 src="/katyayani-enterprises-logo.png"
@@ -74,36 +74,23 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col justify-center min-w-0">
-              <div className="text-base min-[360px]:text-lg min-[390px]:text-xl sm:text-2xl md:text-3xl text-black font-black leading-none tracking-tight truncate sm:whitespace-normal">
-                Katayayani Enterprises
-              </div>
-              <div className={cn(
-                "flex flex-wrap items-center gap-2 md:gap-4 opacity-80 transition-all duration-300 overflow-hidden", 
-                scrolled ? "h-0 opacity-0 mt-0" : "h-auto opacity-100 mt-1 md:mt-2"
-              )}>
-                <span className="text-[8px] md:text-[11px] font-bold text-gray-600 flex items-center gap-1 tracking-wide">
-                  <BadgeCheck className="w-2.5 h-2.5 md:w-3 md:h-3 text-green-600" /> Govt. Reg GST: 09***********1ZL
-                </span>
-                <span className="hidden sm:flex text-[9px] md:text-[11px] font-bold text-gray-600 items-center gap-1 tracking-wide">
-                  <Award className="w-3 h-3 text-[#ffc641]" /> 10+ Yrs Excellence
-                </span>
-                <span className="hidden xl:flex text-[9px] md:text-[11px] font-bold text-gray-600 items-center gap-1 tracking-wide">
-                  <Star className="w-3 h-3 text-[#ffc641] fill-[#ffc641]" /> Rated 3.9/5 by 500+
-                </span>
-              </div>
+            <div className="text-[17px] min-[360px]:text-[19px] md:text-[22px] font-bold font-heading text-[#012d1d] tracking-tight transition-all duration-300">
+              Katayayani Enterprises
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <NavHeader className="hidden md:flex" />
 
-          {/* Call Us Button (Desktop) */}
+          {/* Classy Call Us Button (Desktop) */}
           <div className="hidden md:flex">
-            <CartoonButton href="tel:+919358273054">
-              <Phone className="w-[16px] h-[16px]" />
-              Call Us
-            </CartoonButton>
+            <a
+              href="tel:+919358273054"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#012d1d] text-white font-semibold text-[14px] hover:bg-[#023e29] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#ffc641]" />
+              <span>Call Us</span>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -125,16 +112,16 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: [0.2, 0, 0, 1] }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
             className={cn(
-              "fixed inset-x-0 z-40 bg-surface/95 backdrop-blur-lg border-b border-secondary/30 shadow-lg md:hidden transition-all duration-300",
+              "fixed inset-x-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg md:hidden transition-all duration-300",
               scrolled ? "top-16" : "top-20"
             )}
           >
-            <nav className="max-w-[1280px] mx-auto px-[24px] py-[24px] flex flex-col gap-[8px]">
+            <nav className="max-w-[1280px] mx-auto px-[24px] py-[20px] flex flex-col gap-[6px]">
               {navItems.map((item) => {
                 const active = isActive(item.href);
                 return (
@@ -142,12 +129,12 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="relative text-body-lg px-[16px] py-[12px] rounded-lg transition-colors duration-300 block"
+                    className="relative text-body-lg px-[16px] py-[10px] rounded-xl transition-colors duration-300 block"
                   >
                     {active && (
                       <motion.div
                         layoutId="mobileActiveNavBg"
-                        className="absolute inset-0 bg-primary-fixed/20 rounded-lg -z-10"
+                        className="absolute inset-0 bg-[#012d1d]/5 rounded-xl -z-10"
                         transition={{
                           type: "spring",
                           stiffness: 380,
@@ -156,23 +143,24 @@ export default function Navbar() {
                       />
                     )}
                     <span className={cn(
-                      "transition-colors duration-300",
-                      active ? "text-primary font-semibold" : "text-on-surface-variant"
+                      "transition-colors duration-300 text-[15px] tracking-wide",
+                      active ? "text-[#012d1d] font-bold" : "text-gray-500 font-medium"
                     )}>
                       {item.label}
                     </span>
                   </Link>
                 );
               })}
-              <div className="divider-gold mt-[8px] mb-[16px]" />
-              <div className="flex justify-center">
-                <CartoonButton
+              <div className="h-[1px] bg-gray-100 mt-2 mb-4" />
+              <div className="flex justify-center pb-2">
+                <a
                   href="tel:+919358273054"
                   onClick={() => setMobileOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#012d1d] text-white font-semibold text-[15px] hover:bg-[#023e29] transition-all duration-300 shadow-sm"
                 >
-                  <Phone className="w-[16px] h-[16px]" />
-                  Call Us Now
-                </CartoonButton>
+                  <Phone className="w-4 h-4 text-[#ffc641]" />
+                  <span>Call Us Now</span>
+                </a>
               </div>
             </nav>
           </motion.div>
