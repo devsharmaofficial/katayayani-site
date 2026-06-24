@@ -45,11 +45,11 @@ export function generateProductSchema(product: Product) {
     },
     category: product.category,
     offers: {
-      "@type": "AggregateOffer",
-      offerCount: "1",
-      availability: "https://schema.org/InStock",
-      // Prices are typically custom quotes in this industry, but structure exists
+      "@type": "Offer",
+      price: "12500",
       priceCurrency: "INR",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
       url: `${SITE_URL}/products/${product.slug}`,
     },
   };
