@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import { useState } from "react";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -14,7 +15,11 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-export default function ContactPage() {
+interface ContactPageProps {
+  isEnquiry?: boolean;
+}
+
+export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -68,18 +73,42 @@ export default function ContactPage() {
     }
   };
 
+  const breadcrumbItems = isEnquiry
+    ? [
+        { name: "Home", url: "/" },
+        { name: "Products", url: "/products" },
+        { name: "Send Enquiry", url: "/enquiry" },
+      ]
+    : [
+        { name: "Home", url: "/" },
+        { name: "Contact Us", url: "/contact" },
+      ];
+
+  const pageTitle = isEnquiry
+    ? "Request Katyayani Enterprises FRP Canopy Price Quote"
+    : "Contact Katyayani Enterprises — Get Tractor Fiber Hood Quote";
+
+  const pageDescription = isEnquiry
+    ? "Fill out the quick form below to request factory-direct pricing, custom color availability, or dealer rates for our premium tractor canopies."
+    : "Have questions about our FRP canopies? Want a custom quote? Fill out the form below or contact us directly.";
+
   return (
     <>
       <Navbar />
       <main className="flex-grow pt-32">
-        <div className="max-w-[1280px] mx-auto px-[24px] py-[48px]">
+        {/* Visual Breadcrumb Trail */}
+        <div className="max-w-[1280px] mx-auto px-[24px] pt-4">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
+
+        <div className="max-w-[1280px] mx-auto px-[24px] pb-[48px]">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-[64px]">
-              <h1 className="text-headline-md text-on-surface mb-[16px]">
-                Get in Touch
+            <div className="text-center max-w-3xl mx-auto mb-[64px]">
+              <h1 className="text-[26px] md:text-[36px] font-black text-[#012d1d] leading-tight mb-[16px]">
+                {pageTitle}
               </h1>
-              <p className="text-body-lg text-on-surface-variant">
-                Have questions about our FRP canopies? Want a custom quote? Fill out the form below or contact us directly.
+              <p className="text-body-lg text-[#414844] leading-relaxed">
+                {pageDescription}
               </p>
             </div>
           </ScrollReveal>

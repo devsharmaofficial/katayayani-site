@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import ProductCard from "@/components/ui/ProductCard";
 import ScrollReveal, {
   StaggerContainer,
@@ -67,6 +68,8 @@ export default function ProductsPage() {
 
       <Navbar />
       <main className="flex-grow pt-28 w-full max-w-[1280px] mx-auto px-[24px] pb-12">
+        {/* Visual Breadcrumb Trail */}
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Products", url: "/products" }]} />
 
         {/* ── H1 PAGE HEADER ── Keyword-rich, tells Google exactly what this page is about */}
         <ScrollReveal>

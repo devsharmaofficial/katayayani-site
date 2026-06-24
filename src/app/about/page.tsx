@@ -13,6 +13,7 @@ import ScrollReveal, {
 } from "@/components/motion/ScrollReveal";
 import { AwardBadge } from "@/components/ui/award-badge";
 import { Testimonials } from "@/components/ui/testimonials-columns-1";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 const values = [
   {
@@ -48,8 +49,13 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="flex-grow pt-32">
+        {/* Visual Breadcrumb Trail */}
+        <div className="max-w-[1280px] mx-auto px-[24px] pt-4">
+          <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "About Us", url: "/about" }]} />
+        </div>
+
         {/* Trust & Verification Section */}
-        <section className="py-[64px] bg-white relative overflow-hidden">
+        <section className="py-[32px] bg-white relative overflow-hidden">
           {/* Background decorations */}
           <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
@@ -95,12 +101,12 @@ export default function AboutPage() {
               {/* Right Column: Verified Details & Badges */}
               <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
                 <ScrollReveal direction="right">
-                  <h2 className="text-headline-md text-primary font-black leading-tight">
-                    Recognized & Verified for Professional Excellence
-                  </h2>
+                  <h1 className="text-headline-md text-primary font-black leading-tight">
+                    About Katyayani Enterprises — FRP Tractor Canopy Manufacturer
+                  </h1>
                   
                   <p className="text-body-lg text-on-surface-variant leading-relaxed">
-                    At Katayayani Enterprises, we prioritize transparency and reliability. We are honored to be awarded the <strong className="text-on-surface">IndiaMART Certificate of Trust</strong>, reflecting our steadfast commitment to genuine business operations, financial integrity, and product quality.
+                    At Katyayani Enterprises, we prioritize transparency and reliability. We are honored to be awarded the <strong className="text-on-surface">IndiaMART Certificate of Trust</strong>, reflecting our steadfast commitment to genuine business operations, financial integrity, and product quality.
                   </p>
                 </ScrollReveal>
 

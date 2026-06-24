@@ -19,7 +19,7 @@ function EnquiryContent() {
           You are enquiring about: <span className="font-bold">{productSlug.replace(/-/g, " ")}</span>
         </div>
       )}
-      <ContactPage />
+      <ContactPage isEnquiry={true} />
     </div>
   );
 }

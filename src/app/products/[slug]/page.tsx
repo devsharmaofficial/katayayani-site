@@ -25,6 +25,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import ProductCard from "@/components/ui/ProductCard";
 import ScrollReveal from "@/components/motion/ScrollReveal";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import {
   getProductBySlug,
   getRelatedProducts,
@@ -150,19 +151,13 @@ function ProductDetailContent({ slug }: { slug: string }) {
       <main className="flex-grow pt-32">
         <div className="max-w-[1280px] mx-auto px-[24px] py-[48px]">
           {/* Breadcrumb */}
-          <ScrollReveal>
-            <nav className="flex items-center gap-2 text-label-md text-on-surface-variant mb-[24px]">
-              <Link
-                href="/products"
-                className="hover:text-primary transition-colors flex items-center gap-1"
-              >
-                <ChevronLeft className="w-4 h-4" />
-                Tractor Fiber Hood
-              </Link>
-              <span>/</span>
-              <span className="text-on-surface">{product.brand} Fiber Hood Price</span>
-            </nav>
-          </ScrollReveal>
+          <Breadcrumbs
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Products", url: "/products" },
+              { name: `${product.brand} Fiber Hood`, url: `/products/${product.slug}` },
+            ]}
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-[48px]">
             {/* Left: Image Gallery (3 cols) */}

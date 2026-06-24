@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 const SITE_URL = "https://katayayanienterprises.vercel.app";
-const BUSINESS_NAME = "Katayayani Enterprises";
+const BUSINESS_NAME = "Katyayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
@@ -26,11 +26,11 @@ const BUSINESS_ADDRESS = "Tirupati complex wali gali, Baghpat Rd, Sabun Godam, M
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `Tractor Fiber Hood Price | Punjabi Hood | FRP Canopy Manufacturer — ${BUSINESS_NAME}`,
+    default: "Tractor Fiber Hood Price | Punjabi Hood | FRP Canopy Manufacturer — Katyayani Enterprises",
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "Buy tractor fiber hood at best price in India. Punjabi tractor hood, fiber chatri for Mahindra, Swaraj, Sonalika, John Deere, Eicher & all brands. Katayayani Enterprises — India's #1 tractor fiber hood manufacturer in Meerut, UP. Call +91-9358273054 for price.",
+    "Katyayani Enterprises is India's leading FRP tractor canopy manufacturer based in Meerut, UP. Premium fiber roof canopies for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands.",
   keywords: [
     // TIER 1 — Highest priority keywords (720–590 search volume)
     "tractor fiber hood price",
@@ -281,24 +281,6 @@ const jsonLd = {
         "query-input": "required name=search_term_string",
       },
       inLanguage: "en-IN",
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: SITE_URL,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Products",
-          item: `${SITE_URL}/products`,
-        },
-      ],
     },
   ],
 };

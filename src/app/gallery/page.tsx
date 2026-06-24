@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 import { getAllProducts } from "@/lib/products";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export default function GalleryPage() {
   const allProducts = getAllProducts();
@@ -70,6 +71,21 @@ export default function GalleryPage() {
     <>
       <Navbar />
       <main className="flex-grow pt-28 md:pt-36 w-full max-w-[1280px] mx-auto px-[24px] pb-24">
+        {/* Visual Breadcrumb Trail */}
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Product Gallery", url: "/gallery" }]} />
+
+        {/* Dynamic H1 Page Header with Keywords */}
+        <ScrollReveal>
+          <div className="text-center mb-10 max-w-2xl mx-auto">
+            <h1 className="text-[26px] md:text-[36px] font-black text-[#012d1d] leading-tight mb-3">
+              FRP Tractor Canopy Installation Gallery
+            </h1>
+            <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed">
+              View real customer installation photos of <strong>punjabi tractor hoods</strong> and <strong>fiber chatris</strong> manufactured by Katyayani Enterprises. High quality FRP canopies for Swaraj, Mahindra, John Deere & all brands.
+            </p>
+          </div>
+        </ScrollReveal>
+
         {/* Gallery Grid */}
         <StaggerContainer className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           {galleryItems.map((item, idx) => (
