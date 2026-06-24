@@ -294,10 +294,8 @@ export default function RootLayout({
         <meta name="language" content="English" />
         <meta name="distribution" content="global" />
         <meta name="target" content="all" />
-        <meta name="rating" content="general" />
         <meta name="revisit-after" content="7 days" />
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
-        <link rel="canonical" href={SITE_URL} />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
         <WebsiteBackground>
