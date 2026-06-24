@@ -26,6 +26,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://katayayanienterprises.vercel.app/sitemap.xml",
-    host: "https://katayayanienterprises.vercel.app",
   };
 }
