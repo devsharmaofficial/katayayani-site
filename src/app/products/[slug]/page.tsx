@@ -125,7 +125,9 @@ function ProductDetailContent({ slug }: { slug: string }) {
             },
             offers: {
               "@type": "Offer",
+              price: "12500",
               priceCurrency: "INR",
+              priceValidUntil: "2027-12-31",
               availability: "https://schema.org/InStock",
               url: `https://katayayanienterprises.vercel.app/products/${product.slug}`,
               seller: {

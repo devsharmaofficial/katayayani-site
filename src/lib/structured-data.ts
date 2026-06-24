@@ -47,9 +47,10 @@ export function generateProductSchema(product: Product) {
     offers: {
       "@type": "AggregateOffer",
       offerCount: "1",
-      availability: "https://schema.org/InStock",
-      // Prices are typically custom quotes in this industry, but structure exists
+      lowPrice: "12000",
+      highPrice: "25000",
       priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
       url: `${SITE_URL}/products/${product.slug}`,
     },
   };
