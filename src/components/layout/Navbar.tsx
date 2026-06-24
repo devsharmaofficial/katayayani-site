@@ -34,6 +34,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
   const isHeroPage = pathname === "/";
   const isSolid = scrolled || !isHeroPage;
 
@@ -129,7 +133,6 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={() => setMobileOpen(false)}
                     className="relative text-body-lg px-[16px] py-[12px] rounded-xl transition-colors duration-300 block"
                   >
                     {active && (

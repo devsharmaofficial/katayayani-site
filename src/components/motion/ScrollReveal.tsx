@@ -1,7 +1,21 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { type ReactNode } from "react";
+import { type ReactNode, useState, useEffect } from "react";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+    setIsMobile(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
+  return isMobile;
+}
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -51,6 +65,12 @@ export default function ScrollReveal({
   once = true,
   amount = 0.02,
 }: ScrollRevealProps) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial="hidden"
@@ -79,6 +99,12 @@ export function StaggerContainer({
   className?: string;
   staggerDelay?: number;
 }) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial="hidden"
@@ -99,6 +125,12 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{
@@ -115,3 +147,4 @@ export function StaggerItem({
     </motion.div>
   );
 }
+

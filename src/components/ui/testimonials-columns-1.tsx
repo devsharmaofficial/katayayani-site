@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import ScrollReveal from "@/components/motion/ScrollReveal";
 
 interface Testimonial {
   text: string;
@@ -57,17 +57,9 @@ export const TestimonialsColumn = (props: {
 }) => {
   return (
     <div className={props.className}>
-      <motion.div
-        animate={{
-          translateY: "-50%",
-        }}
-        transition={{
-          duration: props.duration || 10,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop",
-        }}
-        className="flex flex-col gap-6 pb-6 bg-transparent"
+      <div
+        className="animate-marquee-vertical flex flex-col gap-6 pb-6 bg-transparent"
+        style={{ animationDuration: `${props.duration || 10}s` }}
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
@@ -115,7 +107,7 @@ export const TestimonialsColumn = (props: {
             </React.Fragment>
           )),
         ]}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -129,17 +121,13 @@ export const Testimonials = () => {
   return (
     <section className="py-16 bg-transparent relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-[24px] z-10 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
+        <ScrollReveal
           className="flex flex-col items-center justify-center max-w-[600px] mx-auto mb-12 text-center"
         >
           <h2 className="text-headline-md text-primary">
             What Farmers Say <span className="font-semibold text-secondary">About Us</span>
           </h2>
-        </motion.div>
+        </ScrollReveal>
 
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={35} />
