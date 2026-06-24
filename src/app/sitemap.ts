@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Product pages — highest priority commercial pages
   const productPages = productSlugs.map((slug) => ({
     url: `${SITE_URL}/products/${slug}`,
-    lastModified: new Date("2026-06-23").toISOString(),
+    lastModified: new Date("2026-06-25").toISOString(),
     changeFrequency: "weekly" as const,
     priority: 0.9,
   }));
@@ -19,37 +19,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "daily" as const,
       priority: 1.0,
     },
     {
       url: `${SITE_URL}/products`,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "weekly" as const,
       priority: 0.95,
     },
     {
       url: `${SITE_URL}/about`,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/contact`,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "monthly" as const,
       priority: 0.75,
     },
     {
       url: `${SITE_URL}/gallery`,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "monthly" as const,
       priority: 0.65,
     },
     {
       url: `${SITE_URL}/enquiry`,
-      lastModified: new Date("2026-06-23").toISOString(),
+      lastModified: new Date("2026-06-25").toISOString(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
