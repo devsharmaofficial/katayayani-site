@@ -3,10 +3,6 @@ import { getProductSlugs, getAllProducts } from "@/lib/products";
 
 const SITE_URL = "https://katayayanienterprises.vercel.app";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
-
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts();
   const productSlugs = getProductSlugs();
