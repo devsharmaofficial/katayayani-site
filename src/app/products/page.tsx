@@ -34,12 +34,12 @@ export default function ProductsPage() {
     name: "Tractor Fiber Hood (Punjabi Hood / Fiber Chatri) — All Brands",
     description:
       "Best price tractor fiber hood, fiber chatri and punjabi hood for all tractor brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac, Powertrac, Solis, Deutz Fahr.",
-    url: "https://katayayani-site.vercel.app/products",
+    url: "https://katayayanienterprises.vercel.app/products",
     itemListElement: allProducts.map((p, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: `${p.brand} Tractor Fiber Hood Price`,
-      url: `https://katayayani-site.vercel.app/products/${p.slug}`,
+      url: `https://katayayanienterprises.vercel.app/products/${p.slug}`,
     })),
   };
 

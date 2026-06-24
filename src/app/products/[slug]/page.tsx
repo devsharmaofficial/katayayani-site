@@ -105,7 +105,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               `${product.brand} tractor fiber hood price`,
             ],
             description: product.description,
-            image: product.images.map((img) => `https://katayayani-site.vercel.app${img.src}`),
+            image: product.images.map((img) => `https://katayayanienterprises.vercel.app${img.src}`),
             brand: {
               "@type": "Brand",
               name: product.brand,
@@ -113,7 +113,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
             manufacturer: {
               "@type": "Organization",
               name: "Katayayani Enterprises",
-              url: "https://katayayani-site.vercel.app",
+              url: "https://katayayanienterprises.vercel.app",
               telephone: "+91-9358273054",
               address: {
                 "@type": "PostalAddress",
@@ -126,7 +126,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               "@type": "Offer",
               priceCurrency: "INR",
               availability: "https://schema.org/InStock",
-              url: `https://katayayani-site.vercel.app/products/${product.slug}`,
+              url: `https://katayayanienterprises.vercel.app/products/${product.slug}`,
               seller: {
                 "@type": "Organization",
                 name: "Katayayani Enterprises",

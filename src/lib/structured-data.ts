@@ -5,7 +5,7 @@
 
 import type { Product } from "@/types";
 
-const SITE_URL = "https://katayayani-site.vercel.app";
+const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export function generateOrganizationSchema() {
   return {

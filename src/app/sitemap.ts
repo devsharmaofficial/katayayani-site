@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getProductSlugs, getAllProducts } from "@/lib/products";
 
-const SITE_URL = "https://katayayani-site.vercel.app";
+const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts();
