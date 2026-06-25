@@ -1,31 +1,44 @@
-import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/config/site';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    '',
-    '/products',
-    '/about',
-    '/contact',
-    '/gallery',
-    '/enquiry',
-    '/products/swaraj-frp-canopy',
-    '/products/mahindra-frp-canopy',
-    '/products/john-deere-frp-canopy',
-    '/products/sonalika-frp-canopy',
-    '/products/eicher-frp-canopy',
-    '/products/new-holland-frp-canopy',
-    '/products/massey-ferguson-frp-canopy',
-    '/products/deutz-fahr-frp-canopy',
-    '/products/farmtrac-frp-canopy',
-    '/products/solis-frp-canopy',
-    '/products/powertrac-frp-canopy',
-  ];
-
-  return routes.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1 : 0.8,
-  }));
+  const SITE_URL = 'https://kataayanienterprises.vercel.app';
+  
+  return [
+    {
+      url: `${SITE_URL}`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/products`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/gallery`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/enquiry`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
+  ]
 }

@@ -16,7 +16,8 @@ const outfit = Outfit({
   display: "swap",
 });
 
-import { SITE_URL, BUSINESS_NAME } from "@/config/site";
+const SITE_URL = "https://kataayanienterprises.vercel.app";
+const BUSINESS_NAME = "Kataayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
@@ -107,8 +108,8 @@ export const metadata: Metadata = {
     "tractor fiber hood accessories",
     "tractor u pipe and fiber hood",
     // Business
-    "Katayayani Enterprises",
-    "katayayani fiber hood",
+    "Kataayani Enterprises",
+    "kataayani fiber hood",
   ],
   authors: [{ name: BUSINESS_NAME, url: SITE_URL }],
   creator: BUSINESS_NAME,
@@ -125,13 +126,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: `Tractor Fiber Hood Price | Punjabi Tractor Hood | ${BUSINESS_NAME}`,
     description:
-      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Katayayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
+      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Kataayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Katayayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
+        alt: "Kataayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
         type: "image/jpeg",
       },
     ],
@@ -142,8 +143,8 @@ export const metadata: Metadata = {
     description:
       "Best price tractor fiber hood, punjabi hood & fiber chatri for Swaraj, Mahindra, Sonalika, JD & all brands. India's #1 manufacturer in Meerut. Low price.",
     images: [`${SITE_URL}/og-image.jpg`],
-    creator: "@katayayanienterprises",
-    site: "@katayayanienterprises",
+    creator: "@kataayanienterprises",
+    site: "@kataayanienterprises",
   },
   robots: {
     index: true,
@@ -158,11 +159,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
   category: "Agricultural Equipment, Tractor Parts, FRP Canopies",
 };
 
@@ -174,18 +170,18 @@ const jsonLd = {
       "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: BUSINESS_NAME,
-      alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises"],
+      alternateName: ["Kataayani Agro Industries", "Kataayani Enterprises"],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/katayayani-enterprises-logo.png`,
+        url: `${SITE_URL}/kataayani-enterprises-logo.png`,
         width: 200,
         height: 200,
-        caption: "Katayayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
+        caption: "Kataayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
       },
       image: `${SITE_URL}/og-image.jpg`,
       description:
-        "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
+        "Kataayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
       foundingDate: "2010",
       telephone: BUSINESS_PHONE_PRIMARY,
       email: BUSINESS_EMAIL,
@@ -202,7 +198,7 @@ const jsonLd = {
         latitude: 28.97119,
         longitude: 77.6657833,
       },
-      hasMap: "https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z",
+      hasMap: "https://www.google.com/maps/place/Kataayani+Enterprises/@28.97119,77.6657833,17z",
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -221,7 +217,7 @@ const jsonLd = {
         },
       ],
       sameAs: [
-        `https://www.indiamart.com/katayayanienterprises/`,
+        `https://www.indiamart.com/kataayanienterprises/`,
         `https://wa.me/919358273054`,
       ],
       openingHoursSpecification: [

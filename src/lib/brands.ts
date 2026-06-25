@@ -1,5 +1,5 @@
 // ============================================================================
-// Katayayani Enterprises — Brand Data
+// Kataayani Enterprises — Brand Data
 // CMS-ready: Replace with API calls to your headless CMS.
 // ============================================================================
 

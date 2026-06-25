@@ -1,13 +1,13 @@
-import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/config/site';
+import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const SITE_URL = 'https://kataayanienterprises.vercel.app';
+  
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/_next/', '/venv/', '/.venv/', '/node_modules/'],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
-  };
+  }
 }

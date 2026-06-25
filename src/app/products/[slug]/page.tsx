@@ -106,15 +106,15 @@ function ProductDetailContent({ slug }: { slug: string }) {
               `${product.brand} tractor fiber hood price`,
             ],
             description: product.description,
-            image: product.images.map((img) => `https://katayayanienterprises.vercel.app${img.src}`),
+            image: product.images.map((img) => `https://kataayanienterprises.vercel.app${img.src}`),
             brand: {
               "@type": "Brand",
               name: product.brand,
             },
             manufacturer: {
               "@type": "Organization",
-              name: "Katayayani Enterprises",
-              url: "https://katayayanienterprises.vercel.app",
+              name: "Kataayani Enterprises",
+              url: "https://kataayanienterprises.vercel.app",
               telephone: "+91-9358273054",
               address: {
                 "@type": "PostalAddress",
@@ -129,10 +129,10 @@ function ProductDetailContent({ slug }: { slug: string }) {
               priceCurrency: "INR",
               priceValidUntil: "2027-12-31",
               availability: "https://schema.org/InStock",
-              url: `https://katayayanienterprises.vercel.app/products/${product.slug}`,
+              url: `https://kataayanienterprises.vercel.app/products/${product.slug}`,
               seller: {
                 "@type": "Organization",
-                name: "Katayayani Enterprises",
+                name: "Kataayani Enterprises",
                 telephone: "+91-9358273054",
               },
               areaServed: "IN",
@@ -561,11 +561,11 @@ function ProductDetailContent({ slug }: { slug: string }) {
           <ScrollReveal>
             <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-8">
               <h2 className="text-[20px] font-black text-[#012d1d] mb-3">
-                {product.brand} Tractor Fiber Hood Price — Katayayani Enterprises
+                {product.brand} Tractor Fiber Hood Price — Kataayani Enterprises
               </h2>
               <p className="text-[14px] text-gray-600 leading-relaxed">
                 Buy <strong>{product.brand} tractor fiber hood</strong> (fiber chatri / punjabi hood)
-                at the best factory-direct price from Katayayani Enterprises, Meerut. Our{" "}
+                at the best factory-direct price from Kataayani Enterprises, Meerut. Our{" "}
                 <strong>{product.brand} fiber chatri</strong> is made from premium FRP (Fiber
                 Reinforced Plastic) — UV resistant. For the latest{" "}
                 <strong>{product.brand} tractor fiber hood price</strong>, call{" "}

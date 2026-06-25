@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
+const SITE_URL = "https://kataayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Request FRP Canopy Quote | Fast Response | Katayayani Enterprises",
+  title: "Request FRP Canopy Quote | Fast Response | Kataayani Enterprises",
   description:
-    "Submit your enquiry for premium FRP tractor canopies from Katayayani Enterprises. Get the best price quote for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands. Fast 24-hour response. Call +91-9358273054.",
+    "Submit your enquiry for premium FRP tractor canopies from Kataayani Enterprises. Get the best price quote for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands. Fast 24-hour response. Call +91-9358273054.",
   keywords: [
     "FRP canopy enquiry",
     "tractor canopy quote",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "buy FRP tractor canopy",
     "tractor canopy order India",
     "FRP canopy dealer",
-    "Katayayani enquiry form",
+    "Kataayani enquiry form",
     "tractor fiber roof price",
   ],
   alternates: {
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Katayayani Enterprises",
+    siteName: "Kataayani Enterprises",
     url: `${SITE_URL}/enquiry`,
-    title: "Request Quote | FRP Tractor Canopy | Katayayani Enterprises",
+    title: "Request Quote | FRP Tractor Canopy | Kataayani Enterprises",
     description:
       "Submit your canopy enquiry and get a price quote within 24 hours. FRP canopies for all tractor brands. Best price guaranteed.",
     images: [
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Katayayani Enterprises - Request FRP Tractor Canopy Quote",
+        alt: "Kataayani Enterprises - Request FRP Tractor Canopy Quote",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Request FRP Canopy Quote | Katayayani Enterprises",
+    title: "Request FRP Canopy Quote | Kataayani Enterprises",
     description: "Get best price quote for FRP tractor canopies. 24-hour response guaranteed.",
     images: [`${SITE_URL}/og-image.jpg`],
   },

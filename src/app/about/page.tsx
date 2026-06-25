@@ -76,8 +76,8 @@ export default function AboutPage() {
                     {/* The Certificate Image */}
                     <div className="relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100">
                       <Image
-                        src="/katayayani-enterprises-indiamart-trust-certificate.png"
-                        alt="IndiaMART Trust Seal Certificate of Trust - Katayayani Enterprises"
+                        src="/kataayani-enterprises-indiamart-trust-certificate.png"
+                        alt="IndiaMART Trust Seal Certificate of Trust - Kataayani Enterprises"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 400px"
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   <div className="mt-8 flex justify-center">
                     <AwardBadge 
                       type="indiamart-trust-seal"
-                      link="https://www.indiamart.com/katayayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv"
+                      link="https://www.indiamart.com/kataayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv"
                     />
                   </div>
                 </ScrollReveal>
@@ -217,7 +217,7 @@ export default function AboutPage() {
                       </div>
                       <div className="w-full">
                         <span className="text-[10px] uppercase tracking-widest text-[#795900] font-black block mb-1">Registered Address</span>
-                        <h4 className="text-title-md font-bold text-black font-semibold">Katayayani Enterprises</h4>
+                        <h4 className="text-title-md font-bold text-black font-semibold">Kataayani Enterprises</h4>
                         <p className="text-body-sm text-[#414844] mt-0.5 leading-relaxed">
                           Tirupati complex wali gali, Baghpat Rd,<br />
                           Sabun Godam, Meerut,<br />
@@ -227,15 +227,15 @@ export default function AboutPage() {
                         {/* Embedded Google Map */}
                         <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 shadow-sm w-full">
                           <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.870375990264!2d77.6657833!3d28.97119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65d40d93aa71%3A0x27d2116f19318fce!2sKatayayani%20Enterprises!5e0!3m2!1sen!2sin!4v1719000000000!5m2!1sen!2sin" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.870375990264!2d77.6657833!3d28.97119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65d40d93aa71%3A0x27d2116f19318fce!2sKataayani%20Enterprises!5e0!3m2!1sen!2sin!4v1719000000000!5m2!1sen!2sin" 
                             className="w-full h-[180px] border-0" 
                             allowFullScreen 
                             loading="lazy"
-                            title="Katayayani Enterprises Location Map"
+                            title="Kataayani Enterprises Location Map"
                           />
                         </div>
                         <a 
-                          href="https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKatayayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                          href="https://www.google.com/maps/place/Kataayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKataayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#012d1d] hover:bg-[#023e29] text-white rounded-lg text-[11px] font-bold transition-all shadow-[0_2px_8px_rgba(1,45,29,0.15)] hover:scale-[1.03] mt-3"
@@ -327,7 +327,7 @@ export default function AboutPage() {
               </button>
               <div className="relative w-full h-full rounded-lg overflow-hidden">
                 <Image
-                  src="/katayayani-enterprises-indiamart-trust-certificate.png"
+                  src="/kataayani-enterprises-indiamart-trust-certificate.png"
                   alt="IndiaMART Certificate of Trust"
                   fill
                   className="object-contain"
