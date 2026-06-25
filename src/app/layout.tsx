@@ -16,7 +16,7 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const SITE_URL = "https://kataayanienterprises.vercel.app";
+const SITE_URL = "https://katayayanienterprises.vercel.app";
 const BUSINESS_NAME = "Kataayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "Katyayani Enterprises is India's leading FRP tractor canopy manufacturer based in Meerut, UP. Premium fiber roof canopies for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands.",
+    "Kataayani Enterprises is India's leading FRP tractor canopy manufacturer based in Meerut, UP. Premium fiber roof canopies for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands.",
   keywords: [
     // TIER 1 — Highest priority keywords (720–590 search volume)
     "tractor fiber hood price",
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: `Tractor Fiber Hood Price | Punjabi Tractor Hood | ${BUSINESS_NAME}`,
     description:
-      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Kataayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
+      "Buy tractor fiber hood (punjabi hood / fiber chatri) at best price. Mahindra, Swaraj 744/855, Sonalika, John Deere & all brands. Katayayani Enterprises — Meerut manufacturer. Call +91-9358273054.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
@@ -158,6 +158,11 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   category: "Agricultural Equipment, Tractor Parts, FRP Canopies",
 };
@@ -217,7 +222,7 @@ const jsonLd = {
         },
       ],
       sameAs: [
-        `https://www.indiamart.com/kataayanienterprises/`,
+        `https://www.indiamart.com/katayayanienterprises/`,
         `https://wa.me/919358273054`,
       ],
       openingHoursSpecification: [

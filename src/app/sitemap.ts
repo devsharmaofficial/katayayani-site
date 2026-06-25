@@ -1,44 +1,44 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const SITE_URL = 'https://kataayanienterprises.vercel.app';
-  
+  const SITE_URL = "https://katayayanienterprises.vercel.app";
+
   return [
     {
-      url: `${SITE_URL}`,
+      url: `${SITE_URL}/`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: "weekly",
       priority: 1,
-    },
-    {
-      url: `${SITE_URL}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${SITE_URL}/products`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${SITE_URL}/gallery`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.6,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${SITE_URL}/enquiry`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "monthly",
       priority: 0.6,
     },
-  ]
+  ];
 }

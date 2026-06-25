@@ -1,13 +1,13 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const SITE_URL = 'https://kataayanienterprises.vercel.app';
-  
+  const SITE_URL = "https://katayayanienterprises.vercel.app";
+
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
-  }
+  };
 }
