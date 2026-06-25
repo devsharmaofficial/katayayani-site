@@ -16,8 +16,7 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
-const BUSINESS_NAME = "Katyayani Enterprises";
+import { SITE_URL, BUSINESS_NAME } from "@/config/site";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
