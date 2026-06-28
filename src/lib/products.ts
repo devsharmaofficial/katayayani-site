@@ -52,7 +52,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Lightweight", "UV Resistant", "Double-Layer"],
     category: "FRP Canopies",
     seo: {
-      title: "Swaraj Tractor Fiber Hood Price | Swaraj 744 855 Fiber Chatri | Kataayani Enterprises",
+      title: "Swaraj Tractor Fiber Hood Price | Swaraj 744 855 Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Swaraj tractor fiber hood at best price. Swaraj 744 fiber hood price, Swaraj 855 fiber chatri price — all models available. Punjab tractor hood / fiber chatri with UV protection. Manufacturer in Meerut, UP. Call +91-9358273054.",
       keywords: [
@@ -133,7 +133,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Aerodynamic", "Heat Shield", "Field-Ready"],
     category: "FRP Canopies",
     seo: {
-      title: "Mahindra Tractor Fiber Hood Price | Mahindra Fiber Chatri | Kataayani Enterprises",
+      title: "Mahindra Tractor Fiber Hood Price | Mahindra Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Mahindra tractor fiber hood at best price. Mahindra tractor fiber chatri, Mahindra 575 DI fiber hood price — fits all Mahindra models. Heat shield. Punjabi hood style. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
@@ -203,7 +203,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Tri-Layer", "Weatherproof", "LED Ready"],
     category: "FRP Canopies",
     seo: {
-      title: "John Deere Tractor Fiber Hood Price | JD Fiber Chatri | Kataayani Enterprises",
+      title: "John Deere Tractor Fiber Hood Price | JD Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy John Deere tractor fiber hood at best price. John Deere 5050D fiber hood price, 5310 fiber chatri — tri-layer FRP, LED mounts. Meerut manufacturer. Call +91-9358273054 for price.",
       keywords: [
@@ -280,7 +280,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Reinforced", "All-Weather", "Compact Option"],
     category: "FRP Canopies",
     seo: {
-      title: "Sonalika Tractor Fiber Hood Price | Sonalika Fiber Chatri | Kataayani Enterprises",
+      title: "Sonalika Tractor Fiber Hood Price | Sonalika Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Sonalika tractor fiber hood at best price. Sonalika fiber chatri price, Sonalika tractor fiber chatri — fits DI 750, Tiger 50/55 & all models. Anti-vibration. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
@@ -349,7 +349,7 @@ const products: Product[] = [
     featureTags: ["FRP", "All-Weather", "Wind Resistant"],
     category: "FRP Canopies",
     seo: {
-      title: "Eicher Tractor Fiber Hood Price | Eicher Fiber Chatri | Kataayani Enterprises",
+      title: "Eicher Tractor Fiber Hood Price | Eicher Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Eicher tractor fiber hood at best price. Eicher tractor fiber chatri, fiber hood — fits Eicher 380, 485, 551 & all models. 140 km/h wind rated, stainless mounts. Meerut manufacturer. Call +91-9358273054.",
       keywords: [
@@ -419,7 +419,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Premium Finish", "OEM Compatible"],
     category: "FRP Canopies",
     seo: {
-      title: "New Holland Tractor Fiber Hood Price | NH Fiber Chatri | Kataayani Enterprises",
+      title: "New Holland Tractor Fiber Hood Price | NH Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy New Holland tractor fiber hood at best price. New Holland 3630 TX fiber hood, fiber chatri — OEM compatible, no drilling needed. Fits NH 3630 TX, 5620 TX & all models. Meerut manufacturer.",
       keywords: [
@@ -487,7 +487,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Heritage Design", "Quick-Mount"],
     category: "FRP Canopies",
     seo: {
-      title: "Massey Tractor Fiber Hood Price | Massey Fiber Chatri | Kataayani Enterprises",
+      title: "Massey Tractor Fiber Hood Price | Massey Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Massey Ferguson tractor fiber hood at best price. Massey tractor fiber chatri, fiber hood — fits MF 1035 DI, 241 DI, 7250 PowerUp. 30-min quick mount, MF red color-matched. Meerut manufacturer.",
       keywords: [
@@ -551,7 +551,7 @@ const products: Product[] = [
     featureTags: ["FRP", "German Engineered", "UV Resistant", "Heavy Duty"],
     category: "FRP Canopies",
     seo: {
-      title: "Deutz Fahr Tractor Fiber Hood Price | Fiber Chatri | Kataayani Enterprises",
+      title: "Deutz Fahr Tractor Fiber Hood Price | Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Deutz Fahr tractor fiber hood at best price. Fiber chatri for Deutz Fahr Agromaxx 55, Agrolux 70 & all models. Double-wall thermal insulation, UV-stabilized. India manufacturer.",
       keywords: ["deutz fahr tractor fiber hood", "deutz fahr fiber chatri", "deutz fahr fiber hood price", "deutz fahr agromaxx fiber hood", "fiber hood for deutz fahr tractor", "deutz fahr FRP fiber hood", "tractor fiber hood price deutz fahr"]
@@ -603,7 +603,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Dependable", "Classic Fit", "Vibration Dampened"],
     category: "FRP Canopies",
     seo: {
-      title: "Farmtrac Tractor Fiber Hood Price | Farmtrac Fiber Chatri | Kataayani Enterprises",
+      title: "Farmtrac Tractor Fiber Hood Price | Farmtrac Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Farmtrac tractor fiber hood at best price. Farmtrac fiber chatri, fiber hood — fits Farmtrac 60, 45, 6055 & all models. Classic blue, vibration-dampened. Meerut manufacturer. Call +91-9358273054.",
       keywords: ["farmtrac tractor fiber hood", "farmtrac fiber hood price", "farmtrac fiber chatri", "farmtrac 60 fiber hood", "farmtrac punjabi hood", "fiber hood for farmtrac tractor", "farmtrac FRP fiber hood", "tractor fiber hood price farmtrac"]
@@ -652,7 +652,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Orchard Friendly", "Lightweight", "Modern Style"],
     category: "FRP Canopies",
     seo: {
-      title: "Solis Tractor Fiber Hood Price | Solis Fiber Chatri | Kataayani Enterprises",
+      title: "Solis Tractor Fiber Hood Price | Solis Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Solis tractor fiber hood at best price. Solis fiber chatri for compact tractors — fits Solis 5015, 4515, 4215 & all models. Low-profile orchard design, lightweight. Meerut manufacturer.",
       keywords: ["solis tractor fiber hood", "solis fiber chatri", "solis fiber hood price", "solis compact tractor fiber hood", "solis 5015 fiber hood", "fiber hood for solis tractor", "solis FRP fiber hood"]
@@ -703,7 +703,7 @@ const products: Product[] = [
     featureTags: ["FRP", "Heavy Duty", "Field Ready", "High Durability"],
     category: "FRP Canopies",
     seo: {
-      title: "Powertrac Tractor Fiber Hood Price | Fiber Chatri | Kataayani Enterprises",
+      title: "Powertrac Tractor Fiber Hood Price | Fiber Chatri | Katayayani Enterprises",
       description:
         "Buy Powertrac tractor fiber hood at best price. Fiber chatri for Powertrac 439, Euro 50, Euro 60 & all models. High fade-resistance blue gel-coat. Meerut manufacturer. Best price guaranteed.",
       keywords: ["powertrac tractor fiber hood", "powertrac fiber chatri", "powertrac fiber hood price", "powertrac euro fiber hood", "powertrac punjabi hood", "fiber hood for powertrac tractor", "powertrac FRP fiber hood", "powertrac tractor fiber hood price"]

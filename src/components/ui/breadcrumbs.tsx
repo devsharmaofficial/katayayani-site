@@ -11,7 +11,7 @@ interface BreadcrumbsProps {
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const SITE_URL = "https://kataayanienterprises.vercel.app";
+  const SITE_URL = "https://katayayanienterprises.vercel.app";
 
   // Build JSON-LD BreadcrumbList structured data
   const schema = {

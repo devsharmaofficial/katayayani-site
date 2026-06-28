@@ -1,5 +1,5 @@
 // ============================================================================
-// Kataayani Enterprises — Type Definitions
+// Katayayani Enterprises — Type Definitions
 // CMS-ready: These types mirror what any headless CMS would provide.
 // ============================================================================
 

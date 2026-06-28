@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin, MessageCircle, Store } from "lucide-react";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
-  const googleMapsUrl = "https://www.google.com/maps/place/Kataayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKataayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D";
+  const googleMapsUrl = "https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKatayayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D";
   const email = "agroindustriesmeerut@gmail.com";
-  const indiamartUrl = "https://www.indiamart.com/kataayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv";
+  const indiamartUrl = "https://www.indiamart.com/katayayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv";
   const whatsappNumber = "919358273054";
   const phoneNumber = "+919358273054";
 
@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left md:flex-1">
           <Link href="/" className="group flex items-baseline gap-1">
             <span className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-[#012d1d] via-[#104e33] to-[#795900] bg-clip-text text-transparent group-hover:opacity-90 transition-opacity duration-300">
-              Kataayani Enterprises
+              Katayayani Enterprises
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#795900] animate-pulse"></span>
           </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="w-full py-2.5 border-t border-gray-100 text-center text-[12px] text-gray-400 bg-white">
-        © {currentYear} Kataayani Enterprises. All Rights Reserved.
+        © {currentYear} Katayayani Enterprises. All Rights Reserved.
       </div>
     </footer>
   );

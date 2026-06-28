@@ -71,8 +71,8 @@ export default function Navbar() {
               scrolled ? "w-8 h-8 min-[360px]:w-9 min-[360px]:h-9" : "w-9 h-9 min-[360px]:w-11 min-[360px]:h-11"
             )}>
               <Image
-                src="/kataayani-enterprises-logo.png"
-                alt="Kataayani Enterprises Logo"
+                src="/katayayani-enterprises-logo.png"
+                alt="Katayayani Enterprises Logo"
                 fill
                 className="object-contain"
                 sizes="44px"
@@ -80,7 +80,7 @@ export default function Navbar() {
               />
             </div>
             <div className="text-[14px] min-[340px]:text-[16px] min-[380px]:text-[19px] md:text-[22px] font-bold font-heading text-[#012d1d] tracking-tight transition-all duration-300">
-              Kataayani Enterprises
+              Katayayani Enterprises
             </div>
           </Link>
 

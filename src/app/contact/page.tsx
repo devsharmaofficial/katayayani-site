@@ -53,7 +53,7 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
       formSchema.parse(formData);
       setIsSubmitting(true);
       
-      const whatsappMessage = `Hello Kataayani Enterprises! 👋\n\nI am interested in your FRP tractor canopies and would like to get more information.\n\nHere are my details:\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n\n📝 My Message / Requirements:\n${formData.message}\n\nLooking forward to your response!`;
+      const whatsappMessage = `Hello Katayayani Enterprises! 👋\n\nI am interested in your FRP tractor canopies and would like to get more information.\n\nHere are my details:\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n\n📝 My Message / Requirements:\n${formData.message}\n\nLooking forward to your response!`;
       const whatsappUrl = `https://wa.me/919358273054?text=${encodeURIComponent(whatsappMessage)}`;
       
       // Redirect to WhatsApp
@@ -158,7 +158,7 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                           Uttar Pradesh 250002, India
                         </p>
                         <a 
-                          href="https://www.google.com/maps/place/Kataayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKataayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                          href="https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKatayayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-block text-[12px] font-bold text-primary hover:underline mt-2"

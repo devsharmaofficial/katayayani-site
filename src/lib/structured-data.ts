@@ -1,17 +1,17 @@
 // ============================================================================
-// Kataayani Enterprises — Structured Data Helpers
+// Katayayani Enterprises — Structured Data Helpers
 // For generating JSON-LD structured data for SEO.
 // ============================================================================
 
 import type { Product } from "@/types";
 
-const SITE_URL = "https://kataayanienterprises.vercel.app";
+const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Kataayani Enterprises",
+    name: "Katayayani Enterprises",
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`, // Placeholder for actual logo
     contactPoint: {

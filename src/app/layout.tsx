@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 const SITE_URL = "https://katayayanienterprises.vercel.app";
-const BUSINESS_NAME = "Kataayani Enterprises";
+const BUSINESS_NAME = "Katayayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "Kataayani Enterprises is India's leading FRP tractor canopy manufacturer based in Meerut, UP. Premium fiber roof canopies for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands.",
+    "Katayayani Enterprises is India's leading FRP tractor canopy manufacturer based in Meerut, UP. Premium fiber roof canopies for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands.",
   keywords: [
     // TIER 1 — Highest priority keywords (720–590 search volume)
     "tractor fiber hood price",
@@ -108,8 +108,8 @@ export const metadata: Metadata = {
     "tractor fiber hood accessories",
     "tractor u pipe and fiber hood",
     // Business
-    "Kataayani Enterprises",
-    "kataayani fiber hood",
+    "Katayayani Enterprises",
+    "katayayani fiber hood",
   ],
   authors: [{ name: BUSINESS_NAME, url: SITE_URL }],
   creator: BUSINESS_NAME,
@@ -132,7 +132,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Kataayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
+        alt: "Katayayani Enterprises - Premium FRP Tractor Canopy Manufacturer in Meerut India",
         type: "image/jpeg",
       },
     ],
@@ -143,8 +143,8 @@ export const metadata: Metadata = {
     description:
       "Best price tractor fiber hood, punjabi hood & fiber chatri for Swaraj, Mahindra, Sonalika, JD & all brands. India's #1 manufacturer in Meerut. Low price.",
     images: [`${SITE_URL}/og-image.jpg`],
-    creator: "@kataayanienterprises",
-    site: "@kataayanienterprises",
+    creator: "@katayayanienterprises",
+    site: "@katayayanienterprises",
   },
   robots: {
     index: true,
@@ -175,18 +175,18 @@ const jsonLd = {
       "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: BUSINESS_NAME,
-      alternateName: ["Kataayani Agro Industries", "Kataayani Enterprises"],
+      alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises"],
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/kataayani-enterprises-logo.png`,
+        url: `${SITE_URL}/katayayani-enterprises-logo.png`,
         width: 200,
         height: 200,
-        caption: "Kataayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
+        caption: "Katayayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
       },
       image: `${SITE_URL}/og-image.jpg`,
       description:
-        "Kataayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
+        "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
       foundingDate: "2010",
       telephone: BUSINESS_PHONE_PRIMARY,
       email: BUSINESS_EMAIL,
@@ -203,7 +203,7 @@ const jsonLd = {
         latitude: 28.97119,
         longitude: 77.6657833,
       },
-      hasMap: "https://www.google.com/maps/place/Kataayani+Enterprises/@28.97119,77.6657833,17z",
+      hasMap: "https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z",
       contactPoint: [
         {
           "@type": "ContactPoint",

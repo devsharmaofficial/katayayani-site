@@ -9,52 +9,52 @@ const faqData = [
   {
     question: "What is the price of a tractor fiber hood in India?",
     answer:
-      "Tractor fiber hood price at Kataayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and FRP canopies for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
+      "Tractor fiber hood price at Katayayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and FRP canopies for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
   },
   {
     question: "What is the price of Swaraj 744 fiber hood?",
     answer:
-      "Kataayani Enterprises offers the best price for Swaraj 744 fiber hood and Swaraj 855 fiber hood. Our Swaraj tractor fiber hood is precision-molded for a perfect fit on Swaraj 744 FE, 744 XT, 855 FE, 855 XM and all Swaraj series models. Call +91-9358273054 or WhatsApp for the latest Swaraj fiber hood price.",
+      "Katayayani Enterprises offers the best price for Swaraj 744 fiber hood and Swaraj 855 fiber hood. Our Swaraj tractor fiber hood is precision-molded for a perfect fit on Swaraj 744 FE, 744 XT, 855 FE, 855 XM and all Swaraj series models. Call +91-9358273054 or WhatsApp for the latest Swaraj fiber hood price.",
   },
   {
     question: "What is the Mahindra tractor fiber hood price?",
     answer:
-      "Kataayani Enterprises manufactures Mahindra tractor fiber hood (fiber chatri) at the best factory price. Our Mahindra fiber hood fits Mahindra 575 DI, 475 DI, Arjun Novo, Yuvo, Oja and all Mahindra models. It features an integrated heat shield that reduces cabin temperature by up to 15°C. Contact us at +91-9358273054 for Mahindra tractor fiber hood price.",
+      "Katayayani Enterprises manufactures Mahindra tractor fiber hood (fiber chatri) at the best factory price. Our Mahindra fiber hood fits Mahindra 575 DI, 475 DI, Arjun Novo, Yuvo, Oja and all Mahindra models. It features an integrated heat shield that reduces cabin temperature by up to 15°C. Contact us at +91-9358273054 for Mahindra tractor fiber hood price.",
   },
   {
     question: "What is the Sonalika tractor fiber hood price?",
     answer:
-      "Our Sonalika tractor fiber hood (fiber chatri) is available at the best price in India. It fits Sonalika DI 750 III, Tiger 50, Tiger 55, DI 60 and all Sonalika series. Kataayani Enterprises provides home delivery across India. Call +91-9358273054 for the current Sonalika fiber hood price.",
+      "Our Sonalika tractor fiber hood (fiber chatri) is available at the best price in India. It fits Sonalika DI 750 III, Tiger 50, Tiger 55, DI 60 and all Sonalika series. Katayayani Enterprises provides home delivery across India. Call +91-9358273054 for the current Sonalika fiber hood price.",
   },
   {
     question: "What is a Punjabi tractor hood (Punjabi hood)?",
     answer:
-      "Punjabi tractor hood (also known as punjabi hood or fiber chatri) is an FRP (Fiber Reinforced Plastic) roof cover for tractors that protects the operator from intense sun, heavy rain, and high winds. Kataayani Enterprises in Meerut, UP is India's #1 manufacturer of punjabi tractor hoods for all major brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, and Farmtrac.",
+      "Punjabi tractor hood (also known as punjabi hood or fiber chatri) is an FRP (Fiber Reinforced Plastic) roof cover for tractors that protects the operator from intense sun, heavy rain, and high winds. Katayayani Enterprises in Meerut, UP is India's #1 manufacturer of punjabi tractor hoods for all major brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, and Farmtrac.",
   },
   {
     question: "Is home delivery available for tractor fiber hood?",
     answer:
-      "Yes! Kataayani Enterprises delivers tractor fiber hood (punjabi hood / fiber chatri) to any state in India — Punjab, Haryana, Uttar Pradesh, Gujarat, Maharashtra, Rajasthan, Madhya Pradesh, and all other states. Delivery typically takes 4–5 days. Order online via WhatsApp or call us at +91-9358273054.",
+      "Yes! Katayayani Enterprises delivers tractor fiber hood (punjabi hood / fiber chatri) to any state in India — Punjab, Haryana, Uttar Pradesh, Gujarat, Maharashtra, Rajasthan, Madhya Pradesh, and all other states. Delivery typically takes 4–5 days. Order online via WhatsApp or call us at +91-9358273054.",
   },
   {
     question: "What is the John Deere tractor fiber hood price? (5050D / 5310)",
     answer:
-      "Kataayani Enterprises offers John Deere tractor fiber hood at the best price. Our John Deere fiber hood is made with tri-layer FRP composite, fits John Deere 5050D, 5045D, 5310, 5105, and all JD series models. It includes integrated LED work light mounting ports. Call +91-9358273054 for John Deere 5050D fiber hood price.",
+      "Katayayani Enterprises offers John Deere tractor fiber hood at the best price. Our John Deere fiber hood is made with tri-layer FRP composite, fits John Deere 5050D, 5045D, 5310, 5105, and all JD series models. It includes integrated LED work light mounting ports. Call +91-9358273054 for John Deere 5050D fiber hood price.",
   },
   {
     question: "What are the Eicher, Farmtrac, and New Holland tractor fiber hood prices?",
     answer:
-      "Kataayani Enterprises manufactures fiber hoods for Eicher (Eicher 380, 485, 551), Farmtrac (Farmtrac 60, 45, 6055), and New Holland (New Holland 3630 TX, 5620 TX Plus) at competitive prices. Each fiber chatri is custom-fit for the specific model with all-weather protection. Call +91-9358273054 for the best price.",
+      "Katayayani Enterprises manufactures fiber hoods for Eicher (Eicher 380, 485, 551), Farmtrac (Farmtrac 60, 45, 6055), and New Holland (New Holland 3630 TX, 5620 TX Plus) at competitive prices. Each fiber chatri is custom-fit for the specific model with all-weather protection. Call +91-9358273054 for the best price.",
   },
   {
     question: "What is the difference between fiber hood and fiber chatri?",
     answer:
-      "Fiber hood and fiber chatri are two names for the same product — both refer to an FRP (Fiber Reinforced Plastic) tractor roof canopy. It is also known as a punjabi hood or tractor chatri. Kataayani Enterprises manufactures all types of fiber hood / fiber chatri for all major tractor brands at the best factory price in India.",
+      "Fiber hood and fiber chatri are two names for the same product — both refer to an FRP (Fiber Reinforced Plastic) tractor roof canopy. It is also known as a punjabi hood or tractor chatri. Katayayani Enterprises manufactures all types of fiber hood / fiber chatri for all major tractor brands at the best factory price in India.",
   },
   {
-    question: "Where is Kataayani Enterprises located?",
+    question: "Where is Katayayani Enterprises located?",
     answer:
-      "Kataayani Enterprises is located at: Tirupati Complex wali gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002, India. We are India's #1 tractor fiber hood manufacturer. For factory visits, bulk orders, or dealer inquiries, call: +91-9358273054 or WhatsApp us.",
+      "Katayayani Enterprises is located at: Tirupati Complex wali gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002, India. We are India's #1 tractor fiber hood manufacturer. For factory visits, bulk orders, or dealer inquiries, call: +91-9358273054 or WhatsApp us.",
   },
 ];
 
@@ -176,7 +176,7 @@ export default function HomepageSEOContent() {
               Punjabi Hood · Fiber Chatri · All Brands
             </p>
             <p className="text-[15px] text-gray-600 leading-relaxed">
-              <strong>Kataayani Enterprises</strong>, Meerut (UP) — factory-direct{" "}
+              <strong>Katayayani Enterprises</strong>, Meerut (UP) — factory-direct{" "}
               <strong>tractor fiber hood</strong> for <strong>Mahindra, Swaraj 744/855,
               Sonalika, John Deere, Eicher, New Holland, Massey Ferguson</strong> and all
               other brands. Best price guaranteed. Home delivery all over India.
@@ -248,11 +248,11 @@ export default function HomepageSEOContent() {
           {/* ── About Section (keyword-rich body text) ── */}
           <div className="bg-white rounded-2xl border border-gray-100 p-8 mb-14 shadow-sm">
             <h2 className="text-[20px] md:text-[24px] font-black text-[#012d1d] mb-5">
-              About Kataayani Enterprises — Tractor Fiber Hood Manufacturer
+              About Katayayani Enterprises — Tractor Fiber Hood Manufacturer
             </h2>
             <div className="text-[14px] text-gray-600 leading-relaxed space-y-4 max-w-[900px]">
               <p>
-                <strong>Kataayani Enterprises</strong> is India's leading manufacturer and supplier of{" "}
+                <strong>Katayayani Enterprises</strong> is India's leading manufacturer and supplier of{" "}
                 <strong>tractor fiber hood</strong> (punjabi hood / fiber chatri), based in{" "}
                 <strong>Meerut, Uttar Pradesh</strong>. We deliver our premium quality FRP hoods all across India.
               </p>
@@ -260,7 +260,7 @@ export default function HomepageSEOContent() {
                 Our <strong>punjabi tractor hoods</strong> are manufactured using premium FRP (Fiber
                 Reinforced Plastic) — lightweight yet ultra-durable, providing complete overhead
                 protection from sun, rain, and high winds. The{" "}
-                <strong>tractor fiber hood price</strong> at Kataayani Enterprises is the most
+                <strong>tractor fiber hood price</strong> at Katayayani Enterprises is the most
                 competitive in India because we sell factory-direct with no middlemen.
               </p>
               <p>

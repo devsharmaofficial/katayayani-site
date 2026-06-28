@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getProductBySlug, getProductSlugs } from "@/lib/products";
 
-const SITE_URL = "https://kataayanienterprises.vercel.app";
+const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export async function generateMetadata({
   params,
@@ -13,7 +13,7 @@ export async function generateMetadata({
 
   if (!product) {
     return {
-      title: "Product Not Found | Kataayani Enterprises",
+      title: "Product Not Found | Katayayani Enterprises",
       description: "The requested FRP tractor canopy product could not be found.",
     };
   }
@@ -46,7 +46,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: "en_IN",
-      siteName: "Kataayani Enterprises",
+      siteName: "Katayayani Enterprises",
       url: `${SITE_URL}/products/${slug}`,
       title: product.seo.title,
       description: product.seo.description,
