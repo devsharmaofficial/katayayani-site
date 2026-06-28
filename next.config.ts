@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
       },
       // Explicit Content-Type for sitemap as requested by Claude
       {
-        source: "/sitemap.xml",
+        source: "/sitemap/sitemap.xml",
         headers: [
           {
             key: "Content-Type",
