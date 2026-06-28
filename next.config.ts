@@ -65,6 +65,10 @@ const nextConfig: NextConfig = {
             key: "Content-Type",
             value: "application/xml",
           },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
+          },
         ],
       },
       // Cache static assets aggressively for Core Web Vitals
