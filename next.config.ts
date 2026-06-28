@@ -57,6 +57,16 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Explicit Content-Type for sitemap as requested by Claude
+      {
+        source: "/sitemap.xml",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/xml",
+          },
+        ],
+      },
       // Cache static assets aggressively for Core Web Vitals
       {
         source: "/products/:path*",
