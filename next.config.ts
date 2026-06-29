@@ -95,6 +95,16 @@ const nextConfig: NextConfig = {
 
   // Redirect trailing slashes for canonical URL consistency
   trailingSlash: false,
+
+  async redirects() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/sitemap/sitemap.xml",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
