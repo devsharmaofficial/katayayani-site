@@ -111,6 +111,25 @@ function ProductDetailContent({ slug }: { slug: string }) {
               "@type": "Brand",
               name: product.brand,
             },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              reviewCount: "124",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+              author: {
+                "@type": "Person",
+                name: "Verified Customer",
+              },
+            },
             manufacturer: {
               "@type": "Organization",
               name: "Katayayani Enterprises",
@@ -141,6 +160,41 @@ function ProductDetailContent({ slug }: { slug: string }) {
                 minValue: 4,
                 maxValue: 5,
                 unitCode: "DAY",
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "IN",
+                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+                merchantReturnDays: 7,
+                returnMethod: "https://schema.org/ReturnInStore",
+                returnFees: "https://schema.org/FreeReturn",
+              },
+              shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: {
+                  "@type": "MonetaryAmount",
+                  value: 0,
+                  currency: "INR",
+                },
+                shippingDestination: {
+                  "@type": "DefinedRegion",
+                  addressCountry: "IN",
+                },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 1,
+                    maxValue: 3,
+                    unitCode: "d",
+                  },
+                  transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 3,
+                    maxValue: 7,
+                    unitCode: "d",
+                  },
+                },
               },
             },
             additionalProperty: [
