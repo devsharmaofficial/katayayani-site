@@ -3,18 +3,24 @@ import type { Metadata } from "next";
 const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Request FRP Canopy Quote | Fast Response | Katayayani Enterprises",
+  title: "Request Tractor Fiber Hood Price Quote | Fast Response | Katayayani Enterprises Meerut",
   description:
-    "Submit your enquiry for premium FRP tractor canopies from Katayayani Enterprises. Get the best price quote for Swaraj, Mahindra, John Deere, Sonalika & all tractor brands. Fast 24-hour response. Call +91-9358273054.",
+    "Submit your enquiry for tractor fiber hood (punjabi hood / fiber chatri) price from Katayayani Enterprises. Get the best factory-direct quote for Swaraj 744/855, Mahindra, Sonalika, John Deere & all tractor brands. 24-hour response guaranteed. Call +91-9358273054.",
   keywords: [
-    "FRP canopy enquiry",
-    "tractor canopy quote",
+    "tractor fiber hood price enquiry",
     "FRP canopy price request",
-    "buy FRP tractor canopy",
+    "punjabi hood price enquiry",
+    "fiber chatri price quote",
+    "tractor fiber hood quote",
+    "buy FRP tractor canopy enquiry",
     "tractor canopy order India",
-    "FRP canopy dealer",
+    "FRP canopy dealer enquiry",
     "Katayayani enquiry form",
-    "tractor fiber roof price",
+    "tractor fiber hood home delivery enquiry",
+    "swaraj fiber hood price enquiry",
+    "mahindra fiber hood price request",
+    "sonalika fiber hood enquiry",
+    "john deere fiber hood price quote",
   ],
   alternates: {
     canonical: `${SITE_URL}/enquiry`,
@@ -24,22 +30,22 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Katayayani Enterprises",
     url: `${SITE_URL}/enquiry`,
-    title: "Request Quote | FRP Tractor Canopy | Katayayani Enterprises",
+    title: "Request Tractor Fiber Hood Price Quote | Katayayani Enterprises",
     description:
-      "Submit your canopy enquiry and get a price quote within 24 hours. FRP canopies for all tractor brands. Best price guaranteed.",
+      "Submit your tractor fiber hood enquiry and get a price quote within 24 hours. Punjabi hood, fiber chatri for all tractor brands. Best factory-direct price guaranteed.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Katayayani Enterprises - Request FRP Tractor Canopy Quote",
+        alt: "Katayayani Enterprises - Request Tractor Fiber Hood Price Quote",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Request FRP Canopy Quote | Katayayani Enterprises",
-    description: "Get best price quote for FRP tractor canopies. 24-hour response guaranteed.",
+    title: "Request Tractor Fiber Hood Price Quote | Katayayani Enterprises",
+    description: "Get best price quote for tractor fiber hood, punjabi hood & fiber chatri. 24-hour response guaranteed.",
     images: [`${SITE_URL}/og-image.jpg`],
   },
 };
