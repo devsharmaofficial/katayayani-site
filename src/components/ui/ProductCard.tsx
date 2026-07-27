@@ -8,28 +8,14 @@ import { useState, useEffect, useRef } from "react";
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [particles, setParticles] = useState<{ id: number; x: number; y: number; size: number; color: string; angle: number }[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
-  const [autoplayKey, setAutoplayKey] = useState(0);
-
-  useEffect(() => {
-    if (product.images.length <= 1) return;
-    
-    // Create a unique, deterministic interval for each product based on its ID
-    const idHash = product.id.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    const uniqueInterval = 3500 + (idHash % 5) * 500; // Will result in 3500, 4000, 4500, 5000, or 5500 ms
-
-    const interval = setInterval(() => {
-      setDirection(1);
-      setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
-    }, uniqueInterval);
-    return () => clearInterval(interval);
-  }, [product.images.length, autoplayKey, product.id]);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -37,7 +23,6 @@ export default function ProductCard({ product }: ProductCardProps) {
     if (product.images.length <= 1) return;
     setDirection(-1);
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
-    setAutoplayKey((k) => k + 1);
   };
 
   const handleNext = (e: React.MouseEvent) => {
@@ -46,7 +31,6 @@ export default function ProductCard({ product }: ProductCardProps) {
     if (product.images.length <= 1) return;
     setDirection(1);
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
-    setAutoplayKey((k) => k + 1);
   };
 
   const handleLike = (e: React.MouseEvent) => {
@@ -116,7 +100,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
                   quality={60}
-                  loading="lazy"
+                  priority={priority && idx === 0}
+                  loading={priority && idx === 0 ? undefined : "lazy"}
                 />
               </div>
             );
@@ -155,9 +140,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                   e.stopPropagation();
                   setDirection(idx > currentImageIndex ? 1 : -1);
                   setCurrentImageIndex(idx);
-                  setAutoplayKey((k) => k + 1);
                 }}
-                className="p-2 -m-2 cursor-pointer flex items-center justify-center outline-none"
+                className="p-2 -m-2 cursor-pointer flex items-center justify-center outline-none group/dot"
                 aria-label={`Go to slide ${idx + 1}`}
               >
                 <div className={`h-1.5 rounded-full transition-all duration-300 ${

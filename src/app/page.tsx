@@ -145,12 +145,12 @@ export default function HomePage() {
               durationOnHover={120}
               className="py-4"
             >
-              {allProducts.map((product) => (
+              {allProducts.map((product, idx) => (
                 <div
                   key={product.id}
                   className="w-[290px] min-[375px]:w-[320px] sm:w-[350px] md:w-[370px] shrink-0"
                 >
-                  <ProductCard product={product} />
+                  <ProductCard product={product} priority={idx < 4} />
                 </div>
               ))}
             </InfiniteSlider>

@@ -87,9 +87,9 @@ export default function ProductsPage() {
 
         {/* Product Grid */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-          {allProducts.map((product) => (
+          {allProducts.map((product, idx) => (
             <StaggerItem key={product.id}>
-              <ProductCard product={product} />
+              <ProductCard product={product} priority={idx < 6} />
             </StaggerItem>
           ))}
         </StaggerContainer>
