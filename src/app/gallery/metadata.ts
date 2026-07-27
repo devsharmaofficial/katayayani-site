@@ -1,6 +1,6 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
   title: "Tractor Fiber Hood Gallery | Real Photos — Swaraj, Mahindra, Sonalika | Katayayani Enterprises",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "tractor fiber hood images",
     "punjabi hood gallery",
     "fiber chatri photos",
-    "FRP canopy gallery India",
+    "tractor fiber hood gallery India",
     "tractor canopy real photos",
     "swaraj fiber hood images",
     "mahindra fiber hood photos",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "tractor fiber hood product images",
     "fiber hood for tractor gallery",
     "Katayayani canopy gallery",
-    "FRP canopy product photos",
+    "tractor fiber hood product photos",
     "tractor fiber hood design photos",
     "tractor fiber hood real images India",
   ],

@@ -1,6 +1,6 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
   title: "Request Tractor Fiber Hood Price Quote | Fast Response | Katayayani Enterprises Meerut",
@@ -8,13 +8,13 @@ export const metadata: Metadata = {
     "Submit your enquiry for tractor fiber hood (punjabi hood / fiber chatri) price from Katayayani Enterprises. Get the best factory-direct quote for Swaraj 744/855, Mahindra, Sonalika, John Deere & all tractor brands. 24-hour response guaranteed. Call +91-9358273054.",
   keywords: [
     "tractor fiber hood price enquiry",
-    "FRP canopy price request",
+    "tractor fiber hood price request",
     "punjabi hood price enquiry",
     "fiber chatri price quote",
     "tractor fiber hood quote",
     "buy FRP tractor canopy enquiry",
     "tractor canopy order India",
-    "FRP canopy dealer enquiry",
+    "tractor fiber hood dealer enquiry",
     "Katayayani enquiry form",
     "tractor fiber hood home delivery enquiry",
     "swaraj fiber hood price enquiry",

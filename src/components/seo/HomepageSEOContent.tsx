@@ -9,7 +9,7 @@ const faqData = [
   {
     question: "What is the price of a tractor fiber hood in India?",
     answer:
-      "Tractor fiber hood price at Katayayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and FRP canopies for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
+      "Tractor fiber hood price at Katayayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and tractor fiber hoods for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
   },
   {
     question: "What is the price of Swaraj 744 fiber hood?",
@@ -116,15 +116,16 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-gray-100 last:border-0">
       <button
-        className="w-full flex items-start justify-between gap-4 py-5 text-left group"
+        className="w-full flex items-start justify-between gap-4 py-5 text-left group min-h-[48px]"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-label={open ? `Collapse answer for: ${q}` : `Expand answer for: ${q}`}
       >
         <span className="text-[14px] md:text-[15px] font-semibold text-[#012d1d] leading-snug group-hover:text-[#104e33] transition-colors">
           {q}
         </span>
-        <span className="shrink-0 mt-0.5 text-[#012d1d]/40 group-hover:text-[#012d1d] transition-colors">
-          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        <span className="shrink-0 mt-0.5 text-[#012d1d]/60 group-hover:text-[#012d1d] transition-colors">
+          {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </span>
       </button>
       {open && (
@@ -191,17 +192,17 @@ export default function HomepageSEOContent() {
                 Call for Price: +91-9358273054
               </a>
               <a
-                href="https://wa.me/919358273054?text=I%20need%20tractor%20fiber%20hood%20price"
+                href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises%2C%0A%0AI%20am%20interested%20in%20exploring%20your%20premium%20tractor%20fiber%20hoods.%20Could%20you%20please%20share%20your%20latest%20catalog%20and%20pricing%20details%3F%0A%0AThank%20you!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#1da851] transition-all shadow-md text-[14px]"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-[#012d1d] font-bold px-7 py-3.5 rounded-full hover:bg-[#1da851] hover:text-white transition-all shadow-md text-[14px]"
               >
                 <MessageCircle size={16} />
                 WhatsApp Us
               </a>
             </div>
             {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 text-[12px] text-gray-400 font-medium">
+            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 text-[12px] text-gray-500 font-medium">
               <span className="flex items-center gap-1.5"><Truck size={12} className="text-[#012d1d]" /> Home Delivery India</span>
               <span className="flex items-center gap-1.5"><Award size={12} className="text-[#012d1d]" /> Factory Direct Price</span>
               <span className="flex items-center gap-1.5"><MapPin size={12} className="text-[#012d1d]" /> Meerut, Uttar Pradesh</span>
@@ -213,7 +214,7 @@ export default function HomepageSEOContent() {
             <h2 className="text-[18px] md:text-[22px] font-black text-[#012d1d] text-center mb-2">
               Fiber Hood Price — Brand Wise
             </h2>
-            <p className="text-center text-[13px] text-gray-400 mb-8">
+            <p className="text-center text-[13px] text-gray-500 mb-8">
               Click your tractor brand to view models &amp; get the best price
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -284,12 +285,32 @@ export default function HomepageSEOContent() {
             </div>
           </div>
 
+          {/* ── Top Searched Tractor Fiber Hoods (Internal Links for SEO) ── */}
+          <div className="mb-14">
+            <h2 className="text-[18px] md:text-[22px] font-black text-[#012d1d] text-center mb-6">
+              Top Searched Tractor Fiber Hoods &amp; Prices
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3 max-w-[1000px] mx-auto">
+              <Link href="/products/swaraj-744-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Swaraj 744 Fiber Hood Price</Link>
+              <Link href="/products/mahindra-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Mahindra Tractor Fiber Hood Price</Link>
+              <Link href="/products/sonalika-di-750-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Sonalika Tractor Fiber Hood Price</Link>
+              <Link href="/products/john-deere-5050d-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">John Deere 5050D Fiber Hood Price</Link>
+              <Link href="/products/swaraj-855-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Swaraj 855 Fiber Hood Price</Link>
+              <Link href="/products/sonalika-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Sonalika Fiber Chatri Price</Link>
+              <Link href="/products/mahindra-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Mahindra Tractor Fiber Chatri Price</Link>
+              <Link href="/products" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Fiber Hood For Tractor Price</Link>
+              <Link href="/products" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Punjabi Tractor Hood Price</Link>
+              <Link href="/products" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Tractor Fiber Chatri Price</Link>
+              <Link href="/products" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Punjabi Hood Tractor</Link>
+            </div>
+          </div>
+
           {/* ── FAQ Section ── */}
           <div>
             <h2 className="text-[20px] md:text-[24px] font-black text-[#012d1d] text-center mb-2">
               Tractor Fiber Hood — Frequently Asked Questions
             </h2>
-            <p className="text-center text-[13px] text-gray-400 mb-8">
+            <p className="text-center text-[13px] text-gray-500 mb-8">
               Everything you need to know about Punjabi Hood Price, Fiber Chatri &amp; More
             </p>
 

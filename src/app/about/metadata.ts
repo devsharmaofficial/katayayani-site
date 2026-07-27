@@ -1,23 +1,28 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
   title: "About Katayayani Enterprises | India's #1 Tractor Fiber Hood Manufacturer Meerut UP",
   description:
-    "Katayayani Enterprises — India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. IndiaMART TrustSEAL verified, GST compliant. 15+ years manufacturing premium FRP canopies for Swaraj, Mahindra, Sonalika & all brands. Factory-direct pricing. Call +91-9358273054.",
+    "Katayayani Enterprises — India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, UP. IndiaMART TrustSEAL verified & GST compliant. Download our corporate product catalogue PDF & watch official video showcases on our YouTube channel. Factory-direct pricing. Call +91-9358273054.",
   keywords: [
     "Katayayani Enterprises about",
     "tractor fiber hood manufacturer Meerut",
     "tractor fiber hood manufacturer India",
-    "FRP canopy manufacturer Meerut",
-    "FRP canopy manufacturer UP",
+    "tractor fiber hood catalogue PDF",
+    "download tractor canopy catalogue",
+    "Katayayani Enterprises YouTube channel",
+    "tractor fiber hood video demos",
+    "IndiaMART TrustSEAL certificate Meerut",
+    "tractor fiber hood manufacturer Meerut",
+    "tractor fiber hood manufacturer UP",
     "tractor canopy manufacturer Uttar Pradesh",
     "Katayayani Enterprises Meerut",
-    "IndiaMART verified FRP canopy",
+    "IndiaMART verified tractor fiber hood",
     "trusted tractor fiber hood manufacturer",
     "Ashok Kumar Sharma Katayayani",
-    "FRP canopy supplier India",
+    "tractor fiber hood supplier India",
     "fiber hood manufacturer Meerut",
     "punjabi hood manufacturer India",
     "fiber chatri manufacturer Meerut",
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Katayayani Enterprises | Tractor Fiber Hood Manufacturer Meerut",
-    description: "IndiaMART TrustSEAL verified FRP canopy manufacturer. 15+ years. India's #1 tractor fiber hood manufacturer in Meerut, Uttar Pradesh.",
+    description: "IndiaMART TrustSEAL verified tractor fiber hood manufacturer. 15+ years. India's #1 tractor fiber hood manufacturer in Meerut, Uttar Pradesh.",
     images: [`${SITE_URL}/og-image.jpg`],
   },
 };

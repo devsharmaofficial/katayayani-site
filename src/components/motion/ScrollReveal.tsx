@@ -1,21 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { type ReactNode, useState, useEffect } from "react";
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 768px)");
-    setIsMobile(media.matches);
-    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, []);
-
-  return isMobile;
-}
+import { type ReactNode, useRef, useEffect, useState } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -27,35 +12,6 @@ interface ScrollRevealProps {
   amount?: number;
 }
 
-const getVariants = (direction: string): Variants => {
-  const offset = 40;
-  const initial: Record<string, number> = { opacity: 0 };
-
-  switch (direction) {
-    case "up":
-      initial.y = offset;
-      break;
-    case "down":
-      initial.y = -offset;
-      break;
-    case "left":
-      initial.x = offset;
-      break;
-    case "right":
-      initial.x = -offset;
-      break;
-  }
-
-  return {
-    hidden: initial,
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-    },
-  };
-};
-
 export default function ScrollReveal({
   children,
   className,
@@ -65,31 +21,57 @@ export default function ScrollReveal({
   once = true,
   amount = 0.02,
 }: ScrollRevealProps) {
-  const isMobile = useIsMobile();
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  if (isMobile) {
-    return <div className={className}>{children}</div>;
-  }
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          if (once) observer.disconnect();
+        } else if (!once) {
+          setVisible(false);
+        }
+      },
+      { threshold: amount }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [once, amount]);
+
+  const getTransform = () => {
+    if (visible) return "translate3d(0,0,0)";
+    switch (direction) {
+      case "up":    return "translate3d(0,40px,0)";
+      case "down":  return "translate3d(0,-40px,0)";
+      case "left":  return "translate3d(40px,0,0)";
+      case "right": return "translate3d(-40px,0,0)";
+      default:      return "translate3d(0,0,0)";
+    }
+  };
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, amount }}
-      variants={getVariants(direction)}
-      transition={{
-        duration,
-        delay,
-        ease: [0.2, 0, 0, 1],
-      }}
+    <div
+      ref={ref}
       className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: getTransform(),
+        transition: `opacity ${duration}s ease, transform ${duration}s ease`,
+        transitionDelay: `${delay}s`,
+        willChange: "opacity, transform",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-// Stagger container for child animations
+// Stagger container — pure CSS, no framer-motion
 export function StaggerContainer({
   children,
   className,
@@ -99,22 +81,24 @@ export function StaggerContainer({
   className?: string;
   staggerDelay?: number;
 }) {
-  const isMobile = useIsMobile();
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  if (isMobile) {
-    return <div className={className}>{children}</div>;
-  }
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.02 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.02 }}
-      transition={{ staggerChildren: staggerDelay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <div ref={ref} className={className}>
+      {visible ? children : <div style={{ opacity: 0 }}>{children}</div>}
+    </div>
   );
 }
 
@@ -125,26 +109,5 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
-  const isMobile = useIsMobile();
-
-  if (isMobile) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, ease: [0.2, 0, 0, 1] },
-        },
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
-

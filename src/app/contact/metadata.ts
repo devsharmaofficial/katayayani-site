@@ -1,6 +1,6 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
   title: "Contact Katayayani Enterprises | Get Tractor Fiber Hood Price | Meerut UP",
@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     "fiber hood for tractor price quote",
     "punjabi hood price contact",
     "fiber chatri price contact",
-    "FRP canopy quote Meerut",
+    "tractor fiber hood quote Meerut",
     "tractor canopy price quote",
-    "FRP canopy dealer Meerut",
+    "tractor fiber hood dealer Meerut",
     "buy tractor fiber hood Meerut",
     "tractor canopy enquiry",
-    "FRP canopy contact number",
+    "tractor fiber hood contact number",
     "Katayayani Enterprises phone number",
     "tractor canopy whatsapp",
     "tractor fiber hood whatsapp order",

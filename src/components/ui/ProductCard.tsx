@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Product } from "@/types";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 interface ProductCardProps {
   product: Product;
@@ -78,60 +77,50 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
   };
 
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const message = `Hello, I am interested in the ${product.brand} ${product.shortName} FRP canopy. Please share details and pricing.`;
-    const whatsappUrl = `https://wa.me/919358273054?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
+
 
   return (
     <Link
       href={`/products/${product.slug}`}
       className="group bg-white rounded-[32px] shadow-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 p-4 flex flex-col relative w-full max-w-[420px] mx-auto md:max-w-none"
     >
-      {/* Top Image Area */}
       <div className="relative aspect-[4/3] w-full bg-[#f4f4f4] rounded-[24px] overflow-hidden mb-4">
         
-        {/* Animated Carousel Container */}
+        {/* CSS-based Carousel — only renders prev/current/next slides */}
         <div className="relative w-full h-full overflow-hidden">
-          <AnimatePresence initial={false} custom={direction}>
-            <motion.div
-              key={currentImageIndex}
-              custom={direction}
-              variants={{
-                enter: (dir: number) => ({
-                  x: dir > 0 ? "100%" : dir < 0 ? "-100%" : 0,
-                  opacity: 0.8,
-                }),
-                center: {
-                  x: 0,
-                  opacity: 1,
-                },
-                exit: (dir: number) => ({
-                  x: dir < 0 ? "100%" : dir > 0 ? "-100%" : 0,
-                  opacity: 0.8,
-                }),
-              }}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 380, damping: 38 },
-                opacity: { duration: 0.25 },
-              }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <Image
-                src={product.images[currentImageIndex]?.src ?? "/placeholder.jpg"}
-                alt={product.images[currentImageIndex]?.alt ?? product.name}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-            </motion.div>
-          </AnimatePresence>
+          {product.images.map((img, idx) => {
+            const total = product.images.length;
+            // Only render prev, current, and next to avoid loading all images
+            const isPrev = idx === (currentImageIndex - 1 + total) % total;
+            const isCurr = idx === currentImageIndex;
+            const isNext = idx === (currentImageIndex + 1) % total;
+            if (!isPrev && !isCurr && !isNext && total > 3) return null;
+
+            const offset = idx - currentImageIndex;
+            // Wrap around for prev/next at edges
+            const wrappedOffset = offset > total / 2 ? offset - total : offset < -total / 2 ? offset + total : offset;
+
+            return (
+              <div
+                key={idx}
+                className="absolute inset-0 w-full h-full transition-transform duration-300 ease-out"
+                style={{
+                  transform: `translateX(${wrappedOffset * 100}%)`,
+                  opacity: isCurr ? 1 : 0.85,
+                }}
+              >
+                <Image
+                  src={img.src ?? "/placeholder.jpg"}
+                  alt={img.alt ?? product.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  quality={60}
+                  loading="lazy"
+                />
+              </div>
+            );
+          })}
         </div>
         
 
@@ -168,11 +157,13 @@ export default function ProductCard({ product }: ProductCardProps) {
                   setCurrentImageIndex(idx);
                   setAutoplayKey((k) => k + 1);
                 }}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === currentImageIndex ? "bg-[#318664] w-3" : "bg-[#c6ded3]"
-                }`}
+                className="p-2 -m-2 cursor-pointer flex items-center justify-center outline-none"
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <div className={`h-1.5 rounded-full transition-all duration-300 ${
+                  idx === currentImageIndex ? "bg-[#318664] w-3" : "bg-[#c6ded3] w-1.5"
+                }`} />
+              </button>
             ))}
           </div>
         )}
@@ -186,85 +177,54 @@ export default function ProductCard({ product }: ProductCardProps) {
             ? "bg-white border-white text-[#ff4b6e] scale-105"
             : "bg-white/50 hover:bg-white/70 border-white/30 text-white hover:scale-105"
         }`}
+        aria-label={isLiked ? "Unlike product" : "Like product"}
       >
-        <motion.div
-          animate={{
-            scale: isLiked ? [1, 1.45, 0.85, 1.15, 1] : 1,
-            rotate: isLiked ? [0, 15, -15, 0] : 0,
-          }}
-          transition={{
-            duration: 0.45,
-            ease: "easeInOut",
-          }}
+        {/* Pure CSS heart bounce animation */}
+        <span
           className="flex items-center justify-center"
+          style={{
+            animation: isLiked ? "heartBounce 0.45s ease-in-out" : "none",
+          }}
         >
           <Heart
             className="w-4 h-4"
             fill={isLiked ? "currentColor" : "none"}
             strokeWidth={isLiked ? 0 : 2}
           />
-        </motion.div>
+        </span>
 
-        {/* Particles */}
-        <AnimatePresence>
-          {particles.map((p) => (
-            <motion.div
-              key={p.id}
-              className="absolute pointer-events-none"
-              initial={{ x: 0, y: 0, scale: 0, opacity: 1, rotate: 0 }}
-              animate={{
-                x: p.x,
-                y: p.y,
-                scale: [0, 1.4, 0.8, 0],
-                opacity: [1, 1, 0.6, 0],
-                rotate: p.angle * (180 / Math.PI) - 90 + (Math.random() * 40 - 20),
-              }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{
-                duration: 0.7,
-                ease: "easeOut",
-              }}
-              style={{
-                left: "50%",
-                top: "50%",
-                width: p.size,
-                height: p.size,
-                x: "-50%",
-                y: "-50%",
-              }}
-            >
-              <Heart
-                className="w-full h-full"
-                style={{ color: p.color, fill: p.color }}
-              />
-            </motion.div>
-          ))}
-        </AnimatePresence>
+        {/* CSS Particles */}
+        {particles.map((p) => (
+          <span
+            key={p.id}
+            className="absolute pointer-events-none"
+            style={{
+              left: "50%",
+              top: "50%",
+              width: p.size,
+              height: p.size,
+              animation: `particle 0.7s ease-out forwards`,
+              "--tx": `${p.x}px`,
+              "--ty": `${p.y}px`,
+              color: p.color,
+              fill: p.color,
+            } as React.CSSProperties}
+          >
+            <Heart className="w-full h-full" style={{ color: p.color, fill: p.color }} />
+          </span>
+        ))}
       </button>
 
       {/* Content Area */}
       <div className="px-1 flex-grow flex flex-col justify-between">
         <div>
-          {/* Color Selection Dots */}
-          <div className="flex gap-2 mb-3 mt-1 px-0.5">
-            {product.colorVariants?.map((c) => (
-              <span
-                key={c.slug}
-                className="w-3 h-3 rounded-full border border-black/10 inline-block shadow-sm"
-                style={{ backgroundColor: c.hex }}
-                title={c.name}
-              />
-            ))}
-          </div>
 
-          {/* Title & Price Row */}
+
+          {/* Title Row */}
           <div className="flex justify-between items-baseline mb-1">
-            <h3 className="text-gray-900 text-[18px] md:text-[20px] font-bold tracking-tight">
+            <h3 className="text-gray-900 text-[18px] md:text-[20px] font-bold tracking-tight w-full">
               {product.shortName}
             </h3>
-            <span className="text-[#012d1d] text-[18px] md:text-[20px] font-bold whitespace-nowrap">
-              Enquire
-            </span>
           </div>
 
           {/* Short Description */}
@@ -273,10 +233,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         </div>
 
+        {/* Price Row */}
+        <div className="mt-3 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 px-0.5">
+          <span className="text-[20px] font-black text-[#318664]">₹13,500</span>
+          <span className="text-[13px] text-gray-500 line-through">₹18,000</span>
+          <span className="text-[11px] font-bold text-[#318664] bg-[#318664]/10 px-1.5 py-0.5 rounded">25% OFF</span>
+          <span className="text-[11px] text-gray-500 font-semibold block w-full mt-0.5">Free Delivery • Inclusive of GST</span>
+        </div>
+
         {/* CTA Button */}
         <div className="mt-4 pb-1">
           <div
-            onClick={handleWhatsAppClick}
             className="w-full bg-[#18181b] hover:bg-black text-white py-3.5 rounded-2xl text-[14px] font-semibold text-center transition-all duration-200 shadow-sm hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
           >
             Buy Now

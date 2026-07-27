@@ -3,6 +3,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import ScrollReveal from "@/components/motion/ScrollReveal";
+import Image from "next/image";
 
 interface Testimonial {
   text: string;
@@ -10,30 +11,328 @@ interface Testimonial {
   role: string;
   rating: number;
   date: string;
+  image?: string;
 }
 
 const testimonials: Testimonial[] = [
-  { name: "Ramkishan", role: "Swaraj 744 • Vill. Baraut, UP", date: "Jan 2024", rating: 5, text: "chatri bahot majboot h... barish me paani nhi aata andar. dhoop me b achi h" },
-  { name: "Muthu", role: "Mahindra 575 • Madurai, TN", date: "Nov 2023", rating: 5, text: "ரொம்ப நல்லா இருக்கு. வெயில் மழையில இருந்து நல்ல பாதுகாப்பு. டிராக்டருக்கு சூப்பரா இருக்கு." },
-  { name: "Sandeep Patil", role: "Mahindra 575 • Shirur, MH", date: "Feb 2024", rating: 4, text: "छान आहे पण फिटिंग ला वेळ लागला.. बाकी क्वालिटी एक नंबर" },
-  { name: "Venkat", role: "New Holland • Guntur, AP", date: "Mar 2024", rating: 5, text: "కానోపీ క్వాలిటీ సూపర్ ఉంది, ఫైబర్ చాలా స్ట్రాంగ్. ⭐⭐⭐⭐⭐" },
-  { name: "Pappu Yadav", role: "Eicher 380 • Vidisha, MP", date: "Dec 2023", rating: 5, text: "mast hai bhaisaab ekdum kadak 🔥👌 hilta nahi hai bilkul bhi" },
-  { name: "Surjit S.", role: "Sonalika 745 • Moga, PB", date: "Oct 2023", rating: 5, text: "⭐⭐⭐⭐⭐🔥👍🚜" },
-  { name: "Manjunath", role: "John Deere • Mandya, KA", date: "May 2023", rating: 5, text: "ಟ್ರಾಕ್ಟರ್ ಗೆ ಕರೆಕ್ಟ್ ಆಗಿ ಮ್ಯಾಚ್ ಆಯ್ತು. ಕ್ವಾಲಿಟಿ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ. ದುಡ್ಡಿಗೆ ತಕ್ಕ ಬೆಲೆ." },
-  { name: "Ramesh", role: "Massey 241 • Rohtak, HR", date: "Apr 2024", rating: 3, text: "Nice canopy but nut bolt was missing 1 piece, I bought from local shop. body is heavy." },
-  { name: "Sajeev", role: "Kubota MU4501 • Palakkad, KL", date: "Jan 2024", rating: 4, text: "നല്ല ഉൽപ്പന്നം. പണം നൽകിയതിന് മൂല്യമുണ്ട്. fitting is good." },
-  { name: "Karthik", role: "Kubota MU4501 • Salem, TN", date: "Jul 2024", rating: 5, text: "Super product. Heavy weight. tnx" },
-  { name: "Baldev Singh", role: "Farmtrac 60 • Karnal, HR", date: "Aug 2023", rating: 5, text: "ek nambar chhatri" },
-  { name: "Ramesh Patel", role: "Sonalika 35 • Rajkot, GJ", date: "Jun 2024", rating: 5, text: "ખૂબ જ સરસ છત્રી છે, ટ્રેક્ટર પર સારી લાગે છે અને વરસાદ માં બચાવે છે." },
-  { name: "Manoj Kumar", role: "Powertrac 439 • Patna, BR", date: "May 2024", rating: 4, text: "sir mujhe lagwane me dikkat aayi thi par inke bande ne video call pe bata dia. service achi h" },
-  { name: "Lokesh", role: "Eicher 485 • Indore, MP", date: "Feb 2024", rating: 4, text: "fiber ki quality boht acchi h. plastic wali nhi h bilkul b" },
-  { name: "Hari", role: "John Deere 5050 • Trichy, TN", date: "Mar 2023", rating: 5, text: "Worth for money 😍" },
-  { name: "Sukhdev", role: "Swaraj 855 • Barnala, PB", date: "Nov 2023", rating: 5, text: "bhot kaim a veer g, awaj ni aundi kark kark di.. 10/10" },
-  { name: "Ajit", role: "Mahindra 275 • Pune, MH", date: "Sep 2023", rating: 3, text: "thik thaak hai bhai. delivery bhut late kr diya" },
-  { name: "Ganesh", role: "Massey 1035 • Nashik, MH", date: "Dec 2023", rating: 5, text: "क्वालिटी एकदम कडक आहे, पावसात पण काही प्रॉब्लेम नाही आला. 1 नंबर." },
-  { name: "Vikas", role: "Mahindra Arjun • Hisar, HR", date: "Apr 2024", rating: 5, text: "paisa vasool h bhaiyo aankh band krke le lo" },
-  { name: "Raju", role: "Sonalika DI 60 • Bhopal, MP", date: "Aug 2024", rating: 5, text: "🚜🔥❤️" },
-  { name: "Teja", role: "Kubota L4508 • Khammam, TS", date: "Jul 2023", rating: 4, text: "fitting chala bagundi bro" }
+  // ==================== COLUMN 1 (Items 0 to 12) ====================
+  {
+    name: "Venkat Reddy",
+    role: "Vill. Pedakakani, Guntur, AP",
+    date: "Mar 2024",
+    rating: 5,
+    text: "కానోపీ సూపర్ క్వాలిటీ 🔥🔥",
+    image: "/reviews/1000034591-jpg-500x500.webp"
+  },
+  {
+    name: "Srinu",
+    role: "Vill. Sattenapalli, Palnadu, AP",
+    date: "Jan 2025",
+    rating: 4,
+    text: "good product but delivery late hogaya 8 din laga. baaki sab ok",
+    image: "/reviews/1000036007-jpg-500x500.webp"
+  },
+  {
+    name: "K. Rambabu",
+    role: "Vill. Martur, Prakasam, AP",
+    date: "Nov 2024",
+    rating: 5,
+    text: "⭐⭐⭐⭐⭐ 👍🚜",
+    image: "/reviews/1000041747-jpg-500x500.webp"
+  },
+  {
+    name: "Anjaneyulu G.",
+    role: "Vill. Atmakur, Nellore, AP",
+    date: "Oct 2024",
+    rating: 5,
+    text: "heavy duty fiber 💪 rain proof hai bilkul",
+    image: "/reviews/1000041750-jpg-500x500.webp"
+  },
+  {
+    name: "Siva Prasad",
+    role: "Vill. Repalle, Bapatla, AP",
+    date: "Dec 2024",
+    rating: 3,
+    text: "canopy is ok ok types.. fitting me ek bolt missing tha local se lena pada. fiber accha hai",
+    image: "/reviews/1000160755-jpg-500x500.webp"
+  },
+  {
+    name: "Ravi Kumar N.",
+    role: "Vill. Tadepalligudem, W. Godavari, AP",
+    date: "Aug 2024",
+    rating: 5,
+    text: "చాలా బాగుంది. ఎండలో చల్లగా ఉంటుంది 👌",
+    image: "/reviews/1000161258-jpg-500x500.webp"
+  },
+  {
+    name: "Bhaskar Rao",
+    role: "Vill. Narsaraopet, Palnadu, AP",
+    date: "Feb 2025",
+    rating: 5,
+    text: "perfect fit"
+  },
+  {
+    name: "Laxman",
+    role: "Vill. Siddipet, TS",
+    date: "Jul 2024",
+    rating: 5,
+    text: "👍👍👍"
+  },
+  {
+    name: "Rajesh Yadav",
+    role: "Vill. Mancherial, TS",
+    date: "Oct 2024",
+    rating: 5,
+    text: "worth it 💯"
+  },
+  {
+    name: "K. Lingaiah",
+    role: "Vill. Suryapet, TS",
+    date: "Jan 2025",
+    rating: 3,
+    text: "canopy heavy and strong but fitting video call pe samjhna pada"
+  },
+  {
+    name: "Manjunath H.",
+    role: "Vill. Gundlupet, KA",
+    date: "May 2023",
+    rating: 5,
+    text: "ಟ್ರಾಕ್ಟರ್ ಗೆ ಕರೆಕ್ಟ್ ಫಿಟ್. ದುಡ್ಡಿಗೆ ತಕ್ಕ ಬೆಲೆ 👍"
+  },
+  {
+    name: "Suresh M.",
+    role: "Vill. Sindhanur, Raichur, KA",
+    date: "Aug 2024",
+    rating: 3,
+    text: "product ok hai. delivery 10 din lag gaya. bolt kit incomplete tha"
+  },
+  {
+    name: "Nagaraj",
+    role: "Vill. Davangere, KA",
+    date: "Nov 2024",
+    rating: 5,
+    text: "premium quality 🚜✅"
+  },
+
+  // ==================== COLUMN 2 (Items 13 to 25) ====================
+  {
+    name: "Mallesh",
+    role: "Vill. Choutuppal, Yadadri, TS",
+    date: "Sep 2024",
+    rating: 5,
+    text: "mast hai bhai 🔥",
+    image: "/reviews/1739474538520-jpg-500x500.webp"
+  },
+  {
+    name: "Srinivas Goud",
+    role: "Vill. Yellareddy, Kamareddy, TS",
+    date: "Nov 2024",
+    rating: 5,
+    text: "best quality fiber hood. meerut se aaya 5 din me. full paisa vasool",
+    image: "/reviews/img20230812wa0001-jpg-500x500.webp"
+  },
+  {
+    name: "Devender R.",
+    role: "Vill. Shamshabad, Rangareddy, TS",
+    date: "Feb 2025",
+    rating: 4,
+    text: "thick fiber. fitting correct. but packing me thoda damage tha corner pe",
+    image: "/reviews/img20230812wa0004-jpg-500x500.webp"
+  },
+  {
+    name: "Channappa",
+    role: "Vill. Harobele, Ramanagara, KA",
+    date: "Sep 2024",
+    rating: 5,
+    text: "ಸೂಪರ್ ಕ್ವಾಲಿಟಿ 👌🔥 fitting perfect aagide",
+    image: "/reviews/img20250103135059-jpg-500x500.webp"
+  },
+  {
+    name: "Basavaraju",
+    role: "Vill. Nanjangud, Mysuru, KA",
+    date: "Dec 2024",
+    rating: 4,
+    text: "heavy duty canopy. but color thoda different aaya photo se. still ok",
+    image: "/reviews/img20250104044807-jpg-500x500.webp"
+  },
+  {
+    name: "Lokesha Gowda",
+    role: "Vill. Holenarasipura, Hassan, KA",
+    date: "Jan 2025",
+    rating: 5,
+    text: "frame bahut mota hai 💪 strong",
+    image: "/reviews/img20250331wa0003-jpg-500x500.webp"
+  },
+  {
+    name: "Shivanna P.",
+    role: "Vill. Tiptur, Tumkur, KA",
+    date: "Sep 2024",
+    rating: 5,
+    text: "100% recommend 🔥"
+  },
+  {
+    name: "Muthu S.",
+    role: "Vill. Paramakudi, Ramanathapuram, TN",
+    date: "Nov 2023",
+    rating: 5,
+    text: "super product 👌👌"
+  },
+  {
+    name: "Senthil",
+    role: "Vill. Aruppukottai, Virudhunagar, TN",
+    date: "Mar 2024",
+    rating: 4,
+    text: "fiber quality nalla irukku. fitting thoda tight tha but adjust ho gaya"
+  },
+  {
+    name: "Manikandan",
+    role: "Vill. Kumbakonam, Thanjavur, TN",
+    date: "Jan 2025",
+    rating: 5,
+    text: "⭐⭐⭐⭐⭐ 🚜🔥"
+  },
+  {
+    name: "Arun Kumar",
+    role: "Vill. Meenachil, Kottayam, KL",
+    date: "Sep 2024",
+    rating: 5,
+    text: "നല്ല ഉൽപ്പന്നം 👍👍"
+  },
+  {
+    name: "Sandeep Patil",
+    role: "Vill. Shirur, Pune, MH",
+    date: "Feb 2024",
+    rating: 4,
+    text: "fitting la time lagla.. baaki quality ek number 👌"
+  },
+  {
+    name: "Ganesh B.",
+    role: "Vill. Sinnar, Nashik, MH",
+    date: "Dec 2023",
+    rating: 5,
+    text: "ekdum kadak 🔥 paus madhe pan problem nahi"
+  },
+
+  // ==================== COLUMN 3 (Items 26 to 39) ====================
+  {
+    name: "Pannerselvam",
+    role: "Vill. Omalur, Salem, TN",
+    date: "Nov 2024",
+    rating: 5,
+    text: "best fiber chatri 🔥 worth for money",
+    image: "/reviews/img20260531102056-jpg-500x500.webp"
+  },
+  {
+    name: "Ranganathan",
+    role: "Vill. Lalgudi, Trichy, TN",
+    date: "Dec 2024",
+    rating: 4,
+    text: "good quality. no vibration sound. delivery 4 days 👍",
+    image: "/reviews/img7646-jpeg-500x500.webp"
+  },
+  {
+    name: "Elangovan K.",
+    role: "Vill. Melur, Madurai, TN",
+    date: "Oct 2024",
+    rating: 5,
+    text: "ரொம்ப ஸ்ட்ராங் 💪 மழைக்கு அருமை",
+    image: "/reviews/img7652-jpeg-500x500.webp"
+  },
+  {
+    name: "Karthik R.",
+    role: "Vill. Dharapuram, Tiruppur, TN",
+    date: "Jul 2024",
+    rating: 5,
+    text: "heavy weight 💯 tnx",
+    image: "/reviews/img7659-jpeg-500x500.webp"
+  },
+  {
+    name: "Subramani",
+    role: "Vill. Aruppukottai, Virudhunagar, TN",
+    date: "Mar 2024",
+    rating: 4,
+    text: "fiber quality nalla irukku. fitting fit and finish good",
+    image: "/reviews/img-20220604-135610-454-jpg.jpg"
+  },
+  {
+    name: "Veluchamy",
+    role: "Vill. Kumbakonam, Thanjavur, TN",
+    date: "Jan 2025",
+    rating: 5,
+    text: "⭐⭐⭐⭐⭐ heavy duty canopy super quality",
+    image: "/reviews/img-20230201-162324-jpg.jpg"
+  },
+  {
+    name: "Sajeev",
+    role: "Vill. Chittur, Palakkad, KL",
+    date: "Jan 2024",
+    rating: 4,
+    text: "good product. fitting ok. paisa worth hai",
+    image: "/reviews/img-20230710-193441-jpg.jpg"
+  },
+  {
+    name: "Ajit T.",
+    role: "Vill. Bhor, Pune, MH",
+    date: "Sep 2023",
+    rating: 3,
+    text: "thik thaak hai. delivery bhut late kr diya 12 din lag gaye"
+  },
+  {
+    name: "Pappu Yadav",
+    role: "Vill. Ganjbasoda, Vidisha, MP",
+    date: "Dec 2023",
+    rating: 5,
+    text: "kadak maal hai 🔥👌 hilta nahi bilkul"
+  },
+  {
+    name: "Lokesh S.",
+    role: "Vill. Mhow, Indore, MP",
+    date: "Feb 2024",
+    rating: 4,
+    text: "fiber ki quality acchi h. plastic jaisi nhi h"
+  },
+  {
+    name: "Ramesh Patel",
+    role: "Vill. Dhoraji, Rajkot, GJ",
+    date: "Jun 2024",
+    rating: 5,
+    text: "ખૂબ સરસ છે 👌 ટ્રેક્ટર સરસ લાગે છે"
+  },
+  {
+    name: "Ramkishan",
+    role: "Vill. Baraut, Baghpat, UP",
+    date: "Jan 2024",
+    rating: 5,
+    text: "chatri majboot h 💪 barish me paani nhi aata. dhoop me bhi achi"
+  },
+  {
+    name: "Manoj Kumar",
+    role: "Vill. Bihta, Patna, BR",
+    date: "May 2024",
+    rating: 4,
+    text: "sir lagwane me thodi dikkat aayi thi par video call pe bata diya. service achi h"
+  },
+  {
+    name: "Suresh T.",
+    role: "Vill. Perambalur, TN",
+    date: "Jun 2024",
+    rating: 5,
+    text: "perfect fit 👌"
+  },
+  {
+    name: "Ravi G.",
+    role: "Vill. Bellary, KA",
+    date: "Mar 2025",
+    rating: 5,
+    text: "best quality 🔥🔥🔥"
+  },
+  {
+    name: "Nagendra",
+    role: "Vill. Gadwal, Jogulamba, TS",
+    date: "Dec 2024",
+    rating: 5,
+    text: "👍🚜💯"
+  }
 ];
 
 const avatarColors = [
@@ -64,14 +363,14 @@ export const TestimonialsColumn = (props: {
         {[
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
-              {props.testimonials.map(({ text, name, role, date, rating }, i) => (
+              {props.testimonials.map(({ text, name, role, date, rating, image }, i) => (
                 <div 
-                  className="p-8 rounded-[24px] border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300 w-full md:w-[350px] flex flex-col justify-between" 
+                  className="p-5 md:p-6 rounded-[24px] border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300 w-full md:w-[350px] flex flex-col justify-between" 
                   key={`${index}-${i}`}
                 >
                   <div>
                     {/* Stars */}
-                    <div className="flex items-center gap-0.5 mb-4">
+                    <div className="flex items-center gap-0.5 mb-3">
                       {Array.from({ length: 5 }).map((_, starIdx) => (
                         <Star
                           key={starIdx}
@@ -81,24 +380,39 @@ export const TestimonialsColumn = (props: {
                         />
                       ))}
                     </div>
-                    <p className="text-[16px] text-gray-600 leading-relaxed">
+
+                    {/* Review text */}
+                    <p className="text-[15px] text-gray-600 leading-relaxed whitespace-normal break-words">
                       {text}
                     </p>
+
+                    {/* Attached Customer Image - full image with custom auto height and transition scale */}
+                    {image && (
+                      <div className="mt-3 relative w-full overflow-hidden rounded-[16px] bg-gray-50 border border-gray-100/50">
+                        <Image
+                          src={image}
+                          alt={`${name}'s tractor canopy feedback`}
+                          width={500}
+                          height={500}
+                          className="w-full h-auto object-contain hover:scale-[1.02] transition-transform duration-300 rounded-[16px]"
+                        />
+                      </div>
+                    )}
                   </div>
                   
-                  <div className="flex items-center gap-3 mt-8">
+                  <div className="flex items-center gap-3 mt-6">
                     {/* Initial Avatar */}
-                    <div className={`h-[42px] w-[42px] shrink-0 rounded-full flex items-center justify-center font-bold text-[16px] ${getColorClass(name)}`}>
+                    <div className={`h-[36px] w-[36px] shrink-0 rounded-full flex items-center justify-center font-bold text-[14px] ${getColorClass(name)}`}>
                       {getInitials(name)}
                     </div>
                     
                     <div className="flex flex-col flex-1 min-w-0">
-                      <div className="font-bold text-[15px] text-gray-900 tracking-tight leading-none truncate">{name}</div>
-                      <div className="text-[13px] text-gray-500 tracking-tight mt-1.5 leading-none truncate">{role}</div>
+                      <div className="font-bold text-[14px] text-gray-900 tracking-tight leading-snug whitespace-normal break-words">{name}</div>
+                      <div className="text-[12px] text-gray-500 tracking-tight mt-0.5 leading-normal whitespace-normal break-words">{role}</div>
                     </div>
                     
                     {/* Date */}
-                    <div className="text-[12px] font-medium text-gray-400 shrink-0 self-start mt-0.5">
+                    <div className="text-[11px] font-medium text-gray-500 shrink-0 self-start mt-0.5 ml-1">
                       {date}
                     </div>
                   </div>
@@ -129,10 +443,16 @@ export const Testimonials = () => {
           </h2>
         </ScrollReveal>
 
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={35} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={45} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={40} />
+        {/* Mobile View: Single column scrolling ALL reviews */}
+        <div className="block md:hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden mt-10">
+          <TestimonialsColumn testimonials={testimonials} duration={120} />
+        </div>
+
+        {/* Tablet & Desktop View: 3 columns with sliced reviews */}
+        <div className="hidden md:flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[720px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={45} />
+          <TestimonialsColumn testimonials={secondColumn} duration={55} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={50} />
         </div>
       </div>
     </section>

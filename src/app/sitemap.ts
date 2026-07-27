@@ -1,12 +1,19 @@
+import { SITE_URL } from "@/config/site";
 import { MetadataRoute } from "next";
+import { getAllProducts } from "@/lib/products";
+import { getAllBlogs } from "@/lib/blogs";
+
+// Force static generation — Next.js will pre-render this at build time
+// and serve it as a pure static file with no server overhead
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const SITE_URL = "https://katayayanienterprises.vercel.app";
-  const CURRENT_DATE = new Date("2026-06-30");
+  const CURRENT_DATE = new Date();
 
-  return [
+  // ── Static Routes ────────────────────────────────────────────────────
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: `${SITE_URL}`,
+      url: `${SITE_URL}/`,
       lastModified: CURRENT_DATE,
       changeFrequency: "weekly",
       priority: 1,
@@ -17,72 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.95,
     },
-    // All individual product pages
     {
-      url: `${SITE_URL}/products/swaraj-frp-canopy`,
+      url: `${SITE_URL}/blogs`,
       lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/mahindra-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/sonalika-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/john-deere-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/eicher-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/products/new-holland-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/products/massey-ferguson-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/products/farmtrac-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/products/deutz-fahr-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${SITE_URL}/products/solis-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${SITE_URL}/products/powertrac-frp-canopy`,
-      lastModified: CURRENT_DATE,
-      changeFrequency: "monthly",
-      priority: 0.75,
     },
     {
       url: `${SITE_URL}/about`,
@@ -109,4 +55,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
   ];
+
+  // ── Product Routes (auto-discovers every product) ─────────────────────
+  const productRoutes: MetadataRoute.Sitemap = getAllProducts().map(
+    (product) => ({
+      url: `${SITE_URL}/products/${product.slug}`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })
+  );
+
+  // ── Blog Routes (auto-discovers every blog post) ───────────────────────
+  const blogRoutes: MetadataRoute.Sitemap = getAllBlogs().map((blog) => ({
+    url: `${SITE_URL}/blogs/${blog.slug}`,
+    lastModified: new Date(blog.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...productRoutes, ...blogRoutes];
 }

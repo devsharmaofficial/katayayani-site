@@ -11,7 +11,7 @@ export const brands: Brand[] = [
     name: "Swaraj",
     slug: "swaraj",
     description:
-      "India's leading tractor manufacturer. Our FRP canopies are precision-engineered for Swaraj's most popular models, ensuring a perfect fit and unmatched durability.",
+      "India's leading tractor manufacturer. Our tractor fiber hoods are precision-engineered for Swaraj's most popular models, ensuring a perfect fit and unmatched durability.",
     models: ["Swaraj 855", "Swaraj 744", "Swaraj 963", "Swaraj 735"],
     productCount: 3,
     country: "India",
@@ -36,7 +36,7 @@ export const brands: Brand[] = [
     name: "John Deere",
     slug: "john-deere",
     description:
-      "Global leader in agricultural machinery. Our FRP canopies complement John Deere's iconic green-and-yellow with color-matched precision.",
+      "Global leader in agricultural machinery. Our tractor fiber hoods complement John Deere's iconic green-and-yellow with color-matched precision.",
     models: ["John Deere 5050D", "John Deere 5310", "John Deere 5210"],
     productCount: 2,
     country: "USA",
@@ -46,7 +46,7 @@ export const brands: Brand[] = [
     name: "Sonalika",
     slug: "sonalika",
     description:
-      "India's fastest-growing tractor brand. Custom-fit FRP canopies designed for Sonalika's modern tractor lineup.",
+      "India's fastest-growing tractor brand. Custom-fit tractor fiber hoods designed for Sonalika's modern tractor lineup.",
     models: ["Sonalika DI 750 III", "Sonalika DI 60", "Sonalika GT 26"],
     productCount: 2,
     country: "India",
@@ -66,7 +66,7 @@ export const brands: Brand[] = [
     name: "New Holland",
     slug: "new-holland",
     description:
-      "A global agricultural powerhouse. Premium FRP canopies built to New Holland's exacting specifications.",
+      "A global agricultural powerhouse. Premium tractor fiber hoods built to New Holland's exacting specifications.",
     models: ["New Holland 3630 TX", "New Holland 3230 NX"],
     productCount: 1,
     country: "Italy",
@@ -96,7 +96,7 @@ export const brands: Brand[] = [
     name: "Farmtrac",
     slug: "farmtrac",
     description:
-      "Versatile and dependable. Our FRP canopies provide all-weather protection for Farmtrac operators.",
+      "Versatile and dependable. Our tractor fiber hoods provide all-weather protection for Farmtrac operators.",
     models: ["Farmtrac 60", "Farmtrac 45"],
     productCount: 1,
     country: "India",
@@ -106,7 +106,7 @@ export const brands: Brand[] = [
     name: "Solis",
     slug: "solis",
     description:
-      "Modern compact tractors for today's farmer. Lightweight FRP canopies designed for Solis's nimble frames.",
+      "Modern compact tractors for today's farmer. Lightweight tractor fiber hoods designed for Solis's nimble frames.",
     models: ["Solis 5015", "Solis 4515"],
     productCount: 1,
     country: "India",
@@ -116,7 +116,7 @@ export const brands: Brand[] = [
     name: "Powertrac",
     slug: "powertrac",
     description:
-      "Affordable power for Indian fields. Durable FRP canopies built to withstand demanding agricultural conditions.",
+      "Affordable power for Indian fields. Durable tractor fiber hoods built to withstand demanding agricultural conditions.",
     models: ["Powertrac 439", "Powertrac Euro 50"],
     productCount: 1,
     country: "India",

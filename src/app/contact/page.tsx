@@ -53,6 +53,14 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
       formSchema.parse(formData);
       setIsSubmitting(true);
       
+      // Fire and forget API call for backend email
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, type: isEnquiry ? 'enquiry' : 'contact' }),
+      }).catch(console.error);
+      
+      // Still redirect to WhatsApp for instant client communication
       const whatsappMessage = `Hello Katayayani Enterprises! 👋\n\nI am interested in your FRP tractor canopies and would like to get more information.\n\nHere are my details:\n👤 Name: ${formData.name}\n📞 Phone: ${formData.phone}\n\n📝 My Message / Requirements:\n${formData.message}\n\nLooking forward to your response!`;
       const whatsappUrl = `https://wa.me/919358273054?text=${encodeURIComponent(whatsappMessage)}`;
       
@@ -85,12 +93,12 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
       ];
 
   const pageTitle = isEnquiry
-    ? "Request Katyayani Enterprises FRP Canopy Price Quote"
-    : "Contact Katyayani Enterprises — Get Tractor Fiber Hood Quote";
+    ? "Request Katayayani Enterprises Tractor Fiber Hood Price Quote"
+    : "Contact Katayayani Enterprises — Get Tractor Fiber Hood Quote";
 
   const pageDescription = isEnquiry
     ? "Fill out the quick form below to request factory-direct pricing, custom color availability, or dealer rates for our premium tractor canopies."
-    : "Have questions about our FRP canopies? Want a custom quote? Fill out the form below or contact us directly.";
+    : "Have questions about our tractor fiber hoods? Want a custom quote? Fill out the form below or contact us directly.";
 
   return (
     <>
@@ -145,8 +153,7 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                         </p>
                       </div>
                     </div>
-                    
-                    <div className="flex items-start gap-[16px]">
+                                        <div className="flex items-start gap-[16px]">
                       <div className="w-[40px] h-[40px] rounded-full bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-5 h-5 text-primary-fixed" />
                       </div>
@@ -165,6 +172,24 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                         >
                           View on Google Maps →
                         </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-[16px] pt-4 border-t border-gray-100/50">
+                      <div className="w-[40px] h-[40px] rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-label-md text-emerald-800 uppercase tracking-wider mb-[4px] font-bold flex items-center gap-1.5">
+                          <span>GST Registered</span>
+                          <span className="text-[9px] uppercase tracking-wider text-emerald-600 font-extrabold bg-emerald-100 px-1 py-0.2 rounded-sm border border-emerald-200">Verified</span>
+                        </h3>
+                        <p className="text-body-lg font-black text-[#012d1d] select-all">
+                          09BGDPS3254A1ZL
+                        </p>
+                        <span className="text-[11px] text-gray-500 font-medium">Govt. of India Taxpayer Identification</span>
                       </div>
                     </div>
                   </div>

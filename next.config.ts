@@ -33,6 +33,16 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/**",
+      },
     ],
   },
 
@@ -57,17 +67,17 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Explicit Content-Type for sitemap as requested by Claude
+      // Sitemap: long cache, proper content-type, allow crawlers
       {
         source: "/sitemap.xml",
         headers: [
           {
             key: "Content-Type",
-            value: "application/xml",
+            value: "application/xml; charset=utf-8",
           },
           {
             key: "Cache-Control",
-            value: "public, max-age=0, must-revalidate",
+            value: "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
           },
         ],
       },

@@ -1,7 +1,9 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
+import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
@@ -16,7 +18,6 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 const BUSINESS_NAME = "Katayayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
@@ -30,156 +31,46 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "Best price tractor fiber hood (punjabi hood / fiber chatri) in India. Katayayani Enterprises — factory-direct FRP canopy manufacturer in Meerut UP. Fits Swaraj 744/855, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey & Farmtrac. Home delivery all over India. Call +91-9358273054.",
+    "Best price tractor fiber hood (punjabi hood / fiber chatri) in India. Katayayani Enterprises — factory-direct tractor fiber hood manufacturer in Meerut UP. Download our corporate catalogue PDF & watch official video showcases on our YouTube channel. Fits Swaraj, Mahindra, Sonalika & all brands. Call +91-9358273054.",
   keywords: [
-    // ── TIER 1: TOP BUYER-INTENT KEYWORDS (720+ monthly searches) ──
+    // ── TIER 1: HIGH INTENT COMMERCIAL (Exact Match from Data) ──
     "tractor fiber hood price",
-    "tractor fiber hood price in india",
-    "tractor fiber hood online",
-    "tractor fiber hood buy",
-    "tractor fiber hood near me",
-    "tractor fiber hood home delivery",
-    "tractor fiber hood for sale",
-    "fiber hood for tractor price",
-    "fiber hood for tractor price in india",
-    "fiber hood for tractor online",
-    "fiber hood for tractor buy",
-    "fiber hood for tractor near me",
-    "fiber hood for tractor home delivery",
-    "fiber hood for tractor for sale",
+    "fiber hood for tractor",
     "mahindra tractor fiber hood price",
-    "mahindra tractor fiber hood price in india",
-    "mahindra tractor fiber hood online",
-    "mahindra tractor fiber hood buy",
-    "mahindra tractor fiber hood near me",
-    "mahindra tractor fiber hood home delivery",
     "punjabi tractor hood price",
-    "punjabi tractor hood price in india",
-    "punjabi tractor hood online",
-    "punjabi tractor hood buy",
-    "punjabi tractor hood near me",
-    "punjabi tractor hood home delivery",
     "punjabi hood",
-    "punjabi hood price",
+    "sonalika tractor fiber hood price",
+    "swaraj 744 fiber hood price",
+    "swaraj fiber hood price",
+    "tractor fiber hood",
+    "mahindra tractor fiber chatri price",
+    "swaraj 855 fiber hood price",
+    "swaraj tractor fiber hood price",
+    "sonalika fiber hood price",
+    "fiber hood for tractor price",
     "punjabi hood tractor",
     "punjabi tractor hood",
     "tractor punjabi hood",
-    "sonalika tractor fiber hood price",
-    "sonalika tractor fiber hood price in india",
-    "sonalika tractor fiber hood online",
-    "sonalika tractor fiber hood buy",
-    "sonalika tractor fiber hood near me",
-    "swaraj 744 fiber hood price",
-    "swaraj 744 fiber hood price in india",
-    "swaraj 744 fiber hood online",
-    "swaraj 744 fiber hood buy",
-    "swaraj fiber hood price",
-    "swaraj fiber hood price in india",
-    "swaraj fiber hood online",
-    "swaraj fiber hood buy",
-    "tractor fiber hood",
-    "fiber hood for tractor",
-    "mahindra tractor fiber chatri price",
-    "mahindra tractor fiber chatri price in india",
-    "mahindra tractor fiber chatri online",
-    "swaraj 855 fiber hood price",
-    "swaraj 855 fiber hood price in india",
-    "swaraj 855 fiber hood online",
-    "swaraj 855 fiber hood buy",
-    "swaraj tractor fiber hood price",
-    "swaraj tractor fiber hood price in india",
-    "swaraj tractor fiber hood online",
-    "sonalika fiber hood price",
-    "sonalika fiber hood price in india",
+    "swaraj 744 tractor fiber chatri price",
     "sonalika fiber hood",
     "mahindra fiber hood",
     "mahindra tractor fiber hood",
     "fiber hood for mahindra tractor",
     "fiber hood for sonalika tractor",
     "massey tractor fiber hood price",
-    "massey tractor fiber hood price in india",
-    "massey tractor fiber hood online",
     "swaraj 855 fiber chatri price",
-    "swaraj 855 fiber chatri price in india",
-    "swaraj 744 tractor fiber chatri price",
     "sonalika fiber chatri price",
     "sonalika tractor fiber chatri price",
     "tractor fiber chatri price",
-    "tractor fiber chatri price in india",
-    "tractor fiber chatri online",
-    "tractor fiber chatri buy",
-    "tractor fiber chatri near me",
-    "tractor fiber chatri home delivery",
-    "tractor fiber chatri",
     "fiber chatri tractor price",
-    // ── TIER 2: BRAND & MODEL SPECIFIC ──
-    "john deere fiber hood",
-    "john deere fiber hood price",
-    "john deere tractor fiber hood price",
-    "john deere 5050d fiber hood price",
-    "john deere 5310 fiber hood price",
-    "massey 241 tractor fiber hood price",
-    "massey 1035 tractor fiber hood price",
-    "swaraj 744 tractor fiber hood price",
-    "mahindra 575 tractor fiber hood price",
-    "mahindra 275 tractor fiber hood price",
-    "eicher tractor fiber hood price",
-    "eicher tractor fiber hood",
-    "eicher tractor fiber hood online",
-    "farmtrac fiber hood price",
-    "farmtrac tractor fiber hood",
-    "farmtrac tractor fiber hood price",
-    "new holland tractor fiber hood price",
-    "new holland tractor fiber hood",
-    "new holland 3630 tractor fiber hood price",
-    "digitrac tractor fiber hood price",
-    "digitrac tractor fiber hood",
-    "arjun tractor fiber hood",
-    "arjun tractor fiber hood price",
-    "ace tractor fiber hood",
-    "ace tractor fiber hood price",
-    "swaraj fiber hood",
-    "massey tractor fiber hood",
-    // ── PRODUCT VARIANTS ──
-    "tractor fiber hood chatri",
-    "tractor fiber hood chatri price",
-    "tractor fiber hood cover",
-    "tractor fiber hood accessories",
-    "tractor fiber canopy price",
-    "fiber hood tractor chatri",
-    "punjab hood for tractor",
-    // ── COMMERCIAL INTENT ──
-    "buy fiber hood for tractor",
-    "tractor fiber hood for sale",
-    "tractor fiber hood online",
-    "online tractor fiber hood price",
+    "tractor fiber chatri",
+    // ── TIER 2: BROADER SEO FOUNDATION ──
     "tractor fiber hood price in india",
-    "tractor fiber hood home delivery",
-    "fiber hood for tractor swaraj",
-    "fiber hood for tractor price swaraj",
-    "fiber hood tractor price",
-    // ── LOCATION-BASED ──
-    "tractor fiber hood price in gujarat",
-    "tractor fiber chatri price in punjab",
-    "tractor fiber chatri near me",
-    "fiber hood for tractor near me",
-    "tractor fiber hood price in up",
-    "tractor fiber hood price in haryana",
-    "tractor fiber hood price in rajasthan",
-    "tractor fiber hood price in maharashtra",
-    "tractor canopy Meerut",
-    "tractor fiber hood manufacturer Meerut",
-    // ── FRP/CANOPY ALTERNATES ──
-    "FRP tractor canopy",
-    "FRP canopy manufacturer India",
-    "fiberglass tractor hood",
-    "tractor fiber hood manufacturer India",
-    "tractor u pipe and fiber hood",
-    "tractor fiber roof canopy",
-    // ── BUSINESS ──
+    "tractor fiber hood online",
+    "tractor fiber hood manufacturer india",
+    "punjabi hood price in india",
+    "fiber chatri manufacturer",
     "Katayayani Enterprises",
-    "katayayani fiber hood",
-    "Katayayani Enterprises Meerut",
   ],
   authors: [{ name: BUSINESS_NAME, url: SITE_URL }],
   creator: BUSINESS_NAME,
@@ -234,7 +125,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
-  category: "Agricultural Equipment, Tractor Parts, FRP Canopies",
+  category: "Agricultural Equipment, Tractor Parts, Tractor Fiber Hoods",
 };
 
 // JSON-LD Structured Data — Organization + LocalBusiness + WebSite
@@ -246,6 +137,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#organization`,
       name: BUSINESS_NAME,
       alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises"],
+      vatID: "09BGDPS3254A1ZL",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -292,6 +184,7 @@ const jsonLd = {
         },
       ],
       sameAs: [
+        `https://www.katayayanienterprises.com/`,
         `https://www.indiamart.com/katayayanienterprises/`,
         `https://wa.me/919358273054`,
       ],
@@ -312,14 +205,14 @@ const jsonLd = {
       },
       knowsAbout: [
         "Tractor Fiber Hood Manufacturing",
-        "Punjabi Tractor Hood",
+        "Punjabi Tractor Hood Price",
         "Fiber Chatri for Tractors",
-        "FRP Canopy Manufacturing",
-        "Fiber Reinforced Plastic",
-        "Tractor Accessories",
-        "Agricultural Equipment",
         "Tractor Fiber Hood Price",
-        "Tractor Fiber Hood Online",
+        "Fiber Hood for Tractor",
+        "Mahindra Tractor Fiber Hood Price",
+        "Swaraj 744 Fiber Hood Price",
+        "Sonalika Tractor Fiber Hood Price",
+        "Fiber Reinforced Plastic",
       ],
     },
     {
@@ -366,6 +259,14 @@ export default function RootLayout({
         <meta name="target" content="all" />
         <meta name="revisit-after" content="7 days" />
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
+        {/* Critical LCP preload — tells browser to fetch hero image before any JS */}
+        <link
+          rel="preload"
+          href="/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif"
+          as="image"
+          type="image/avif"
+          fetchPriority="high"
+        />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
         <WebsiteBackground>

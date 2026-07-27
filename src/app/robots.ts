@@ -1,13 +1,21 @@
+import { SITE_URL } from "@/config/site";
 import { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
-  const SITE_URL = "https://katayayanienterprises.vercel.app";
+export const dynamic = "force-static";
 
+export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/_next/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+      },
+    ],
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

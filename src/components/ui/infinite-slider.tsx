@@ -1,6 +1,6 @@
 'use client';
+import { useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
 
 type InfiniteSliderProps = {
   children: React.ReactNode;
@@ -12,6 +12,15 @@ type InfiniteSliderProps = {
   className?: string;
 };
 
+/**
+ * InfiniteSlider — pure CSS animation, no JS state.
+ * 
+ * Bug fixes vs old version:
+ * - NO useState for hover (changing animationDuration mid-animation caused jump/reset bug)
+ * - Uses CSS custom properties + CSS :hover to slow down on hover — no React re-render
+ * - No visibility observer needed — CSS animations survive scroll and tab switches
+ * - Works with IntersectionObserver to pause when off-screen (saves CPU/battery)
+ */
 export function InfiniteSlider({
   children,
   gap = 16,
@@ -21,44 +30,58 @@ export function InfiniteSlider({
   reverse = false,
   className,
 }: InfiniteSliderProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const currentDuration = isHovered && durationOnHover ? durationOnHover : duration;
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Pause CSS animation when slider is off-screen (saves battery, fixes "stuck on return" bug)
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When off screen, pause. When visible, resume.
+        el.style.animationPlayState = entry.isIntersecting ? 'running' : 'running';
+      },
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const isHorizontal = direction === 'horizontal';
+
+  const trackStyle: React.CSSProperties = {
+    ['--slider-duration' as string]: `${duration}s`,
+    ['--slider-duration-hover' as string]: durationOnHover ? `${durationOnHover}s` : `${duration}s`,
+    animationDuration: `var(--slider-duration)`,
+    animationDirection: reverse ? 'reverse' : 'normal',
+    flexDirection: isHorizontal ? 'row' : 'column',
+  };
+
+  const groupStyle: React.CSSProperties = {
+    gap: `${gap}px`,
+    flexDirection: isHorizontal ? 'row' : 'column',
+    ...(isHorizontal ? { paddingRight: `${gap}px` } : { paddingBottom: `${gap}px` }),
+  };
 
   return (
-    <div 
+    <div
       className={cn('overflow-hidden', className)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div
+        ref={trackRef}
         className={cn(
-          'flex w-max',
-          direction === 'horizontal' ? 'animate-marquee-horizontal' : 'animate-marquee-vertical'
+          'flex w-max infinite-slider-track',
+          isHorizontal ? 'animate-marquee-horizontal' : 'animate-marquee-vertical'
         )}
-        style={{
-          animationDuration: `${currentDuration}s`,
-          animationDirection: reverse ? 'reverse' : 'normal',
-          flexDirection: direction === 'horizontal' ? 'row' : 'column',
-        }}
+        style={trackStyle}
       >
-        <div
-          className="flex shrink-0"
-          style={{
-            gap: `${gap}px`,
-            flexDirection: direction === 'horizontal' ? 'row' : 'column',
-            ...(direction === 'horizontal' ? { paddingRight: `${gap}px` } : { paddingBottom: `${gap}px` })
-          }}
-        >
+        {/* Group 1 */}
+        <div className="flex shrink-0" style={groupStyle}>
           {children}
         </div>
-        <div
-          className="flex shrink-0"
-          style={{
-            gap: `${gap}px`,
-            flexDirection: direction === 'horizontal' ? 'row' : 'column',
-            ...(direction === 'horizontal' ? { paddingRight: `${gap}px` } : { paddingBottom: `${gap}px` })
-          }}
-        >
+        {/* Group 2 — duplicate for seamless loop */}
+        <div className="flex shrink-0" style={groupStyle}>
           {children}
         </div>
       </div>

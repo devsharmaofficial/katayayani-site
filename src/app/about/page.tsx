@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Shield, Target, Users, Factory, Check, Star, X, Phone, Mail, MapPin } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Shield, Target, Users, Factory, Check, Star, X, Phone, Mail, MapPin, FileText, FileDown, Award, ExternalLink, ArrowUpRight } from "lucide-react";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
@@ -89,11 +89,20 @@ export default function AboutPage() {
                   </p>
                   
                   {/* IndiaMART Trust Seal Badge */}
-                  <div className="mt-8 flex justify-center">
+                  <div className="mt-8 flex flex-col items-center gap-2">
                     <AwardBadge 
                       type="indiamart-trust-seal"
                       link="https://www.indiamart.com/katayayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv"
                     />
+                    <a 
+                      href="https://www.indiamart.com/katayayanienterprises/profile.html?srsltid=AfmBOop7_rHYA-qT9ya5XoTm4omHIJ2nd_umeto-mJHGfQDWpkjqOkXv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-label-xs font-bold text-on-surface-variant/70 hover:text-orange-600 hover:underline transition-all duration-300 mt-2"
+                    >
+                      <span>Click here to visit our IndiaMART profile</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </ScrollReveal>
               </div>
@@ -102,11 +111,14 @@ export default function AboutPage() {
               <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
                 <ScrollReveal direction="right">
                   <h1 className="text-headline-md text-primary font-black leading-tight">
-                    About Katyayani Enterprises — FRP Tractor Canopy Manufacturer
+                    About Katayayani Enterprises — FRP Tractor Canopy Manufacturer
                   </h1>
                   
                   <p className="text-body-lg text-on-surface-variant leading-relaxed">
-                    At Katyayani Enterprises, we prioritize transparency and reliability. We are honored to be awarded the <strong className="text-on-surface">IndiaMART Certificate of Trust</strong>, reflecting our steadfast commitment to genuine business operations, financial integrity, and product quality.
+                    At Katayayani Enterprises, we prioritize transparency and reliability. We are honored to be awarded the <strong className="text-on-surface">IndiaMART Certificate of Trust</strong>, reflecting our steadfast commitment to genuine business operations, financial integrity, and product quality.
+                  </p>
+                  <p className="text-body-lg text-on-surface-variant leading-relaxed mt-3">
+                    Explore our comprehensive <a href="https://www.katayayanienterprises.com/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Official Business Catalog</a> to discover our full range of premium fiber hoods, complete with detailed specifications and wholesale pricing options tailored for dealers and farmers across India.
                   </p>
                 </ScrollReveal>
 
@@ -121,7 +133,7 @@ export default function AboutPage() {
                       </div>
                       <div>
                         <h4 className="text-title-sm text-on-surface font-bold">100% Verified GST</h4>
-                        <p className="text-body-sm text-on-surface-variant">Fully registered and compliant under GSTIN: 09***********ZL.</p>
+                        <p className="text-body-sm text-on-surface-variant">Fully registered and compliant under GSTIN: <span className="font-extrabold text-[#012d1d] select-all">09BGDPS3254A1ZL</span>.</p>
                       </div>
                     </div>
 
@@ -180,6 +192,88 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </ScrollReveal>
+
+                {/* Verification & Download actions */}
+                <ScrollReveal direction="right" delay={0.3}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    {/* Catalogue Card */}
+                    <a
+                      href="/katayayani-enterprises-catalogue.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:border-primary/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                          <FileText className="w-5.5 h-5.5" />
+                        </div>
+                        <div>
+                          <h4 className="text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                            Product Catalogue
+                          </h4>
+                          <p className="text-body-xs text-on-surface-variant mt-0.5 font-medium">
+                            PDF • 993 KB
+                          </p>
+                        </div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-on-surface-variant group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300">
+                        <FileDown className="w-4 h-4" />
+                      </div>
+                    </a>
+
+                    {/* YouTube Channel Card */}
+                    <a
+                      href="https://youtube.com/@katayayanienterprises.meerut"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:border-red-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-red-500/5 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                          <svg className="w-5.5 h-5.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.387.507 9.387.507s7.517 0 9.387-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="text-title-sm text-on-surface font-bold group-hover:text-red-600 transition-colors">
+                            Official YouTube
+                          </h4>
+                          <p className="text-body-xs text-on-surface-variant mt-0.5 font-medium">
+                            Video Showcases & Demos
+                          </p>
+                        </div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-on-surface-variant group-hover:bg-red-500/10 group-hover:text-red-500 transition-all duration-300">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                    </a>
+
+                    {/* Official Business Catalog Card */}
+                    <a
+                      href="https://www.katayayanienterprises.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:border-[#012d1d]/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all duration-300 cursor-pointer sm:col-span-2 lg:col-span-2"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-[#012d1d]/5 flex items-center justify-center text-[#012d1d] group-hover:bg-[#012d1d] group-hover:text-white transition-all duration-300">
+                          <ExternalLink className="w-5.5 h-5.5" />
+                        </div>
+                        <div>
+                          <h4 className="text-title-sm text-on-surface font-bold group-hover:text-[#012d1d] transition-colors">
+                            Official Business Catalog
+                          </h4>
+                          <p className="text-body-xs text-on-surface-variant mt-0.5 font-medium">
+                            Full product range & wholesale pricing
+                          </p>
+                        </div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-on-surface-variant group-hover:bg-[#012d1d]/10 group-hover:text-[#012d1d] transition-all duration-300">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
+                    </a>
+                  </div>
+                </ScrollReveal>
               </div>
 
             </div>
@@ -223,26 +317,21 @@ export default function AboutPage() {
                           Sabun Godam, Meerut,<br />
                           Uttar Pradesh - 250002
                         </p>
-                        
-                        {/* Embedded Google Map */}
-                        <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 shadow-sm w-full">
-                          <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.870375990264!2d77.6657833!3d28.97119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65d40d93aa71%3A0x27d2116f19318fce!2sKatayayani%20Enterprises!5e0!3m2!1sen!2sin!4v1719000000000!5m2!1sen!2sin" 
-                            className="w-full h-[180px] border-0" 
-                            allowFullScreen 
-                            loading="lazy"
-                            title="Katayayani Enterprises Location Map"
-                          />
-                        </div>
-                        <a 
-                          href="https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKatayayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#012d1d] hover:bg-[#023e29] text-white rounded-lg text-[11px] font-bold transition-all shadow-[0_2px_8px_rgba(1,45,29,0.15)] hover:scale-[1.03] mt-3"
-                        >
-                          <MapPin className="w-3 h-3 text-[#ffc641]" />
-                          <span>View on Google Maps</span>
-                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 pt-2">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-[#795900] font-black block mb-1">GST Registration Number</span>
+                        <h4 className="text-title-md font-extrabold text-[#012d1d] flex items-center gap-1.5">
+                          <span className="select-all">09BGDPS3254A1ZL</span>
+                          <span className="text-[9px] uppercase tracking-wider text-emerald-600 font-extrabold bg-emerald-100 px-1 py-0.2 rounded-sm border border-emerald-200">Verified</span>
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -291,6 +380,36 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Full-width Map Section */}
+                <div className="mt-8 border-t border-gray-100 pt-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                    <div>
+                      <span className="text-[10px] uppercase tracking-widest text-[#795900] font-black block mb-0.5">Factory Location</span>
+                      <h4 className="text-title-lg font-black text-black">Find Us on Google Maps</h4>
+                    </div>
+                    <a 
+                      href="https://www.google.com/maps/place/Katayayani+Enterprises/@28.97119,77.6657833,17z/data=!4m14!1m7!3m6!1s0x390c65d40d93aa71:0x27d2116f19318fce!2sKatayayani+Enterprises!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5!3m5!1s0x390c65d40d93aa71:0x27d2116f19318fce!8m2!3d28.97119!4d77.6657833!16s%2Fg%2F11q7fxf2h5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#012d1d] hover:bg-[#023e29] text-white rounded-xl text-[11px] font-bold transition-all shadow-[0_2px_8px_rgba(1,45,29,0.15)] hover:scale-[1.03]"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-[#ffc641]" />
+                      <span>Open in Google Maps</span>
+                    </a>
+                  </div>
+
+                  {/* Embedded Google Map */}
+                  <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm w-full">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.870375990264!2d77.6657833!3d28.97119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65d40d93aa71%3A0x27d2116f19318fce!2sKatayayani%20Enterprises!5e0!3m2!1sen!2sin!4v1719000000000!5m2!1sen!2sin" 
+                      className="w-full h-[320px] sm:h-[400px] border-0" 
+                      allowFullScreen 
+                      loading="lazy"
+                      title="Katayayani Enterprises Location Map"
+                    />
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -301,44 +420,35 @@ export default function AboutPage() {
       </main>
 
       {/* Modal for full certificate view */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 cursor-zoom-out"
+      {isModalOpen && (
+        <div
+          onClick={() => setIsModalOpen(false)}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 cursor-zoom-out animate-in fade-in duration-300"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-[90vw] max-h-[90vh] aspect-[1/1.4] w-full md:w-[500px] bg-white rounded-2xl overflow-hidden shadow-2xl p-2 cursor-default animate-in zoom-in-95 duration-300"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-w-[90vw] max-h-[90vh] aspect-[1/1.4] w-full md:w-[500px] bg-white rounded-2xl overflow-hidden shadow-2xl p-2 cursor-default"
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Close modal"
             >
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-              <div className="relative w-full h-full rounded-lg overflow-hidden">
-                <Image
-                  src="/katayayani-enterprises-indiamart-trust-certificate.png"
-                  alt="IndiaMART Certificate of Trust"
-                  fill
-                  className="object-contain"
-                  sizes="90vw"
-                  priority
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <X className="w-5 h-5" />
+            </button>
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <Image
+                src="/katayayani-enterprises-indiamart-trust-certificate.png"
+                alt="IndiaMART Certificate of Trust"
+                fill
+                className="object-contain"
+                sizes="90vw"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
       <FloatingActions />

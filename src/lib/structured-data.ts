@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/config/site";
 // ============================================================================
 // Katayayani Enterprises — Structured Data Helpers
 // For generating JSON-LD structured data for SEO.
@@ -5,7 +6,6 @@
 
 import type { Product } from "@/types";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export function generateOrganizationSchema() {
   return {
@@ -44,25 +44,6 @@ export function generateProductSchema(product: Product) {
       name: product.brand,
     },
     category: product.category,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "124",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Person",
-        name: "Verified Customer",
-      },
-    },
     offers: {
       "@type": "AggregateOffer",
       offerCount: "1",

@@ -40,6 +40,7 @@ export interface Product {
   compatibleModels: string[];
   colorVariants: ColorVariant[];
   images: ProductImage[];
+  videos?: string[];
   specifications: Specification[];
   features: string[];
   featureTags: string[];

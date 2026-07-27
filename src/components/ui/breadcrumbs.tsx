@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/config/site";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 
@@ -11,8 +12,7 @@ interface BreadcrumbsProps {
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const SITE_URL = "https://katayayanienterprises.vercel.app";
-
+  
   // Build JSON-LD BreadcrumbList structured data
   const schema = {
     "@context": "https://schema.org",

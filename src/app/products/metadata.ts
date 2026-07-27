@@ -1,6 +1,6 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 
-const SITE_URL = "https://katayayanienterprises.vercel.app";
 
 export const metadata: Metadata = {
   title: "Tractor Fiber Hood Price | Buy Punjabi Hood | Fiber Chatri All Brands — Katayayani Enterprises",
@@ -148,7 +148,7 @@ export const metadata: Metadata = {
     "tractor fiber hood manufacturer Meerut",
     // FRP alternates
     "FRP tractor canopy",
-    "FRP canopy manufacturer India",
+    "tractor fiber hood manufacturer India",
     "fiberglass tractor hood",
     "tractor fiber hood manufacturer India",
     "tractor u pipe and fiber hood",

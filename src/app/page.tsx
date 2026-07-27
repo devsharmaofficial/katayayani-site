@@ -8,16 +8,17 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import dynamic from "next/dynamic";
-import { getFeaturedProducts } from "@/lib/products";
+import { getAllProducts } from "@/lib/products";
 import { getAllBrands } from "@/lib/brands";
 import { GetStartedButton } from "@/components/ui/get-started-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import HomepageSEOContent from "@/components/seo/HomepageSEOContent";
 import { HeroSlider } from "@/components/ui/hero-slider";
+const YouTubeSection = dynamic(() => import("@/components/sections/YouTubeSection"));
 
 // Dynamically import heavy UI components to reduce unused JavaScript
 const TextMarquee = dynamic(() => import("@/components/ui/text-marque").then(m => m.TextMarquee));
-const ScrollReveal = dynamic(() => import("@/components/motion/ScrollReveal"));
+const ScrollReveal = dynamic(() => import("@/components/motion/ScrollReveal")); // Kept SSR for above-the-fold content
 const InfiniteSlider = dynamic(() => import("@/components/ui/infinite-slider").then(m => m.InfiniteSlider));
 const Testimonials = dynamic(() => import("@/components/ui/testimonials-columns-1").then(m => m.Testimonials));
 const ProductCard = dynamic(() => import("@/components/ui/ProductCard"));
@@ -31,12 +32,9 @@ const indianStates = [
   "Nagaland", "Arunachal Pradesh", "Sikkim"
 ];
 
-import { preload } from "react-dom";
 
 export default function HomePage() {
-  preload("/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif", { as: "image", fetchPriority: "high" });
-  
-  const featuredProducts = getFeaturedProducts();
+  const allProducts = getAllProducts();
   const brands = getAllBrands();
 
   return (
@@ -52,17 +50,39 @@ export default function HomePage() {
         {/* ================================================================
             MARQUEE SECTION
             ================================================================ */}
-        <section className="bg-gradient-to-r from-[#012d1d] via-[#104e33] to-[#012d1d] py-[22px] overflow-hidden border-y border-[#795900]/25 shadow-md relative">
+        <section
+          className="bg-[#012d1d] py-[10px] md:py-[16px] overflow-hidden border-y border-[#795900]/25 shadow-md relative text-marquee-fixed"
+          style={{ ['--slider-duration' as string]: '10s' } as React.CSSProperties}
+        >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none" />
           <TextMarquee
             baseVelocity={-1.5}
-            className="text-[22px] md:text-[26px] font-extrabold text-white/90 px-[20px] uppercase tracking-widest"
+            className="text-[11px] md:text-[16px] font-bold text-white/90 px-[10px] md:px-[18px] uppercase tracking-[0.06em] md:tracking-[0.12em]"
           >
-            <span className="text-[#ffc641]">🔥 BEST PRICE TRACTOR FIBER HOOD IN INDIA</span> &nbsp; • &nbsp; 
-            <span>PUNJABI TRACTOR HOOD</span> &nbsp; • &nbsp; 
-            <span className="text-[#ffc641]">FIBER CHATRI — ALL BRANDS</span> &nbsp; • &nbsp; 
-            <span>SWARAJ 744/855 • MAHINDRA • SONALIKA</span> &nbsp; • &nbsp; 
-            <span className="text-[#ffc641]">HOME DELIVERY ALL OVER INDIA</span> &nbsp; • &nbsp;
+            <span className="text-[#ffc641]">🔥 Best Tractor Fiber Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Tractor Punjab Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span className="text-[#ffc641]">Tractor Fiber Chatri</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Tractor Tractor Fiber Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span className="text-[#ffc641]">Tractor FRP Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Tractor Fiber Roof Price</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span className="text-[#ffc641]">Punjabi Hood Price</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Swaraj 744 Fiber Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span className="text-[#ffc641]">Mahindra Fiber Chatri</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Sonalika Fiber Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span className="text-[#ffc641]">John Deere FRP Hood</span>
+            <span className="opacity-40 mx-2">•</span>
+            <span>Home Delivery All India</span>
+            <span className="opacity-40 mx-2">•</span>
           </TextMarquee>
         </section>
 
@@ -98,39 +118,56 @@ export default function HomePage() {
         </section>
 
         {/* ================================================================
-            FEATURED PRODUCTS
+            ALL PRODUCTS SLIDER
             ================================================================ */}
-        <section className="py-[48px] bg-transparent">
+        <section
+          className="py-[48px] bg-transparent"
+          aria-label="Tractor Fiber Hood Products — All Brands"
+        >
           <div className="max-w-[1280px] mx-auto px-[24px]">
             <ScrollReveal>
               <div className="text-center mb-[24px]">
                 <h2 className="text-headline-md text-primary">
                   Tractor <span className="font-semibold text-secondary">Fiber Hood</span> — All Brands
                 </h2>
-
+                <p className="text-[14px] text-gray-500 mt-2 max-w-[520px] mx-auto">
+                  Best price fiber hood (punjabi hood / fiber chatri) for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey &amp; more. Home delivery all over India.
+                </p>
               </div>
             </ScrollReveal>
+          </div>
 
-            <ScrollReveal delay={0.2}>
-              <div className="relative w-full py-4 overflow-hidden">
-                <InfiniteSlider gap={24} duration={35} durationOnHover={300} className="py-4">
-                  {featuredProducts.map((product) => (
-                    <div key={product.id} className="w-[290px] min-[375px]:w-[320px] sm:w-[350px] md:w-[370px] shrink-0">
-                      <ProductCard product={product} />
-                    </div>
-                  ))}
-                </InfiniteSlider>
-              </div>
-            </ScrollReveal>
+          {/* Full-width slider — NO ScrollReveal wrapper to prevent animation stuck bug */}
+          <div className="relative w-full py-4 overflow-hidden">
+            <InfiniteSlider
+              gap={24}
+              duration={40}
+              durationOnHover={120}
+              className="py-4"
+            >
+              {allProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="w-[290px] min-[375px]:w-[320px] sm:w-[350px] md:w-[370px] shrink-0"
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </InfiniteSlider>
+          </div>
 
           <ScrollReveal>
-            <div className="text-center mt-[48px]">
+            <div className="text-center mt-[36px]">
               <GetStartedButton href="/products" text="View All Fiber Hoods" />
             </div>
           </ScrollReveal>
-          </div>
         </section>
 
+
+        {/* ================================================================
+            YOUTUBE SECTION
+            ================================================================ */}
+        <YouTubeSection />
 
         {/* ================================================================
             TESTIMONIALS SECTION

@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
 export { metadata } from "./metadata";
 import Link from "next/link";
@@ -10,6 +11,9 @@ import ScrollReveal, {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion/ScrollReveal";
+import { GradientText } from "@/components/ui/gradient-text-fill";
+import { Hero } from "@/components/ui/hero-designali-demo";
+import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { getAllProducts } from "@/lib/products";
 import {
   SwarajLogo,
@@ -35,12 +39,12 @@ export default function ProductsPage() {
     name: "Tractor Fiber Hood (Punjabi Hood / Fiber Chatri) — All Brands",
     description:
       "Best price tractor fiber hood, fiber chatri and punjabi hood for all tractor brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac, Powertrac, Solis, Deutz Fahr.",
-    url: "https://katayayanienterprises.vercel.app/products",
+    url: `${SITE_URL}/products`,
     itemListElement: allProducts.map((p, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: `${p.brand} Tractor Fiber Hood Price`,
-      url: `https://katayayanienterprises.vercel.app/products/${p.slug}`,
+      url: `${SITE_URL}/products/${p.slug}`,
     })),
   };
 
@@ -71,69 +75,13 @@ export default function ProductsPage() {
         {/* Visual Breadcrumb Trail */}
         <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Products", url: "/products" }]} />
 
-        {/* ── H1 PAGE HEADER ── Keyword-rich, tells Google exactly what this page is about */}
-        <ScrollReveal>
-          <div className="text-center mb-8">
-            <h1 className="text-[26px] md:text-[36px] font-black text-[#012d1d] leading-tight mb-2">
-              Tractor Fiber Hood Price — All Brands
-            </h1>
-            <p className="text-[14px] md:text-[16px] text-gray-600 max-w-[680px] mx-auto">
-              Buy <strong>tractor fiber hood</strong> (punjabi hood / fiber chatri) online at best price.{" "}
-              <strong>Mahindra, Swaraj 744/855, Sonalika, John Deere, Eicher, New Holland, Massey, Farmtrac</strong> —
-              all brands available. Factory direct from <strong>Katayayani Enterprises, Meerut</strong>.
-            </p>
-            {/* Keyword anchor links — help Google understand keyword relevance per brand */}
-            <div className="flex flex-wrap justify-center gap-2 mt-4 text-[12px]">
-              {[
-                { label: "Swaraj Fiber Hood", slug: "swaraj-frp-canopy" },
-                { label: "Mahindra Fiber Hood", slug: "mahindra-frp-canopy" },
-                { label: "Sonalika Fiber Hood", slug: "sonalika-frp-canopy" },
-                { label: "John Deere Fiber Hood", slug: "john-deere-frp-canopy" },
-                { label: "Eicher Fiber Hood", slug: "eicher-frp-canopy" },
-                { label: "New Holland Fiber Hood", slug: "new-holland-frp-canopy" },
-                { label: "Massey Fiber Hood", slug: "massey-ferguson-frp-canopy" },
-                { label: "Farmtrac Fiber Hood", slug: "farmtrac-frp-canopy" },
-              ].map((b) => (
-                <Link
-                  key={b.slug}
-                  href={`/products/${b.slug}`}
-                  className="bg-[#f0faf5] text-[#012d1d] font-semibold px-3 py-1 rounded-full border border-[#012d1d]/10 hover:bg-[#012d1d] hover:text-white transition-colors"
-                >
-                  {b.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
+        {/* ── NEW HERO SECTION WITH CANVAS AND ANIMATIONS ── */}
+        <Hero />
 
         {/* Brand Logos Strip */}
         <ScrollReveal>
-          <div className="bg-white/40 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(31,38,135,0.07)] p-[24px] mb-[48px] border border-white/50">
-            <h2 className="text-label-sm text-on-surface-variant uppercase tracking-[0.2em] text-center mb-[20px] font-bold">
-              Select Your Tractor Brand — Fiber Hood Price
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-[12px] items-center justify-center">
-              {brands.map((brand) => {
-                const LogoComponent = brand.Logo;
-                return (
-                  <Link
-                    key={brand.slug}
-                    href={`/products/${brand.slug}`}
-                    className="group flex flex-col items-center justify-center bg-white/60 hover:bg-white border border-white/85 hover:border-primary/50 rounded-xl p-[12px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 h-[96px] w-full"
-                    title={`${brand.name} Tractor Fiber Hood Price`}
-                  >
-                    <div className="relative w-full h-[40px] flex items-center justify-center mb-1">
-                      <div className="w-full h-full max-h-[38px] max-w-[90%] filter drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
-                        <LogoComponent />
-                      </div>
-                    </div>
-                    <span className="text-[11px] text-on-surface-variant font-bold tracking-wider uppercase opacity-85 group-hover:text-primary transition-colors text-center truncate w-full">
-                      {brand.name}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
+          <div className="mb-6">
+            <LogoCloud brands={brands} />
           </div>
         </ScrollReveal>
 
