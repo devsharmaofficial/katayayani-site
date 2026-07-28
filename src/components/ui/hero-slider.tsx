@@ -65,6 +65,10 @@ export function HeroSlider() {
       const player = playerRefs.current[idx];
       if (player && typeof player.pauseVideo === "function") {
         if (idx === currentSlide) {
+          const startAt = heroBanners[idx].start;
+          if (startAt) {
+            player.seekTo(startAt, true);
+          }
           // Attempt to auto-play with sound
           player.playVideo();
         } else {
@@ -108,6 +112,10 @@ export function HeroSlider() {
     playerRefs.current[index] = event.target;
     // If the video loads while it's the current slide, play it
     if (currentSlide === index) {
+      const startAt = heroBanners[index].start;
+      if (startAt) {
+        event.target.seekTo(startAt, true);
+      }
       event.target.playVideo();
     }
   };
