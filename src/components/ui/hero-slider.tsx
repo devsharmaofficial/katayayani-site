@@ -142,7 +142,7 @@ export function HeroSlider() {
           alt="Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
           fetchPriority="high"
           decoding="sync"
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-contain text-transparent"
           style={{
             opacity: firstLoaded ? 0 : 1,
             zIndex: firstLoaded ? -1 : 20,
