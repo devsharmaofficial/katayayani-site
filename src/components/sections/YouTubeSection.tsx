@@ -52,7 +52,7 @@ function ShortCard({ id, index }: { id: string; index: number }) {
             width={175}
             height={311}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            unoptimized={true}
+            unoptimized={false}
           />
 
           {/* Gradient layers */}

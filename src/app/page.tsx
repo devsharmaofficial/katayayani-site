@@ -40,7 +40,8 @@ export default function HomePage() {
   const brands = getAllBrands();
   
   // Aggressively preload the LCP image for Lighthouse to completely bypass Next.js Image component limitations
-  ReactDOM.preload("https://img.youtube.com/vi/gQT_ke2q5To/hqdefault.jpg", { as: "image", fetchPriority: "high" });
+  ReactDOM.preload("/hero/gQT_ke2q5To.webp", { as: "image", fetchPriority: "high" });
+  ReactDOM.preload("/hero/dmhwYUss980.webp", { as: "image", fetchPriority: "high" });
 
   return (
     <>
