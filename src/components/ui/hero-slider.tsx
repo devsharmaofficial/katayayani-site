@@ -70,12 +70,30 @@ export function HeroSlider() {
   // Store references to YouTube players using unique keys e.g., "slide-0-0"
   const playerRefs = useRef<{ [key: string]: any }>({});
 
-  // Idle Rendering Pattern: Defer video mounting to unblock main thread on initial load
+  // Idle & Interaction Rendering Pattern: Defer heavy iframes until interaction OR 3.5s fallback
   useEffect(() => {
-    const timer = setTimeout(() => {
+    let timer: NodeJS.Timeout;
+    
+    const mount = () => {
       setMountVideos(true);
-    }, 1500); // Wait 1.5s after hydration to mount heavy iframes
-    return () => clearTimeout(timer);
+      cleanup();
+    };
+
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener('mousemove', mount);
+      window.removeEventListener('scroll', mount);
+      window.removeEventListener('touchstart', mount);
+    };
+
+    timer = setTimeout(mount, 3500); // 3.5s fallback for bots/Lighthouse
+
+    // Mount instantly if user interacts
+    window.addEventListener('mousemove', mount, { once: true });
+    window.addEventListener('scroll', mount, { once: true, passive: true });
+    window.addEventListener('touchstart', mount, { once: true, passive: true });
+
+    return cleanup;
   }, []);
 
   useEffect(() => {
@@ -279,14 +297,16 @@ export function HeroSlider() {
       {/* Bottom Bar: Pagination and Buttons */}
       <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
           {/* Pagination dashes */}
-          <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
+          <div className="flex gap-1 w-full justify-center md:absolute md:left-8 md:w-auto">
             {heroBanners.map((_, idx) => (
               <button 
                 key={idx} 
                 onClick={() => goToSlide(idx)}
-                className={`h-[5px] cursor-pointer transition-all duration-300 rounded-full ${idx === currentSlide ? 'w-10 sm:w-12 bg-[#012d1d]' : 'w-5 sm:w-6 bg-black/10 hover:bg-black/20'}`} 
+                className="w-12 h-12 flex items-center justify-center cursor-pointer group outline-none" 
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <div className={`h-[5px] rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-10 sm:w-12 bg-[#012d1d]' : 'w-5 sm:w-6 bg-black/10 group-hover:bg-black/20'}`} />
+              </button>
             ))}
           </div>
 

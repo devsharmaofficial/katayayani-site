@@ -94,8 +94,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                 }}
               >
                 <Image
-                  src={img.src ?? "/placeholder.jpg"}
-                  alt={img.alt ?? product.name}
+                  src={img.src || "/placeholder.jpg"}
+                  alt={img.alt || product.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
@@ -114,24 +114,24 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           <>
             <button
               onClick={handlePrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] border border-gray-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto z-20 flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] border border-gray-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto z-20 flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] border border-gray-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto z-20 flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-[0_4px_12px_rgba(0,0,0,0.1)] border border-gray-200/50 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto z-20 flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Next image"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </>
         )}
 
         {/* Pagination Dots */}
         {product.images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 pointer-events-auto">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-0 z-10 pointer-events-auto">
             {product.images.map((_, idx) => (
               <button
                 key={idx}
@@ -141,7 +141,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                   setDirection(idx > currentImageIndex ? 1 : -1);
                   setCurrentImageIndex(idx);
                 }}
-                className="p-2 -m-2 cursor-pointer flex items-center justify-center outline-none group/dot"
+                className="w-8 h-8 cursor-pointer flex items-center justify-center outline-none group/dot"
                 aria-label={`Go to slide ${idx + 1}`}
               >
                 <div className={`h-1.5 rounded-full transition-all duration-300 ${

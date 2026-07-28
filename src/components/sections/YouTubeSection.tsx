@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { Play, ExternalLink } from "lucide-react";
@@ -44,15 +45,14 @@ function ShortCard({ id, index }: { id: string; index: number }) {
       {!playing ? (
         <>
           {/* Thumbnail */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            ref={imgRef}
+          <Image
+            ref={imgRef as any}
             src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
             alt="Katayayani Enterprises Tractor Fiber Hood YouTube Short"
             width={175}
             height={311}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            loading="lazy"
+            unoptimized={false}
           />
 
           {/* Gradient layers */}
