@@ -66,19 +66,23 @@ type LogoCardProps = React.ComponentProps<"div"> & {
 function LogoCard({ brand, className, children, ...props }: LogoCardProps) {
   const { Logo } = brand;
   return (
-    <Link href={`/products/${brand.slug}`} className="group block w-full h-full cursor-pointer focus:outline-none">
+    <Link 
+      href={`/products/${brand.slug}`} 
+      className="group block w-full h-full cursor-pointer focus:outline-none touch-manipulation"
+      prefetch={true}
+    >
       <div
         className={cn(
           "flex flex-col items-center justify-center p-3 sm:p-4 relative h-full",
-          "md:hover:bg-[#f0faf5] transition-all duration-200",
+          "md:hover:bg-[#f0faf5] active:bg-[#f0faf5]/50 transition-all duration-75",
           className
         )}
         {...props}
       >
-        <div className="pointer-events-none h-5 sm:h-7 w-full max-w-[80px] sm:max-w-[100px] mb-1.5 transition-transform duration-300 md:group-hover:scale-110 flex items-center justify-center">
+        <div className="pointer-events-none h-5 sm:h-7 w-full max-w-[80px] sm:max-w-[100px] mb-1.5 transition-transform duration-300 md:group-hover:scale-110 group-active:scale-95 flex items-center justify-center">
           <Logo />
         </div>
-        <span className="pointer-events-none text-[10px] sm:text-[11px] font-black text-gray-500 uppercase tracking-widest md:group-hover:text-[#012d1d] transition-colors text-center w-full truncate">
+        <span className="pointer-events-none text-[10px] sm:text-[11px] font-black text-gray-500 uppercase tracking-widest md:group-hover:text-[#012d1d] group-active:text-[#012d1d] transition-colors text-center w-full truncate">
           {brand.name}
         </span>
         {children}
