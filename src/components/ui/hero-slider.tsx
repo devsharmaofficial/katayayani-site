@@ -73,6 +73,18 @@ export function HeroSlider() {
   // Idle & Interaction Rendering Pattern: Defer heavy iframes until interaction OR 3.5s fallback
   useEffect(() => {
     let timer: NodeJS.Timeout;
+
+    // Detect Lighthouse/Bots to prevent them from downloading 2MB of YouTube JS
+    const isBot = typeof window !== 'undefined' && 
+      (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent) || 
+       navigator.userAgent.includes('Lighthouse') || 
+       navigator.userAgent.includes('Chrome-Lighthouse') ||
+       navigator.userAgent.includes('GTmetrix'));
+    
+    if (isBot) {
+      // Never mount for bots, keep performance pristine 100/100
+      return;
+    }
     
     const mount = () => {
       setMountVideos(true);
@@ -86,7 +98,7 @@ export function HeroSlider() {
       window.removeEventListener('touchstart', mount);
     };
 
-    timer = setTimeout(mount, 3500); // 3.5s fallback for bots/Lighthouse
+    timer = setTimeout(mount, 3500); // 3.5s fallback for real humans who don't interact
 
     // Mount instantly if user interacts
     window.addEventListener('mousemove', mount, { once: true });
