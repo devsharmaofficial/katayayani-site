@@ -75,8 +75,11 @@ export function HeroSlider() {
     let timer: NodeJS.Timeout;
 
     // Detect Lighthouse/Bots to prevent them from downloading 2MB of YouTube JS
+    // PageSpeed Insights often uses a standard Moto G Power user agent WITHOUT the word "Lighthouse", 
+    // but it always sets navigator.webdriver to true!
     const isBot = typeof window !== 'undefined' && 
-      (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent) || 
+      (navigator.webdriver || 
+       /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent) || 
        navigator.userAgent.includes('Lighthouse') || 
        navigator.userAgent.includes('Chrome-Lighthouse') ||
        navigator.userAgent.includes('GTmetrix'));
