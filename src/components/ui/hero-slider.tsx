@@ -4,15 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
-const HERO_IMAGE_PATH = "/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif";
+const HERO_IMAGE_PATH = "/hero-slider/best-tractor-fiber-chatri-price-banner-2.avif";
 
 const heroBanners = [
   {
     src: HERO_IMAGE_PATH,
-    alt: "Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
-  },
-  {
-    src: "/hero-slider/best-tractor-fiber-chatri-price-banner-2.avif",
     alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut"
   },
   {
@@ -38,7 +34,7 @@ export function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const next = (prev + 1) % 5;
+        const next = (prev + 1) % 4;
         setLoadedSlides((loaded) => {
           if (loaded.has(next)) return loaded;
           const copy = new Set(loaded);
@@ -121,7 +117,7 @@ export function HeroSlider() {
       <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
           {/* Pagination dashes */}
           <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
-            {[0, 1, 2, 3, 4].map((idx) => (
+            {[0, 1, 2, 3].map((idx) => (
               <button 
                 key={idx} 
                 onClick={() => goToSlide(idx)}

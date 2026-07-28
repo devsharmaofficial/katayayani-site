@@ -10,10 +10,8 @@ const CHANNEL_URL = "https://youtube.com/@katayayanienterprises.meerut";
 const SHORTS = [
   { id: "UL6jtWMHmtI" },
   { id: "c1hL6fj8VjQ" },
-  { id: "ap38alCuUxY" },
   { id: "3STNVrRyyP0" },
   { id: "koeGb8HLNgs" },
-  { id: "NCVo8d9WqUM" },
   { id: "dmhwYUss980" },
   { id: "6HTWN0JjXA4" },
 ];

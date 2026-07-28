@@ -396,10 +396,8 @@ const products: Product[] = [
     ],
     images: [
       { src: "/products/massey-ferguson/v1784922285400_hero_image.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_Screenshot_2026-07-01_at_11.52.07_AM.png", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_rd1kd9mrbs19ysivbhe9.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_Screenshot_2026-07-01_at_11.50.46_AM.png", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 5", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/v1784922285400_rd1kd9mrbs19ysivbhe9.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_ft98tfplf5vf6jyrcglm.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 6", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_lwqz1nyazkodgit1hwqm.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 7", width: 800, height: 800 }
     ],
@@ -1040,10 +1038,8 @@ const products: Product[] = [
     ],
     images: [
       { src: "/products/massey-ferguson/v1784922285400_hero_image.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 1", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_Screenshot_2026-07-01_at_11.52.07_AM.png", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 2", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_rd1kd9mrbs19ysivbhe9.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 3", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 4", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_Screenshot_2026-07-01_at_11.50.46_AM.png", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 5", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/v1784922285400_rd1kd9mrbs19ysivbhe9.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 2", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 3", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_ft98tfplf5vf6jyrcglm.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 6", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_lwqz1nyazkodgit1hwqm.avif", alt: "Massey Ferguson 1035 DI Fiber Hood – Punjabi Hood - View 7", width: 800, height: 800 }
     ],
