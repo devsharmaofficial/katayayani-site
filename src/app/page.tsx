@@ -33,9 +33,14 @@ const indianStates = [
 ];
 
 
+import ReactDOM from "react-dom";
+
 export default function HomePage() {
   const allProducts = getAllProducts();
   const brands = getAllBrands();
+  
+  // Aggressively preload the LCP image for Lighthouse to completely bypass Next.js Image component limitations
+  ReactDOM.preload("https://img.youtube.com/vi/gQT_ke2q5To/hqdefault.jpg", { as: "image", fetchPriority: "high" });
 
   return (
     <>

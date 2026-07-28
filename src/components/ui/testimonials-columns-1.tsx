@@ -395,6 +395,7 @@ export const TestimonialsColumn = (props: {
                           width={500}
                           height={500}
                           quality={20}
+                          sizes="(max-width: 640px) 100px, 500px"
                           className="w-full h-auto object-contain hover:scale-[1.02] transition-transform duration-300 rounded-[16px]"
                         />
                       </div>
