@@ -8,14 +8,22 @@ import YouTube from "react-youtube";
 const HERO_IMAGE_PATH = "/hero-slider/hppggurkoc7o0gpnqqn2.avif";
 
 type HeroBanner = {
-  type: "image" | "video";
+  type: "image" | "video" | "split-shorts";
   src?: string;
   alt?: string;
   videoId?: string;
   start?: number;
+  shorts?: { videoId: string; start?: number }[];
 };
 
 const heroBanners: HeroBanner[] = [
+  {
+    type: "split-shorts",
+    shorts: [
+      { videoId: "gQT_ke2q5To" },
+      { videoId: "dmhwYUss980" }
+    ]
+  },
   {
     type: "image",
     src: HERO_IMAGE_PATH,
@@ -48,12 +56,13 @@ export function HeroSlider() {
   const [firstLoaded, setFirstLoaded] = useState(false);
   const [loadedSlides, setLoadedSlides] = useState<Set<number>>(new Set([0]));
   
-  // Store references to YouTube players to control them programmatically
-  const playerRefs = useRef<{ [key: number]: any }>({});
+  // Store references to YouTube players using unique keys e.g., "slide-0-0"
+  const playerRefs = useRef<{ [key: string]: any }>({});
 
   useEffect(() => {
     // If it's a video slide, pause auto-scroll immediately
-    if (heroBanners[currentSlide].type === "video") {
+    const banner = heroBanners[currentSlide];
+    if (banner.type === "video" || banner.type === "split-shorts") {
       setIsPaused(true);
     } else {
       setIsPaused(false);
@@ -61,13 +70,14 @@ export function HeroSlider() {
 
     // Command videos to play or pause based on current slide
     Object.keys(playerRefs.current).forEach((key) => {
-      const idx = parseInt(key);
-      const player = playerRefs.current[idx];
+      const slideIdx = parseInt(key.split("-")[1]);
+      const player = playerRefs.current[key];
+      
       if (player && typeof player.pauseVideo === "function") {
-        if (idx === currentSlide) {
-          const startAt = heroBanners[idx].start;
-          if (startAt) {
-            player.seekTo(startAt, true);
+        if (slideIdx === currentSlide) {
+          const banner = heroBanners[slideIdx];
+          if (banner.type === "video" && banner.start) {
+            player.seekTo(banner.start, true);
           }
           // Attempt to auto-play with sound
           player.playVideo();
@@ -108,15 +118,24 @@ export function HeroSlider() {
     });
   }, []);
 
-  const handleVideoReady = (event: any, index: number) => {
-    playerRefs.current[index] = event.target;
+  const handleVideoReady = (event: any, slideIndex: number, playerKey: string) => {
+    const player = event.target;
+    playerRefs.current[`slide-${slideIndex}-${playerKey}`] = player;
+    
     // If the video loads while it's the current slide, play it
-    if (currentSlide === index) {
-      const startAt = heroBanners[index].start;
-      if (startAt) {
-        event.target.seekTo(startAt, true);
+    if (currentSlide === slideIndex) {
+      const banner = heroBanners[slideIndex];
+      if (banner.type === "video" && banner.start) {
+        player.seekTo(banner.start, true);
       }
-      event.target.playVideo();
+      player.playVideo();
+    }
+  };
+
+  const handleStateChange = (event: any) => {
+    // Hide static LCP image once video actually starts playing
+    if (event.data === YouTube.PlayerState.PLAYING) {
+      setFirstLoaded(true);
     }
   };
 
@@ -127,12 +146,27 @@ export function HeroSlider() {
 
   const encPath = encodeURIComponent(HERO_IMAGE_PATH);
 
+  const getYoutubeOpts = (startAt?: number) => ({
+    height: "100%",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+      controls: 1,
+      rel: 0,
+      modestbranding: 1,
+      vq: "hd1080",
+      mute: 1, // Must be muted for guaranteed autoplay on load
+      playsinline: 1,
+      start: startAt,
+    },
+  });
+
   return (
     <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
       {/* Image/Video Section */}
       <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
 
-        {/* Static LCP image */}
+        {/* Static LCP image - Fades out once first slide (video or image) loads */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           id="hero-lcp-image"
@@ -161,24 +195,37 @@ export function HeroSlider() {
             }`}
           >
             {loadedSlides.has(index) && (
-              banner.type === "video" ? (
+              banner.type === "split-shorts" ? (
+                <div className="w-full h-full flex bg-black">
+                  <div className="w-1/2 h-full border-r border-black/50">
+                    <YouTube
+                      videoId={banner.shorts![0].videoId}
+                      opts={getYoutubeOpts(banner.shorts![0].start)}
+                      onReady={(e) => handleVideoReady(e, index, "0")}
+                      onStateChange={handleStateChange}
+                      onEnd={handleVideoEnd}
+                      className="w-full h-full flex items-center justify-center"
+                      iframeClassName="w-full h-full max-h-full"
+                    />
+                  </div>
+                  <div className="w-1/2 h-full border-l border-black/50">
+                    <YouTube
+                      videoId={banner.shorts![1].videoId}
+                      opts={getYoutubeOpts(banner.shorts![1].start)}
+                      onReady={(e) => handleVideoReady(e, index, "1")}
+                      onStateChange={handleStateChange}
+                      onEnd={handleVideoEnd}
+                      className="w-full h-full flex items-center justify-center"
+                      iframeClassName="w-full h-full max-h-full"
+                    />
+                  </div>
+                </div>
+              ) : banner.type === "video" ? (
                 <YouTube
                   videoId={banner.videoId}
-                  opts={{
-                    height: "100%",
-                    width: "100%",
-                    playerVars: {
-                      autoplay: 0,
-                      controls: 1,
-                      rel: 0,
-                      modestbranding: 1,
-                      vq: "hd1080",
-                      mute: 1,
-                      playsinline: 1,
-                      start: banner.start,
-                    },
-                  }}
-                  onReady={(e) => handleVideoReady(e, index)}
+                  opts={getYoutubeOpts(banner.start)}
+                  onReady={(e) => handleVideoReady(e, index, "0")}
+                  onStateChange={handleStateChange}
                   onEnd={handleVideoEnd}
                   className="w-full h-full bg-black flex items-center justify-center"
                   iframeClassName="w-full h-full max-h-full aspect-video"
@@ -190,11 +237,11 @@ export function HeroSlider() {
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-                  priority={index === 0}
-                  fetchPriority={index === 0 ? "high" : "low"}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  quality={index === 0 ? 100 : 80}
-                  onLoad={index === 0 ? () => setFirstLoaded(true) : undefined}
+                  priority={index === 0 || index === 1}
+                  fetchPriority={index === 0 || index === 1 ? "high" : "low"}
+                  loading={index === 0 || index === 1 ? "eager" : "lazy"}
+                  quality={index === 0 || index === 1 ? 100 : 80}
+                  onLoad={index === 1 ? () => setFirstLoaded(true) : undefined}
                 />
               )
             )}
