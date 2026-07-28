@@ -9,12 +9,14 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -259,14 +261,6 @@ export default function RootLayout({
         <meta name="target" content="all" />
         <meta name="revisit-after" content="7 days" />
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
-        {/* Critical LCP preload — tells browser to fetch hero image before any JS */}
-        <link
-          rel="preload"
-          href="/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif"
-          as="image"
-          type="image/avif"
-          fetchPriority="high"
-        />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
         <WebsiteBackground>
