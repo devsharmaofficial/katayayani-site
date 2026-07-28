@@ -4,20 +4,38 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
-const HERO_IMAGE_PATH = "/hero-slider/tractor-fiber-hood-banner-1.avif";
+const HERO_IMAGE_PATH = "/hero-slider/hppggurkoc7o0gpnqqn2.avif";
 
-const heroBanners = [
+type HeroBanner = {
+  type: "image" | "video";
+  src?: string;
+  alt?: string;
+  videoId?: string;
+};
+
+const heroBanners: HeroBanner[] = [
   {
+    type: "image",
     src: HERO_IMAGE_PATH,
-    alt: "Katayayani Enterprises Tractor Fiber Hood & Punjabi Chatri Banner 1"
+    alt: "Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
   },
   {
-    src: "/hero-slider/tractor-fiber-hood-banner-2.avif",
-    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut Banner 2"
+    type: "video",
+    videoId: "8AwxVYJaLew",
   },
   {
-    src: "/hero-slider/tractor-fiber-hood-banner-3.avif",
-    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory Banner 3"
+    type: "image",
+    src: "/hero-slider/lf33ylzukbdxjfbcupvf.avif",
+    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut"
+  },
+  {
+    type: "video",
+    videoId: "0IoHCk3LOko",
+  },
+  {
+    type: "image",
+    src: "/hero-slider/ppisvxajf1zmlunl52yu.avif",
+    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory"
   }
 ];
 
@@ -30,7 +48,7 @@ export function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const next = (prev + 1) % heroBanners.length;
+        const next = (prev + 1) % 5;
         setLoadedSlides((loaded) => {
           if (loaded.has(next)) return loaded;
           const copy = new Set(loaded);
@@ -39,7 +57,7 @@ export function HeroSlider() {
         });
         return next;
       });
-    }, 4000);
+    }, 3000);
     return () => clearInterval(timer);
   }, []);
 
@@ -59,7 +77,7 @@ export function HeroSlider() {
   return (
     <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
       {/* Image Section */}
-      <div className="w-full relative aspect-[16/9] sm:aspect-[16/9] md:aspect-[16/9] bg-[#f8f8f8] overflow-hidden">
+      <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
 
         {/* Static LCP image — always visible until Next.js Image slot 0 fires onLoad.
             Uses /_next/image srcset so the browser downloads the correctly-sized image
@@ -70,10 +88,10 @@ export function HeroSlider() {
           src={`/_next/image?url=${encPath}&w=828&q=80`}
           srcSet={`/_next/image?url=${encPath}&w=640&q=80 640w, /_next/image?url=${encPath}&w=828&q=80 828w, /_next/image?url=${encPath}&w=1080&q=80 1080w, /_next/image?url=${encPath}&w=1200&q=80 1200w`}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-          alt="Premium Katayayani Enterprises Tractor Fiber Hood Manufacturer India"
+          alt="Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
           fetchPriority="high"
           decoding="sync"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain"
           style={{
             opacity: firstLoaded ? 0 : 1,
             zIndex: firstLoaded ? -1 : 20,
@@ -92,18 +110,28 @@ export function HeroSlider() {
             }`}
           >
             {loadedSlides.has(index) && (
-              <Image
-                src={banner.src}
-                alt={banner.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-                priority={index === 0}
-                fetchPriority={index === 0 ? "high" : "low"}
-                loading={index === 0 ? "eager" : "lazy"}
-                quality={index === 0 ? 80 : 60}
-                onLoad={index === 0 ? () => setFirstLoaded(true) : undefined}
-              />
+              banner.type === "video" ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${banner.videoId}?autoplay=1&mute=1&loop=1&playlist=${banner.videoId}&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <Image
+                  src={banner.src!}
+                  alt={banner.alt!}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
+                  priority={index === 0}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  quality={index === 0 ? 100 : 80}
+                  onLoad={index === 0 ? () => setFirstLoaded(true) : undefined}
+                />
+              )
             )}
           </div>
         ))}
@@ -113,7 +141,7 @@ export function HeroSlider() {
       <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
           {/* Pagination dashes */}
           <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
-            {heroBanners.map((_, idx) => (
+            {[0, 1, 2, 3, 4].map((idx) => (
               <button 
                 key={idx} 
                 onClick={() => goToSlide(idx)}

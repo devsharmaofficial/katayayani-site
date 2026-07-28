@@ -262,7 +262,7 @@ export default function RootLayout({
         {/* Critical LCP preload — tells browser to fetch hero image before any JS */}
         <link
           rel="preload"
-          href="/hero-slider/tractor-fiber-hood-banner-1.avif"
+          href="/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif"
           as="image"
           type="image/avif"
           fetchPriority="high"
