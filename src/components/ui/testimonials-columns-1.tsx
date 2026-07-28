@@ -394,7 +394,7 @@ export const TestimonialsColumn = (props: {
                           alt={`${name}'s tractor canopy feedback`}
                           width={500}
                           height={500}
-                          quality={40}
+                          quality={20}
                           className="w-full h-auto object-contain hover:scale-[1.02] transition-transform duration-300 rounded-[16px]"
                         />
                       </div>
