@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tractor Fiber Hood Gallery | Real Photos — Swaraj, Mahindra, Sonalika | Katayayani Enterprises",
   description:
-    "Browse the Katayayani Enterprises product gallery — real photos of premium tractor fiber hood (punjabi hood / fiber chatri) for Swaraj 744/855, Mahindra, Sonalika, John Deere, Eicher, New Holland & all brands. See quality before you buy. Home delivery all over India.",
+    "Browse the Katayayani Enterprises product gallery — real photos of premium tractor fiber hood (punjabi hood / fiber chatri) for Swaraj 744/855, Mahindra, Sonalika, Eicher, New Holland & all brands. See quality before you buy. Home delivery all over India.",
   keywords: [
     "tractor fiber hood gallery",
     "tractor fiber hood photos",

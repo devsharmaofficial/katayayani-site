@@ -18,7 +18,6 @@ import { getAllProducts } from "@/lib/products";
 import {
   SwarajLogo,
   MahindraLogo,
-  JohnDeereLogo,
   SonalikaLogo,
   EicherLogo,
   NewHollandLogo,
@@ -38,7 +37,7 @@ export default function ProductsPage() {
     "@type": "ItemList",
     name: "Tractor Fiber Hood (Punjabi Hood / Fiber Chatri) — All Brands",
     description:
-      "Best price tractor fiber hood, fiber chatri and punjabi hood for all tractor brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac, Powertrac, Solis, Deutz Fahr.",
+      "Best price tractor fiber hood, fiber chatri and punjabi hood for all tractor brands — Mahindra, Swaraj, Sonalika, Eicher, New Holland, Massey Ferguson, Farmtrac, Powertrac, Solis, Deutz Fahr.",
     url: `${SITE_URL}/products`,
     itemListElement: allProducts.map((p, index) => ({
       "@type": "ListItem",
@@ -51,7 +50,6 @@ export default function ProductsPage() {
   const brands = [
     { name: "Swaraj", slug: "swaraj-frp-canopy", Logo: SwarajLogo },
     { name: "Mahindra", slug: "mahindra-frp-canopy", Logo: MahindraLogo },
-    { name: "John Deere", slug: "john-deere-frp-canopy", Logo: JohnDeereLogo },
     { name: "Sonalika", slug: "sonalika-frp-canopy", Logo: SonalikaLogo },
     { name: "Eicher", slug: "eicher-frp-canopy", Logo: EicherLogo },
     { name: "New Holland", slug: "new-holland-frp-canopy", Logo: NewHollandLogo },
@@ -104,8 +102,7 @@ export default function ProductsPage() {
               Katayayani Enterprises — Meerut (UP) — India's #1 <strong>tractor fiber hood</strong> (punjabi
               hood / fiber chatri) manufacturer. <strong>Swaraj 744 fiber hood price</strong>,{" "}
               <strong>Mahindra tractor fiber chatri price</strong>,{" "}
-              <strong>Sonalika fiber hood price</strong>,{" "}
-              <strong>John Deere 5050D fiber hood price</strong> — all at the best factory-direct rate.{" "}
+              <strong>Sonalika fiber hood price</strong> — all at the best factory-direct rate.{" "}
               Order <strong>tractor fiber hood online</strong> with home delivery anywhere in India.{" "}
               <strong>Eicher tractor fiber hood</strong>,{" "}
               <strong>Farmtrac fiber hood</strong>, <strong>New Holland tractor fiber hood</strong>,{" "}

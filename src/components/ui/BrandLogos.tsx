@@ -26,23 +26,6 @@ export const MahindraLogo = () => (
   </svg>
 );
 
-export const JohnDeereLogo = () => (
-  <svg viewBox="0 0 160 40" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(8, 0)">
-      {/* Outer Green Shield with Rounded Corners */}
-      <rect x="2" y="4" width="32" height="32" rx="7" fill="#367c2b" />
-      {/* Inner Yellow Border */}
-      <rect x="4" y="6" width="28" height="28" rx="5" stroke="#ffde00" strokeWidth="2.5" fill="none" />
-      {/* Leaping Deer Silhouette */}
-      <path d="M 12,28 C 12,28 15,22 17,20 C 20,18 25,18 27,17 C 29,16 30,12 28,10 C 26,8 23,8 21,9 C 19,10 16,14 16,14 C 16,14 13,10 11,10 C 9,10 6,12 8,15 C 10,18 10,21 9,23 C 8,25 5,26 5,26 L 8,28 Z" fill="#ffde00" />
-      {/* Text in John Deere Green */}
-      <text x="44" y="24" fill="#367c2b" fontSize="17" fontWeight="bold" fontFamily="'Arial Black', sans-serif" letterSpacing="0.2">
-        JOHN DEERE
-      </text>
-    </g>
-  </svg>
-);
-
 export const SonalikaLogo = () => (
   <svg viewBox="0 0 160 40" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g transform="translate(10, 0)">

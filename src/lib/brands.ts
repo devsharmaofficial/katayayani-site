@@ -32,16 +32,6 @@ export const brands: Brand[] = [
     country: "India",
   },
   {
-    id: "john-deere",
-    name: "John Deere",
-    slug: "john-deere",
-    description:
-      "Global leader in agricultural machinery. Our tractor fiber hoods complement John Deere's iconic green-and-yellow with color-matched precision.",
-    models: ["John Deere 5050D", "John Deere 5310", "John Deere 5210"],
-    productCount: 2,
-    country: "USA",
-  },
-  {
     id: "sonalika",
     name: "Sonalika",
     slug: "sonalika",

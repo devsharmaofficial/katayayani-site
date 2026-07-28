@@ -28,7 +28,7 @@ const reviews = [
   },
   {
     name: "Karthik R.",
-    role: "John Deere 5310 • Vill. Perundurai, TN",
+    role: "Sonalika DI 60 • Vill. Perundurai, TN",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80",
     rating: 4,
     text: "நல்லா இருக்கு டிராக்டருக்கு சூப்பரா பிட் ஆகிடுச்சு காசுக்கு ஏத்த பொருள்"

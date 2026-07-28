@@ -9,7 +9,7 @@ const faqData = [
   {
     question: "What is the price of a tractor fiber hood in India?",
     answer:
-      "Tractor fiber hood price at Katayayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and tractor fiber hoods for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
+      "Tractor fiber hood price at Katayayani Enterprises starts from a competitive factory-direct rate depending on the brand and model. We offer the best price on punjabi tractor hoods, fiber chatri, and tractor fiber hoods for Swaraj, Mahindra, Sonalika, Eicher, New Holland, Massey Ferguson, Farmtrac and all other brands. Call us at +91-9358273054 for an exact quote.",
   },
   {
     question: "What is the price of Swaraj 744 fiber hood?",
@@ -29,18 +29,14 @@ const faqData = [
   {
     question: "What is a Punjabi tractor hood (Punjabi hood)?",
     answer:
-      "Punjabi tractor hood (also known as punjabi hood or fiber chatri) is an FRP (Fiber Reinforced Plastic) roof cover for tractors that protects the operator from intense sun, heavy rain, and high winds. Katayayani Enterprises in Meerut, UP is India's #1 manufacturer of punjabi tractor hoods for all major brands — Mahindra, Swaraj, Sonalika, John Deere, Eicher, New Holland, Massey Ferguson, and Farmtrac.",
+      "Punjabi tractor hood (also known as punjabi hood or fiber chatri) is an FRP (Fiber Reinforced Plastic) roof cover for tractors that protects the operator from intense sun, heavy rain, and high winds. Katayayani Enterprises in Meerut, UP is India's #1 manufacturer of punjabi tractor hoods for all major brands — Mahindra, Swaraj, Sonalika, Eicher, New Holland, Massey Ferguson, and Farmtrac.",
   },
   {
     question: "Is home delivery available for tractor fiber hood?",
     answer:
       "Yes! Katayayani Enterprises delivers tractor fiber hood (punjabi hood / fiber chatri) to any state in India — Punjab, Haryana, Uttar Pradesh, Gujarat, Maharashtra, Rajasthan, Madhya Pradesh, and all other states. Delivery typically takes 4–5 days. Order online via WhatsApp or call us at +91-9358273054.",
   },
-  {
-    question: "What is the John Deere tractor fiber hood price? (5050D / 5310)",
-    answer:
-      "Katayayani Enterprises offers John Deere tractor fiber hood at the best price. Our John Deere fiber hood is made with tri-layer FRP composite, fits John Deere 5050D, 5045D, 5310, 5105, and all JD series models. It includes integrated LED work light mounting ports. Call +91-9358273054 for John Deere 5050D fiber hood price.",
-  },
+
   {
     question: "What are the Eicher, Farmtrac, and New Holland tractor fiber hood prices?",
     answer:
@@ -78,12 +74,7 @@ const brandModels = [
     slug: "sonalika-frp-canopy",
     models: ["Sonalika DI 750 III", "Sonalika Tiger 50", "Sonalika Tiger 55", "Sonalika DI 60"],
   },
-  {
-    brand: "John Deere",
-    keyword: "John Deere Tractor Fiber Hood",
-    slug: "john-deere-frp-canopy",
-    models: ["John Deere 5050D", "John Deere 5045D", "John Deere 5310", "John Deere 5105"],
-  },
+
   {
     brand: "Eicher",
     keyword: "Eicher Tractor Fiber Hood",
@@ -179,7 +170,7 @@ export default function HomepageSEOContent() {
             <p className="text-[15px] text-gray-600 leading-relaxed">
               <strong>Katayayani Enterprises</strong>, Meerut (UP) — factory-direct{" "}
               <strong>tractor fiber hood</strong> for <strong>Mahindra, Swaraj 744/855,
-              Sonalika, John Deere, Eicher, New Holland, Massey Ferguson</strong> and all
+              Sonalika, Eicher, New Holland, Massey Ferguson</strong> and all
               other brands. Best price guaranteed. Home delivery all over India.
             </p>
             {/* CTA row */}
@@ -272,8 +263,6 @@ export default function HomepageSEOContent() {
                 fits DI 750, Tiger 50/55 with reinforced anti-vibration mounts.
               </p>
               <p>
-                <strong>John Deere tractor fiber hood</strong> uses tri-layer FRP construction with
-                integrated LED light mounts.{" "}
                 <strong>Eicher tractor fiber hood</strong>, <strong>New Holland tractor fiber hood</strong>,{" "}
                 <strong>Massey tractor fiber hood</strong>, and <strong>Farmtrac tractor fiber hood</strong>{" "}
                 — all available at the best price with pan-India home delivery.
@@ -294,7 +283,7 @@ export default function HomepageSEOContent() {
               <Link href="/products/swaraj-744-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Swaraj 744 Fiber Hood Price</Link>
               <Link href="/products/mahindra-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Mahindra Tractor Fiber Hood Price</Link>
               <Link href="/products/sonalika-di-750-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Sonalika Tractor Fiber Hood Price</Link>
-              <Link href="/products/john-deere-5050d-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">John Deere 5050D Fiber Hood Price</Link>
+
               <Link href="/products/swaraj-855-fiber-hood" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Swaraj 855 Fiber Hood Price</Link>
               <Link href="/products/sonalika-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Sonalika Fiber Chatri Price</Link>
               <Link href="/products/mahindra-frp-canopy" className="bg-white border border-gray-200 text-[#012d1d] text-[13px] font-semibold px-4 py-2 rounded-full hover:border-[#012d1d] hover:bg-[#f8faf9] transition-all shadow-sm">Mahindra Tractor Fiber Chatri Price</Link>

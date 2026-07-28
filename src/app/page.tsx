@@ -79,7 +79,7 @@ export default function HomePage() {
             <span className="opacity-40 mx-2">•</span>
             <span>Sonalika Fiber Hood</span>
             <span className="opacity-40 mx-2">•</span>
-            <span className="text-[#ffc641]">John Deere FRP Hood</span>
+            <span className="text-[#ffc641]">Massey Ferguson FRP Hood</span>
             <span className="opacity-40 mx-2">•</span>
             <span>Home Delivery All India</span>
             <span className="opacity-40 mx-2">•</span>

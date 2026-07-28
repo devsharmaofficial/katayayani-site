@@ -81,7 +81,7 @@ export default function GalleryPage() {
               FRP Tractor Canopy Installation Gallery
             </h1>
             <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed">
-              View real customer installation photos of <strong>punjabi tractor hoods</strong> and <strong>fiber chatris</strong> manufactured by Katayayani Enterprises. High quality tractor fiber hoods for Swaraj, Mahindra, John Deere & all brands.
+              View real customer installation photos of <strong>punjabi tractor hoods</strong> and <strong>fiber chatris</strong> manufactured by Katayayani Enterprises. High quality tractor fiber hoods for Swaraj, Mahindra & all brands.
             </p>
           </div>
         </ScrollReveal>

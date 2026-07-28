@@ -22,7 +22,7 @@ export const blogs: BlogPost[] = [
     id: "2",
     slug: "how-to-install-fiber-hood-on-tractor",
     title: "How to Install a Fiber Hood on a Tractor: Step-by-Step Fitting Guide",
-    excerpt: "Learn the easiest and most secure way to install a Punjabi fiber hood (chatri) on your tractor. A complete fitting guide for Swaraj, John Deere, Mahindra, and more.",
+    excerpt: "Learn the easiest and most secure way to install a Punjabi fiber hood (chatri) on your tractor. A complete fitting guide for Swaraj, Mahindra, and more.",
     content: `
       <h2>The Importance of Proper Tractor Fiber Hood Installation</h2>
       <p>Upgrading your tractor with a heavy-duty <strong>tractor fiber hood</strong> (also known as a Punjabi hood or chatri) is one of the best investments you can make for field work. However, proper <strong>tractor chatri fitting</strong> is critical. If not installed securely, the hood can vibrate excessively, crack under stress, or even become a safety hazard on bumpy village roads.</p>
@@ -54,7 +54,7 @@ export const blogs: BlogPost[] = [
       <p>Use your spirit level to ensure the hood is straight. Once perfectly aligned, tighten all nuts securely in a cross-pattern to ensure even pressure distribution.</p>
 
       <h2>Need a Perfect Fit for Your Tractor?</h2>
-      <p>Different tractors require different mounting setups. At <strong>Katayayani Enterprises</strong>, we provide exact-fit <strong>tractor accessories fitting</strong> kits tailored specifically for your Swaraj 744, John Deere 5050D, Mahindra, or Sonalika. Our hoods come with all necessary heavy-duty mounting hardware included.</p>
+      <p>Different tractors require different mounting setups. At <strong>Katayayani Enterprises</strong>, we provide exact-fit <strong>tractor accessories fitting</strong> kits tailored specifically for your Swaraj 744, Mahindra, or Sonalika. Our hoods come with all necessary heavy-duty mounting hardware included.</p>
       <p><em>Call Katayayani Enterprises today at +91-9358273054 for expert guidance on your tractor hood fitting!</em></p>
     `,
     author: "Katayayani Enterprises",
@@ -71,18 +71,18 @@ export const blogs: BlogPost[] = [
   {
     id: "1",
     slug: "best-tractor-fiber-hood-price-india",
-    title: "Best Tractor Fiber Hood Price in India for Swaraj 744, John Deere 5050D & More",
-    excerpt: "Get the best deals on heavy-duty fiber chatri (punjabi hood) directly from the factory. Perfect fit for Swaraj 744, John Deere 5050D, Mahindra, and Sonalika.",
+    title: "Best Tractor Fiber Hood Price in India for Swaraj 744 & More",
+    excerpt: "Get the best deals on heavy-duty fiber chatri (punjabi hood) directly from the factory. Perfect fit for Swaraj 744, Mahindra, and Sonalika.",
     content: `
       <h2>Why Every Indian Farmer Needs a Strong Fiber Chatri</h2>
-      <p>For hardworking farmers in India, spending 10 to 12 hours straight in the fields under the blazing hot sun or sudden heavy monsoon rain is a daily reality. A strong <strong>tractor fiber hood (punjabi hood)</strong> is the best way to keep yourself safe, cool, and comfortable while ploughing or harvesting. Whether you drive a <strong>Swaraj 744</strong>, a <strong>John Deere 5050D</strong>, or a Mahindra tractor, a solid fiber chatri is a must-have for daily field work.</p>
+      <p>For hardworking farmers in India, spending 10 to 12 hours straight in the fields under the blazing hot sun or sudden heavy monsoon rain is a daily reality. A strong <strong>tractor fiber hood (punjabi hood)</strong> is the best way to keep yourself safe, cool, and comfortable while ploughing or harvesting. Whether you drive a <strong>Swaraj 744</strong>, a Mahindra tractor, a solid fiber chatri is a must-have for daily field work.</p>
 
       <h2>Real Benefits for Daily Field Work</h2>
       <ul>
         <li><strong>Beat the Heat & Rain:</strong> Working in the summer heat or heavy showers is exhausting. A heavy-duty fiber hood gives you full thick shade and keeps you completely dry, so you can work longer without falling sick.</li>
         <li><strong>Save Your Tractor's Life:</strong> Your tractor is a huge investment. A wide roof protects your costly dashboard meters, steering wheel, and switches from getting damaged or rusted by direct sunlight and heavy water.</li>
         <li><strong>Heavy-Duty Strength:</strong> We know that village roads and muddy fields have heavy bumps. Our punjabi hoods are made of super strong thick fiber that won't crack, bend, or break easily, no matter how rough the field gets.</li>
-        <li><strong>Perfect Matching Fitting:</strong> We make specific models for top tractors. For example, our <strong>Swaraj 744 fiber hood price</strong> and <strong>John Deere 5050D fiber hood price</strong> give you exact matching fitting and original colors without needing any extra local welding.</li>
+        <li><strong>Perfect Matching Fitting:</strong> We make specific models for top tractors. For example, our <strong>Swaraj 744 fiber hood price</strong> and <strong>Swaraj 744 fiber hood price</strong> give you exact matching fitting and original colors without needing any extra local welding.</li>
       </ul>
 
       <h2>Direct Factory Price - Katayayani Enterprises</h2>
@@ -95,11 +95,11 @@ export const blogs: BlogPost[] = [
     publishedAt: "2026-07-08",
     readTime: "4 min read",
     image: "/products/swaraj/awt13ljuuyjyavhnard5.avif",
-    tags: ["Tractor Fiber Hood", "Swaraj 744", "John Deere 5050D", "Fiber Chatri", "Punjabi Hood"],
+    tags: ["Tractor Fiber Hood", "Swaraj 744", "Fiber Chatri", "Punjabi Hood"],
     seo: {
-      title: "Best Tractor Fiber Hood Price | Swaraj 744 & John Deere 5050D",
-      description: "Get the lowest factory tractor fiber hood price for Swaraj 744, John Deere 5050D, Mahindra & more. Buy heavy-duty punjabi hood / fiber chatri directly from manufacturer.",
-      keywords: ["tractor fiber hood", "tractor fiber hood price", "swaraj 744 fiber hood price", "john deere 5050d fiber hood price", "punjabi hood", "fiber chatri", "Katayayani Enterprises"]
+      title: "Best Tractor Fiber Hood Price | Swaraj 744",
+      description: "Get the lowest factory tractor fiber hood price for Swaraj 744, Mahindra & more. Buy heavy-duty punjabi hood / fiber chatri directly from manufacturer.",
+      keywords: ["tractor fiber hood", "tractor fiber hood price", "swaraj 744 fiber hood price", "punjabi hood", "fiber chatri", "Katayayani Enterprises"]
     }
   },
   {
@@ -127,7 +127,7 @@ export const blogs: BlogPost[] = [
         <li><strong>Mahindra Fiber Hood</strong> — Mahindra 575 DI, Mahindra 265 DI, Mahindra 475 DI, Mahindra Arjun 605</li>
         <li><strong>Swaraj Fiber Hood</strong> — Swaraj 744 FE, Swaraj 855 FE, Swaraj 735 FE, Swaraj 963 FE</li>
         <li><strong>Sonalika Fiber Hood</strong> — Sonalika DI 750 III, Sonalika GT 22, Sonalika DI 60</li>
-        <li><strong>John Deere Fiber Hood</strong> — John Deere 5050D, John Deere 5310, John Deere 5310 GearPro</li>
+        
         <li><strong>New Holland Fiber Hood</strong> — New Holland 3600-2, New Holland Excel 4710</li>
         <li><strong>Eicher Fiber Hood</strong> — Eicher 380, Eicher 557</li>
         <li><strong>Massey Ferguson Fiber Hood</strong> — Massey Ferguson 241, Massey Ferguson 9500</li>
@@ -171,7 +171,7 @@ export const blogs: BlogPost[] = [
       <ul>
         <li><strong>Swaraj 744 Fiber Hood Price</strong>: Factory wholesale rate, contact for latest quote</li>
         <li><strong>Mahindra Fiber Hood Price</strong>: Factory wholesale rate, contact for latest quote</li>
-        <li><strong>John Deere Fiber Hood Price</strong>: Factory wholesale rate, contact for latest quote</li>
+        
         <li><strong>Sonalika Fiber Hood Price</strong>: Factory wholesale rate, contact for latest quote</li>
         <li><strong>Eicher Fiber Hood Price</strong>: Factory wholesale rate, contact for latest quote</li>
       </ul>
@@ -190,7 +190,7 @@ export const blogs: BlogPost[] = [
       <p><strong>A:</strong> They are the same product. A <strong>punjabi chatri</strong> (or punjabi hood) is the popular regional name for a <strong>tractor fiber canopy / FRP hood</strong>. The term is most commonly used in North India (Punjab, Haryana, UP), while "fiber hood" or "fiber canopy" is used more broadly across India. All names refer to the protective FRP roof mounted on a tractor.</p>
 
       <h3>Q: Do you make fiber hoods for all tractor brands?</h3>
-      <p><strong>A:</strong> Yes. We manufacture custom-fitted <strong>fiber chatri for all major tractor brands</strong> including Mahindra, Swaraj, Sonalika, John Deere, New Holland, Eicher, Massey Ferguson, Farmtrac, ACE, Indo Farm, and more. Every hood is designed for an exact fit for the specific model — no modification required.</p>
+      <p><strong>A:</strong> Yes. We manufacture custom-fitted <strong>fiber chatri for all major tractor brands</strong> including Mahindra, Swaraj, Sonalika, New Holland, Eicher, Massey Ferguson, Farmtrac, ACE, Indo Farm, and more. Every hood is designed for an exact fit for the specific model — no modification required.</p>
 
       <h3>Q: How long does a fiber hood from Katayayani Enterprises last?</h3>
       <p><strong>A:</strong> Our <strong>FRP tractor fiber hoods</strong> are built for a service life of 8 to 12 years under normal agricultural use. The UV-resistant coating prevents sunlight degradation, and the high-density fiber construction resists cracking and impact damage from rough terrain.</p>
@@ -229,7 +229,7 @@ export const blogs: BlogPost[] = [
     ],
     seo: {
       title: "Best Tractor Fiber Hood & Chatri Manufacturer in India | Katayayani Enterprises Meerut",
-      description: "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi chatri / FRP canopy) manufacturer in Meerut, UP. Factory-direct price for Mahindra, Swaraj, Sonalika, John Deere & all brands. Pan-India delivery. Call +91-9358273054.",
+      description: "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi chatri / FRP canopy) manufacturer in Meerut, UP. Factory-direct price for Mahindra, Swaraj, Sonalika & all brands. Pan-India delivery. Call +91-9358273054.",
       keywords: [
         "best fiber hood manufacturer india",
         "tractor fiber hood manufacturer india",
@@ -240,7 +240,7 @@ export const blogs: BlogPost[] = [
         "swaraj 744 fiber hood manufacturer",
         "mahindra fiber hood manufacturer",
         "sonalika fiber hood manufacturer",
-        "john deere fiber hood manufacturer",
+        
         "tractor fiber hood price india",
         "punjabi hood manufacturer uttar pradesh",
         "fiber hood factory meerut",

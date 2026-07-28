@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tractor Fiber Hood Price | Buy Punjabi Hood | Fiber Chatri All Brands — Katayayani Enterprises",
   description:
-    "Buy tractor fiber hood (punjabi hood / fiber chatri) at best factory price in India. All brands: Swaraj 744/855, Mahindra 575, Sonalika DI 750, John Deere 5050D, Eicher, New Holland, Massey, Farmtrac. Home delivery across India. Call +91-9358273054 for price.",
+    "Buy tractor fiber hood (punjabi hood / fiber chatri) at best factory price in India. All brands: Swaraj 744/855, Mahindra 575, Sonalika DI 750, Eicher, New Holland, Massey, Farmtrac. Home delivery across India. Call +91-9358273054 for price.",
   keywords: [
     // TIER 1 — High-volume commercial buyer keywords
     "tractor fiber hood price",
@@ -88,12 +88,6 @@ export const metadata: Metadata = {
     "massey tractor fiber hood",
     "massey 241 tractor fiber hood price",
     "massey 1035 tractor fiber hood price",
-    // John Deere
-    "john deere fiber hood",
-    "john deere fiber hood price",
-    "john deere tractor fiber hood price",
-    "john deere 5050d fiber hood price",
-    "john deere 5310 fiber hood price",
     // Eicher
     "eicher tractor fiber hood price",
     "eicher tractor fiber hood",
@@ -169,7 +163,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/products`,
     title: "Tractor Fiber Hood Price | Punjabi Hood | Fiber Chatri All Brands — Katayayani Enterprises",
     description:
-      "Best factory price tractor fiber hood (punjabi hood / fiber chatri) for all brands — Swaraj 744/855, Mahindra, Sonalika, John Deere, Eicher & more. Home delivery across India. Call +91-9358273054.",
+      "Best factory price tractor fiber hood (punjabi hood / fiber chatri) for all brands — Swaraj 744/855, Mahindra, Sonalika, Eicher & more. Home delivery across India. Call +91-9358273054.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
