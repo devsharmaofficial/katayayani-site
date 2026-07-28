@@ -8,6 +8,8 @@ const CHANNEL_URL = "https://youtube.com/@katayayanienterprises.meerut";
 
 // YouTube Shorts video IDs from the channel
 const SHORTS = [
+  { id: "8AwxVYJaLew" },
+  { id: "0IoHCk3LOko" },
   { id: "UL6jtWMHmtI" },
   { id: "c1hL6fj8VjQ" },
   { id: "ap38alCuUxY" },
@@ -20,6 +22,7 @@ const SHORTS = [
 
 function ShortCard({ id, index }: { id: string; index: number }) {
   const [playing, setPlaying] = useState(false);
+  const [imgSrc, setImgSrc] = useState(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
   const imgRef = useRef<HTMLImageElement>(null);
 
   const handlePlay = (e: React.MouseEvent) => {
@@ -47,7 +50,8 @@ function ShortCard({ id, index }: { id: string; index: number }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             ref={imgRef}
-            src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
+            src={imgSrc}
+            onError={() => setImgSrc(`https://img.youtube.com/vi/${id}/hqdefault.jpg`)}
             alt="Katayayani Enterprises Tractor Fiber Hood YouTube Short"
             width={175}
             height={311}

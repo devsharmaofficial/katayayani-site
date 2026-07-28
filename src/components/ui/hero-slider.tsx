@@ -4,28 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
-const HERO_IMAGE_PATH = "/hero-slider/tractor-fiber-hood-manufacturer-banner-1.avif";
+const HERO_IMAGE_PATH = "/hero-slider/tractor-fiber-hood-banner-1.avif";
 
 const heroBanners = [
   {
     src: HERO_IMAGE_PATH,
-    alt: "Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
+    alt: "Katayayani Enterprises Tractor Fiber Hood & Punjabi Chatri Banner 1"
   },
   {
-    src: "/hero-slider/best-tractor-fiber-chatri-price-banner-2.avif",
-    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut"
+    src: "/hero-slider/tractor-fiber-hood-banner-2.avif",
+    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut Banner 2"
   },
   {
-    src: "/hero-slider/punjabi-hood-canopy-manufacturer-banner-3.avif",
-    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory"
-  },
-  {
-    src: "/hero-slider/premium-frp-canopy-factory-banner-4.avif",
-    alt: "High Quality Tractor Fiber Hood Roof for All Tractor Models"
-  },
-  {
-    src: "/hero-slider/heavy-duty-tractor-fiber-hood-banner-5.avif",
-    alt: "Weatherproof Heavy Duty Tractor Fiber Hood and Roof"
+    src: "/hero-slider/tractor-fiber-hood-banner-3.avif",
+    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory Banner 3"
   }
 ];
 
@@ -38,7 +30,7 @@ export function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const next = (prev + 1) % 5;
+        const next = (prev + 1) % heroBanners.length;
         setLoadedSlides((loaded) => {
           if (loaded.has(next)) return loaded;
           const copy = new Set(loaded);
@@ -47,7 +39,7 @@ export function HeroSlider() {
         });
         return next;
       });
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -67,7 +59,7 @@ export function HeroSlider() {
   return (
     <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
       {/* Image Section */}
-      <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
+      <div className="w-full relative aspect-[16/9] sm:aspect-[16/9] md:aspect-[16/9] bg-[#f8f8f8] overflow-hidden">
 
         {/* Static LCP image — always visible until Next.js Image slot 0 fires onLoad.
             Uses /_next/image srcset so the browser downloads the correctly-sized image
@@ -78,10 +70,10 @@ export function HeroSlider() {
           src={`/_next/image?url=${encPath}&w=828&q=80`}
           srcSet={`/_next/image?url=${encPath}&w=640&q=80 640w, /_next/image?url=${encPath}&w=828&q=80 828w, /_next/image?url=${encPath}&w=1080&q=80 1080w, /_next/image?url=${encPath}&w=1200&q=80 1200w`}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-          alt="Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
+          alt="Premium Katayayani Enterprises Tractor Fiber Hood Manufacturer India"
           fetchPriority="high"
           decoding="sync"
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             opacity: firstLoaded ? 0 : 1,
             zIndex: firstLoaded ? -1 : 20,
@@ -104,7 +96,7 @@ export function HeroSlider() {
                 src={banner.src}
                 alt={banner.alt}
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
                 priority={index === 0}
                 fetchPriority={index === 0 ? "high" : "low"}
@@ -121,7 +113,7 @@ export function HeroSlider() {
       <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
           {/* Pagination dashes */}
           <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
-            {[0, 1, 2, 3, 4].map((idx) => (
+            {heroBanners.map((_, idx) => (
               <button 
                 key={idx} 
                 onClick={() => goToSlide(idx)}
