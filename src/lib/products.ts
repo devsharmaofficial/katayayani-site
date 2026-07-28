@@ -1347,6 +1347,119 @@ const products: Product[] = [
     isNew: true,
     createdAt: "2024-07-12",
   },
+  {
+    id: "universal-tractor-hood-1",
+    slug: "john-deere-frp-canopy",
+    name: "Universal Tractor Fiber Hood — Premium Quality",
+    shortName: "Universal Fiber Hood",
+    description: "Premium Universal Tractor Fiber Hood compatible with all major tractor brands. Features a heavy-duty FRP build with excellent UV resistance. Watch our YouTube shorts to see the incredible quality and fitment in real life!",
+    shortDescription: "Premium universal tractor fiber hood compatible with all major tractor brands.",
+    brand: "Universal (All Brands)",
+    brandSlug: "universal",
+    compatibleModels: ["All Brands", "Universal Fit"],
+    colorVariants: [
+      { name: "Green", hex: "#16a34a", slug: "green" },
+      { name: "White", hex: "#ffffff", slug: "white" }
+    ],
+    images: [
+      { src: "https://img.youtube.com/vi/UL6jtWMHmtI/hqdefault.jpg", alt: "Universal Tractor Fiber Hood Video Showcase", width: 800, height: 800 }
+    ],
+    videos: [
+      "https://youtube.com/shorts/UL6jtWMHmtI"
+    ],
+    specifications: [
+      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
+      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+    ],
+    features: ["Heavy Duty", "UV Protected", "Universal Fit"],
+    featureTags: ["Universal", "Premium"],
+    category: "FRP Canopies",
+    seo: {
+      title: "Universal Tractor Fiber Hood | Premium Quality | Katayayani Enterprises",
+      description: "Buy premium universal tractor fiber hood. Compatible with all tractor brands.",
+      keywords: ["universal tractor hood", "tractor fiber hood"]
+    },
+    galleryImages: [],
+    isFeatured: false,
+    isNew: true,
+    createdAt: "2024-08-01"
+  },
+  {
+    id: "universal-tractor-hood-2",
+    slug: "john-deere-5050d-fiber-hood",
+    name: "Universal Tractor Fiber Chatri — Heavy Duty",
+    shortName: "Universal Fiber Chatri",
+    description: "Heavy Duty Universal Tractor Fiber Chatri compatible with all major tractor brands. Features a durable FRP build. Watch our YouTube shorts to see the incredible quality and fitment in real life!",
+    shortDescription: "Heavy Duty universal tractor fiber chatri compatible with all major tractor brands.",
+    brand: "Universal (All Brands)",
+    brandSlug: "universal",
+    compatibleModels: ["All Brands", "Universal Fit"],
+    colorVariants: [
+      { name: "Green", hex: "#16a34a", slug: "green" },
+      { name: "Red", hex: "#ef4444", slug: "red" },
+      { name: "White", hex: "#ffffff", slug: "white" }
+    ],
+    images: [
+      { src: "https://img.youtube.com/vi/c1hL6fj8VjQ/hqdefault.jpg", alt: "Universal Tractor Fiber Chatri Video Showcase", width: 800, height: 800 }
+    ],
+    videos: [
+      "https://youtube.com/shorts/c1hL6fj8VjQ"
+    ],
+    specifications: [
+      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
+      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+    ],
+    features: ["Heavy Duty", "UV Protected", "Universal Fit"],
+    featureTags: ["Universal", "Heavy Duty"],
+    category: "FRP Canopies",
+    seo: {
+      title: "Universal Tractor Fiber Chatri | Heavy Duty | Katayayani Enterprises",
+      description: "Buy heavy duty universal tractor fiber chatri. Compatible with all tractor brands.",
+      keywords: ["universal tractor chatri", "tractor fiber chatri"]
+    },
+    galleryImages: [],
+    isFeatured: false,
+    isNew: true,
+    createdAt: "2024-08-01"
+  },
+  {
+    id: "universal-tractor-hood-3",
+    slug: "john-deere-5310-fiber-hood",
+    name: "Universal Tractor Punjabi Hood — Custom Fit",
+    shortName: "Universal Punjabi Hood",
+    description: "Universal Tractor Punjabi Hood compatible with all major tractor brands. Adjustable mounting brackets for a perfect fit. Watch our YouTube shorts to see the incredible quality and fitment in real life!",
+    shortDescription: "Universal tractor punjabi hood compatible with all major tractor brands.",
+    brand: "Universal (All Brands)",
+    brandSlug: "universal",
+    compatibleModels: ["All Brands", "Universal Fit"],
+    colorVariants: [
+      { name: "Green", hex: "#16a34a", slug: "green" },
+      { name: "Blue", hex: "#3b82f6", slug: "blue" },
+      { name: "White", hex: "#ffffff", slug: "white" }
+    ],
+    images: [
+      { src: "https://img.youtube.com/vi/ap38alCuUxY/hqdefault.jpg", alt: "Universal Tractor Punjabi Hood Video Showcase", width: 800, height: 800 }
+    ],
+    videos: [
+      "https://youtube.com/shorts/ap38alCuUxY"
+    ],
+    specifications: [
+      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
+      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+    ],
+    features: ["Heavy Duty", "UV Protected", "Universal Fit", "Punjabi Design"],
+    featureTags: ["Universal", "Punjabi Hood"],
+    category: "FRP Canopies",
+    seo: {
+      title: "Universal Tractor Punjabi Hood | Custom Fit | Katayayani Enterprises",
+      description: "Buy universal tractor punjabi hood. Compatible with all tractor brands.",
+      keywords: ["universal punjabi hood", "tractor punjabi hood"]
+    },
+    galleryImages: [],
+    isFeatured: false,
+    isNew: true,
+    createdAt: "2024-08-01"
+  }
 ];
 
 

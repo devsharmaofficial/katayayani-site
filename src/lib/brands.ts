@@ -7,6 +7,16 @@ import { Brand } from "@/types";
 
 export const brands: Brand[] = [
   {
+    id: "universal",
+    name: "Universal (All Brands)",
+    slug: "universal",
+    description:
+      "Universal fit tractor fiber hoods and canopies designed to be compatible with all major tractor brands in India. Features heavy-duty FRP construction and adjustable mounting brackets for a perfect fit on any model.",
+    models: ["All Models", "Universal Fit"],
+    productCount: 3,
+    country: "India",
+  },
+  {
     id: "swaraj",
     name: "Swaraj",
     slug: "swaraj",
