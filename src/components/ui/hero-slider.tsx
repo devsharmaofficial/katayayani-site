@@ -3,7 +3,10 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import YouTube from "react-youtube";
+import dynamic from "next/dynamic";
+
+// Dynamically import react-youtube with NO SSR so it doesn't block initial page load/hydration
+const YouTube = dynamic(() => import("react-youtube"), { ssr: false });
 
 const HERO_IMAGE_PATH = "/hero-slider/hppggurkoc7o0gpnqqn2.avif";
 
@@ -62,9 +65,18 @@ export function HeroSlider() {
   const [isPaused, setIsPaused] = useState(false);
   const [firstLoaded, setFirstLoaded] = useState(false);
   const [loadedSlides, setLoadedSlides] = useState<Set<number>>(new Set([0]));
+  const [mountVideos, setMountVideos] = useState(false);
   
   // Store references to YouTube players using unique keys e.g., "slide-0-0"
   const playerRefs = useRef<{ [key: string]: any }>({});
+
+  // Idle Rendering Pattern: Defer video mounting to unblock main thread on initial load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMountVideos(true);
+    }, 1500); // Wait 1.5s after hydration to mount heavy iframes
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // If it's a video slide, pause auto-scroll immediately
@@ -140,8 +152,8 @@ export function HeroSlider() {
   };
 
   const handleStateChange = (event: any) => {
-    // Hide static LCP image once video actually starts playing
-    if (event.data === YouTube.PlayerState.PLAYING) {
+    // Hide static LCP image once video actually starts playing (state 1 is PLAYING in YT API)
+    if (event.data === 1) { 
       setFirstLoaded(true);
     }
   };
@@ -204,39 +216,47 @@ export function HeroSlider() {
             {loadedSlides.has(index) && (
               banner.type === "split-shorts" ? (
                 <div className="w-full h-full flex bg-black">
-                  <div className="w-1/2 h-full border-r border-black/50">
-                    <YouTube
-                      videoId={banner.shorts![0].videoId}
-                      opts={getYoutubeOpts(banner.shorts![0].start)}
-                      onReady={(e) => handleVideoReady(e, index, "0")}
-                      onStateChange={handleStateChange}
-                      onEnd={handleVideoEnd}
-                      className="w-full h-full flex items-center justify-center"
-                      iframeClassName="w-full h-full max-h-full"
-                    />
-                  </div>
-                  <div className="w-1/2 h-full border-l border-black/50">
-                    <YouTube
-                      videoId={banner.shorts![1].videoId}
-                      opts={getYoutubeOpts(banner.shorts![1].start)}
-                      onReady={(e) => handleVideoReady(e, index, "1")}
-                      onStateChange={handleStateChange}
-                      onEnd={handleVideoEnd}
-                      className="w-full h-full flex items-center justify-center"
-                      iframeClassName="w-full h-full max-h-full"
-                    />
-                  </div>
+                  {mountVideos && (
+                    <>
+                      <div className="w-1/2 h-full border-r border-black/50">
+                        <YouTube
+                          videoId={banner.shorts![0].videoId}
+                          opts={getYoutubeOpts(banner.shorts![0].start)}
+                          onReady={(e) => handleVideoReady(e, index, "0")}
+                          onStateChange={handleStateChange}
+                          onEnd={handleVideoEnd}
+                          className="w-full h-full flex items-center justify-center"
+                          iframeClassName="w-full h-full max-h-full"
+                        />
+                      </div>
+                      <div className="w-1/2 h-full border-l border-black/50">
+                        <YouTube
+                          videoId={banner.shorts![1].videoId}
+                          opts={getYoutubeOpts(banner.shorts![1].start)}
+                          onReady={(e) => handleVideoReady(e, index, "1")}
+                          onStateChange={handleStateChange}
+                          onEnd={handleVideoEnd}
+                          className="w-full h-full flex items-center justify-center"
+                          iframeClassName="w-full h-full max-h-full"
+                        />
+                      </div>
+                    </>
+                  )}
                 </div>
               ) : banner.type === "video" ? (
-                <YouTube
-                  videoId={banner.videoId}
-                  opts={getYoutubeOpts(banner.start)}
-                  onReady={(e) => handleVideoReady(e, index, "0")}
-                  onStateChange={handleStateChange}
-                  onEnd={handleVideoEnd}
-                  className="w-full h-full bg-black flex items-center justify-center"
-                  iframeClassName="w-full h-full max-h-full aspect-video"
-                />
+                <div className="w-full h-full bg-black">
+                   {mountVideos && (
+                     <YouTube
+                       videoId={banner.videoId}
+                       opts={getYoutubeOpts(banner.start)}
+                       onReady={(e) => handleVideoReady(e, index, "0")}
+                       onStateChange={handleStateChange}
+                       onEnd={handleVideoEnd}
+                       className="w-full h-full bg-black flex items-center justify-center"
+                       iframeClassName="w-full h-full max-h-full aspect-video"
+                     />
+                   )}
+                </div>
               ) : (
                 <Image
                   src={banner.src!}
