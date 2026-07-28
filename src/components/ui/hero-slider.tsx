@@ -44,6 +44,13 @@ const heroBanners: HeroBanner[] = [
     videoId: "0IoHCk3LOko",
   },
   {
+    type: "split-shorts",
+    shorts: [
+      { videoId: "c1hL6fj8VjQ" },
+      { videoId: "ap38alCuUxY" }
+    ]
+  },
+  {
     type: "image",
     src: "/hero-slider/ppisvxajf1zmlunl52yu.avif",
     alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory"
