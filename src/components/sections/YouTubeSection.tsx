@@ -10,8 +10,10 @@ const CHANNEL_URL = "https://youtube.com/@katayayanienterprises.meerut";
 const SHORTS = [
   { id: "UL6jtWMHmtI" },
   { id: "c1hL6fj8VjQ" },
+  { id: "ap38alCuUxY" },
   { id: "3STNVrRyyP0" },
   { id: "koeGb8HLNgs" },
+  { id: "NCVo8d9WqUM" },
   { id: "dmhwYUss980" },
   { id: "6HTWN0JjXA4" },
 ];
@@ -156,7 +158,7 @@ export default function YouTubeSection() {
             </h2>
 
             <p className="text-white/60 text-[14px] mt-3 max-w-[480px] leading-relaxed">
-              See real tractor fiber hoods, punjabi hoods &amp; fiber chatri in action — Swaraj, Mahindra, Sonalika, John Deere &amp; all brands.
+              See real tractor fiber hoods, punjabi hoods &amp; fiber chatri in action — Swaraj, Mahindra, Sonalika &amp; all brands.
             </p>
           </div>
 

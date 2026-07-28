@@ -131,7 +131,7 @@ export default function HomePage() {
                   Tractor <span className="font-semibold text-secondary">Fiber Hood</span> — All Brands
                 </h2>
                 <p className="text-[14px] text-gray-500 mt-2 max-w-[520px] mx-auto">
-                  Best price fiber hood (punjabi hood / fiber chatri) for Swaraj, Mahindra, Sonalika, John Deere, Eicher, New Holland, Massey &amp; more. Home delivery all over India.
+                  Best price fiber hood (punjabi hood / fiber chatri) for Swaraj, Mahindra, Sonalika, Eicher, New Holland, Massey &amp; more. Home delivery all over India.
                 </p>
               </div>
             </ScrollReveal>

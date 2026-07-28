@@ -782,7 +782,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
                           {/* Short Description */}
                           <p className="text-gray-500 text-[14px] leading-relaxed line-clamp-2 min-h-[40px] mt-1.5">
-                            Custom heavy-duty fiber hoods & canopies for Swaraj, Mahindra, John Deere, and all other major tractor brands.
+                            Custom heavy-duty fiber hoods & canopies for Swaraj, Mahindra, Sonalika, and all other major tractor brands.
                           </p>
                         </div>
                       </div>
