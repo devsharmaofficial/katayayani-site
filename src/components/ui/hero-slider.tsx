@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import YouTube from "react-youtube";
 
 const HERO_IMAGE_PATH = "/hero-slider/hppggurkoc7o0gpnqqn2.avif";
 
@@ -41,14 +42,43 @@ const heroBanners: HeroBanner[] = [
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  // Static LCP img stays visible until the first Next.js Image fires onLoad
+  const [isPaused, setIsPaused] = useState(false);
   const [firstLoaded, setFirstLoaded] = useState(false);
   const [loadedSlides, setLoadedSlides] = useState<Set<number>>(new Set([0]));
+  
+  // Store references to YouTube players to control them programmatically
+  const playerRefs = useRef<{ [key: number]: any }>({});
 
   useEffect(() => {
+    // If it's a video slide, pause auto-scroll immediately
+    if (heroBanners[currentSlide].type === "video") {
+      setIsPaused(true);
+    } else {
+      setIsPaused(false);
+    }
+
+    // Command videos to play or pause based on current slide
+    Object.keys(playerRefs.current).forEach((key) => {
+      const idx = parseInt(key);
+      const player = playerRefs.current[idx];
+      if (player && typeof player.pauseVideo === "function") {
+        if (idx === currentSlide) {
+          // Attempt to auto-play with sound
+          player.playVideo();
+        } else {
+          // Pause if it's not the active slide
+          player.pauseVideo();
+        }
+      }
+    });
+  }, [currentSlide]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const next = (prev + 1) % 5;
+        const next = (prev + 1) % heroBanners.length;
         setLoadedSlides((loaded) => {
           if (loaded.has(next)) return loaded;
           const copy = new Set(loaded);
@@ -57,9 +87,10 @@ export function HeroSlider() {
         });
         return next;
       });
-    }, 3000);
+    }, 4000); // 4 seconds per slide
+
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused]);
 
   const goToSlide = useCallback((idx: number) => {
     setCurrentSlide(idx);
@@ -71,17 +102,27 @@ export function HeroSlider() {
     });
   }, []);
 
-  // Encoded URL for Next.js image optimizer (proper sizing for mobile)
+  const handleVideoReady = (event: any, index: number) => {
+    playerRefs.current[index] = event.target;
+    // If the video loads while it's the current slide, play it
+    if (currentSlide === index) {
+      event.target.playVideo();
+    }
+  };
+
+  const handleVideoEnd = () => {
+    // Advance to next slide when video finishes
+    goToSlide((currentSlide + 1) % heroBanners.length);
+  };
+
   const encPath = encodeURIComponent(HERO_IMAGE_PATH);
 
   return (
-    <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
-      {/* Image Section */}
+    <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2 group">
+      {/* Image/Video Section */}
       <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
 
-        {/* Static LCP image — always visible until Next.js Image slot 0 fires onLoad.
-            Uses /_next/image srcset so the browser downloads the correctly-sized image
-            that matches the preload link in layout.tsx. */}
+        {/* Static LCP image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           id="hero-lcp-image"
@@ -111,12 +152,25 @@ export function HeroSlider() {
           >
             {loadedSlides.has(index) && (
               banner.type === "video" ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${banner.videoId}?autoplay=1&mute=1&loop=1&playlist=${banner.videoId}&controls=0&modestbranding=1&playsinline=1&rel=0`}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
+                <YouTube
+                  videoId={banner.videoId}
+                  opts={{
+                    height: "100%",
+                    width: "100%",
+                    playerVars: {
+                      autoplay: 0,
+                      controls: 1,
+                      rel: 0,
+                      modestbranding: 1,
+                      vq: "hd1080",
+                      mute: 0,
+                      playsinline: 1,
+                    },
+                  }}
+                  onReady={(e) => handleVideoReady(e, index)}
+                  onEnd={handleVideoEnd}
+                  className="w-full h-full bg-black flex items-center justify-center"
+                  iframeClassName="w-full h-full max-h-full aspect-video"
                 />
               ) : (
                 <Image
@@ -141,7 +195,7 @@ export function HeroSlider() {
       <div className="w-full relative px-5 py-4 md:px-8 md:py-6 bg-white flex flex-col md:flex-row items-center justify-center gap-5 border-t border-black/5">
           {/* Pagination dashes */}
           <div className="flex gap-2.5 w-full justify-center md:absolute md:left-8 md:w-auto">
-            {[0, 1, 2, 3, 4].map((idx) => (
+            {heroBanners.map((_, idx) => (
               <button 
                 key={idx} 
                 onClick={() => goToSlide(idx)}
