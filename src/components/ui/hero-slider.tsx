@@ -219,7 +219,7 @@ export function HeroSlider() {
                     >
                       {/* Left Thumbnail Facade */}
                       <div className="w-1/2 h-full relative border-r border-black/50 overflow-hidden">
-                        <Image src={`https://img.youtube.com/vi/${banner.shorts![0].videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                        <Image src={`https://img.youtube.com/vi/${banner.shorts![0].videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} fetchPriority={index === 0 ? "high" : "auto"} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                         <div className="absolute inset-0 flex items-center justify-center">
                            <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
                              <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
@@ -228,7 +228,7 @@ export function HeroSlider() {
                       </div>
                       {/* Right Thumbnail Facade */}
                       <div className="w-1/2 h-full relative border-l border-black/50 overflow-hidden">
-                        <Image src={`https://img.youtube.com/vi/${banner.shorts![1].videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                        <Image src={`https://img.youtube.com/vi/${banner.shorts![1].videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} fetchPriority={index === 0 ? "high" : "auto"} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                         <div className="absolute inset-0 flex items-center justify-center">
                            <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
                              <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
@@ -270,7 +270,7 @@ export function HeroSlider() {
                        className="w-full h-full relative cursor-pointer group overflow-hidden"
                        onClick={() => setMountVideos(true)}
                      >
-                       <Image src={`https://img.youtube.com/vi/${banner.videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                       <Image src={`https://img.youtube.com/vi/${banner.videoId}/hqdefault.jpg`} alt="Video Thumbnail" fill priority={index === 0} fetchPriority={index === 0 ? "high" : "auto"} className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                        <div className="absolute inset-0 flex items-center justify-center">
                           <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl group-hover:bg-red-500 transition-colors">
                             <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1.5" fill="currentColor" />
