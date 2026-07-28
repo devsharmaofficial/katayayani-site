@@ -12,6 +12,7 @@ type HeroBanner = {
   src?: string;
   alt?: string;
   videoId?: string;
+  start?: number;
 };
 
 const heroBanners: HeroBanner[] = [
@@ -23,6 +24,7 @@ const heroBanners: HeroBanner[] = [
   {
     type: "video",
     videoId: "8AwxVYJaLew",
+    start: 5,
   },
   {
     type: "image",
@@ -163,8 +165,9 @@ export function HeroSlider() {
                       rel: 0,
                       modestbranding: 1,
                       vq: "hd1080",
-                      mute: 0,
+                      mute: 1,
                       playsinline: 1,
+                      start: banner.start,
                     },
                   }}
                   onReady={(e) => handleVideoReady(e, index)}
