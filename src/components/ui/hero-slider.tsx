@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Play } from "lucide-react";
 import dynamic from "next/dynamic";
 
 // Dynamically import react-youtube with NO SSR so it doesn't block initial page load/hydration
@@ -70,46 +71,8 @@ export function HeroSlider() {
   // Store references to YouTube players using unique keys e.g., "slide-0-0"
   const playerRefs = useRef<{ [key: string]: any }>({});
 
-  // Idle & Interaction Rendering Pattern: Defer heavy iframes until interaction OR 3.5s fallback
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-
-    // Detect Lighthouse/Bots to prevent them from downloading 2MB of YouTube JS
-    // PageSpeed Insights often uses a standard Moto G Power user agent WITHOUT the word "Lighthouse", 
-    // but it always sets navigator.webdriver to true!
-    const isBot = typeof window !== 'undefined' && 
-      (navigator.webdriver || 
-       /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent) || 
-       navigator.userAgent.includes('Lighthouse') || 
-       navigator.userAgent.includes('Chrome-Lighthouse') ||
-       navigator.userAgent.includes('GTmetrix'));
-    
-    if (isBot) {
-      // Never mount for bots, keep performance pristine 100/100
-      return;
-    }
-    
-    const mount = () => {
-      setMountVideos(true);
-      cleanup();
-    };
-
-    const cleanup = () => {
-      clearTimeout(timer);
-      window.removeEventListener('mousemove', mount);
-      window.removeEventListener('scroll', mount);
-      window.removeEventListener('touchstart', mount);
-    };
-
-    timer = setTimeout(mount, 3500); // 3.5s fallback for real humans who don't interact
-
-    // Mount instantly if user interacts
-    window.addEventListener('mousemove', mount, { once: true });
-    window.addEventListener('scroll', mount, { once: true, passive: true });
-    window.addEventListener('touchstart', mount, { once: true, passive: true });
-
-    return cleanup;
-  }, []);
+  // We now use a pure Click-to-Play Facade for videos to guarantee 100/100 Lighthouse score.
+  // No global event listeners or timeouts that can be triggered by Lighthouse bots.
 
   useEffect(() => {
     // If it's a video slide, pause auto-scroll immediately
@@ -202,7 +165,7 @@ export function HeroSlider() {
     height: "100%",
     width: "100%",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1, // Instantly auto-play once the Facade is clicked and the iframe mounts
       controls: 1,
       rel: 0,
       modestbranding: 1,
@@ -249,7 +212,31 @@ export function HeroSlider() {
             {loadedSlides.has(index) && (
               banner.type === "split-shorts" ? (
                 <div className="w-full h-full flex bg-black">
-                  {mountVideos && (
+                  {!mountVideos ? (
+                    <div 
+                      className="w-full h-full relative cursor-pointer group flex"
+                      onClick={() => setMountVideos(true)}
+                    >
+                      {/* Left Thumbnail Facade */}
+                      <div className="w-1/2 h-full relative border-r border-black/50 overflow-hidden">
+                        <Image src={`https://img.youtube.com/vi/${banner.shorts![0].videoId}/maxresdefault.jpg`} alt="Video Thumbnail" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                           <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
+                             <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                           </div>
+                        </div>
+                      </div>
+                      {/* Right Thumbnail Facade */}
+                      <div className="w-1/2 h-full relative border-l border-black/50 overflow-hidden">
+                        <Image src={`https://img.youtube.com/vi/${banner.shorts![1].videoId}/maxresdefault.jpg`} alt="Video Thumbnail" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                           <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
+                             <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
                     <>
                       <div className="w-1/2 h-full border-r border-black/50">
                         <YouTube
@@ -278,7 +265,19 @@ export function HeroSlider() {
                 </div>
               ) : banner.type === "video" ? (
                 <div className="w-full h-full bg-black">
-                   {mountVideos && (
+                   {!mountVideos ? (
+                     <div 
+                       className="w-full h-full relative cursor-pointer group overflow-hidden"
+                       onClick={() => setMountVideos(true)}
+                     >
+                       <Image src={`https://img.youtube.com/vi/${banner.videoId}/maxresdefault.jpg`} alt="Video Thumbnail" fill className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                       <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-xl group-hover:bg-red-500 transition-colors">
+                            <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1.5" fill="currentColor" />
+                          </div>
+                       </div>
+                     </div>
+                   ) : (
                      <YouTube
                        videoId={banner.videoId}
                        opts={getYoutubeOpts(banner.start)}
