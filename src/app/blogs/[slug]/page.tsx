@@ -1,5 +1,6 @@
 "use client";
 
+import { SITE_URL, getAbsoluteImageUrl } from "@/config/site";
 import Image from "next/image";
 import { use } from "react";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
@@ -11,7 +12,6 @@ import FloatingActions from "@/components/layout/FloatingActions";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { getBlogBySlug } from "@/lib/blogs";
-import { SITE_URL } from "@/config/site";
 
 export default function BlogPostPage({
   params,
@@ -38,7 +38,7 @@ export default function BlogPostPage({
             "@type": "Article",
             headline: blog.seo.title,
             description: blog.seo.description,
-            image: [`${SITE_URL}${blog.image}`],
+            image: [getAbsoluteImageUrl(blog.image)],
             datePublished: `${blog.publishedAt}T08:00:00+08:00`,
             dateModified: `${blog.publishedAt}T08:00:00+08:00`,
             author: [{

@@ -1,5 +1,5 @@
 "use client";
-import { SITE_URL } from "@/config/site";
+import { SITE_URL, getAbsoluteImageUrl } from "@/config/site";
 
 import { useState, useEffect, use, useMemo } from "react";
 import Image from "next/image";
@@ -169,7 +169,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               `${product.brand} tractor fiber hood price`,
             ],
             description: product.description,
-            image: product.images.map((img) => `${SITE_URL}${img.src}`),
+            image: product.images.map((img) => getAbsoluteImageUrl(img.src)),
             brand: {
               "@type": "Brand",
               name: product.brand,

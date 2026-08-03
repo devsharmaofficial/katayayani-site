@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/config/site";
+import { SITE_URL, getAbsoluteImageUrl } from "@/config/site";
 import type { Metadata } from "next";
 import { getProductBySlug, getProductSlugs } from "@/lib/products";
 
@@ -20,7 +20,7 @@ export async function generateMetadata({
 
   const primaryImage = product.images[0];
   const imageUrl = primaryImage
-    ? `${SITE_URL}${primaryImage.src}`
+    ? getAbsoluteImageUrl(primaryImage.src)
     : `${SITE_URL}/og-image.jpg`;
 
   return {
@@ -51,7 +51,7 @@ export async function generateMetadata({
       title: product.seo.title,
       description: product.seo.description,
       images: product.images.slice(0, 4).map((img) => ({
-        url: `${SITE_URL}${img.src}`,
+        url: getAbsoluteImageUrl(img.src),
         width: img.width,
         height: img.height,
         alt: img.alt,

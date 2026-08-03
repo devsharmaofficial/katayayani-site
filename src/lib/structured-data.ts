@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/config/site";
+import { SITE_URL, getAbsoluteImageUrl } from "@/config/site";
 // ============================================================================
 // Katayayani Enterprises — Structured Data Helpers
 // For generating JSON-LD structured data for SEO.
@@ -37,7 +37,7 @@ export function generateProductSchema(product: Product) {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: product.images.map((img) => img.src),
+    image: product.images.map((img) => getAbsoluteImageUrl(img.src)),
     description: product.description,
     brand: {
       "@type": "Brand",
