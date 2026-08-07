@@ -31,6 +31,9 @@ const REELS_POOL: MediaItem[] = [
   { type: "reel", id: "DbP04gcBKGt", title: "Mahindra Tractor New Fiber Canopy Fitment and Walkaround 🚜🌟", thumbnail: "/instagram/DbP04gcBKGt.jpg" },
   { type: "reel", id: "DafnacEhlnu", title: "Customer Review and Ride-Along with Punjabi Hood Installation 🌾💯", thumbnail: "/instagram/DafnacEhlnu.jpg" },
   { type: "reel", id: "DbPzywnBs0f", title: "Best Price Tractor Fiber Hood Manufacturing Unit Meerut 🏗️⚡", thumbnail: "/instagram/DbPzywnBs0f.jpg" },
+  { type: "reel", id: "DafmBMVhVBs", title: "Tractor Canopy Professional Fitting Overview", thumbnail: "/instagram/DafmBMVhVBs.jpg" },
+  { type: "reel", id: "DaizqZkRhB4", title: "Latest Heavy Duty Tractor Bumper Design Release", thumbnail: "/instagram/DaizqZkRhB4.jpg" },
+  { type: "reel", id: "Dbv_SG5hyOB", title: "Ultimate Canopy Setup for Farmers Walkaround", thumbnail: "/instagram/Dbv_SG5hyOB.jpg" }
 ];
 
 const SHORTS_POOL: MediaItem[] = [
