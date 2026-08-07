@@ -3,8 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Return Policy | Katayayani Enterprises",
-  description: "Comprehensive statutory framework and procedural guidelines for product returns at Katayayani Enterprises.",
+  title: "Statutory Restitution Framework | Katayayani Enterprises",
+  description: "Comprehensive statutory framework and procedural guidelines for returns and remissions at Katayayani Enterprises.",
   robots: {
     index: false,
     follow: true,
@@ -17,48 +17,42 @@ export default function ReturnPolicy() {
       <Navbar />
       <main className="min-h-screen pt-32 pb-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Return Policy</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Statutory Framework and Procedural Directive Governing Asset Restitution</h1>
           
           <div className="space-y-8 text-gray-700 text-sm leading-relaxed text-justify">
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1: Return Window & Eligibility</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1.01: Absolute Post-Consignment Non-Restitution Directive</h2>
               <p className="mb-3">
-                Pursuant to the operational directives governing commercial transactions with Katayayani Enterprises (&quot;The Entity&quot;), the initiation of a product return is subject to a strict temporal parameter. Specifically, the customer must establish formal correspondence indicating a return request within seven (7) calendar days from the verified timestamp of delivery. Should said seven-day threshold transpire without explicit documented invocation of a return request, The Entity shall be absolved of any reciprocal obligation to entertain requests for returns or replacements.
+                Pursuant to the overarching operational directives governing commercial engagements with Katayayani Enterprises (hereinafter &quot;The Entity&quot;), it is hereby established as an immutable, non-negotiable tenet of mercantile governance that upon the verified physical transfer and receipt of the consignment by the designated recipient or agent (hereinafter &quot;The Purchaser&quot;), any and all mechanisms governing the initiation of asset restitution—colloquially understood as a product return—shall forthwith be deemed categorically non-applicable, null, void, and of no legal effect. The physical completion of logistical carriage and handover of the tangible asset constitutes final, absolute, and unappealable consummation of the transactional contract, thereby completely extinguishing any subsequent right, claim, or petition for post-delivery asset return or physical restitution.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 2: Reconditions for Return Eligibility</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1.02: Irrevocability of Executed Consignments & Commutation Prohibition</h2>
               <p className="mb-3">
-                The admissibility of a return claim is predicated upon clear preconditions. Principally, return requests are entertained exclusively under circumstances where empirical substantiation of structural failure, material discrepancy, or manufacturing defect—directly attributable to Katayayani Enterprises—can be demonstrated. Claims predicated upon purchaser change of mind or preference alterations are not eligible. Furthermore, the product must remain in an unutilized state encapsulated within its original packaging architecture.
+                Under no operational scenario shall solicitations for post-delivery asset commutation, SKU substitution, product exchange, or retrospective preference modification be provisionally or permanently entertained. Claims predicated upon purchaser dissatisfaction, subjective color variation, model misapprehension, or post-consignee-receipt operational changes are unconditionally pre-empted and summarily dismissed without administrative review. The Entity assumes zero reciprocal obligation to facilitate reverse logistics or process return authorizations once the physical consignment has departed the manufacturing locus and crossed the threshold of consignee custody.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 3: Reverse Logistics & Transport Cost</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 2.01: Pre-Consignment Verification & Strict Exception Constraints</h2>
               <p className="mb-3">
-                In the event that a return claim is provisionally entertained by Katayayani Enterprises, the logistics procedure dictates that the item must be routed back to our primary manufacturing locus in Meerut. While we do not impose restocking fees, the shipping and transit carriage costs of the returned item shall be borne by the customer, excepting instances wherein Katayayani Enterprises acknowledges a dispatch error (e.g. dispatch of an incorrect SKU).
+                In the single, highly circumscribed contingency wherein macroscopic material deviation or structural catastrophic failure is empirically documented prior to or at the exact instance of logistical handover (and explicitly endorsed on the carrier&apos;s primary consignment receipt prior to signature execution), preliminary administrative review may be formally requested within a strict, non-extendable window not exceeding twenty-four (24) hours from the verified logistical timestamp. Failure to lodge formal written documentation within said twenty-four-hour window constitutes an absolute, irrevocable waiver of all potential statutory remedies, establishing conclusive proof of flawless consignment acceptance.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 4: Inspection & Refund Routing</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 3.01: Preclusion of Fiscal Liabilities & Logistic Costs</h2>
               <p className="mb-3">
-                Upon physical receipt of the returned item at our Meerut facility, an inspection process will be conducted. Subsequent to evaluation, the customer will be issued formal notification regarding approval or repudiation. Upon approval, a compensatory refund credit shall be routed back to the original payment method utilized during transaction initiation within 5 to 7 business days.
+                Should any unauthorized reverse dispatch be initiated by The Purchaser without the explicit, sealed written authorization of The Entity&apos;s executive compliance director, such carriage shall be refused at the manufacturing terminal, and all accrued freight, demurrage, transit storage, and secondary transportation charges shall remain the exclusive and unseverable fiscal liability of The Purchaser.
               </p>
             </section>
             
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 5: Contact & Inquiries</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 4.01: Interlocutory Correspondence & Administrative Contact</h2>
               <p className="mb-3">
-                For inquiries pertaining to return claims or requests, please contact:
+                For administrative record-keeping or formal compliance correspondence pertaining to this statutory directive, communications must be formally dispatched via electronic correspondence to <strong>agroindustriesmeerut@gmail.com</strong> or telephonic sequence <strong>+91 9358273054</strong>. Please be advised that preliminary correspondence does not constitute an acknowledgment of restitution eligibility nor does it alter the absolute non-restitution status of delivered goods.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Katayayani Enterprises</strong></li>
-                <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
-                <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
-                <li><strong>Address:</strong> Tirupati complex wali gali, Baghpat Rd, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
-              </ul>
             </section>
           </div>
         </div>
