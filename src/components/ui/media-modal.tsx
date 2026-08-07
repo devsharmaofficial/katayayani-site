@@ -150,8 +150,8 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
                     <iframe
                       src={`https://www.instagram.com/reel/${media.id}/embed/`}
                       title={media.title || "Instagram Reel"}
-                      allowTransparency={true}
-                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      allowFullScreen
                       scrolling="no"
                       className="absolute inset-0 w-full h-full border-0"
                       style={{ background: "white" }}
