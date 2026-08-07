@@ -18,8 +18,8 @@ interface MediaItem {
 }
 
 const VIDEO_POOL: MediaItem[] = [
-  { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "https://img.youtube.com/vi/8AwxVYJaLew/maxresdefault.jpg" },
-  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "https://img.youtube.com/vi/0IoHCk3LOko/maxresdefault.jpg" },
+  { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "/youtube/8AwxVYJaLew.jpg" },
+  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "/youtube/0IoHCk3LOko.jpg" },
 ];
 
 const REELS_POOL: MediaItem[] = [
@@ -37,13 +37,13 @@ const REELS_POOL: MediaItem[] = [
 ];
 
 const SHORTS_POOL: MediaItem[] = [
-  { type: "short", id: "ct35ydK7Z_g", title: "Katayayani Tractor Fiber Hood Showcase", thumbnail: "https://img.youtube.com/vi/ct35ydK7Z_g/maxresdefault.jpg" },
-  { type: "short", id: "-tSXzjKu17A", title: "New Premium Design Reveal", thumbnail: "https://img.youtube.com/vi/-tSXzjKu17A/maxresdefault.jpg" },
-  { type: "short", id: "UhsBJOETVRI", title: "Heavy Duty Canopy Testing", thumbnail: "https://img.youtube.com/vi/UhsBJOETVRI/maxresdefault.jpg" },
-  { type: "short", id: "UdOJf6It_TA", title: "Customer Satisfaction Guaranteed", thumbnail: "https://img.youtube.com/vi/UdOJf6It_TA/maxresdefault.jpg" },
-  { type: "short", id: "sHBdDOuziVI", title: "Perfect Fitment Tutorial", thumbnail: "https://img.youtube.com/vi/sHBdDOuziVI/maxresdefault.jpg" },
-  { type: "short", id: "gQT_ke2q5To", title: "Installation Process Live", thumbnail: "https://img.youtube.com/vi/gQT_ke2q5To/maxresdefault.jpg" },
-  { type: "short", id: "dmhwYUss980", title: "Delivering Excellence", thumbnail: "https://img.youtube.com/vi/dmhwYUss980/maxresdefault.jpg" },
+  { type: "short", id: "ct35ydK7Z_g", title: "Katayayani Tractor Fiber Hood Showcase", thumbnail: "/youtube/ct35ydK7Z_g.jpg" },
+  { type: "short", id: "-tSXzjKu17A", title: "New Premium Design Reveal", thumbnail: "/youtube/-tSXzjKu17A.jpg" },
+  { type: "short", id: "UhsBJOETVRI", title: "Heavy Duty Canopy Testing", thumbnail: "/youtube/UhsBJOETVRI.jpg" },
+  { type: "short", id: "UdOJf6It_TA", title: "Customer Satisfaction Guaranteed", thumbnail: "/youtube/UdOJf6It_TA.jpg" },
+  { type: "short", id: "sHBdDOuziVI", title: "Perfect Fitment Tutorial", thumbnail: "/youtube/sHBdDOuziVI.jpg" },
+  { type: "short", id: "gQT_ke2q5To", title: "Installation Process Live", thumbnail: "/youtube/gQT_ke2q5To.jpg" },
+  { type: "short", id: "dmhwYUss980", title: "Delivering Excellence", thumbnail: "/youtube/dmhwYUss980.jpg" },
 ];
 
 // Combine all vertical media for the side slots
