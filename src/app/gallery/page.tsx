@@ -99,30 +99,21 @@ export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeVideo, setActiveVideo] = useState<MediaItem | null>(null);
 
-  // Mixed and shuffled video array for the dense grid
-  const [shuffledVideos, setShuffledVideos] = useState<(MediaItem & { spanClass: string })[]>([]);
+  // Shuffled video pool — randomized on mount for freshness
+  const [shuffledMedia, setShuffledMedia] = useState<MediaItem[]>([]);
 
   useEffect(() => {
-    // Shuffle the array
-    const shuffled = [...MEDIA_POOL].sort(() => 0.5 - Math.random());
-    
-    // Assign random masonry span classes based on media type for an eye-catching grid
-    const withSpans = shuffled.map((media) => {
-      let spanClass = "";
-      if (media.type === "video") {
-        // 40% large video, 60% wide video
-        spanClass = Math.random() > 0.6 
-          ? "col-span-1 sm:col-span-2 md:col-span-2 row-span-2 aspect-video" 
-          : "col-span-1 sm:col-span-2 md:col-span-2 row-span-1 aspect-[21/9] sm:aspect-video";
-      } else {
-        // 30% tall vertical reel, 70% normal vertical reel
-        spanClass = Math.random() > 0.7 
-          ? "col-span-1 row-span-2 aspect-[9/16]" 
-          : "col-span-1 row-span-1 aspect-[3/4] sm:aspect-[9/16]";
-      }
-      return { ...media, spanClass };
-    });
-    setShuffledVideos(withSpans);
+    // Separate by type for structured layout
+    const videos = [...MEDIA_POOL].filter(m => m.type === 'video').sort(() => 0.5 - Math.random());
+    const verticals = [...MEDIA_POOL].filter(m => m.type !== 'video').sort(() => 0.5 - Math.random());
+    // Interleave: 1 video (wide) then 3 verticals, repeat
+    const interleaved: MediaItem[] = [];
+    let vi = 0, ri = 0;
+    while (vi < videos.length || ri < verticals.length) {
+      if (vi < videos.length) interleaved.push(videos[vi++]);
+      for (let k = 0; k < 3 && ri < verticals.length; k++) interleaved.push(verticals[ri++]);
+    }
+    setShuffledMedia(interleaved);
   }, []);
 
   const handlePrevPhoto = (e: React.MouseEvent) => {
@@ -231,70 +222,85 @@ export default function GalleryPage() {
 
         {/* --- VIDEOS TAB --- */}
         {activeTab === "videos" && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 grid-flow-dense gap-3 sm:gap-4 md:gap-5 animate-in fade-in duration-500">
-            {shuffledVideos.map((media, idx) => {
-              const isHorizontal = media.type === "video";
-              return (
-                <div 
-                  key={media.id + idx}
-                  onClick={() => setActiveVideo(media)}
-                  className={`group relative rounded-xl sm:rounded-[24px] overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ${media.spanClass}`}
-                >
-                  <img
-                    src={media.thumbnail}
-                    alt={media.title}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 bg-gray-100"
-                    onError={(e) => {
-                      if (media.type !== 'reel' && media.thumbnail.includes('maxresdefault.jpg')) {
-                        e.currentTarget.src = media.thumbnail.replace('maxresdefault.jpg', 'hqdefault.jpg');
-                      }
-                    }}
-                  />
-                  
-                  {/* Gradient Overlay for text contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/5 opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                  
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-sm">
-                      {media.type === 'reel' ? (
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-white">
-                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                      ) : media.type === 'short' ? (
-                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white text-white">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                        </svg>
-                      ) : (
-                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-red-500 text-red-500">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                        </svg>
+          <div className="animate-in fade-in duration-500">
+            {/* Stats Bar */}
+            <div className="flex items-center gap-4 mb-8 pb-5 border-b border-gray-100">
+              <div className="flex items-center gap-2 text-gray-500 text-[13px] font-medium">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-600 font-bold text-[12px] border border-red-100"><span className="w-2 h-2 rounded-full bg-red-500 animate-pulse inline-block"></span>Videos</span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 text-pink-600 font-bold text-[12px] border border-pink-100">Instagram Reels</span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[12px] border border-blue-100">YT Shorts</span>
+              </div>
+              <span className="ml-auto text-gray-400 text-[13px]">{MEDIA_POOL.length} videos total</span>
+            </div>
+
+            {/* STRUCTURED editorial 4-column grid */}
+            {/* Each 'block' is: 1 wide video (col-span-4) then 4 verticals per row */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-5">
+              {shuffledMedia.map((media, idx) => {
+                const isVideo = media.type === 'video';
+                const isReel = media.type === 'reel';
+                const badgeColor = isReel ? 'bg-[#e1306c]/90' : isVideo ? 'bg-[#ff0000]/90' : 'bg-[#0f0f0f]/80';
+                const badgeLabel = isReel ? '📷 Reel' : isVideo ? '▶ Video' : '⚡ Short';
+
+                return (
+                  <div
+                    key={media.id + idx}
+                    onClick={() => setActiveVideo(media)}
+                    className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-gray-900 shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] ${
+                      isVideo ? 'col-span-2 sm:col-span-3 md:col-span-4 aspect-video' : 'col-span-1 aspect-[9/16]'
+                    }`}
+                  >
+                    {/* Thumbnail */}
+                    <img
+                      src={media.thumbnail}
+                      alt={media.title}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                      onError={(e) => {
+                        if (media.type !== 'reel' && media.thumbnail.includes('maxresdefault.jpg')) {
+                          e.currentTarget.src = media.thumbnail.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                        }
+                      }}
+                    />
+
+                    {/* Gradient overlay — stronger at bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-400" />
+
+                    {/* Top left — platform badge */}
+                    <div className={`absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-white text-[10px] font-black uppercase tracking-widest ${badgeColor} backdrop-blur-sm shadow-lg`}>
+                      {badgeLabel}
+                    </div>
+
+                    {/* Center play button */}
+                    <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                      <div className={`flex items-center justify-center rounded-full shadow-2xl border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50 ${
+                        isVideo ? 'w-16 h-16 bg-black/40 group-hover:bg-red-600' : 'w-12 h-12 bg-black/40 group-hover:bg-white/20'
+                      }`}>
+                        <Play className="text-white fill-white ml-1" style={{ width: isVideo ? '24px' : '16px', height: isVideo ? '24px' : '16px' }} />
+                      </div>
+                    </div>
+
+                    {/* Bottom info block */}
+                    <div className="absolute bottom-0 left-0 right-0 z-10 p-3 md:p-4">
+                      <p className={`text-white font-bold leading-tight drop-shadow-lg ${
+                        isVideo ? 'text-[15px] md:text-[17px] line-clamp-2' : 'text-[12px] line-clamp-3'
+                      }`}>
+                        {media.title}
+                      </p>
+                      {isVideo && (
+                        <div className="flex items-center gap-2 mt-1.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
+                          <span className="text-white/60 text-[11px] font-medium">Click to watch</span>
+                        </div>
                       )}
-                      <span className="text-[10px] font-bold text-white uppercase tracking-wider">
-                        {media.type === 'reel' ? 'Insta Reel' : media.type === 'short' ? 'YT Short' : 'Video'}
-                      </span>
                     </div>
-                  </div>
 
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                    <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-red-600 border border-white/20">
-                      <Play className="text-white w-6 h-6 ml-1" fill="currentColor" />
-                    </div>
+                    {/* Hover shimmer border */}
+                    <div className="absolute inset-0 rounded-2xl ring-0 group-hover:ring-2 group-hover:ring-white/20 transition-all duration-300 pointer-events-none" />
                   </div>
-
-                  {/* Title */}
-                  <div className="absolute bottom-4 left-4 right-4 z-10">
-                    <p className={`text-white font-bold leading-snug drop-shadow-md ${isHorizontal ? 'text-[16px] line-clamp-2' : 'text-[14px] line-clamp-3'}`}>
-                      {media.title}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         )}
 
