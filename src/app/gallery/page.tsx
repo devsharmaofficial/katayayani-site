@@ -25,11 +25,30 @@ interface MediaItem {
 
 // Consolidating all scraped media
 const MEDIA_POOL: MediaItem[] = [
-  // Videos
-  { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "https://img.youtube.com/vi/8AwxVYJaLew/maxresdefault.jpg" },
-  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "https://img.youtube.com/vi/0IoHCk3LOko/maxresdefault.jpg" },
+  // Newly Scraped YouTube Videos & Shorts (21 items)
+  { type: "video", id: "0IoHCk3LOko", title: "Tractor Fiber Hood", thumbnail: "https://img.youtube.com/vi/0IoHCk3LOko/maxresdefault.jpg" },
+  { type: "video", id: "1K2QMNdviLU", title: "MAKING OF TRACTOR ROOF CANOPY || AVAILABLE ON INDIAMART || #indiantractor", thumbnail: "https://img.youtube.com/vi/1K2QMNdviLU/maxresdefault.jpg" },
+  { type: "video", id: "zQnOOgY0xAA", title: "BEST QUALITY FIBER HOOD | KATAYAYANI ENTERPRISES|", thumbnail: "https://img.youtube.com/vi/zQnOOgY0xAA/maxresdefault.jpg" },
+  { type: "video", id: "scicO4XIies", title: "Mahindra Tractor Hoods", thumbnail: "https://img.youtube.com/vi/scicO4XIies/maxresdefault.jpg" },
+  { type: "video", id: "8AwxVYJaLew", title: "🚜SWARAJ TRACTOR FIBER ROOF CANOPY🔥🔥", thumbnail: "https://img.youtube.com/vi/8AwxVYJaLew/maxresdefault.jpg" },
+  { type: "video", id: "ubeivRfLExQ", title: "Swaraj Tractor Bumper manufacturing", thumbnail: "https://img.youtube.com/vi/ubeivRfLExQ/maxresdefault.jpg" },
+  { type: "video", id: "XH49xTiab9E", title: "Tractor Hoods Canopy", thumbnail: "https://img.youtube.com/vi/XH49xTiab9E/maxresdefault.jpg" },
+  { type: "short", id: "ct35ydK7Z_g", title: "Tractor Fiber Hood| Buy Now", thumbnail: "https://img.youtube.com/vi/ct35ydK7Z_g/maxresdefault.jpg" },
+  { type: "short", id: "-tSXzjKu17A", title: "All Tractor fiber hood available #mahindra", thumbnail: "https://img.youtube.com/vi/-tSXzjKu17A/maxresdefault.jpg" },
+  { type: "short", id: "UhsBJOETVRI", title: "All Tractor Fiber Hood available", thumbnail: "https://img.youtube.com/vi/UhsBJOETVRI/maxresdefault.jpg" },
+  { type: "short", id: "UdOJf6It_TA", title: "All Tractor fiber hood available| all India delivery", thumbnail: "https://img.youtube.com/vi/UdOJf6It_TA/maxresdefault.jpg" },
+  { type: "short", id: "sHBdDOuziVI", title: "All Tractor fiber hood available| all India delivery", thumbnail: "https://img.youtube.com/vi/sHBdDOuziVI/maxresdefault.jpg" },
+  { type: "short", id: "gQT_ke2q5To", title: "Tractor Fiber Hood", thumbnail: "https://img.youtube.com/vi/gQT_ke2q5To/maxresdefault.jpg" },
+  { type: "short", id: "m9KhEgoSXUM", title: "tractor fiber hood", thumbnail: "https://img.youtube.com/vi/m9KhEgoSXUM/maxresdefault.jpg" },
+  { type: "short", id: "UL6jtWMHmtI", title: "BEST QUALITY FIBER HOOD ONLY AT KATAYAYANI ENTERPRISES", thumbnail: "https://img.youtube.com/vi/UL6jtWMHmtI/maxresdefault.jpg" },
+  { type: "short", id: "c1hL6fj8VjQ", title: "BEST TRACTOR FIBER HOOD ONLY AT KATAYAYANI ENTERPRISES", thumbnail: "https://img.youtube.com/vi/c1hL6fj8VjQ/maxresdefault.jpg" },
+  { type: "short", id: "ap38alCuUxY", title: "NO.1 QUALITY SONALIKA FIBER HOOD AND JOHN DEER FIBER HOOD", thumbnail: "https://img.youtube.com/vi/ap38alCuUxY/maxresdefault.jpg" },
+  { type: "short", id: "3STNVrRyyP0", title: "EICHER TRACTOR ACCESORIES ONLY AT KATAYAYANI ENTERPRISES", thumbnail: "https://img.youtube.com/vi/3STNVrRyyP0/maxresdefault.jpg" },
+  { type: "short", id: "koeGb8HLNgs", title: "SWARAJ TRACTOR BUMPER | SONALIKA TRACTOR BUMPER", thumbnail: "https://img.youtube.com/vi/koeGb8HLNgs/maxresdefault.jpg" },
+  { type: "short", id: "dmhwYUss980", title: "TRACTOR FRP CANOPY (HOOD)", thumbnail: "https://img.youtube.com/vi/dmhwYUss980/maxresdefault.jpg" },
+  { type: "short", id: "6HTWN0JjXA4", title: "Tractor front Bumfer For Swaraj", thumbnail: "https://img.youtube.com/vi/6HTWN0JjXA4/maxresdefault.jpg" },
   
-  // Reels
+  // Instagram Reels
   { type: "reel", id: "DbsKeEUB73O", title: "Premium Punjabi Hood Modification on Tractor 🚜🔥", thumbnail: "/instagram/DbsKeEUB73O.jpg" },
   { type: "reel", id: "DbP0c0bBdcZ", title: "Swaraj Modified with Heavy Duty Fiber Chatri Setup ⚡", thumbnail: "/instagram/DbP0c0bBdcZ.jpg" },
   { type: "reel", id: "DbP1VJ_hLbN", title: "Katayayani Enterprises Custom Canopy Fitment & Review 🌟", thumbnail: "/instagram/DbP1VJ_hLbN.jpg" },
@@ -37,24 +56,7 @@ const MEDIA_POOL: MediaItem[] = [
   { type: "reel", id: "DblTKvyhXuj", title: "Custom Painted Tractor Canopy Design Factory Showcase 🎨", thumbnail: "/instagram/DblTKvyhXuj.jpg" },
   { type: "reel", id: "DbP04gcBKGt", title: "Mahindra Tractor New Fiber Canopy Fitment and Walkaround 🚜🌟", thumbnail: "/instagram/DbP04gcBKGt.jpg" },
   { type: "reel", id: "DafnacEhlnu", title: "Customer Review and Ride-Along with Punjabi Hood Installation 🌾💯", thumbnail: "/instagram/DafnacEhlnu.jpg" },
-  { type: "reel", id: "DbPzywnBs0f", title: "Best Price Tractor Fiber Hood Manufacturing Unit Meerut 🏗️⚡", thumbnail: "/instagram/DbPzywnBs0f.jpg" },
-  
-  // Shorts (all 15)
-  { type: "short", id: "ct35ydK7Z_g", title: "Katayayani Tractor Fiber Hood Showcase", thumbnail: "https://img.youtube.com/vi/ct35ydK7Z_g/maxresdefault.jpg" },
-  { type: "short", id: "-tSXzjKu17A", title: "New Premium Design Reveal", thumbnail: "https://img.youtube.com/vi/-tSXzjKu17A/maxresdefault.jpg" },
-  { type: "short", id: "UhsBJOETVRI", title: "Heavy Duty Canopy Testing", thumbnail: "https://img.youtube.com/vi/UhsBJOETVRI/maxresdefault.jpg" },
-  { type: "short", id: "UdOJf6It_TA", title: "Customer Satisfaction Guaranteed", thumbnail: "https://img.youtube.com/vi/UdOJf6It_TA/maxresdefault.jpg" },
-  { type: "short", id: "sHBdDOuziVI", title: "Perfect Fitment Tutorial", thumbnail: "https://img.youtube.com/vi/sHBdDOuziVI/maxresdefault.jpg" },
-  { type: "short", id: "gQT_ke2q5To", title: "Installation Process Live", thumbnail: "https://img.youtube.com/vi/gQT_ke2q5To/maxresdefault.jpg" },
-  { type: "short", id: "m9KhEgoSXUM", title: "Tractor Canopy Walkaround", thumbnail: "https://img.youtube.com/vi/m9KhEgoSXUM/maxresdefault.jpg" },
-  { type: "short", id: "UL6jtWMHmtI", title: "Fiber Hood Quality Test", thumbnail: "https://img.youtube.com/vi/UL6jtWMHmtI/maxresdefault.jpg" },
-  { type: "short", id: "c1hL6fj8VjQ", title: "Before and After Setup", thumbnail: "https://img.youtube.com/vi/c1hL6fj8VjQ/maxresdefault.jpg" },
-  { type: "short", id: "ap38alCuUxY", title: "Expert Installation", thumbnail: "https://img.youtube.com/vi/ap38alCuUxY/maxresdefault.jpg" },
-  { type: "short", id: "3STNVrRyyP0", title: "Premium Tractor Chatri", thumbnail: "https://img.youtube.com/vi/3STNVrRyyP0/maxresdefault.jpg" },
-  { type: "short", id: "koeGb8HLNgs", title: "Swaraj Tractor Hood Upgrade", thumbnail: "https://img.youtube.com/vi/koeGb8HLNgs/maxresdefault.jpg" },
-  { type: "short", id: "dmhwYUss980", title: "Delivering Excellence", thumbnail: "https://img.youtube.com/vi/dmhwYUss980/maxresdefault.jpg" },
-  { type: "short", id: "6HTWN0JjXA4", title: "Heavy Tractor Roof Built", thumbnail: "https://img.youtube.com/vi/6HTWN0JjXA4/maxresdefault.jpg" },
-  { type: "short", id: "NCVo8d9WqUM", title: "Amazing Design Fitment", thumbnail: "https://img.youtube.com/vi/NCVo8d9WqUM/maxresdefault.jpg" },
+  { type: "reel", id: "DbPzywnBs0f", title: "Best Price Tractor Fiber Hood Manufacturing Unit Meerut 🏗️⚡", thumbnail: "/instagram/DbPzywnBs0f.jpg" }
 ];
 
 export default function GalleryPage() {
