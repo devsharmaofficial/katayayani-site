@@ -131,12 +131,22 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="w-full py-2.5 border-t border-gray-100 flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-3 text-[12px] text-gray-500 bg-white">
+      <div className="w-full py-3 border-t border-gray-100 flex flex-col md:flex-row justify-center items-center gap-1 md:gap-3 text-[11px] sm:text-[12px] text-gray-500 bg-white px-4">
         <span>© {currentYear} Katayayani Enterprises. All Rights Reserved.</span>
-        <span className="hidden sm:inline text-gray-300">|</span>
-        <Link href="/return-policy" className="hover:text-gray-700 transition-colors p-3 min-h-[48px] flex items-center justify-center">Return Policy</Link>
-        <span className="hidden sm:inline text-gray-300">|</span>
-        <Link href="/store-rating" className="hover:text-gray-700 transition-colors p-3 min-h-[48px] flex items-center justify-center">Store Rating</Link>
+        <span className="hidden md:inline text-gray-300">|</span>
+        <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1">
+          <Link href="/terms-and-conditions" className="hover:text-gray-700 transition-colors py-1">Terms & Conditions</Link>
+          <span className="text-gray-300">|</span>
+          <Link href="/privacy-policy" className="hover:text-gray-700 transition-colors py-1">Privacy Policy</Link>
+          <span className="text-gray-300">|</span>
+          <Link href="/return-policy" className="hover:text-gray-700 transition-colors py-1">Return Policy</Link>
+          <span className="text-gray-300">|</span>
+          <Link href="/refund-policy" className="hover:text-gray-700 transition-colors py-1">Refund Policy</Link>
+          <span className="text-gray-300">|</span>
+          <Link href="/shipping-policy" className="hover:text-gray-700 transition-colors py-1">Shipping Policy</Link>
+          <span className="text-gray-300">|</span>
+          <Link href="/store-rating" className="hover:text-gray-700 transition-colors py-1">Store Rating</Link>
+        </div>
       </div>
     </footer>
   );

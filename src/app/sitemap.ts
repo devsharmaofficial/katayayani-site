@@ -54,6 +54,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.65,
     },
+    {
+      url: `${SITE_URL}/terms-and-conditions`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/privacy-policy`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/return-policy`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/refund-policy`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/shipping-policy`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
   ];
 
   // ── Product Routes (auto-discovers every product) ─────────────────────
