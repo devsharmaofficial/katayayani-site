@@ -9,14 +9,21 @@ const CHANNEL_URL = "https://youtube.com/@katayayanienterprises.meerut";
 
 // YouTube Shorts video IDs from the channel
 const SHORTS = [
+  { id: "ct35ydK7Z_g" },
+  { id: "-tSXzjKu17A" },
+  { id: "UhsBJOETVRI" },
+  { id: "UdOJf6It_TA" },
+  { id: "sHBdDOuziVI" },
+  { id: "gQT_ke2q5To" },
+  { id: "m9KhEgoSXUM" },
   { id: "UL6jtWMHmtI" },
   { id: "c1hL6fj8VjQ" },
   { id: "ap38alCuUxY" },
   { id: "3STNVrRyyP0" },
   { id: "koeGb8HLNgs" },
-  { id: "NCVo8d9WqUM" },
   { id: "dmhwYUss980" },
   { id: "6HTWN0JjXA4" },
+  { id: "NCVo8d9WqUM" },
 ];
 
 function ShortCard({ id, index }: { id: string; index: number }) {
