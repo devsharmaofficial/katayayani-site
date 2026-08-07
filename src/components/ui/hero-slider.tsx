@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import { Play } from "lucide-react";
 import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 
 const VIDEO_POOL: MediaItem[] = [
