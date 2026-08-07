@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import dynamic from "next/dynamic";
 import { X, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,7 +23,13 @@ interface MediaModalProps {
 }
 
 export default function MediaModal({ media, onClose }: MediaModalProps) {
-  // ESC key listener to close modal smoothly
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // ESC key listener & body scroll lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -39,61 +46,78 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
     };
   }, [media, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  const modalJSX = (
     <AnimatePresence>
       {media && (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
           {/* Backdrop Blur Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute inset-0 bg-black/90 backdrop-blur-xl cursor-pointer"
-            onClick={onClose}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 bg-black/95 backdrop-blur-2xl cursor-pointer z-[999998]"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
           />
 
-          {/* Close Button - Fixed High Z-Index & Explicit Stop Propagation */}
+          {/* Floating Top-Right Close Button - Highest Z-Index */}
           <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
+            exit={{ opacity: 0, scale: 0.7 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
               onClose();
             }}
-            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[200] p-3 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 text-white transition-all backdrop-blur-md border border-white/20 shadow-2xl cursor-pointer pointer-events-auto group"
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1000001] p-3.5 rounded-full bg-white/15 hover:bg-red-600 active:scale-90 text-white transition-all duration-200 backdrop-blur-xl border border-white/30 shadow-2xl cursor-pointer pointer-events-auto group"
             title="Close Video (Esc)"
           >
-            <X className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:rotate-90 duration-300" />
+            <X className="w-6 h-6 sm:w-8 sm:h-8 transition-transform group-hover:rotate-90 duration-300" />
           </motion.button>
 
           {/* Animated Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 15 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 15 }}
-            transition={{ type: "spring", damping: 26, stiffness: 320 }}
-            className={`relative w-full z-[160] flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl bg-[#09090b] shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/15 ${
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 350 }}
+            className={`relative w-full z-[1000000] flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl bg-[#09090b] shadow-[0_0_80px_rgba(0,0,0,0.95)] border border-white/20 ${
               media.type === "video"
                 ? "max-w-[1000px] aspect-video"
                 : "max-w-[420px] h-[85vh] max-h-[760px]"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header info bar */}
-            <div className="absolute top-0 left-0 right-0 z-20 px-4 py-3 bg-gradient-to-b from-black/80 via-black/40 to-transparent flex items-center justify-between pointer-events-none">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/20">
+            {/* Header info bar inside container */}
+            <div className="absolute top-0 left-0 right-0 z-30 px-4 py-3 bg-gradient-to-b from-black/90 via-black/50 to-transparent flex items-center justify-between pointer-events-auto">
+              <span className="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/20 shadow-sm">
                 {media.type === "reel" ? "Instagram Reel" : media.type === "short" ? "YouTube Short" : "YouTube Video"}
               </span>
+
+              {/* Inner close button inside container header for extra reliability */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 hover:bg-red-600 text-white text-[12px] font-bold transition-all border border-white/20 cursor-pointer shadow-md"
+              >
+                <X className="w-3.5 h-3.5" />
+                Close
+              </button>
             </div>
 
             {/* Video Content */}
             {media.type === "reel" ? (
               // Official Instagram Reel Embed
-              <div className="w-full h-full bg-[#fafafa] relative overflow-hidden flex flex-col pt-8">
+              <div className="w-full h-full bg-[#fafafa] relative overflow-hidden flex flex-col pt-12">
                 <div className="flex-1 w-full relative">
                   <iframe
                     src={`https://www.instagram.com/reel/${media.id}/embed/`}
@@ -144,4 +168,6 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modalJSX, document.body);
 }
