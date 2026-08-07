@@ -1,8 +1,43 @@
 "use client";
 
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Play, Heart, MessageCircle, Send, X, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { Play, Heart, MessageCircle, X, ExternalLink } from "lucide-react";
+
+const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/katayayani.enterprises/";
+const INSTAGRAM_ID = "katayayani.enterprises";
+
+const REELS = [
+  {
+    id: "DbsKeEUB73O",
+    title: "Premium Punjabi Hood Modification on Tractor 🚜🔥",
+    likes: "5.4K",
+    comments: "148",
+  },
+  {
+    id: "DbP0c0bBdcZ",
+    title: "Swaraj Modified with Heavy Duty Fiber Chatri Setup ⚡",
+    likes: "4.1K",
+    comments: "112",
+  },
+  {
+    id: "DbP1VJ_hLbN",
+    title: "Katayayani Enterprises Custom Canopy Fitment & Review 🌟",
+    likes: "6.3K",
+    comments: "230",
+  },
+  {
+    id: "DblnpQQhbOV",
+    title: "Double Bumper Fiber Hood Tractor Installation Guide 🛠️",
+    likes: "3.8K",
+    comments: "95",
+  },
+  {
+    id: "DblTKvyhXuj",
+    title: "Custom Painted Tractor Canopy Design Factory Showcase 🎨",
+    likes: "4.7K",
+    comments: "128",
+  },
+];
 
 function Instagram({ className = "w-5 h-5" }: { className?: string }) {
   return (
@@ -22,75 +57,26 @@ function Instagram({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/katayayanienterprises.meerut/";
-
-const REELS = [
-  {
-    id: "reel-1",
-    videoId: "UL6jtWMHmtI",
-    title: "Swaraj 855 FE Heavy Duty Punjabi Hood Installation 🔥",
-    likes: "4.8K",
-    comments: "142",
-  },
-  {
-    id: "reel-2",
-    videoId: "c1hL6fj8VjQ",
-    title: "Mahindra Arjun Novo Premium FRP Canopy Fitting Guide 🚜",
-    likes: "3.5K",
-    comments: "98",
-  },
-  {
-    id: "reel-3",
-    videoId: "ap38alCuUxY",
-    title: "Sonalika Tiger Double Bumper Fiber Chatri Setup ⚡",
-    likes: "5.2K",
-    comments: "187",
-  },
-  {
-    id: "reel-4",
-    videoId: "3STNVrRyyP0",
-    title: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory Tour 🏭",
-    likes: "6.1K",
-    comments: "204",
-  },
-  {
-    id: "reel-5",
-    videoId: "koeGb8HLNgs",
-    title: "John Deere Premium Canopy Review by Customer 🌟",
-    likes: "4.3K",
-    comments: "115",
-  },
-  {
-    id: "reel-6",
-    videoId: "NCVo8d9WqUM",
-    title: "New Holland Fiber Hood Custom Fitting Process 🛠️",
-    likes: "2.9K",
-    comments: "84",
-  },
-];
-
 export default function InstagramSection() {
   const [activeReel, setActiveReel] = useState<typeof REELS[0] | null>(null);
   const [isLiked, setIsLiked] = useState<Record<string, boolean>>({});
   const [likeCounts, setLikeCounts] = useState<Record<string, number>>({});
 
-  useEffect(() => {
-    // Initialize random mock like counts close to their text representation
-    const counts: Record<string, number> = {};
-    REELS.forEach((reel) => {
-      const base = parseFloat(reel.likes.replace("K", "")) * 1000;
-      counts[reel.id] = Math.floor(base);
-    });
-    setLikeCounts(counts);
-  }, []);
+  // Initialize randomly styled counts
+  const getLikeCount = (reelId: string, baseLikes: string) => {
+    if (likeCounts[reelId]) return likeCounts[reelId];
+    const base = parseFloat(baseLikes.replace("K", "")) * 1000;
+    return Math.floor(base);
+  };
 
-  const handleLikeToggle = (id: string, e: React.MouseEvent) => {
+  const handleLikeToggle = (id: string, baseLikes: string, e: React.MouseEvent) => {
     e.stopPropagation();
+    const currentCount = getLikeCount(id, baseLikes);
     setIsLiked((prev) => {
       const nextState = !prev[id];
       setLikeCounts((prevCounts) => ({
         ...prevCounts,
-        [id]: prevCounts[id] + (nextState ? 1 : -1),
+        [id]: (prevCounts[id] || currentCount) + (nextState ? 1 : -1),
       }));
       return { ...prev, [id]: nextState };
     });
@@ -118,7 +104,7 @@ export default function InstagramSection() {
                 <Instagram className="w-3.5 h-3.5" />
                 Instagram
               </span>
-              <span className="text-gray-500 text-[12px] font-semibold">@katayayanienterprises.meerut</span>
+              <span className="text-gray-500 text-[12px] font-semibold">@{INSTAGRAM_ID}</span>
             </div>
             
             <h2 className="text-gray-900 text-[28px] sm:text-[36px] md:text-[40px] font-black leading-tight tracking-tight">
@@ -145,28 +131,29 @@ export default function InstagramSection() {
         </div>
 
         {/* Reels grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
           {REELS.map((reel) => {
             const liked = isLiked[reel.id];
-            const currentLikes = likeCounts[reel.id] || 0;
+            const currentLikes = likeCounts[reel.id] || getLikeCount(reel.id, reel.likes);
+            const redirectThumbnailUrl = `https://www.instagram.com/p/${reel.id}/media/?size=l`;
+
             return (
               <div
                 key={reel.id}
                 onClick={() => setActiveReel(reel)}
                 className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                {/* Reel cover image facade */}
-                <Image
-                  src={`https://img.youtube.com/vi/${reel.videoId}/hqdefault.jpg`}
+                {/* Reel cover image from Instagram direct redirect API */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={redirectThumbnailUrl}
                   alt={reel.title}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
-                  unoptimized={true}
-                  className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
 
                 {/* Dark gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
 
                 {/* Play Badge Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -184,13 +171,13 @@ export default function InstagramSection() {
                 </div>
 
                 {/* Bottom stats & info */}
-                <div className="absolute bottom-3 left-3 right-3 text-white">
+                <div className="absolute bottom-4 left-3 right-3 text-white">
                   <p className="text-[11px] font-medium leading-tight mb-2 line-clamp-2 text-white/90">
                     {reel.title}
                   </p>
                   <div className="flex items-center justify-between text-[10px] text-white/70">
                     <button
-                      onClick={(e) => handleLikeToggle(reel.id, e)}
+                      onClick={(e) => handleLikeToggle(reel.id, reel.likes, e)}
                       className="flex items-center gap-1 hover:text-red-500 transition-colors py-1"
                     >
                       <Heart
@@ -212,7 +199,7 @@ export default function InstagramSection() {
         {/* Footer row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-10 pt-6 border-t border-gray-100">
           <span className="text-[12px] font-semibold text-gray-500">
-            @katayayanienterprises.meerut
+            @{INSTAGRAM_ID}
           </span>
           <a
             href={INSTAGRAM_PROFILE_URL}
@@ -220,16 +207,16 @@ export default function InstagramSection() {
             rel="noopener noreferrer"
             className="text-[13px] font-bold text-pink-600 hover:text-pink-700 hover:underline inline-flex items-center gap-1.5 transition-colors"
           >
-            Open Instagram Grid
+            Open Instagram Profile
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>
 
-      {/* Immersive Instagram Reels Modal */}
+      {/* Immersive Instagram Reels Embed Modal */}
       {activeReel && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-          {/* Close button outside */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md" onClick={() => setActiveReel(null)}>
+          {/* Close button */}
           <button
             onClick={() => setActiveReel(null)}
             className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 active:scale-95"
@@ -240,105 +227,56 @@ export default function InstagramSection() {
 
           {/* Modal Container */}
           <div 
-            className="relative w-full max-w-[420px] aspect-[9/19] rounded-[40px] border-[12px] border-gray-800 bg-[#000] shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
+            className="relative w-full max-w-[480px] h-[85vh] max-h-[720px] rounded-3xl bg-white shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Phone notch / camera spacer */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-2xl z-30 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-black mr-2" />
-              <div className="w-12 h-1 bg-black rounded-full" />
-            </div>
-
-            {/* Video container */}
-            <div className="flex-1 w-full relative bg-[#111]">
-              <iframe
-                src={`https://www.youtube.com/embed/${activeReel.videoId}?autoplay=1&mute=0&rel=0&modestbranding=1&controls=0`}
-                title="Instagram Reel View"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full border-0 z-10"
-              />
-
-              {/* Instagram Reels UI Overlays (Simulated on top of video) */}
-              <div className="absolute right-4 bottom-24 z-20 flex flex-col items-center gap-5 text-white">
-                {/* Profile Pic Indicator */}
-                <a 
-                  href={INSTAGRAM_PROFILE_URL}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border-2 border-pink-500 overflow-hidden relative group hover:scale-105 transition-transform"
-                >
-                  <div className="absolute inset-0 bg-[#bc1888]/20 group-hover:bg-transparent transition-colors" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/favicon.ico" alt="Katayayani Enterprises Logo" className="w-full h-full object-cover bg-white" />
-                </a>
-
-                {/* Like Button */}
-                <button 
-                  onClick={(e) => handleLikeToggle(activeReel.id, e)}
-                  className="flex flex-col items-center gap-1 group py-1"
-                >
-                  <div className="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-black/60 transition-colors">
-                    <Heart className={`w-5.5 h-5.5 ${isLiked[activeReel.id] ? "text-red-500 fill-red-500 animate-ping-once" : "text-white"}`} />
+            {/* Header info */}
+            <div className="px-5 py-3 border-b border-gray-100 flex items-center justify-between bg-white">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e1306c] to-[#bc1888] p-[1.5px]">
+                  <div className="w-full h-full rounded-full bg-white p-[1px]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/favicon.ico" alt="Katayayani Enterprises Logo" className="w-full h-full object-cover rounded-full" />
                   </div>
-                  <span className="text-[11px] font-bold shadow-sm">{formatNumber(likeCounts[activeReel.id] || 0)}</span>
-                </button>
-
-                {/* Comment Button */}
-                <div className="flex flex-col items-center gap-1 py-1">
-                  <div className="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center">
-                    <MessageCircle className="w-5.5 h-5.5 text-white" />
-                  </div>
-                  <span className="text-[11px] font-bold shadow-sm">{activeReel.comments}</span>
                 </div>
-
-                {/* Share/Instagram Button */}
-                <a 
-                  href={`${INSTAGRAM_PROFILE_URL}reels/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 py-1"
-                >
-                  <div className="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-black/60 transition-colors">
-                    <Send className="w-5.5 h-5.5 text-white ml-0.5" />
-                  </div>
-                  <span className="text-[11px] font-bold shadow-sm">Share</span>
-                </a>
-              </div>
-
-              {/* Bottom Caption Overlay */}
-              <div className="absolute bottom-4 left-4 right-16 z-20 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[13px] font-bold">katayayanienterprises.meerut</span>
-                  <a
-                    href={INSTAGRAM_PROFILE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] font-bold bg-[#bc1888] hover:bg-[#d6249f] px-2 py-0.5 rounded-md transition-colors"
-                  >
-                    Follow
-                  </a>
-                </div>
-                <p className="text-[12px] font-normal leading-tight text-white/90 line-clamp-3">
-                  {activeReel.title}
-                </p>
-                <div className="flex items-center gap-1 mt-2.5 text-[10px] text-white/70">
-                  <Instagram className="w-3.5 h-3.5" />
-                  <span>Original audio</span>
+                <div>
+                  <h3 className="text-[13px] font-bold text-gray-900 leading-none">{INSTAGRAM_ID}</h3>
+                  <span className="text-[10px] text-gray-500">Instagram Reel</span>
                 </div>
               </div>
-            </div>
-
-            {/* Bottom Phone Indicator Bar */}
-            <div className="w-full h-8 bg-black flex items-center justify-center z-30">
               <a
                 href={INSTAGRAM_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-2 bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] text-white text-[12px] font-black tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5"
+                className="text-[11px] font-bold text-white bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] px-3.5 py-1.5 rounded-full hover:opacity-90 transition-opacity"
               >
-                <Instagram className="w-3.5 h-3.5" />
-                View on Instagram
+                Follow
+              </a>
+            </div>
+
+            {/* Main Instagram Official Embed Iframe */}
+            <div className="flex-1 w-full bg-[#fafafa] relative overflow-hidden flex items-center justify-center p-2">
+              <iframe
+                src={`https://www.instagram.com/reel/${activeReel.id}/embed/`}
+                title="Instagram Reel View"
+                allowTransparency={true}
+                frameBorder="0"
+                scrolling="no"
+                className="w-full h-full rounded-xl border-0 shadow-sm"
+                style={{ background: "white" }}
+              />
+            </div>
+
+            {/* Bottom Bar redirecting to app / website */}
+            <div className="p-4 border-t border-gray-100 bg-white">
+              <a
+                href={`https://www.instagram.com/reel/${activeReel.id}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] text-white text-[13px] font-extrabold tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5 rounded-xl shadow-md transition-all active:scale-[0.98]"
+              >
+                <Instagram className="w-4 h-4" />
+                View & Comment on Instagram
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>

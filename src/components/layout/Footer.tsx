@@ -120,7 +120,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <Link
-              href="https://www.instagram.com/katayayanienterprises.meerut/"
+              href="https://www.instagram.com/katayayani.enterprises/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-600 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#e1306c] hover:to-[#bc1888] hover:border-transparent transition-all duration-300"
