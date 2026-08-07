@@ -10,18 +10,10 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 import { getAllProducts } from "@/lib/products";
+import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
-const YouTube = dynamic(() => import("react-youtube"), { ssr: false });
 
-type MediaType = "video" | "reel" | "short";
-
-interface MediaItem {
-  type: MediaType;
-  id: string;
-  title: string;
-  thumbnail: string;
-}
 
 // Consolidating all scraped media
 const MEDIA_POOL: MediaItem[] = [
@@ -378,71 +370,7 @@ export default function GalleryPage() {
         )}
 
         {/* Video Player Modal */}
-        {activeVideo && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-lg" onClick={() => setActiveVideo(null)}>
-            {/* Close button */}
-            <button
-              onClick={() => setActiveVideo(null)}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[110] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 active:scale-95 cursor-pointer"
-            >
-              <X className="w-6 h-6 sm:w-8 sm:h-8" />
-            </button>
-
-            {/* Modal Content Container */}
-            <div 
-              className={`relative w-full max-h-[90vh] flex flex-col items-center justify-center
-                ${activeVideo.type === 'video' ? 'max-w-[1000px] aspect-video' : 'max-w-[480px] h-[85vh]'}
-                rounded-2xl sm:rounded-3xl bg-black overflow-hidden shadow-2xl border border-white/10
-              `}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {activeVideo.type === 'reel' ? (
-                // Instagram Reel Embed
-                <div className="w-full h-full bg-[#fafafa] relative overflow-hidden flex flex-col">
-                  <div className="flex-1 w-full relative">
-                    <iframe
-                      src={`https://www.instagram.com/reel/${activeVideo.id}/embed/`}
-                      title="Instagram Reel View"
-                      allowTransparency={true}
-                      frameBorder="0"
-                      scrolling="no"
-                      className="absolute inset-0 w-full h-full border-0"
-                      style={{ background: "white" }}
-                    />
-                  </div>
-                  <div className="p-4 bg-white border-t border-gray-100 shrink-0">
-                    <a
-                      href={`https://www.instagram.com/reel/${activeVideo.id}/`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3.5 bg-[#e1306c] hover:bg-[#c13584] text-white text-[13px] font-extrabold tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5 rounded-xl shadow-md transition-all active:scale-[0.98]"
-                    >
-                      View on Instagram
-                      <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                    </a>
-                  </div>
-                </div>
-              ) : (
-                // YouTube Embed
-                <YouTube
-                  videoId={activeVideo.id}
-                  opts={{
-                    height: "100%",
-                    width: "100%",
-                    playerVars: {
-                      autoplay: 1,
-                      controls: 1,
-                      rel: 0,
-                      modestbranding: 1,
-                    }
-                  }}
-                  className="w-full h-full bg-black flex items-center justify-center absolute inset-0"
-                  iframeClassName="w-full h-full max-h-full"
-                />
-              )}
-            </div>
-          </div>
-        )}
+        <MediaModal media={activeVideo} onClose={() => setActiveVideo(null)} />
 
       </main>
       <Footer />

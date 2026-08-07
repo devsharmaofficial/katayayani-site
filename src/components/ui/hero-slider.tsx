@@ -2,20 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Play, X, ExternalLink } from "lucide-react";
-import dynamic from "next/dynamic";
-
-// Dynamically import react-youtube to avoid SSR blocking
-const YouTube = dynamic(() => import("react-youtube"), { ssr: false });
-
-type MediaType = "video" | "reel" | "short";
-
-interface MediaItem {
-  type: MediaType;
-  id: string;
-  title: string;
-  thumbnail: string;
-}
+import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 
 const VIDEO_POOL: MediaItem[] = [
   { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "/youtube/8AwxVYJaLew.jpg" },
@@ -217,78 +204,7 @@ export function HeroSlider() {
       </div>
 
       {/* Immersive Full-Screen Media Modal */}
-      {activeMedia && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-lg" onClick={() => setActiveMedia(null)}>
-          {/* Close button */}
-          <button
-            onClick={() => setActiveMedia(null)}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[110] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 active:scale-95"
-            title="Close Video"
-          >
-            <X className="w-6 h-6 sm:w-8 sm:h-8" />
-          </button>
-
-          {/* Modal Content Container */}
-          <div 
-            className={`relative w-full max-h-[90vh] flex flex-col items-center justify-center
-              ${activeMedia.type === 'video' ? 'max-w-[1000px] aspect-video' : 'max-w-[480px] h-[85vh]'}
-              rounded-2xl sm:rounded-3xl bg-black overflow-hidden shadow-2xl border border-white/10
-            `}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {activeMedia.type === 'reel' ? (
-              // Instagram Reel Official Embed
-              <div className="w-full h-full bg-[#fafafa] relative overflow-hidden flex flex-col">
-                <div className="flex-1 w-full relative">
-                  <iframe
-                    src={`https://www.instagram.com/reel/${activeMedia.id}/embed/`}
-                    title="Instagram Reel View"
-                    allowTransparency={true}
-                    frameBorder="0"
-                    scrolling="no"
-                    className="absolute inset-0 w-full h-full border-0"
-                    style={{ background: "white" }}
-                  />
-                </div>
-                {/* Direct link footer for better UX */}
-                <div className="p-4 bg-white border-t border-gray-100 shrink-0">
-                  <a
-                    href={`https://www.instagram.com/reel/${activeMedia.id}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3.5 bg-[#e1306c] hover:bg-[#c13584] text-white text-[13px] font-extrabold tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5 rounded-xl shadow-md transition-all active:scale-[0.98]"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    View on Instagram
-                    <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                  </a>
-                </div>
-              </div>
-            ) : (
-              // YouTube Video or Short Embed
-              <YouTube
-                videoId={activeMedia.id}
-                opts={{
-                  height: "100%",
-                  width: "100%",
-                  playerVars: {
-                    autoplay: 1,
-                    controls: 1,
-                    rel: 0,
-                    modestbranding: 1,
-                  }
-                }}
-                className="w-full h-full bg-black flex items-center justify-center absolute inset-0"
-                iframeClassName="w-full h-full max-h-full"
-              />
-            )}
-          </div>
-        </div>
-      )}
+      <MediaModal media={activeMedia} onClose={() => setActiveMedia(null)} />
     </div>
   );
 }
