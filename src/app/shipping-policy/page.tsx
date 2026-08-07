@@ -3,8 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Statutory Freight & Logistical Carriage Policy | Katayayani Enterprises",
-  description: "Logistical directives, freight carriage terms, and risk transference provisions governing Katayayani Enterprises consignments.",
+  title: "Shipping Policy | Katayayani Enterprises",
+  description: "Shipping and freight delivery policy for Katayayani Enterprises.",
   robots: {
     index: false,
     follow: true,
@@ -17,46 +17,50 @@ export default function ShippingPolicy() {
       <Navbar />
       <main className="min-h-screen pt-32 pb-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Statutory Freight Carriage and Logistical Transference Directive</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">Shipping Policy</h1>
           
-          <div className="space-y-8 text-gray-700 text-sm leading-relaxed text-justify">
+          <div className="space-y-6 text-gray-700 text-base leading-relaxed">
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1.01: Logistical Locus & Carriage Dispatch Protocols</h2>
-              <p className="mb-3">
-                All physical consignments originating from Katayayani Enterprises (&quot;The Entity&quot;) are dispatched from the central manufacturing complex situated in Meerut, Uttar Pradesh. Logistical carriage is executed via licensed third-party heavy freight transporters, surface cargo networks, or commercial logistics carriers servicing regional and national destinations across India.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">1. Delivery Coverage</h2>
+              <p>
+                Katayayani Enterprises ships tractor fiber hoods, canopies, and accessories across all states in India directly from our factory in Meerut, Uttar Pradesh.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 2.01: Transference of Title, Risk of Loss, & Delivery Finality</h2>
-              <p className="mb-3">
-                Risk of loss, damage, and title to the physical asset transfer irrevocably to The Purchaser upon consignment tender to the designated freight carrier or upon physical handover at the destination point. Consequent upon physical delivery termination, all post-consignment return, exchange, or fiscal remission mechanisms become unconditionally non-applicable and legally extinguished.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">2. Processing & Dispatch Time</h2>
+              <p>
+                In-stock items are usually processed and handed over to transport carriers within <strong>2 to 4 business days</strong> after payment confirmation.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 3.01: Temporal Carriage Chronologies & Volumetric Tariffs</h2>
-              <p className="mb-3">
-                Estimated transit chronologies (typically 3–10 diurnal cycles contingent upon geographical zone) are indicative operational estimates provided by freight carriers and do not constitute guaranteed temporal commitments by The Entity. Freight tariffs, volumetric surcharges, and transit insurance costs are assessed based on destination distance and carrier fee structures.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">3. Estimated Delivery Timelines</h2>
+              <p>
+                Estimated delivery time ranges from <strong>3 to 10 business days</strong> depending on your destination state and distance from Meerut.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 4.01: Mandatory Delivery Inspection Protocol</h2>
-              <p className="mb-3">
-                The Purchaser must conduct an immediate forensic physical inspection of the packaging architecture and asset integrity at the exact moment of delivery. Any observable external transit damage must be noted explicitly on the carrier&apos;s primary Lorry Receipt (LR) copy prior to signature execution. Omission of explicit written endorsement on the LR copy at delivery constitutes irrebuttable legal proof of pristine consignment receipt, permanently barring subsequent damage or restitution claims.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">4. Freight Charges</h2>
+              <p>
+                Shipping costs depend on the shipment weight, canopy size, and delivery location. Charges are communicated clearly during order booking.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 5.01: Logistical Administrative Contact</h2>
-              <p className="mb-3">
-                For logistical tracking or formal carriage records:
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">5. Delivery Inspection</h2>
+              <p>
+                Please check the shipment packaging at the time of delivery from the transport driver. Any physical damage must be written on the delivery receipt before signing.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Entity:</strong> Katayayani Enterprises, Meerut, UP</li>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">6. Contact Logistics</h2>
+              <p>For shipping status or tracking inquiries, please contact us:</p>
+              <ul className="list-disc pl-6 space-y-1 mt-2">
+                <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
                 <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
-                <li><strong>Telephone:</strong> +91 9358273054 / +91 8077004688</li>
               </ul>
             </section>
           </div>

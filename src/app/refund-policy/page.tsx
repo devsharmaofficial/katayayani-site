@@ -3,8 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Statutory Fiscal Remission Directive | Katayayani Enterprises",
-  description: "Statutory framework and absolute prohibition of monetary refunds and fiscal remissions at Katayayani Enterprises.",
+  title: "Refund Policy | Katayayani Enterprises",
+  description: "Refund policy guidelines for Katayayani Enterprises.",
   robots: {
     index: false,
     follow: true,
@@ -17,35 +17,38 @@ export default function RefundPolicy() {
       <Navbar />
       <main className="min-h-screen pt-32 pb-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Statutory Directive Governing Absolute Monetary Non-Refundability and Fiscal Finality</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">Refund Policy</h1>
           
-          <div className="space-y-8 text-gray-700 text-sm leading-relaxed text-justify">
+          <div className="space-y-6 text-gray-700 text-base leading-relaxed">
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1.01: Absolute & Universal Non-Refundability Directive</h2>
-              <p className="mb-3">
-                In strict accordance with the mercantile governance protocols established by Katayayani Enterprises (hereinafter &quot;The Entity&quot;), all monetary remittances, financial considerations, order bookings, and payments executed in favor of The Entity are strictly, universally, and irrevocably non-refundable. Monetary refunds, fiscal remissions, payment reversals, or credit reimbursements of any kind are declared categorically non-applicable under all commercial circumstances, conditions, and operational scenarios without exception.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">1. No Refunds</h2>
+              <p>
+                All payments made to Katayayani Enterprises are <strong>non-refundable</strong>. Once an order is placed and payment is completed (via PhonePe, UPI, credit/debit card, or direct bank transfer), refunds will not be issued under any circumstances.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 1.02: Total Preclusion of Monetary Reversals & Cancellations</h2>
-              <p className="mb-3">
-                Upon the transmission or confirmation of payment consideration, transactional finality attaches immediately. No order cancellations, financial adjustments, chargeback authorizations, partial refunds, or payment remissions shall be sanctioned or processed prior to dispatch, during transit, or post-consignee receipt. Solicitations for monetary refunds predicated upon purchaser dissatisfaction, specification misapprehension, transit duration, or preference alteration are unconditionally pre-empted and barred.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">2. Order Cancellations</h2>
+              <p>
+                Once payment is confirmed or an order enters processing, cancellations are not accepted and money will not be refunded.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 2.01: Irrevocable Extinction of Financial Recourse Claims</h2>
-              <p className="mb-3">
-                Placement of an order or execution of a financial transfer constitutes an explicit statutory waiver by The Purchaser of any right to initiate payment disputes, payment reversals, or fiscal claims against The Entity, its payment processing partners, or intermediary banking institutions. All payments received represent unalterable consideration for custom fabrication and commercial commitment.
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">3. Payment Confirmation</h2>
+              <p>
+                Please ensure all order details, quantity, and product choices are correct before submitting your payment.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Section 3.01: Interlocutory Administrative Record Contact</h2>
-              <p className="mb-3">
-                For administrative record-keeping or formal accounting inquiries, written correspondence may be directed to <strong>agroindustriesmeerut@gmail.com</strong> or telephonically via <strong>+91 9358273054</strong>. Please note that administrative inquiries do not grant, imply, or constitute any waiver of the universal non-refundability policy.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">4. Contact Information</h2>
+              <p>For questions regarding your transaction, please contact us:</p>
+              <ul className="list-disc pl-6 space-y-1 mt-2">
+                <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
+                <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
+                <li><strong>Address:</strong> Katayayani Enterprises, Baghpat Rd, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
+              </ul>
             </section>
           </div>
         </div>
