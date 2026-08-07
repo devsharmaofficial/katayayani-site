@@ -30,14 +30,14 @@ export default function ShippingPolicy() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">2. Processing & Dispatch Time</h2>
               <p>
-                In-stock items are usually processed and handed over to transport carriers within <strong>2 to 4 business days</strong> after payment confirmation.
+                In-stock items are processed and handed over to transport carriers within <strong>5 to 6 business days</strong> after payment confirmation.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">3. Estimated Delivery Timelines</h2>
               <p>
-                Estimated delivery time ranges from <strong>3 to 10 business days</strong> depending on your destination state and distance from Meerut.
+                Estimated delivery time is <strong>5 to 6 business days</strong> after dispatch, depending on your destination location.
               </p>
             </section>
 
