@@ -60,20 +60,24 @@ export function HeroSlider() {
   
   // State for the randomly selected grid items
   const [centerVideo, setCenterVideo] = useState<MediaItem | null>(null);
-  const [leftVertical, setLeftVertical] = useState<MediaItem | null>(null);
-  const [rightVertical, setRightVertical] = useState<MediaItem | null>(null);
+  const [leftTop, setLeftTop] = useState<MediaItem | null>(null);
+  const [leftBottom, setLeftBottom] = useState<MediaItem | null>(null);
+  const [rightTop, setRightTop] = useState<MediaItem | null>(null);
+  const [rightBottom, setRightBottom] = useState<MediaItem | null>(null);
 
   // Pick random media on mount to avoid hydration mismatch
   useEffect(() => {
     // Pick 1 random horizontal video
     const randomVideo = shuffleArray(VIDEO_POOL)[0];
     
-    // Pick 2 random vertical medias (shorts or reels)
-    const randomVerticals = shuffleArray(VERTICAL_POOL).slice(0, 2);
+    // Pick 4 random vertical medias (shorts or reels)
+    const randomVerticals = shuffleArray(VERTICAL_POOL).slice(0, 4);
     
     setCenterVideo(randomVideo);
-    setLeftVertical(randomVerticals[0]);
-    setRightVertical(randomVerticals[1]);
+    setLeftTop(randomVerticals[0]);
+    setLeftBottom(randomVerticals[1]);
+    setRightTop(randomVerticals[2]);
+    setRightBottom(randomVerticals[3]);
   }, []);
 
   const handleMediaClick = (media: MediaItem) => {
@@ -84,14 +88,14 @@ export function HeroSlider() {
     if (!media) {
       // Skeleton loader placeholder
       return (
-        <div className={`w-full ${isVertical ? 'aspect-[9/16]' : 'aspect-[16/9]'} bg-gray-100 rounded-3xl animate-pulse`}></div>
+        <div className={`w-full h-full bg-gray-100 rounded-3xl animate-pulse`}></div>
       );
     }
 
     return (
       <div 
         onClick={() => handleMediaClick(media)}
-        className={`relative w-full ${isVertical ? 'aspect-[9/16]' : 'aspect-[16/9]'} rounded-[28px] overflow-hidden group cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100/50`}
+        className={`relative w-full h-full rounded-[28px] overflow-hidden group cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100/50`}
       >
         {/* High Res Thumbnail */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -155,54 +159,58 @@ export function HeroSlider() {
   return (
     <div className="w-full flex flex-col mt-6 mb-8 relative">
       
-      {/* Dynamic Media Bento Grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+      {/* Dynamic 5-Item Media Bento Grid */}
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 grid-rows-[repeat(2,180px)] md:grid-rows-[repeat(2,260px)] gap-3 md:gap-4 relative">
         
-        {/* Left Column - Vertical Media (Hidden on mobile for cleaner stack, visible on tablet+) */}
-        <div className="hidden md:flex flex-col gap-4 col-span-1">
-          {renderGridCard(leftVertical, true)}
-        </div>
-
-        {/* Center Column - Large Video (Takes 2 columns on desktop, full width on mobile) */}
-        <div className="col-span-1 md:col-span-2 flex flex-col gap-4 items-center justify-center">
-          {renderGridCard(centerVideo, false)}
-          
-          {/* Action Buttons Below the main video */}
-          <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
-            <a
-              href="/products"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#0a2e1f] hover:bg-[#061d13] text-white text-[15px] font-bold transition-all shadow-md hover:shadow-lg active:scale-95 group"
-            >
-              Explore Products
-              <svg 
-                className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-            <a
-              href="/enquiry"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white border border-gray-200 text-[#0a2e1f] text-[15px] font-bold hover:bg-gray-50 transition-all shadow-sm hover:shadow active:scale-95"
-            >
-              Request Quote
-            </a>
+        {/* Center Main Video (Col Span 2, Row Span 2 on desktop) */}
+        <div className="col-span-2 md:col-span-2 row-span-1 md:row-span-2 relative order-1 md:order-2 flex flex-col h-full">
+          <div className="flex-1 w-full relative">
+             {renderGridCard(centerVideo, false)}
           </div>
         </div>
 
-        {/* Right Column - Vertical Media */}
-        <div className="col-span-1 flex flex-col gap-4">
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-             {/* On mobile, we show the left vertical item here alongside the right one to form a nice 2-col row! */}
-             <div className="md:hidden">
-               {renderGridCard(leftVertical, true)}
-             </div>
-             <div>
-               {renderGridCard(rightVertical, true)}
-             </div>
-          </div>
+        {/* Left Top */}
+        <div className="col-span-1 row-span-1 relative order-2 md:order-1 flex w-full h-full">
+            {renderGridCard(leftTop, true)}
+        </div>
+        
+        {/* Left Bottom */}
+        <div className="col-span-1 row-span-1 relative order-3 md:order-1 hidden md:flex w-full h-full">
+            {renderGridCard(leftBottom, true)}
         </div>
 
+        {/* Right Top */}
+        <div className="col-span-1 row-span-1 relative order-4 md:order-3 flex w-full h-full">
+            {renderGridCard(rightTop, true)}
+        </div>
+        
+        {/* Right Bottom */}
+        <div className="col-span-1 row-span-1 relative order-5 md:order-3 hidden md:flex w-full h-full">
+            {renderGridCard(rightBottom, true)}
+        </div>
+
+      </div>
+
+      {/* Action Buttons Below the entire grid */}
+      <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 mb-2">
+        <a
+          href="/products"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#0a2e1f] hover:bg-[#061d13] text-white text-[15px] font-bold transition-all shadow-md hover:shadow-lg active:scale-95 group"
+        >
+          Explore Products
+          <svg 
+            className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" 
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a
+          href="/enquiry"
+          className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white border border-gray-200 text-[#0a2e1f] text-[15px] font-bold hover:bg-gray-50 transition-all shadow-sm hover:shadow active:scale-95"
+        >
+          Request Quote
+        </a>
       </div>
 
       {/* Immersive Full-Screen Media Modal */}
