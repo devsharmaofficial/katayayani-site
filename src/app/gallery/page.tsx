@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -98,6 +98,32 @@ export default function GalleryPage() {
 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeVideo, setActiveVideo] = useState<MediaItem | null>(null);
+
+  // Mixed and shuffled video array for the dense grid
+  const [shuffledVideos, setShuffledVideos] = useState<(MediaItem & { spanClass: string })[]>([]);
+
+  useEffect(() => {
+    // Shuffle the array
+    const shuffled = [...MEDIA_POOL].sort(() => 0.5 - Math.random());
+    
+    // Assign random masonry span classes based on media type for an eye-catching grid
+    const withSpans = shuffled.map((media) => {
+      let spanClass = "";
+      if (media.type === "video") {
+        // 40% large video, 60% wide video
+        spanClass = Math.random() > 0.6 
+          ? "col-span-1 sm:col-span-2 md:col-span-2 row-span-2 aspect-video" 
+          : "col-span-1 sm:col-span-2 md:col-span-2 row-span-1 aspect-[21/9] sm:aspect-video";
+      } else {
+        // 30% tall vertical reel, 70% normal vertical reel
+        spanClass = Math.random() > 0.7 
+          ? "col-span-1 row-span-2 aspect-[9/16]" 
+          : "col-span-1 row-span-1 aspect-[3/4] sm:aspect-[9/16]";
+      }
+      return { ...media, spanClass };
+    });
+    setShuffledVideos(withSpans);
+  }, []);
 
   const handlePrevPhoto = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -205,22 +231,25 @@ export default function GalleryPage() {
 
         {/* --- VIDEOS TAB --- */}
         {activeTab === "videos" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-in fade-in duration-500">
-            {MEDIA_POOL.map((media, idx) => {
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 grid-flow-dense gap-3 sm:gap-4 md:gap-5 animate-in fade-in duration-500">
+            {shuffledVideos.map((media, idx) => {
               const isHorizontal = media.type === "video";
               return (
                 <div 
                   key={media.id + idx}
                   onClick={() => setActiveVideo(media)}
-                  className={`group relative rounded-[24px] overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ${
-                    isHorizontal ? "col-span-1 sm:col-span-2 aspect-video" : "col-span-1 aspect-[9/16]"
-                  }`}
+                  className={`group relative rounded-xl sm:rounded-[24px] overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ${media.spanClass}`}
                 >
                   <img
                     src={media.thumbnail}
                     alt={media.title}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 bg-gray-100"
+                    onError={(e) => {
+                      if (media.type !== 'reel' && media.thumbnail.includes('maxresdefault.jpg')) {
+                        e.currentTarget.src = media.thumbnail.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                      }
+                    }}
                   />
                   
                   {/* Gradient Overlay for text contrast */}
