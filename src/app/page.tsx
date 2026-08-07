@@ -15,6 +15,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import HomepageSEOContent from "@/components/seo/HomepageSEOContent";
 import { HeroSlider } from "@/components/ui/hero-slider";
 const YouTubeSection = dynamic(() => import("@/components/sections/YouTubeSection"));
+const InstagramSection = dynamic(() => import("@/components/sections/InstagramSection"));
 
 // Dynamically import heavy UI components to reduce unused JavaScript
 const TextMarquee = dynamic(() => import("@/components/ui/text-marque").then(m => m.TextMarquee));
@@ -174,6 +175,11 @@ export default function HomePage() {
             YOUTUBE SECTION
             ================================================================ */}
         <YouTubeSection />
+
+        {/* ================================================================
+            INSTAGRAM SECTION
+            ================================================================ */}
+        <InstagramSection />
 
         {/* ================================================================
             TESTIMONIALS SECTION

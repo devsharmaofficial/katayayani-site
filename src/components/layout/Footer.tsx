@@ -1,6 +1,24 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, MessageCircle, Store, ArrowUpRight } from "lucide-react";
 
+function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg 
+      className={className} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+  );
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
@@ -98,6 +116,18 @@ export default function Footer() {
               aria-label="View IndiaMart Profile"
             >
               <Store className="w-[18px] h-[18px]" />
+            </Link>
+
+            {/* Instagram */}
+            <Link
+              href="https://www.instagram.com/katayayanienterprises.meerut/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-600 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#e1306c] hover:to-[#bc1888] hover:border-transparent transition-all duration-300"
+              title="Instagram Profile"
+              aria-label="Visit Instagram Profile"
+            >
+              <InstagramIcon className="w-[18px] h-[18px]" />
             </Link>
 
             {/* YouTube */}

@@ -9,12 +9,8 @@ import dynamic from "next/dynamic";
 // Dynamically import react-youtube with NO SSR so it doesn't block initial page load/hydration
 const YouTube = dynamic(() => import("react-youtube"), { ssr: false });
 
-const HERO_IMAGE_PATH = "/hero-slider/hppggurkoc7o0gpnqqn2.avif";
-
 type HeroBanner = {
-  type: "image" | "video" | "split-shorts";
-  src?: string;
-  alt?: string;
+  type: "video" | "split-shorts";
   videoId?: string;
   start?: number;
   shorts?: { videoId: string; start?: number }[];
@@ -29,19 +25,9 @@ const heroBanners: HeroBanner[] = [
     ]
   },
   {
-    type: "image",
-    src: HERO_IMAGE_PATH,
-    alt: "Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
-  },
-  {
     type: "video",
     videoId: "8AwxVYJaLew",
     start: 5,
-  },
-  {
-    type: "image",
-    src: "/hero-slider/lf33ylzukbdxjfbcupvf.avif",
-    alt: "Best Price Tractor Fiber Chatri & Canopy Manufacturer Meerut"
   },
   {
     type: "video",
@@ -53,18 +39,12 @@ const heroBanners: HeroBanner[] = [
       { videoId: "c1hL6fj8VjQ" },
       { videoId: "ap38alCuUxY" }
     ]
-  },
-  {
-    type: "image",
-    src: "/hero-slider/ppisvxajf1zmlunl52yu.avif",
-    alt: "Heavy Duty Punjabi Hood Fiber Chatri Canopy Factory"
   }
 ];
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [firstLoaded, setFirstLoaded] = useState(false);
   const [loadedSlides, setLoadedSlides] = useState<Set<number>>(new Set([0]));
   const [mountVideos, setMountVideos] = useState(false);
   
@@ -75,9 +55,9 @@ export function HeroSlider() {
   // No global event listeners or timeouts that can be triggered by Lighthouse bots.
 
   useEffect(() => {
-    // If it's a video slide, pause auto-scroll immediately
+    // If it's a video slide, pause auto-scroll only if video is actually mounted/playing
     const banner = heroBanners[currentSlide];
-    if (banner.type === "video" || banner.type === "split-shorts") {
+    if ((banner.type === "video" || banner.type === "split-shorts") && mountVideos) {
       setIsPaused(true);
     } else {
       setIsPaused(false);
@@ -102,7 +82,7 @@ export function HeroSlider() {
         }
       }
     });
-  }, [currentSlide]);
+  }, [currentSlide, mountVideos]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -148,18 +128,13 @@ export function HeroSlider() {
   };
 
   const handleStateChange = (event: any) => {
-    // Hide static LCP image once video actually starts playing (state 1 is PLAYING in YT API)
-    if (event.data === 1) { 
-      setFirstLoaded(true);
-    }
+    // Left empty for tracking active states if needed
   };
 
   const handleVideoEnd = () => {
     // Advance to next slide when video finishes
     goToSlide((currentSlide + 1) % heroBanners.length);
   };
-
-  const encPath = encodeURIComponent(HERO_IMAGE_PATH);
 
   const getYoutubeOpts = (startAt?: number) => ({
     height: "100%",
@@ -180,26 +155,6 @@ export function HeroSlider() {
     <div className="w-full flex flex-col relative rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] bg-white mt-2">
       {/* Image/Video Section */}
       <div className="w-full relative aspect-[16/9] sm:aspect-[2/1] md:aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[2.8/1] bg-[#f8f8f8]">
-
-        {/* Static LCP image - Fades out once first slide (video or image) loads */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          id="hero-lcp-image"
-          src={`/_next/image?url=${encPath}&w=828&q=80`}
-          srcSet={`/_next/image?url=${encPath}&w=640&q=80 640w, /_next/image?url=${encPath}&w=828&q=80 828w, /_next/image?url=${encPath}&w=1080&q=80 1080w, /_next/image?url=${encPath}&w=1200&q=80 1200w`}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-          alt="Premium Swaraj & Mahindra Tractor Fiber Hood Manufacturer India"
-          fetchPriority="high"
-          decoding="sync"
-          className="absolute inset-0 w-full h-full object-contain text-transparent"
-          style={{
-            opacity: firstLoaded ? 0 : 1,
-            zIndex: firstLoaded ? -1 : 20,
-            transition: "opacity 0.3s ease",
-          }}
-          width={828}
-          height={466}
-        />
 
         {/* Interactive slides */}
         {heroBanners.map((banner, index) => (
@@ -297,20 +252,7 @@ export function HeroSlider() {
                      />
                    )}
                 </div>
-              ) : (
-                <Image
-                  src={banner.src!}
-                  alt={banner.alt!}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1300px"
-                  priority={index === 0 || index === 1}
-                  fetchPriority={index === 0 || index === 1 ? "high" : "low"}
-                  loading={index === 0 || index === 1 ? "eager" : "lazy"}
-                  quality={index === 0 || index === 1 ? 100 : 80}
-                  onLoad={index === 1 ? () => setFirstLoaded(true) : undefined}
-                />
-              )
+              ) : null
             )}
           </div>
         ))}
