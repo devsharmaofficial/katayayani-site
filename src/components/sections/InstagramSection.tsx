@@ -39,7 +39,7 @@ const REELS = [
   },
 ];
 
-function Instagram({ className = "w-5 h-5" }: { className?: string }) {
+function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg 
       className={className} 
@@ -62,7 +62,6 @@ export default function InstagramSection() {
   const [isLiked, setIsLiked] = useState<Record<string, boolean>>({});
   const [likeCounts, setLikeCounts] = useState<Record<string, number>>({});
 
-  // Initialize randomly styled counts
   const getLikeCount = (reelId: string, baseLikes: string) => {
     if (likeCounts[reelId]) return likeCounts[reelId];
     const base = parseFloat(baseLikes.replace("K", "")) * 1000;
@@ -90,30 +89,27 @@ export default function InstagramSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-white" aria-label="Instagram Integration">
+    <section className="relative overflow-hidden py-16 md:py-24 bg-[#fafafa] border-t border-gray-100" aria-label="Instagram Integration">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-pink-500/5 via-purple-500/5 to-yellow-500/5 blur-[80px] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-yellow-500/5 via-red-500/5 to-purple-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-pink-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 relative z-10">
         {/* Header content */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="flex items-center gap-2 bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
-                <Instagram className="w-3.5 h-3.5" />
+              <span className="flex items-center gap-2 bg-[#e1306c] text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                <InstagramIcon className="w-3.5 h-3.5" />
                 Instagram
               </span>
-              <span className="text-gray-500 text-[12px] font-semibold">@{INSTAGRAM_ID}</span>
+              <span className="text-gray-600 text-[12px] font-bold">@{INSTAGRAM_ID}</span>
             </div>
             
             <h2 className="text-gray-900 text-[28px] sm:text-[36px] md:text-[40px] font-black leading-tight tracking-tight">
-              Trending on{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888]">
-                Instagram Reels
-              </span>
+              Trending on <span className="text-[#e1306c]">Instagram Reels</span>
             </h2>
-            <p className="text-gray-500 text-[14px] mt-3 max-w-[500px] leading-relaxed">
+            <p className="text-gray-500 text-[14px] mt-2 max-w-[500px] leading-relaxed">
               Explore our latest updates, customer tractor installations, and newly customized fiber hoods directly on our Instagram grid.
             </p>
           </div>
@@ -122,9 +118,9 @@ export default function InstagramSection() {
             href={INSTAGRAM_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] text-white font-extrabold text-[14px] rounded-full hover:opacity-95 active:scale-95 transition-all shadow-[0_4px_20px_rgba(225,48,108,0.25)] hover:shadow-[0_4px_25px_rgba(225,48,108,0.35)]"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#e1306c] hover:bg-[#c13584] text-white font-extrabold text-[14px] rounded-full transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
           >
-            <Instagram className="w-4 h-4" />
+            <InstagramIcon className="w-4 h-4" />
             Follow on Instagram
             <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
           </a>
@@ -135,25 +131,26 @@ export default function InstagramSection() {
           {REELS.map((reel) => {
             const liked = isLiked[reel.id];
             const currentLikes = likeCounts[reel.id] || getLikeCount(reel.id, reel.likes);
-            const redirectThumbnailUrl = `https://www.instagram.com/p/${reel.id}/media/?size=l`;
+            // Local high-quality downloaded thumbnail image
+            const localThumbnailUrl = `/instagram/${reel.id}.jpg`;
 
             return (
               <div
                 key={reel.id}
                 onClick={() => setActiveReel(reel)}
-                className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100"
               >
-                {/* Reel cover image from Instagram direct redirect API */}
+                {/* Local downloaded high-quality thumbnail */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={redirectThumbnailUrl}
+                  src={localThumbnailUrl}
                   alt={reel.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
 
                 {/* Dark gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
 
                 {/* Play Badge Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -163,7 +160,7 @@ export default function InstagramSection() {
                 </div>
 
                 {/* Top Instagram Reels indicator */}
-                <div className="absolute top-3 left-3 bg-black/40 backdrop-blur-md rounded-lg px-2 py-1 text-[9px] text-white/95 font-semibold flex items-center gap-1">
+                <div className="absolute top-3 left-3 bg-black/40 backdrop-blur-md rounded-lg px-2 py-1 text-[9px] text-white/95 font-bold flex items-center gap-1">
                   <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
                   </svg>
@@ -172,10 +169,10 @@ export default function InstagramSection() {
 
                 {/* Bottom stats & info */}
                 <div className="absolute bottom-4 left-3 right-3 text-white">
-                  <p className="text-[11px] font-medium leading-tight mb-2 line-clamp-2 text-white/90">
+                  <p className="text-[11px] font-semibold leading-snug mb-2 line-clamp-2 text-white/95">
                     {reel.title}
                   </p>
-                  <div className="flex items-center justify-between text-[10px] text-white/70">
+                  <div className="flex items-center justify-between text-[10px] text-white/80 font-bold">
                     <button
                       onClick={(e) => handleLikeToggle(reel.id, reel.likes, e)}
                       className="flex items-center gap-1 hover:text-red-500 transition-colors py-1"
@@ -197,15 +194,15 @@ export default function InstagramSection() {
         </div>
 
         {/* Footer row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-10 pt-6 border-t border-gray-100">
-          <span className="text-[12px] font-semibold text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-10 pt-6 border-t border-gray-200">
+          <span className="text-[12px] font-bold text-gray-500">
             @{INSTAGRAM_ID}
           </span>
           <a
             href={INSTAGRAM_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[13px] font-bold text-pink-600 hover:text-pink-700 hover:underline inline-flex items-center gap-1.5 transition-colors"
+            className="text-[13px] font-bold text-[#e1306c] hover:text-[#c13584] hover:underline inline-flex items-center gap-1.5 transition-colors"
           >
             Open Instagram Profile
             <ExternalLink className="w-3.5 h-3.5" />
@@ -248,7 +245,7 @@ export default function InstagramSection() {
                 href={INSTAGRAM_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] font-bold text-white bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] px-3.5 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+                className="text-[11px] font-bold text-white bg-[#e1306c] hover:bg-[#c13584] px-4 py-1.5 rounded-full transition-colors"
               >
                 Follow
               </a>
@@ -273,9 +270,9 @@ export default function InstagramSection() {
                 href={`https://www.instagram.com/reel/${activeReel.id}/`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-gradient-to-r from-[#f09433] via-[#e1306c] to-[#bc1888] text-white text-[13px] font-extrabold tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5 rounded-xl shadow-md transition-all active:scale-[0.98]"
+                className="w-full py-3 bg-[#e1306c] hover:bg-[#c13584] text-white text-[13px] font-extrabold tracking-wide uppercase hover:opacity-95 flex items-center justify-center gap-1.5 rounded-xl shadow-md transition-all active:scale-[0.98]"
               >
-                <Instagram className="w-4 h-4" />
+                <InstagramIcon className="w-4 h-4" />
                 View & Comment on Instagram
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
