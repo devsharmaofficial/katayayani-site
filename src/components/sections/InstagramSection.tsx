@@ -37,6 +37,24 @@ const REELS = [
     likes: "4.7K",
     comments: "128",
   },
+  {
+    id: "DbP04gcBKGt",
+    title: "Mahindra Tractor New Fiber Canopy Fitment and Walkaround 🚜🌟",
+    likes: "3.9K",
+    comments: "104",
+  },
+  {
+    id: "DafnacEhlnu",
+    title: "Customer Review and Ride-Along with Punjabi Hood Installation 🌾💯",
+    likes: "5.1K",
+    comments: "176",
+  },
+  {
+    id: "DbPzywnBs0f",
+    title: "Best Price Tractor Fiber Hood Manufacturing Unit Meerut 🏗️⚡",
+    likes: "4.5K",
+    comments: "135",
+  },
 ];
 
 function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -127,7 +145,7 @@ export default function InstagramSection() {
         </div>
 
         {/* Reels grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {REELS.map((reel) => {
             const liked = isLiked[reel.id];
             const currentLikes = likeCounts[reel.id] || getLikeCount(reel.id, reel.likes);
