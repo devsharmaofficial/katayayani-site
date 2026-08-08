@@ -169,9 +169,9 @@ export default function Footer() {
           <span className="text-gray-300">|</span>
           <Link href="/privacy-policy" className="hover:text-gray-700 transition-colors py-1">Privacy Policy</Link>
           <span className="text-gray-300">|</span>
-          <Link href="/return-policy" className="hover:text-gray-700 transition-colors py-1">Return Policy</Link>
+          <Link href="/return-policy" className="hover:text-gray-700 transition-colors py-1">Cancellation & Return Policy</Link>
           <span className="text-gray-300">|</span>
-          <Link href="/refund-policy" className="hover:text-gray-700 transition-colors py-1">Refund Policy</Link>
+          <Link href="/refund-policy" className="hover:text-gray-700 transition-colors py-1">Cancellation & Refund Policy</Link>
           <span className="text-gray-300">|</span>
           <Link href="/shipping-policy" className="hover:text-gray-700 transition-colors py-1">Shipping Policy</Link>
           <span className="text-gray-300">|</span>

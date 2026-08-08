@@ -59,8 +59,10 @@ export default function ShippingPolicy() {
               <h2 className="text-xl font-semibold text-gray-900 mb-2">6. Contact Logistics</h2>
               <p>For shipping status or tracking inquiries, please contact us:</p>
               <ul className="list-disc pl-6 space-y-1 mt-2">
+                <li><strong>Entity Name:</strong> Katayayani Enterprises</li>
                 <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
                 <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
+                <li><strong>Address:</strong> Tirupati complex wali gali, Baghpat Rd, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
               </ul>
             </section>
           </div>
