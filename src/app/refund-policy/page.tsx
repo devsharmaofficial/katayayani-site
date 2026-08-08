@@ -1,12 +1,16 @@
 import { Metadata } from "next";
+import { SITE_URL } from "@/config/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Refund and Cancellation Policy | Katayayani Enterprises",
   description: "Refund and Cancellation Policy for Katayayani Enterprises.",
+  alternates: {
+    canonical: `${SITE_URL}/refund-policy`,
+  },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

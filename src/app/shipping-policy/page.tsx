@@ -1,12 +1,16 @@
 import { Metadata } from "next";
+import { SITE_URL } from "@/config/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Shipping Policy | Katayayani Enterprises",
   description: "Shipping Policy for Katayayani Enterprises.",
+  alternates: {
+    canonical: `${SITE_URL}/shipping-policy`,
+  },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

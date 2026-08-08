@@ -1,12 +1,16 @@
 import { Metadata } from "next";
+import { SITE_URL } from "@/config/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Return Policy | Katayayani Enterprises",
   description: "Return Policy for Katayayani Enterprises.",
+  alternates: {
+    canonical: `${SITE_URL}/return-policy`,
+  },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

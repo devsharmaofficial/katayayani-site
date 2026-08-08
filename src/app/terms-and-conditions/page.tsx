@@ -1,12 +1,16 @@
 import { Metadata } from "next";
+import { SITE_URL } from "@/config/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Katayayani Enterprises",
   description: "Terms and conditions for Katayayani Enterprises.",
+  alternates: {
+    canonical: `${SITE_URL}/terms-and-conditions`,
+  },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };
