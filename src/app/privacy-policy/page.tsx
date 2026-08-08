@@ -41,15 +41,15 @@ export default function PrivacyPolicy() {
 
             <p><strong>Grievance Officer</strong></p>
 
-            <p>Insert Name of the Office: Ashok Kumar Sharma</p>
+            <p>Name: Ashok Kumar Sharma</p>
             
             <p>Designation: Grievance Officer</p>
             
-            <p>Insert Name and Address of the Company: KATAYAYANI ENTERPRISES, 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh 250002</p>
+            <p>Company: KATAYAYANI ENTERPRISES, 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh 250002</p>
             
             <p>Contact us: agroindustriesmeerut@gmail.com</p>
             
-            <p>Phone: 9358273054 Time: Monday - Friday(9:00 - 18:00)</p>
+            <p>Phone: 9358273054 (Monday - Friday 9:00 - 18:00)</p>
           </div>
         </div>
       </main>
