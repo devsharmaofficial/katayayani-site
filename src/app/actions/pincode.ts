@@ -35,6 +35,6 @@ export async function checkDelivery(pincode: string) {
       message: `Delivery available to ${info.area}, ${info.district}`
     };
   } catch (err) {
-    return { error: "Error checking pincode. Please try again." };
+    return { error: "Error: " + String(err) };
   }
 }
