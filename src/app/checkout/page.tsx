@@ -233,26 +233,25 @@ function CheckoutContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f7f6] pt-24 pb-20">
+    <div className="min-h-screen bg-[#f5f7f6] pt-16 pb-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ── Back link ── */}
-        <Link
-          href={`/products/${product.slug}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-600 hover:text-primary transition-colors mb-6 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-          Back to product
-        </Link>
-
-        {/* ── Page heading ── */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">Checkout</h1>
-          <p className="text-gray-500 text-sm mt-1">Complete your order in 2 simple steps</p>
+        {/* ── Page header & Back link ── */}
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-black text-gray-900 tracking-tight">Checkout</h1>
+          <Link
+            href={`/products/${product.slug}`}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-primary transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+            Back
+          </Link>
         </div>
 
         {/* ── Step progress ── */}
-        <StepBar step={step} />
+        <div className="mb-6">
+          <StepBar step={step} />
+        </div>
 
         {/* ── Error banner ── */}
         {error && (
@@ -269,19 +268,19 @@ function CheckoutContent() {
           <div className="space-y-5">
 
             {/* ═══ STEP 1 ═══ */}
-            <div className={`bg-white rounded-2xl shadow-sm border-2 transition-all duration-300 overflow-hidden ${step === 1 ? "border-primary" : "border-transparent"}`}>
+            <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 overflow-hidden ${step === 1 ? "border-primary ring-1 ring-primary" : "border-gray-200"}`}>
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-                <h2 className={`flex items-center gap-3 font-black text-base ${step >= 1 ? "text-gray-900" : "text-gray-400"}`}>
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 transition-colors ${step === 1 ? "bg-primary text-white" : "bg-green-500 text-white"}`}>
-                    {step > 1 ? <CheckCircle2 className="w-4.5 h-4.5" /> : "1"}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 bg-gray-50/50">
+                <h2 className={`flex items-center gap-2.5 font-bold text-sm ${step >= 1 ? "text-gray-900" : "text-gray-400"}`}>
+                  <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 transition-colors ${step === 1 ? "bg-primary text-white" : "bg-green-500 text-white"}`}>
+                    {step > 1 ? <CheckCircle2 className="w-4 h-4" /> : "1"}
                   </span>
                   Delivery Details
                 </h2>
                 {step > 1 && (
                   <button
                     onClick={() => { setStep(1); setError(""); }}
-                    className="text-sm font-bold text-primary border border-primary/30 px-3 py-1 rounded-lg hover:bg-primary hover:text-white transition-colors"
+                    className="text-xs font-bold text-primary border border-primary/30 px-3 py-1 rounded-md hover:bg-primary hover:text-white transition-colors"
                   >
                     Edit
                   </button>
@@ -290,10 +289,10 @@ function CheckoutContent() {
 
               {/* Collapsed summary */}
               {step > 1 && (
-                <div className="px-6 py-4 bg-green-50/50 text-sm text-gray-700 space-y-1">
-                  <p className="font-bold text-gray-900">{formData.name} <span className="font-normal text-gray-500">· {formData.phone}</span></p>
-                  <p className="text-gray-600 line-clamp-2">{formData.address}{formData.pincode ? `, ${formData.pincode}` : ""}</p>
-                  <p>Color: <span className="font-semibold text-primary">{formData.color}</span></p>
+                <div className="px-5 py-3 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-gray-600">
+                  <p><span className="font-bold text-gray-900">{formData.name}</span> • {formData.phone}</p>
+                  <p className="truncate max-w-sm">{formData.address}, {formData.pincode}</p>
+                  <p>Color: <span className="font-bold text-gray-900">{formData.color}</span></p>
                 </div>
               )}
 
@@ -399,113 +398,99 @@ function CheckoutContent() {
             </div>
 
             {/* ═══ STEP 2 ═══ */}
-            <div className={`bg-white rounded-2xl shadow-sm border-2 transition-all duration-300 overflow-hidden ${step === 2 ? "border-primary" : "border-transparent"}`}>
-              <div className="flex items-center px-6 py-4 border-b border-gray-100">
-                <h2 className={`flex items-center gap-3 font-black text-base ${step === 2 ? "text-gray-900" : "text-gray-400"}`}>
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 ${step === 2 ? "bg-primary text-white" : "bg-gray-200 text-gray-500"}`}>
+            <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 overflow-hidden ${step === 2 ? "border-primary ring-1 ring-primary" : "border-gray-200"}`}>
+              <div className="flex items-center px-5 py-3 border-b border-gray-100 bg-gray-50/50">
+                <h2 className={`flex items-center gap-2.5 font-bold text-sm ${step === 2 ? "text-gray-900" : "text-gray-400"}`}>
+                  <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 ${step === 2 ? "bg-primary text-white" : "bg-gray-300 text-white"}`}>
                     2
                   </span>
                   Secure UPI Payment
                 </h2>
                 {step === 2 && (
-                  <span className="ml-auto flex items-center gap-1.5 text-xs font-bold text-green-700 bg-green-100 px-3 py-1.5 rounded-full">
-                    <Lock className="w-3 h-3" /> 100% Secure
+                  <span className="ml-auto flex items-center gap-1.5 text-xs font-bold text-[#146c43] bg-[#d1e7dd] px-2.5 py-1 rounded-full">
+                    <ShieldCheck className="w-3.5 h-3.5" /> 100% Secure
                   </span>
                 )}
               </div>
 
               {step === 2 && (
-                <div className="p-6 md:p-8">
-                  {/* Secure Banner */}
-                  <div className="flex items-center gap-2 justify-center text-[#318664] bg-[#318664]/10 w-fit mx-auto px-4 py-1.5 rounded-full mb-8 font-bold text-sm">
-                    <ShieldCheck className="w-4 h-4" />
-                    100% Secure Payment
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <div className="p-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
                     {/* LEFT SIDE: QR CODE OR APP LINK */}
-                    <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0 md:pr-8">
+                    <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-gray-100 pb-6 md:pb-0 md:pr-6">
                       {isMobileDevice ? (
                         /* Mobile: deep link button */
-                        <div className="w-full text-center space-y-6">
+                        <div className="w-full text-center space-y-4">
                           <div>
-                            <p className="font-black text-gray-900 text-2xl mb-1">Pay ₹{PRICE.toLocaleString('en-IN')}</p>
-                            <p className="text-sm text-gray-500 font-medium">Inclusive of all taxes & shipping</p>
+                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Amount Payable</p>
+                            <p className="font-black text-primary text-3xl mb-1">₹{PRICE.toLocaleString('en-IN')}</p>
+                            <p className="text-xs text-gray-500 font-medium">Inclusive of all taxes & shipping</p>
                           </div>
                           
                           <a
                             href={upiUrl}
-                            className="block w-full py-4 rounded-xl font-black text-lg text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
+                            className="block w-full py-3.5 rounded-xl font-bold text-base text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
                           >
                             Pay via UPI App Now
                           </a>
-                          <p className="text-xs text-gray-400 font-medium pt-2">Securely open GPay, PhonePe, Paytm, etc.</p>
                         </div>
                       ) : (
                         /* Desktop: QR code */
                         <div className="flex flex-col items-center w-full">
-                          <div className="text-center mb-5">
-                            <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">Scan & Pay</p>
-                            <p className="text-3xl font-black text-primary tracking-tight">₹{PRICE.toLocaleString('en-IN')}</p>
+                          <div className="text-center mb-3">
+                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Scan to Pay</p>
+                            <p className="text-2xl font-black text-primary tracking-tight">₹{PRICE.toLocaleString('en-IN')}</p>
                           </div>
 
-                          <div className="relative mb-6 group">
-                            {/* Glowing border effect */}
-                            <div className="absolute -inset-1 bg-gradient-to-br from-primary via-green-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
-                            <div className="relative bg-white p-4 rounded-xl border border-gray-100 shadow-xl">
+                          <div className="relative mb-4 group">
+                            <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-2xl blur-md opacity-50" />
+                            <div className="relative bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
                               {qrDataUrl ? (
                                 <img
                                   src={qrDataUrl}
                                   alt="UPI QR Code"
-                                  width={180}
-                                  height={180}
+                                  width={140}
+                                  height={140}
                                   className="rounded-lg object-contain"
                                   style={{ imageRendering: "pixelated" }}
                                 />
                               ) : (
-                                <div className="w-[180px] h-[180px] bg-gray-100 animate-pulse rounded-lg flex items-center justify-center">
-                                  <span className="text-xs text-gray-400 font-bold">QR...</span>
-                                </div>
+                                <div className="w-[140px] h-[140px] bg-gray-50 animate-pulse rounded-lg" />
                               )}
                             </div>
                           </div>
-                          <p className="font-bold text-gray-800 text-sm">Open any UPI app to scan</p>
+                          <p className="font-semibold text-gray-700 text-xs text-center">Open any UPI app to scan</p>
                         </div>
                       )}
 
-                      {/* App Logos (Shared for Desktop & Mobile) */}
-                      <div className="mt-8 pt-6 border-t border-gray-100 w-full">
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center mb-4">Supported Apps</p>
-                        <div className="flex items-center justify-center gap-4">
-                          <div className="h-7 w-auto relative grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all cursor-default">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-full object-contain" />
-                          </div>
-                          <div className="h-7 w-auto relative grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all cursor-default">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-full object-contain" />
-                          </div>
-                          <div className="h-5 w-auto relative grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all cursor-default">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-full object-contain" />
-                          </div>
+                      {/* App Logos */}
+                      <div className="mt-5 w-full">
+                        <div className="flex items-center justify-center gap-3">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-4 sm:h-5 object-contain" />
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-5 sm:h-6 object-contain" />
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-3 sm:h-4 object-contain" />
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Bhim_logo.svg" alt="BHIM" className="h-4 sm:h-5 object-contain" />
                         </div>
+                        <p className="text-[9px] font-bold text-gray-400 text-center mt-2 uppercase tracking-widest">& other UPI apps</p>
                       </div>
                     </div>
 
                     {/* RIGHT SIDE: UPI ID & UTR FORM */}
                     <div className="flex flex-col justify-center h-full">
                       {/* UPI ID Row */}
-                      <div className="mb-8">
-                        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Or pay manually to UPI ID</p>
-                        <div className="flex items-center justify-between gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 shadow-sm hover:border-gray-300 transition-colors">
-                          <span className="font-mono font-bold text-gray-900 text-sm truncate max-w-[180px] sm:max-w-full">
+                      <div className="mb-5">
+                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">Or pay manually to UPI ID</p>
+                        <div className="flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-gray-300 transition-colors">
+                          <span className="font-mono font-bold text-gray-900 text-xs sm:text-sm truncate">
                             {UPI_ID}
                           </span>
                           <button
                             type="button"
                             onClick={copyUpiId}
-                            className={`flex-shrink-0 flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all duration-200 ${
+                            className={`flex-shrink-0 flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-md transition-colors ${
                               isCopied
-                                ? "bg-green-100 text-green-700 border border-green-200"
-                                : "bg-white text-primary border border-primary/30 hover:bg-primary hover:text-white"
+                                ? "bg-green-100 text-green-700"
+                                : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
                             }`}
                           >
                             {isCopied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
@@ -514,17 +499,15 @@ function CheckoutContent() {
                         </div>
                       </div>
 
-                      {/* UTR Form */}
-                      <div className="bg-gradient-to-br from-amber-50 to-white border border-amber-200 rounded-2xl p-6 shadow-md relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-20 h-20 bg-amber-400 rounded-full blur-3xl opacity-10"></div>
+                      {/* Premium UTR Form */}
+                      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.08)] relative">
                         <form onSubmit={onConfirmPayment} className="relative z-10">
-                          <div className="mb-5">
-                            <label className="block font-black text-amber-900 text-base mb-1.5 flex items-center gap-2">
-                              <CheckCircle2 className="w-5 h-5 text-amber-500" />
-                              Enter Reference No. (UTR)
+                          <div className="mb-4">
+                            <label className="block font-bold text-gray-900 text-sm mb-1.5 flex items-center gap-2">
+                              Enter UTR / Reference No.
                             </label>
-                            <p className="text-xs text-amber-700/80 mb-4 font-medium leading-relaxed">
-                              After completing the payment on your app, please enter the 12-digit UTR/Reference number below.
+                            <p className="text-[11px] text-gray-500 mb-3 font-medium leading-relaxed">
+                              Found in your UPI app's transaction history after payment.
                             </p>
                             <input
                               type="text"
@@ -532,18 +515,18 @@ function CheckoutContent() {
                               value={upiRefId}
                               onChange={e => setUpiRefId(e.target.value.trim())}
                               placeholder="e.g. 312345678901"
-                              className="w-full px-4 py-3 rounded-xl border-2 border-amber-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 outline-none text-base sm:text-lg font-mono font-bold tracking-widest text-center placeholder:font-sans placeholder:tracking-normal placeholder:text-gray-400 placeholder:text-sm bg-white shadow-inner transition-all"
+                              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm font-mono font-bold tracking-widest text-center placeholder:font-sans placeholder:tracking-normal placeholder:text-gray-400 placeholder:font-normal bg-gray-50 focus:bg-white transition-all"
                               maxLength={20}
                             />
                           </div>
                           <button
                             type="submit"
                             disabled={isSubmitting || !upiRefId.trim()}
-                            className="w-full py-3.5 rounded-xl font-black text-white bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:transform-none flex items-center justify-center gap-2"
+                            className="w-full py-3 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors shadow-sm"
                           >
                             {isSubmitting ? (
                               <>
-                                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                                 Verifying...
                               </>
                             ) : (
