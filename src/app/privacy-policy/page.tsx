@@ -41,15 +41,15 @@ export default function PrivacyPolicy() {
 
             <p><strong>Grievance Officer</strong></p>
 
-            <p>Name of the Office: Vijay</p>
+            <p>Insert Name of the Office:</p>
             
-            <p>Designation: Grievance Officer</p>
+            <p>Designation:</p>
             
-            <p>Name and Address of the Company: KATAYAYANI ENTERPRISES, 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh 250002</p>
+            <p>Insert Name and Address of the Company:</p>
             
-            <p>Contact us: agroindustriesmeerut@gmail.com</p>
+            <p>Contact us:</p>
             
-            <p>Phone: +91 9358273054 Time: Monday - Friday(9:00 - 18:00)</p>
+            <p>Phone: Time: Monday - Friday(9:00 - 18:00)</p>
           </div>
         </div>
       </main>
