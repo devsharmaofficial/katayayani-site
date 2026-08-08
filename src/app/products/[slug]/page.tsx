@@ -26,6 +26,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import ProductCard from "@/components/ui/ProductCard";
+import PincodeChecker from "@/components/ui/PincodeChecker";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import {
@@ -540,7 +541,9 @@ function ProductDetailContent({ slug }: { slug: string }) {
                     </div>
                   </div>
 
-                  <div className="divider-gold mb-[16px]" />
+                  <PincodeChecker />
+
+                  <div className="divider-gold mb-[16px] mt-6" />
 
                   {/* CTA Buttons */}
                   <div className="space-y-[12px]">
