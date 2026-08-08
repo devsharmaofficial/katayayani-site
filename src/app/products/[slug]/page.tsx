@@ -558,6 +558,13 @@ function ProductDetailContent({ slug }: { slug: string }) {
                       </div>
                     </Link>
                     <Link
+                      href={`/checkout?product=${product.slug}`}
+                      className="w-full flex items-center justify-center gap-2 bg-[#6528F7] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#501EC7] transition-colors font-bold"
+                    >
+                      <ShieldCheck className="w-[18px] h-[18px]" />
+                      Buy Now
+                    </Link>
+                    <Link
                       href={`https://wa.me/919358273054?text=${whatsappMessage}`}
                       target="_blank"
                       className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#20BD5A] transition-colors font-bold"
