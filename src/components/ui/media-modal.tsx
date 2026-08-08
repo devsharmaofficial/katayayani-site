@@ -46,8 +46,6 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
     };
   }, [media, onClose]);
 
-  if (!mounted) return null;
-
   const [prevMedia, setPrevMedia] = useState<MediaItem | null>(null);
 
   useEffect(() => {
@@ -55,6 +53,8 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
       setPrevMedia(media);
     }
   }, [media]);
+
+  if (!mounted) return null;
 
   const currentMedia = media || prevMedia;
 
