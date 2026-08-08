@@ -442,20 +442,28 @@ function CheckoutContent() {
                             <p className="text-2xl font-black text-primary tracking-tight">₹{PRICE.toLocaleString('en-IN')}</p>
                           </div>
 
-                          <div className="relative mb-4 group">
-                            <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-2xl blur-md opacity-50" />
-                            <div className="relative bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
+                          <div className="relative mb-6 group flex justify-center w-full">
+                            {/* Background Lighting Orbs */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/40 rounded-full blur-[40px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none" />
+                            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-32 h-32 bg-[#25D366]/30 rounded-full blur-[30px] opacity-60 group-hover:opacity-90 group-hover:-translate-x-4 transition-all duration-700 pointer-events-none" />
+                            <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-32 h-32 bg-blue-500/30 rounded-full blur-[30px] opacity-60 group-hover:opacity-90 group-hover:translate-x-4 transition-all duration-700 pointer-events-none" />
+
+                            {/* Liquid Glass Container */}
+                            <div className="relative p-3.5 rounded-3xl border border-white bg-white/50 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden">
+                              {/* Glossy reflection */}
+                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-white/20 pointer-events-none" />
+                              
                               {qrDataUrl ? (
                                 <img
                                   src={qrDataUrl}
                                   alt="UPI QR Code"
-                                  width={140}
-                                  height={140}
-                                  className="rounded-lg object-contain"
+                                  width={160}
+                                  height={160}
+                                  className="rounded-2xl object-contain relative z-10 bg-white"
                                   style={{ imageRendering: "pixelated" }}
                                 />
                               ) : (
-                                <div className="w-[140px] h-[140px] bg-gray-50 animate-pulse rounded-lg" />
+                                <div className="w-[160px] h-[160px] bg-white/60 backdrop-blur-md animate-pulse rounded-2xl relative z-10" />
                               )}
                             </div>
                           </div>
@@ -469,7 +477,7 @@ function CheckoutContent() {
                           <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-4 sm:h-5 object-contain" />
                           <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-5 sm:h-6 object-contain" />
                           <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-3 sm:h-4 object-contain" />
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Bhim_logo.svg" alt="BHIM" className="h-4 sm:h-5 object-contain" />
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-4 sm:h-5 object-contain" />
                         </div>
                         <p className="text-[9px] font-bold text-gray-400 text-center mt-2 uppercase tracking-widest">& other UPI apps</p>
                       </div>
