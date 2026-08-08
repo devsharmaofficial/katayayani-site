@@ -1,20 +1,28 @@
 "use server";
 
-import { getIndiaPincode, isValidPincode } from "india-pincode";
-
 export async function checkDelivery(pincode: string) {
-  if (!pincode || pincode.length !== 6 || !isValidPincode(pincode)) {
+  if (!pincode || pincode.length !== 6 || !/^\d{6}$/.test(pincode)) {
     return { error: "Please enter a valid 6-digit PIN code." };
   }
 
   try {
-    const result = getIndiaPincode().getByPincode(pincode);
-    if (!result.success || !result.data || !result.data.data || result.data.data.length === 0) {
+    const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`, {
+      // Small cache to prevent too many hits
+      next: { revalidate: 3600 } 
+    });
+    
+    if (!response.ok) {
+      return { error: "Error checking pincode. Please try again." };
+    }
+
+    const data = await response.json();
+    
+    if (!data || !data[0] || data[0].Status !== "Success" || !data[0].PostOffice || data[0].PostOffice.length === 0) {
       return { error: "Pincode not found. Please check and try again." };
     }
 
-    const info = result.data.data[0];
-    const state = (info.state || "").toUpperCase();
+    const info = data[0].PostOffice[0];
+    const state = (info.State || "").toUpperCase();
     
     // Estimate delivery time based on distance from Meerut, UP
     let days = "5-7 days";
@@ -28,13 +36,13 @@ export async function checkDelivery(pincode: string) {
 
     return {
       success: true,
-      area: info.area,
-      district: info.district,
-      state: info.state,
+      area: info.Name,
+      district: info.District,
+      state: info.State,
       deliveryTime: days,
-      message: `Delivery available to ${info.area}, ${info.district}`
+      message: `Delivery available to ${info.Name}, ${info.District}`
     };
   } catch (err) {
-    return { error: "Error: " + String(err) };
+    return { error: "Error checking pincode. Please try again." };
   }
 }
