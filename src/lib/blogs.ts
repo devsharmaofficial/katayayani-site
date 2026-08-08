@@ -205,7 +205,7 @@ export const blogs: BlogPost[] = [
       <p>Ready to upgrade your tractor with the best <strong>fiber hood / punjabi chatri</strong> in India? Don't settle for low-quality local copies. Choose the original manufacturer that thousands of Indian farmers and dealers rely on — <strong>Katayayani Enterprises, Meerut</strong>.</p>
       <ul>
         <li>📞 <strong>Call / WhatsApp:</strong> +91-9358273054</li>
-        <li>📍 <strong>Factory Address:</strong> Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002</li>
+        <li>📍 <strong>Factory Address:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002</li>
         <li>🌐 <strong>Website:</strong> katayayanienterprises.vercel.app</li>
         <li>🛒 <strong>Business Catalog:</strong> katayayanienterprises.com</li>
       </ul>

@@ -55,7 +55,7 @@ export default function RefundPolicy() {
                 <li><strong>Entity Name:</strong> Katayayani Enterprises</li>
                 <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
                 <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
-                <li><strong>Address:</strong> Tirupati complex wali gali, Baghpat Rd, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
+                <li><strong>Address:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
               </ul>
             </section>
           </div>

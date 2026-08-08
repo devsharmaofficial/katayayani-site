@@ -160,7 +160,7 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                       <div>
                         <h3 className="text-label-md text-primary-fixed/80 uppercase tracking-wider mb-[4px]">Location</h3>
                         <p className="text-body-lg leading-relaxed">
-                          Tirupati complex wali gali,<br />
+                          30,9A, Tirupati Complex Wali Gali,<br />
                           Baghpat Rd, Sabun Godam, Meerut,<br />
                           Uttar Pradesh 250002, India
                         </p>

@@ -185,7 +185,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               image: `${SITE_URL}/katayayani-enterprises-logo.png`,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Tirupati complex wali gali, Baghpat Rd, Sabun Godam",
+                streetAddress: "30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam",
                 addressLocality: "Meerut",
                 addressRegion: "Uttar Pradesh",
                 postalCode: "250002",
@@ -251,7 +251,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                 image: `${SITE_URL}/katayayani-enterprises-logo.png`,
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: "Tirupati complex wali gali, Baghpat Rd, Sabun Godam",
+                  streetAddress: "30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam",
                   addressLocality: "Meerut",
                   addressRegion: "Uttar Pradesh",
                   postalCode: "250002",

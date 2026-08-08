@@ -313,7 +313,7 @@ export default function AboutPage() {
                         <span className="text-[10px] uppercase tracking-widest text-[#795900] font-black block mb-1">Registered Address</span>
                         <h4 className="text-title-md font-bold text-black font-semibold">Katayayani Enterprises</h4>
                         <p className="text-body-sm text-[#414844] mt-0.5 leading-relaxed">
-                          Tirupati complex wali gali, Baghpat Rd,<br />
+                          30,9A, Tirupati Complex Wali Gali, Baghpat Road,<br />
                           Sabun Godam, Meerut,<br />
                           Uttar Pradesh - 250002
                         </p>

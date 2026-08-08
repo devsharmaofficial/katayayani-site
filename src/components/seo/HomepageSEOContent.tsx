@@ -50,7 +50,7 @@ const faqData = [
   {
     question: "Where is Katayayani Enterprises located?",
     answer:
-      "Katayayani Enterprises is located at: Tirupati Complex wali gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002, India. We are India's #1 tractor fiber hood manufacturer. For factory visits, bulk orders, or dealer inquiries, call: +91-9358273054 or WhatsApp us.",
+      "Katayayani Enterprises is located at: 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002, India. We are India's #1 tractor fiber hood manufacturer. For factory visits, bulk orders, or dealer inquiries, call: +91-9358273054 or WhatsApp us.",
   },
 ];
 

@@ -24,7 +24,7 @@ const BUSINESS_NAME = "Katayayani Enterprises";
 const BUSINESS_PHONE_PRIMARY = "+91-9358273054";
 const BUSINESS_PHONE_SECONDARY = "+91-8077004688";
 const BUSINESS_EMAIL = "agroindustriesmeerut@gmail.com";
-const BUSINESS_ADDRESS = "Tirupati complex wali gali, Baghpat Rd, Sabun Godam, Meerut, Uttar Pradesh - 250002, India";
+const BUSINESS_ADDRESS = "30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh - 250002, India";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -156,7 +156,7 @@ const jsonLd = {
       email: BUSINESS_EMAIL,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Tirupati complex wali gali, Baghpat Rd, Sabun Godam",
+        streetAddress: "30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam",
         addressLocality: "Meerut",
         addressRegion: "Uttar Pradesh",
         postalCode: "250002",
