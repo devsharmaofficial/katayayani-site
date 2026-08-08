@@ -3,8 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Cancellation & Refund Policy | Katayayani Enterprises",
-  description: "Cancellation, refund policy and non-dispatch refund guidelines for Katayayani Enterprises.",
+  title: "Refund and Cancellation Policy | Katayayani Enterprises",
+  description: "Refund and Cancellation Policy for Katayayani Enterprises.",
   robots: {
     index: false,
     follow: true,
@@ -17,47 +17,20 @@ export default function RefundPolicy() {
       <Navbar />
       <main className="min-h-screen pt-32 pb-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">Cancellation & Refund Policy</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">Refund and Cancellation policy</h1>
           
-          <div className="space-y-6 text-gray-700 text-base leading-relaxed">
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">1. Cancellation Policy</h2>
-              <p>
-                Customers can cancel their orders at any time before the product is dispatched from our factory. If an order is cancelled prior to dispatch, a full refund will be initiated. Once the product has been dispatched, the order cannot be cancelled.
-              </p>
-            </section>
+          <div className="space-y-4 text-gray-700 text-base leading-relaxed">
+            <p>This refund and cancellation policy outlines how you can cancel or seek a refund for a product / service that you have purchased through the Platform. Under this policy:</p>
 
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">2. General Refund Policy</h2>
-              <p>
-                Payments made to Katayayani Enterprises for ordered products are non-refundable once an order is processed and dispatched from our factory.
-              </p>
-            </section>
+            <p>Cancellations will only be considered if the request is made 1 days of placing the order. However, cancellation requests may not be entertained if the orders have been communicated to such sellers / merchant(s) listed on the Platform and they have initiated the process of shipping them, or the product is out for delivery. In such an event, you may choose to reject the product at the doorstep.</p>
 
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">3. 15-Day Non-Dispatch Refund Guarantee</h2>
-              <p>
-                If an ordered product is <strong>not dispatched</strong> from our factory within <strong>15 days</strong> of payment confirmation, the customer is entitled to a full refund. In such cases, the complete payment will be credited back to the customer&apos;s original payment method (PhonePe, UPI, Credit/Debit card, or Bank Account) within 5 to 7 working days.
-              </p>
-            </section>
+            <p>KATAYAYANI ENTERPRISES does not accept cancellation requests for perishable items like flowers, eatables, etc. However, the refund / replacement can be made if the user establishes that the quality of the product delivered is not good.</p>
 
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">4. Order Verification</h2>
-              <p>
-                Please ensure all order details, tractor brand model, dimensions, and quantity are accurate before submitting payment.
-              </p>
-            </section>
+            <p>In case of receipt of damaged or defective items, please report to our customer service team. The request would be entertained once the seller/ merchant listed on the Platform, has checked and determined the same at its own end. This should be reported within 1 days of receipt of products. In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 1 days of receiving the product. The customer service team after looking into your complaint will take an appropriate decision.</p>
 
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">5. Contact Information</h2>
-              <p>For any questions or status updates regarding your order, please contact us:</p>
-              <ul className="list-disc pl-6 space-y-1 mt-2">
-                <li><strong>Entity Name:</strong> Katayayani Enterprises</li>
-                <li><strong>Phone:</strong> +91 9358273054 / +91 8077004688</li>
-                <li><strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
-                <li><strong>Address:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh 250002, India</li>
-              </ul>
-            </section>
+            <p>In case of complaints regarding the products that come with a warranty from the manufacturers, please refer the issue to them.</p>
+
+            <p>In case of any refunds approved by KATAYAYANI ENTERPRISES, it will take 1 days for the refund to be processed to you.</p>
           </div>
         </div>
       </main>
