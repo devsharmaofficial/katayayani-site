@@ -25,14 +25,24 @@ export async function checkDelivery(pincode: string) {
     const state = (info.State || "").toUpperCase();
     
     // Estimate delivery time based on distance from Meerut, UP
-    let days = "5-7 days";
+    let daysToAdd = 12;
     if (state === "UTTAR PRADESH" || state === "DELHI" || state === "HARYANA") {
-      days = "2-4 days";
+      daysToAdd = 8;
     } else if (state === "RAJASTHAN" || state === "PUNJAB" || state === "UTTARAKHAND" || state === "MADHYA PRADESH" || state === "UTTARANCHAL" || state === "CHANDIGARH" || state === "HIMACHAL PRADESH") {
-      days = "3-5 days";
-    } else {
-      days = "5-7 days";
+      daysToAdd = 10;
     }
+
+    const deliveryDate = new Date();
+    deliveryDate.setDate(deliveryDate.getDate() + daysToAdd);
+    
+    // Format: "Wednesday, 18 Aug"
+    const formattedDate = deliveryDate.toLocaleDateString("en-IN", {
+      weekday: "long",
+      day: "numeric",
+      month: "short",
+    });
+
+    const days = `by ${formattedDate}`;
 
     return {
       success: true,
