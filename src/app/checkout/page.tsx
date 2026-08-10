@@ -13,6 +13,24 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getProductBySlug } from "@/lib/products";
 import { Product } from "@/types";
+import { OTPInput } from "input-otp";
+
+function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boolean }) {
+  return (
+    <div
+      className={`relative w-[26px] h-10 sm:w-8 sm:h-12 text-sm sm:text-lg font-bold flex items-center justify-center border-y border-r border-gray-300 first:border-l first:rounded-l-md last:rounded-r-md transition-all bg-white ${
+        props.isActive ? "z-10 ring-2 ring-primary border-primary" : ""
+      }`}
+    >
+      {props.char !== null && <div>{props.char}</div>}
+      {props.hasFakeCaret && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center animate-pulse">
+          <div className="w-px h-5 sm:h-6 bg-primary" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
@@ -534,15 +552,33 @@ function CheckoutContent() {
                             <p className="text-[11px] text-gray-500 mb-3 font-medium leading-relaxed">
                               Found in your UPI app's transaction history after payment.
                             </p>
-                            <input
-                              type="text"
-                              required
-                              value={upiRefId}
-                              onChange={e => setUpiRefId(e.target.value.trim())}
-                              placeholder="e.g. 312345678901"
-                              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm font-mono font-bold tracking-widest text-center placeholder:font-sans placeholder:tracking-normal placeholder:text-gray-400 placeholder:font-normal bg-gray-50 focus:bg-white transition-all"
-                              maxLength={20}
-                            />
+                            <div className="flex justify-center w-full overflow-hidden pb-1">
+                              <OTPInput
+                                value={upiRefId}
+                                onChange={setUpiRefId}
+                                maxLength={12}
+                                containerClassName="group flex items-center has-[:disabled]:opacity-50"
+                                render={({ slots }) => (
+                                  <div className="flex gap-1.5 sm:gap-3">
+                                    <div className="flex">
+                                      {slots.slice(0, 4).map((slot, idx) => (
+                                        <Slot key={idx} {...slot} />
+                                      ))}
+                                    </div>
+                                    <div className="flex">
+                                      {slots.slice(4, 8).map((slot, idx) => (
+                                        <Slot key={idx} {...slot} />
+                                      ))}
+                                    </div>
+                                    <div className="flex">
+                                      {slots.slice(8, 12).map((slot, idx) => (
+                                        <Slot key={idx} {...slot} />
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              />
+                            </div>
                           </div>
                           <button
                             type="submit"
