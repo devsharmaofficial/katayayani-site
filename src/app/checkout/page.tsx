@@ -277,7 +277,7 @@ function CheckoutContent() {
         </div>
 
         {/* ── Step progress ── */}
-        <div className="mb-6">
+        <div className="mb-4">
           <StepBar step={step} />
         </div>
 
@@ -442,23 +442,13 @@ function CheckoutContent() {
               </div>
 
               {step === 2 && (
-                <div className="p-5">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                <div className="p-4 sm:p-5">
+                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                    
                     {/* LEFT SIDE: QR CODE OR APP LINK */}
-                    <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-gray-100 pb-6 md:pb-0 md:pr-6">
+                    <div className="w-full md:w-auto flex flex-col items-center flex-shrink-0">
                       {isMobileDevice ? (
-                        /* Mobile: deep link button */
                         <div className="w-full text-center space-y-4">
-                          <div className="text-center mb-6">
-                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">AMOUNT PAYABLE</p>
-                            <p className="font-black text-primary text-3xl mb-1">₹{PRICE.toLocaleString('en-IN')}</p>
-                            <p className="text-xs text-gray-500 font-medium">Inclusive of all taxes & shipping</p>
-                            <div className="mt-2 inline-flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-xs font-bold border border-red-100">
-                              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                              Offer expires in {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
-                            </div>
-                          </div>
-                          
                           <a
                             href={upiUrl}
                             className="block w-full py-3.5 rounded-xl font-bold text-base text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
@@ -467,106 +457,60 @@ function CheckoutContent() {
                           </a>
                         </div>
                       ) : (
-                        /* Desktop: QR code */
                         <div className="flex flex-col items-center w-full">
-                          <div className="text-center mb-6">
-                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">SCAN TO PAY</p>
-                            <p className="text-2xl font-black text-primary tracking-tight">₹{PRICE.toLocaleString('en-IN')}</p>
-                            <div className="mt-2 inline-flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-xs font-bold border border-red-100">
-                              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                              Offer expires in {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
-                            </div>
-                          </div>
-
-                          <div className="relative mb-6 group flex justify-center w-full">
-                            {/* Background Lighting Orbs */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/40 rounded-full blur-[40px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none" />
-                            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-32 h-32 bg-[#25D366]/30 rounded-full blur-[30px] opacity-60 group-hover:opacity-90 group-hover:-translate-x-4 transition-all duration-700 pointer-events-none" />
-                            <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-32 h-32 bg-blue-500/30 rounded-full blur-[30px] opacity-60 group-hover:opacity-90 group-hover:translate-x-4 transition-all duration-700 pointer-events-none" />
-
-                            {/* Liquid Glass Container */}
-                            <div className="relative p-3.5 rounded-3xl border border-white bg-white/50 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden">
-                              {/* Glossy reflection */}
-                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-white/20 pointer-events-none" />
-                              
-                              {qrDataUrl ? (
-                                <div className="relative z-10 w-[220px] h-[220px] sm:w-[260px] sm:h-[260px]">
-                                  <img
-                                    src={qrDataUrl}
-                                    alt="UPI QR Code"
-                                    className="w-full h-full rounded-2xl object-contain bg-white"
-                                    style={{ imageRendering: "pixelated" }}
-                                  />
-                                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded-md shadow-sm border border-gray-100 flex items-center justify-center w-12 h-12">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" className="w-full h-full object-contain" />
-                                  </div>
+                          <div className="relative p-2 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden mb-3">
+                            {qrDataUrl ? (
+                              <div className="relative z-10 w-[180px] h-[180px] sm:w-[200px] sm:h-[200px]">
+                                <img
+                                  src={qrDataUrl}
+                                  alt="UPI QR Code"
+                                  className="w-full h-full rounded-xl object-contain bg-white"
+                                  style={{ imageRendering: "pixelated" }}
+                                />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded-md shadow-sm border border-gray-100 flex items-center justify-center w-10 h-10">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" className="w-full h-full object-contain" />
                                 </div>
-                              ) : (
-                                <div className="w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] bg-white/60 backdrop-blur-md animate-pulse rounded-2xl relative z-10" />
-                              )}
-                            </div>
+                              </div>
+                            ) : (
+                              <div className="w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] bg-white/60 backdrop-blur-md animate-pulse rounded-xl relative z-10" />
+                            )}
                           </div>
-                          <p className="font-semibold text-gray-700 text-xs text-center">Open any UPI app to scan</p>
+                          
+                          <p className="font-semibold text-gray-500 text-[11px] mb-2">Scan with any UPI app</p>
+                          <div className="flex items-center justify-center gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-3.5 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-4 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-3 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-3.5 object-contain" />
+                          </div>
                         </div>
                       )}
-
-                      {/* App Logos */}
-                      <div className="mt-5 w-full">
-                        <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
-                          <a href={upiUrl.replace('upi://pay', 'tez://upi/pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-5 object-contain" />
-                          </a>
-                          <a href={upiUrl.replace('upi://pay', 'phonepe://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-6 object-contain" />
-                          </a>
-                          <a href={upiUrl.replace('upi://pay', 'paytmmp://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-4 object-contain" />
-                          </a>
-                          <a href={upiUrl.replace('upi://pay', 'bhim://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-5 object-contain" />
-                          </a>
-                        </div>
-                        <div className="mt-3 text-center">
-                          <a href={upiUrl} className="inline-flex items-center justify-center w-full py-3 bg-[#012d1d] hover:bg-[#02422a] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-colors shadow-lg">
-                            Pay with any UPI App
-                          </a>
-                        </div>
-                      </div>
                     </div>
 
-                    {/* RIGHT SIDE: UPI ID & UTR FORM */}
-                    <div className="flex flex-col justify-center h-full">
-                      {/* UPI ID Row */}
-                      <div className="mb-5">
-                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">Or pay manually to UPI ID</p>
-                        <div className="flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-gray-300 transition-colors">
-                          <span className="font-mono font-bold text-gray-900 text-[11px] sm:text-sm break-all leading-tight pr-2">
-                            {UPI_ID}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={copyUpiId}
-                            className={`flex-shrink-0 flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-md transition-colors ${
-                              isCopied
-                                ? "bg-green-100 text-green-700"
-                                : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
-                            }`}
-                          >
-                            {isCopied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                            {isCopied ? "Copied" : "Copy"}
-                          </button>
+                    {/* RIGHT SIDE: DETAILS & UTR */}
+                    <div className="flex-1 w-full border-t md:border-t-0 md:border-l border-gray-100 pt-5 md:pt-0 md:pl-6 flex flex-col justify-center">
+                      
+                      {/* Amount & Timer */}
+                      <div className="flex flex-row items-center justify-between mb-4 bg-gray-50/50 p-3 rounded-xl border border-gray-100">
+                        <div>
+                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Amount Payable</p>
+                          <p className="font-black text-primary text-2xl">₹{PRICE.toLocaleString('en-IN')}</p>
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 px-2.5 py-1.5 rounded-lg text-xs font-bold border border-red-100">
+                          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                          {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
                         </div>
                       </div>
 
-                      {/* Premium UTR Form */}
-                      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.08)] relative">
+                      {/* UTR Form */}
+                      <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm relative">
                         <form onSubmit={onConfirmPayment} className="relative z-10">
                           <div className="mb-4">
-                            <label className="block font-bold text-gray-900 text-sm mb-1.5 flex items-center gap-2">
+                            <label className="block font-bold text-gray-900 text-sm mb-1">
                               Enter UTR / Reference No.
                             </label>
-                            <p className="text-[11px] text-gray-500 mb-3 font-medium leading-relaxed">
-                              Found in your UPI app's transaction history after payment.
+                            <p className="text-[10px] text-gray-500 mb-3 leading-relaxed">
+                              Found in your UPI app's history after paying to <span className="font-mono text-gray-900 break-all">{UPI_ID}</span>
                             </p>
                             <div className="flex justify-center w-full overflow-hidden pb-1">
                               <OTPInput
@@ -575,7 +519,7 @@ function CheckoutContent() {
                                 maxLength={12}
                                 containerClassName="group flex items-center has-[:disabled]:opacity-50"
                                 render={({ slots }) => (
-                                  <div className="flex flex-wrap justify-center gap-1 sm:gap-2 max-w-[280px] sm:max-w-none mx-auto">
+                                  <div className="flex flex-wrap justify-center gap-1 sm:gap-1.5 max-w-[260px] sm:max-w-none mx-auto">
                                     <div className="flex">
                                       {slots.slice(0, 4).map((slot, idx) => (
                                         <Slot key={idx} {...slot} />
@@ -599,7 +543,7 @@ function CheckoutContent() {
                           <button
                             type="submit"
                             disabled={isSubmitting || !upiRefId.trim()}
-                            className="w-full py-3 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors shadow-sm"
+                            className="w-full py-2.5 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors shadow-sm"
                           >
                             {isSubmitting ? (
                               <>
@@ -612,6 +556,7 @@ function CheckoutContent() {
                           </button>
                         </form>
                       </div>
+
                     </div>
                   </div>
                 </div>
