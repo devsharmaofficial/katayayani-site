@@ -14,7 +14,7 @@ import Footer from "@/components/layout/Footer";
 import { getProductBySlug } from "@/lib/products";
 import { Product } from "@/types";
 
-const UPI_ID = "devsharmaofficial.id@okaxis";
+const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
 const PRICE = 13500;
 
@@ -175,7 +175,7 @@ function CheckoutContent() {
   useEffect(() => {
     if (!product) return;
     const upiUrl = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(BUSINESS_NAME)}&am=${PRICE}&tn=${encodeURIComponent("Order " + product.name)}&cu=INR`;
-    QRCode.toDataURL(upiUrl, { width: 280, margin: 2, color: { dark: "#012d1d", light: "#ffffff" } })
+    QRCode.toDataURL(upiUrl, { width: 280, margin: 2, errorCorrectionLevel: 'H', color: { dark: "#012d1d", light: "#ffffff" } })
       .then(url => setQrDataUrl(url))
       .catch(console.error);
   }, [product]);
@@ -454,14 +454,19 @@ function CheckoutContent() {
                               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-white/20 pointer-events-none" />
                               
                               {qrDataUrl ? (
-                                <img
-                                  src={qrDataUrl}
-                                  alt="UPI QR Code"
-                                  width={160}
-                                  height={160}
-                                  className="rounded-2xl object-contain relative z-10 bg-white"
-                                  style={{ imageRendering: "pixelated" }}
-                                />
+                                <div className="relative z-10">
+                                  <img
+                                    src={qrDataUrl}
+                                    alt="UPI QR Code"
+                                    width={160}
+                                    height={160}
+                                    className="rounded-2xl object-contain bg-white"
+                                    style={{ imageRendering: "pixelated" }}
+                                  />
+                                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded-md shadow-sm border border-gray-100 flex items-center justify-center w-9 h-9">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" className="w-full h-full object-contain" />
+                                  </div>
+                                </div>
                               ) : (
                                 <div className="w-[160px] h-[160px] bg-white/60 backdrop-blur-md animate-pulse rounded-2xl relative z-10" />
                               )}
