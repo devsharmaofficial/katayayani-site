@@ -442,8 +442,23 @@ function CheckoutContent() {
               </div>
 
               {step === 2 && (
-                <div className="p-4 sm:p-5">
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                <>
+                  {/* Trust Badge Header */}
+                  <div className="bg-[#2563eb] text-white px-5 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 border-b border-[#1d4ed8]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 border border-white/20 rounded-lg flex items-center justify-center font-bold text-lg sm:text-xl bg-white/10 shadow-sm flex-shrink-0">
+                      {BUSINESS_NAME.charAt(0)}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm sm:text-base leading-tight">{BUSINESS_NAME}</h3>
+                      <div className="flex items-center gap-1 mt-1 text-[9px] sm:text-[10px] bg-white/20 w-fit px-1.5 py-0.5 rounded backdrop-blur-sm shadow-sm">
+                        <ShieldCheck className="w-3 h-3 text-green-300" />
+                        <span className="font-medium text-white tracking-wide uppercase">Trusted Business</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 sm:p-5">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
                     
                     {/* LEFT SIDE: QR CODE OR APP LINK */}
                     <div className="w-full md:w-auto flex flex-col items-center flex-shrink-0">
@@ -482,6 +497,23 @@ function CheckoutContent() {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-4 object-contain" />
                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-3 object-contain" />
                             <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-3.5 object-contain" />
+                          </div>
+
+                          {/* UPI ID block */}
+                          <div className="mt-4 flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1.5 w-full max-w-[220px] hover:border-gray-300 transition-colors shadow-sm">
+                            <span className="font-mono font-bold text-gray-900 text-[10px] truncate" title={UPI_ID}>
+                              {UPI_ID}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={copyUpiId}
+                              className={`flex-shrink-0 flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded transition-colors ${
+                                isCopied ? "bg-green-100 text-green-700" : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                              }`}
+                            >
+                              {isCopied ? <CheckCircle2 className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+                              {isCopied ? "Copied" : "Copy"}
+                            </button>
                           </div>
                         </div>
                       )}
@@ -560,6 +592,7 @@ function CheckoutContent() {
                     </div>
                   </div>
                 </div>
+                </>
               )}
             </div>
           </div>
