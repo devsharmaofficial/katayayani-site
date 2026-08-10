@@ -595,19 +595,19 @@ function CheckoutContent() {
               </div>
 
               {step === 3 && (
-                <div className="p-6 sm:p-10 flex flex-col items-center max-w-lg mx-auto text-center">
-                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4">
-                    <ShieldCheck className="w-8 h-8 text-blue-600" />
+                <div className="w-full p-5 sm:p-8 flex flex-col items-center max-w-lg mx-auto text-center">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-3">
+                    <ShieldCheck className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Verify your Payment</h3>
-                  <p className="text-sm text-gray-600 mb-8">
-                    Please enter the 12-digit UTR or Reference Number from your UPI app's transaction history to confirm your order.
+                  <h3 className="text-lg font-bold text-gray-900 mb-1.5">Verify your Payment</h3>
+                  <p className="text-sm text-gray-500 mb-6 max-w-sm">
+                    Enter the 12-digit UTR or Reference Number from your UPI app's transaction history to confirm your order.
                   </p>
                   
                   {/* Premium UTR Form */}
-                  <div className="w-full bg-white border border-gray-200 rounded-xl p-5 sm:p-6 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.08)]">
+                  <div className="w-full bg-gray-50/50 border border-gray-200 rounded-xl p-5 shadow-sm">
                     <form onSubmit={onConfirmPayment}>
-                      <div className="mb-6">
+                      <div className="mb-5">
                         <label className="block font-bold text-gray-900 text-sm mb-1.5">
                           Enter UTR / Reference No.
                         </label>
