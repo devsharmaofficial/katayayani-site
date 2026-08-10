@@ -41,7 +41,7 @@ const PRICE = 13500;
 ────────────────────────────────────────── */
 function StepBar({ step }: { step: number }) {
   return (
-    <div className="flex items-center gap-0 mb-8">
+    <div className="flex items-center gap-0 mb-4 sm:mb-6">
       {["Delivery", "Payment", "Confirm"].map((label, i) => {
         const idx = i + 1;
         const done = step > idx;
@@ -262,12 +262,12 @@ function CheckoutContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f7f6] pt-16 pb-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#f5f7f6] pt-16 sm:pt-20 pb-10">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
 
         {/* ── Page header & Back link ── */}
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-black text-gray-900 tracking-tight">Checkout</h1>
+        <div className="flex items-center justify-between mb-3 sm:mb-6">
+          <h1 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">Checkout</h1>
           <Link
             href={`/products/${product.slug}`}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-primary transition-colors group"
@@ -458,13 +458,13 @@ function CheckoutContent() {
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5">
-                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                  <div className="p-3 sm:p-5">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center md:items-start">
                     
                     {/* LEFT SIDE: QR CODE OR APP LINK */}
                     <div className="w-full md:w-auto flex flex-col items-center flex-shrink-0">
                       {isMobileDevice ? (
-                        <div className="w-full text-center space-y-4">
+                        <div className="w-full text-center">
                           <a
                             href={upiUrl}
                             className="block w-full py-3.5 rounded-xl font-bold text-base text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
@@ -521,7 +521,7 @@ function CheckoutContent() {
                     </div>
 
                     {/* RIGHT SIDE: DETAILS & UTR */}
-                    <div className="flex-1 w-full border-t md:border-t-0 md:border-l border-gray-100 pt-5 md:pt-0 md:pl-6 flex flex-col justify-center">
+                    <div className="flex-1 w-full border-t md:border-t-0 md:border-l border-gray-100 pt-4 md:pt-0 md:pl-6 flex flex-col justify-center">
                       
                       {/* Amount & Timer */}
                       <div className="flex flex-col mb-4 bg-gray-50/50 p-3 rounded-xl border border-gray-100 transition-all">
@@ -559,13 +559,13 @@ function CheckoutContent() {
                       </div>
 
                       {/* Verify Payment Button */}
-                      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-center mt-auto md:mt-4">
-                        <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-2">
-                           <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm text-center mt-auto md:mt-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-1.5">
+                           <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                         </div>
-                        <h4 className="font-bold text-gray-900 text-sm mb-1">Have you completed the payment?</h4>
-                        <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">
-                          Once paid via your UPI app, click below to proceed and verify your transaction.
+                        <h4 className="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">Have you completed the payment?</h4>
+                        <p className="text-[10px] sm:text-[11px] text-gray-500 mb-3 leading-tight">
+                          Once paid via your UPI app, click below to verify transaction.
                         </p>
                         <button
                           type="button"
