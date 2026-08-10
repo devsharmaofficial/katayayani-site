@@ -473,13 +473,25 @@ function CheckoutContent() {
 
                       {/* App Logos */}
                       <div className="mt-5 w-full">
-                        <div className="flex items-center justify-center gap-3">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-4 sm:h-5 object-contain" />
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-5 sm:h-6 object-contain" />
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-3 sm:h-4 object-contain" />
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-4 sm:h-5 object-contain" />
+                        <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+                          <a href={upiUrl.replace('upi://pay', 'tez://upi/pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay" className="h-5 object-contain" />
+                          </a>
+                          <a href={upiUrl.replace('upi://pay', 'phonepe://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe" className="h-6 object-contain" />
+                          </a>
+                          <a href={upiUrl.replace('upi://pay', 'paytmmp://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" alt="Paytm" className="h-4 object-contain" />
+                          </a>
+                          <a href={upiUrl.replace('upi://pay', 'bhim://pay')} className="h-12 flex-1 flex items-center justify-center bg-white border border-gray-100 rounded-xl hover:shadow-md transition-shadow hover:border-gray-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/BHIM_logo.svg" alt="BHIM" className="h-5 object-contain" />
+                          </a>
                         </div>
-                        <p className="text-[9px] font-bold text-gray-400 text-center mt-2 uppercase tracking-widest">& other UPI apps</p>
+                        <div className="mt-3 text-center">
+                          <a href={upiUrl} className="inline-flex items-center justify-center w-full py-3 bg-[#012d1d] hover:bg-[#02422a] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-colors shadow-lg">
+                            Pay with any UPI App
+                          </a>
+                        </div>
                       </div>
                     </div>
 
