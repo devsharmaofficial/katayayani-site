@@ -24,7 +24,9 @@ export default function RefundPolicy() {
           <h1 className="text-3xl font-bold text-gray-900 mb-6">Refund and Cancellation policy</h1>
           
           <div className="space-y-4 text-gray-700 text-base leading-relaxed">
-            <p>Product will be eligible for return within 2 working days after delivery. If replacements and exchange are accepted, then It will get delivered to you within 5-7 working days. We do not provide any kind of Return.</p>
+            <p>Replacements/Exchanges request must be raised within 2 working days of delivery.</p>
+            <p>We don't provide any return and we provide only replacements/ exchange.</p>
+            <p>Replacements/exchanges will be delivered within 7-10 working days.</p>
           </div>
         </div>
       </main>
