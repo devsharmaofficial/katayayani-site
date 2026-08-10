@@ -29,7 +29,7 @@ export default async function DashboardPage({
   });
 
   const totalOrders = orders.length;
-  const totalRevenue = orders.reduce((sum, order) => sum + order.amount, 0);
+  const totalRevenue = orders.reduce((sum: number, order: { amount: number }) => sum + order.amount, 0);
   const pendingOrders = orders.filter(o => o.status === 'Pending').length;
 
   return (
