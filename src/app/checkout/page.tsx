@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronRight, ArrowLeft, ShieldCheck, CheckCircle2, Copy,
-  AlertCircle, Package, Truck, Lock, MapPin, Phone, User, Palette
+  AlertCircle, Package, Truck, Lock, MapPin, Phone, User, Palette, ChevronDown
 } from "lucide-react";
 import QRCode from "qrcode";
 import Navbar from "@/components/layout/Navbar";
@@ -125,9 +125,9 @@ function OrderSummary({ product, color }: { product: Product; color: string }) {
             <span>Subtotal</span>
             <span className="font-medium text-gray-900">₹{PRICE.toLocaleString("en-IN")}</span>
           </div>
-          <div className="flex justify-between text-gray-600">
+          <div className="flex justify-between text-gray-600 items-center">
             <span>Shipping</span>
-            <span className="font-bold text-green-600">FREE</span>
+            <span className="font-bold text-gray-500 text-[10px] sm:text-xs text-right leading-tight max-w-[140px]">May vary depending on carrier</span>
           </div>
           <div className="flex justify-between text-gray-600">
             <span>GST (incl.)</span>
@@ -175,6 +175,7 @@ function CheckoutContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const [isBreakdownOpen, setIsBreakdownOpen] = useState(false);
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes
   const [error, setError] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -523,76 +524,148 @@ function CheckoutContent() {
                     <div className="flex-1 w-full border-t md:border-t-0 md:border-l border-gray-100 pt-5 md:pt-0 md:pl-6 flex flex-col justify-center">
                       
                       {/* Amount & Timer */}
-                      <div className="flex flex-row items-center justify-between mb-4 bg-gray-50/50 p-3 rounded-xl border border-gray-100">
-                        <div>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Amount Payable</p>
-                          <p className="font-black text-primary text-2xl">₹{PRICE.toLocaleString('en-IN')}</p>
+                      <div className="flex flex-col mb-4 bg-gray-50/50 p-3 rounded-xl border border-gray-100 transition-all">
+                        <div className="flex flex-row items-center justify-between cursor-pointer" onClick={() => setIsBreakdownOpen(!isBreakdownOpen)}>
+                          <div>
+                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5 flex items-center gap-1">
+                              AMOUNT PAYABLE 
+                              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isBreakdownOpen ? "rotate-180" : ""}`} />
+                            </p>
+                            <p className="font-black text-primary text-2xl">₹{PRICE.toLocaleString('en-IN')}</p>
+                          </div>
+                          <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 px-2.5 py-1.5 rounded-lg text-xs font-bold border border-red-100">
+                            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                            {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                          </div>
                         </div>
-                        <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 px-2.5 py-1.5 rounded-lg text-xs font-bold border border-red-100">
-                          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                          {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+
+                        {/* Breakdown Dropdown */}
+                        <div className={`overflow-hidden transition-all duration-300 ${isBreakdownOpen ? "max-h-40 mt-3 pt-3 border-t border-gray-200 opacity-100" : "max-h-0 opacity-0"}`}>
+                          <div className="space-y-2 text-xs">
+                            <div className="flex justify-between text-gray-600">
+                              <span>Subtotal</span>
+                              <span className="font-bold text-gray-900">₹{PRICE.toLocaleString('en-IN')}</span>
+                            </div>
+                            <div className="flex justify-between text-gray-600 items-center">
+                              <span>Shipping</span>
+                              <span className="font-bold text-gray-500 text-[10px] text-right max-w-[120px] leading-tight">May vary depending on carrier</span>
+                            </div>
+                            <div className="flex justify-between font-bold text-sm text-gray-900 pt-2 border-t border-gray-100">
+                              <span>Grand Total</span>
+                              <span className="text-primary">₹{PRICE.toLocaleString('en-IN')}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
-                      {/* UTR Form */}
-                      <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm relative">
-                        <form onSubmit={onConfirmPayment} className="relative z-10">
-                          <div className="mb-4">
-                            <label className="block font-bold text-gray-900 text-sm mb-1">
-                              Enter UTR / Reference No.
-                            </label>
-                            <p className="text-[10px] text-gray-500 mb-3 leading-relaxed">
-                              Found in your UPI app's history after paying to <span className="font-mono text-gray-900 break-all">{UPI_ID}</span>
-                            </p>
-                            <div className="flex justify-center w-full overflow-hidden pb-1">
-                              <OTPInput
-                                value={upiRefId}
-                                onChange={setUpiRefId}
-                                maxLength={12}
-                                containerClassName="group flex items-center has-[:disabled]:opacity-50"
-                                render={({ slots }) => (
-                                  <div className="flex flex-wrap justify-center gap-1 sm:gap-1.5 max-w-[260px] sm:max-w-none mx-auto">
-                                    <div className="flex">
-                                      {slots.slice(0, 4).map((slot, idx) => (
-                                        <Slot key={idx} {...slot} />
-                                      ))}
-                                    </div>
-                                    <div className="flex">
-                                      {slots.slice(4, 8).map((slot, idx) => (
-                                        <Slot key={idx} {...slot} />
-                                      ))}
-                                    </div>
-                                    <div className="flex">
-                                      {slots.slice(8, 12).map((slot, idx) => (
-                                        <Slot key={idx} {...slot} />
-                                      ))}
-                                    </div>
-                                  </div>
-                                )}
-                              />
-                            </div>
-                          </div>
-                          <button
-                            type="submit"
-                            disabled={isSubmitting || !upiRefId.trim()}
-                            className="w-full py-2.5 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors shadow-sm"
-                          >
-                            {isSubmitting ? (
-                              <>
-                                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                Verifying...
-                              </>
-                            ) : (
-                              "Confirm Order"
-                            )}
-                          </button>
-                        </form>
+                      {/* Verify Payment Button */}
+                      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm text-center mt-auto md:mt-4">
+                        <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-2">
+                           <CheckCircle2 className="w-5 h-5 text-green-600" />
+                        </div>
+                        <h4 className="font-bold text-gray-900 text-sm mb-1">Have you completed the payment?</h4>
+                        <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">
+                          Once paid via your UPI app, click below to proceed and verify your transaction.
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => { setStep(3); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="w-full py-3 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container transition-colors shadow-sm active:scale-[0.98]"
+                        >
+                          Yes, I have paid ₹{PRICE.toLocaleString('en-IN')}
+                        </button>
                       </div>
 
                     </div>
                   </div>
                 </div>
                 </>
+              )}
+            </div>
+
+            {/* ═══ STEP 3 ═══ */}
+            <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 overflow-hidden ${step === 3 ? "border-primary ring-1 ring-primary" : "border-gray-200 mt-5"}`}>
+              <div className="flex items-center px-5 py-3 border-b border-gray-100 bg-gray-50/50">
+                <h2 className={`flex items-center gap-2.5 font-bold text-sm ${step === 3 ? "text-gray-900" : "text-gray-400"}`}>
+                  <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 ${step === 3 ? "bg-primary text-white" : "bg-gray-300 text-white"}`}>
+                    3
+                  </span>
+                  Verify Payment
+                </h2>
+              </div>
+
+              {step === 3 && (
+                <div className="p-6 sm:p-10 flex flex-col items-center max-w-lg mx-auto text-center">
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                    <ShieldCheck className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Verify your Payment</h3>
+                  <p className="text-sm text-gray-600 mb-8">
+                    Please enter the 12-digit UTR or Reference Number from your UPI app's transaction history to confirm your order.
+                  </p>
+                  
+                  {/* Premium UTR Form */}
+                  <div className="w-full bg-white border border-gray-200 rounded-xl p-5 sm:p-6 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.08)]">
+                    <form onSubmit={onConfirmPayment}>
+                      <div className="mb-6">
+                        <label className="block font-bold text-gray-900 text-sm mb-1.5">
+                          Enter UTR / Reference No.
+                        </label>
+                        <p className="text-[11px] text-gray-500 mb-4 font-medium leading-relaxed">
+                          Found in your UPI app's history after paying to <span className="font-mono text-gray-900 break-all">{UPI_ID}</span>
+                        </p>
+                        <div className="flex justify-center w-full overflow-hidden pb-1">
+                          <OTPInput
+                            value={upiRefId}
+                            onChange={setUpiRefId}
+                            maxLength={12}
+                            containerClassName="group flex items-center has-[:disabled]:opacity-50"
+                            render={({ slots }) => (
+                              <div className="flex flex-wrap justify-center gap-1 sm:gap-2 max-w-[280px] sm:max-w-none mx-auto">
+                                <div className="flex">
+                                  {slots.slice(0, 4).map((slot, idx) => (
+                                    <Slot key={idx} {...slot} />
+                                  ))}
+                                </div>
+                                <div className="flex">
+                                  {slots.slice(4, 8).map((slot, idx) => (
+                                    <Slot key={idx} {...slot} />
+                                  ))}
+                                </div>
+                                <div className="flex">
+                                  {slots.slice(8, 12).map((slot, idx) => (
+                                    <Slot key={idx} {...slot} />
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          />
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting || !upiRefId.trim()}
+                        className="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-primary hover:bg-primary-container disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors shadow-sm active:scale-[0.98]"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                            Verifying Payment...
+                          </>
+                        ) : (
+                          "Confirm Order"
+                        )}
+                      </button>
+                    </form>
+                  </div>
+                  
+                  <button 
+                    onClick={() => { setStep(2); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="mt-6 text-sm font-semibold text-gray-500 hover:text-gray-800 flex items-center gap-1.5 transition-colors"
+                  >
+                     <ArrowLeft className="w-4 h-4" /> Back to Payment
+                  </button>
+                </div>
               )}
             </div>
           </div>
