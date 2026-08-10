@@ -18,7 +18,7 @@ import { OTPInput } from "input-otp";
 function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boolean }) {
   return (
     <div
-      className={`relative w-[26px] h-10 sm:w-8 sm:h-12 text-sm sm:text-lg font-bold flex items-center justify-center border-y border-r border-gray-300 first:border-l first:rounded-l-md last:rounded-r-md transition-all bg-white ${
+      className={`relative w-[24px] h-10 sm:w-8 sm:h-12 text-sm sm:text-lg font-bold flex items-center justify-center border-y border-r border-gray-300 first:border-l first:rounded-l-md last:rounded-r-md transition-all bg-white ${
         props.isActive ? "z-10 ring-2 ring-primary border-primary" : ""
       }`}
     >
@@ -175,8 +175,18 @@ function CheckoutContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes
   const [error, setError] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (step === 2) {
+      const timer = setInterval(() => {
+        setTimeLeft(prev => (prev > 0 ? prev - 1 : 0));
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [step]);
 
   useEffect(() => {
     if (slug) {
@@ -439,10 +449,14 @@ function CheckoutContent() {
                       {isMobileDevice ? (
                         /* Mobile: deep link button */
                         <div className="w-full text-center space-y-4">
-                          <div>
-                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Amount Payable</p>
+                          <div className="text-center mb-6">
+                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">AMOUNT PAYABLE</p>
                             <p className="font-black text-primary text-3xl mb-1">₹{PRICE.toLocaleString('en-IN')}</p>
                             <p className="text-xs text-gray-500 font-medium">Inclusive of all taxes & shipping</p>
+                            <div className="mt-2 inline-flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-xs font-bold border border-red-100">
+                              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                              Offer expires in {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                            </div>
                           </div>
                           
                           <a
@@ -455,9 +469,13 @@ function CheckoutContent() {
                       ) : (
                         /* Desktop: QR code */
                         <div className="flex flex-col items-center w-full">
-                          <div className="text-center mb-3">
-                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Scan to Pay</p>
+                          <div className="text-center mb-6">
+                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">SCAN TO PAY</p>
                             <p className="text-2xl font-black text-primary tracking-tight">₹{PRICE.toLocaleString('en-IN')}</p>
+                            <div className="mt-2 inline-flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-xs font-bold border border-red-100">
+                              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                              Offer expires in {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                            </div>
                           </div>
 
                           <div className="relative mb-6 group flex justify-center w-full">
@@ -472,21 +490,19 @@ function CheckoutContent() {
                               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-white/20 pointer-events-none" />
                               
                               {qrDataUrl ? (
-                                <div className="relative z-10">
+                                <div className="relative z-10 w-[220px] h-[220px] sm:w-[260px] sm:h-[260px]">
                                   <img
                                     src={qrDataUrl}
                                     alt="UPI QR Code"
-                                    width={160}
-                                    height={160}
-                                    className="rounded-2xl object-contain bg-white"
+                                    className="w-full h-full rounded-2xl object-contain bg-white"
                                     style={{ imageRendering: "pixelated" }}
                                   />
-                                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded-md shadow-sm border border-gray-100 flex items-center justify-center w-9 h-9">
+                                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded-md shadow-sm border border-gray-100 flex items-center justify-center w-12 h-12">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" className="w-full h-full object-contain" />
                                   </div>
                                 </div>
                               ) : (
-                                <div className="w-[160px] h-[160px] bg-white/60 backdrop-blur-md animate-pulse rounded-2xl relative z-10" />
+                                <div className="w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] bg-white/60 backdrop-blur-md animate-pulse rounded-2xl relative z-10" />
                               )}
                             </div>
                           </div>
@@ -524,7 +540,7 @@ function CheckoutContent() {
                       <div className="mb-5">
                         <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">Or pay manually to UPI ID</p>
                         <div className="flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-gray-300 transition-colors">
-                          <span className="font-mono font-bold text-gray-900 text-xs sm:text-sm truncate">
+                          <span className="font-mono font-bold text-gray-900 text-[11px] sm:text-sm break-all leading-tight pr-2">
                             {UPI_ID}
                           </span>
                           <button
@@ -559,7 +575,7 @@ function CheckoutContent() {
                                 maxLength={12}
                                 containerClassName="group flex items-center has-[:disabled]:opacity-50"
                                 render={({ slots }) => (
-                                  <div className="flex gap-1.5 sm:gap-3">
+                                  <div className="flex flex-wrap justify-center gap-1 sm:gap-2 max-w-[280px] sm:max-w-none mx-auto">
                                     <div className="flex">
                                       {slots.slice(0, 4).map((slot, idx) => (
                                         <Slot key={idx} {...slot} />
