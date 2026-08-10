@@ -1,7 +1,21 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
-import { prisma } from '@/lib/prisma';
+
+// Lazy import prisma so a DB connection failure doesn't crash the whole module
+let prismaClient: Awaited<typeof import('@/lib/prisma')>['prisma'] | null = null;
+
+async function getPrisma() {
+  if (!process.env.DATABASE_URL || process.env.DATABASE_URL.startsWith('file:')) {
+    // Don't use prisma on Vercel without a real hosted DB
+    return null;
+  }
+  if (!prismaClient) {
+    const { prisma } = await import('@/lib/prisma');
+    prismaClient = prisma;
+  }
+  return prismaClient;
+}
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
@@ -23,26 +37,28 @@ export async function POST(req: Request) {
 
     const { name, phone, address, color, productName, productSlug, amount, upiRefId } = validatedData;
 
-    // Save order to the database
-    const savedOrder = await prisma.order.create({
-      data: {
-        name,
-        phone,
-        address,
-        color,
-        productName,
-        productSlug,
-        amount,
-        upiRefId,
-        status: 'Pending',
-      },
-    });
+    // Generate a simple order ID for tracking
+    const orderId = `ORD-${Date.now()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+
+    // Try to save to DB (optional – won't fail the order if DB is not configured)
+    let savedOrderId = orderId;
+    try {
+      const db = await getPrisma();
+      if (db) {
+        const saved = await db.order.create({
+          data: { name, phone, address, color, productName, productSlug, amount, upiRefId, status: 'Pending' },
+        });
+        savedOrderId = saved.id;
+      }
+    } catch (dbErr) {
+      console.warn('DB save skipped (no hosted DB configured):', dbErr);
+    }
 
     const emailHtml = `
       <h2>New UPI Order Received!</h2>
       <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
         <h3>Product Details</h3>
-        <p><strong>Order ID:</strong> ${savedOrder.id}</p>
+        <p><strong>Order ID:</strong> ${savedOrderId}</p>
         <p><strong>Product:</strong> ${productName} (Slug: ${productSlug})</p>
         <p><strong>Color:</strong> ${color}</p>
         <p><strong>Amount Paid:</strong> ₹${amount.toLocaleString('en-IN')}</p>
@@ -62,21 +78,21 @@ export async function POST(req: Request) {
     // Send email using Resend
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: 'Website Orders <onboarding@resend.dev>', // Update this if a custom domain is verified in Resend
-        to: ['agroindustriesmeerut@gmail.com'], // The client's email
+        from: 'Website Orders <onboarding@resend.dev>',
+        to: ['agroindustriesmeerut@gmail.com'],
         subject: `[NEW ORDER] ₹${amount.toLocaleString('en-IN')} for ${productName} - Ref: ${upiRefId}`,
         html: emailHtml,
       });
     } else {
-      console.log('RESEND_API_KEY not found. Simulating order email send:', emailHtml);
+      console.log('RESEND_API_KEY not set. Order details:', { name, phone, productName, amount, upiRefId });
     }
 
-    return NextResponse.json({ success: true, message: 'Order submitted successfully', orderId: savedOrder.id });
+    return NextResponse.json({ success: true, message: 'Order submitted successfully', orderId: savedOrderId });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ success: false, message: 'Validation failed', errors: error.issues }, { status: 400 });
     }
-    console.error('Email/DB API Error:', error);
+    console.error('Order API Error:', error);
     return NextResponse.json({ success: false, message: 'Failed to submit order' }, { status: 500 });
   }
 }
