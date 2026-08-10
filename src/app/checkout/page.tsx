@@ -463,18 +463,18 @@ function CheckoutContent() {
                     
                     {/* LEFT SIDE: QR CODE OR APP LINK */}
                     <div className="w-full md:w-auto flex flex-col items-center flex-shrink-0">
-                      {isMobileDevice ? (
-                        <div className="w-full text-center">
-                          <a
-                            href={upiUrl}
-                            className="block w-full py-3.5 rounded-xl font-bold text-base text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
-                          >
-                            Pay via UPI App Now
-                          </a>
-                        </div>
-                      ) : (
-                        <div className="flex flex-col items-center w-full">
-                          <div className="relative p-2 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden mb-3">
+                      <div className="flex flex-col items-center w-full">
+                        {isMobileDevice && (
+                          <div className="w-full text-center mb-5">
+                            <a
+                              href={upiUrl}
+                              className="block w-full py-3.5 px-6 rounded-xl font-bold text-base text-white bg-[#25D366] shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] active:scale-95 transition-all duration-200"
+                            >
+                              Pay via UPI App Now
+                            </a>
+                          </div>
+                        )}
+                        <div className="relative p-2 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden mb-3">
                             {qrDataUrl ? (
                               <div className="relative z-10 w-[180px] h-[180px] sm:w-[200px] sm:h-[200px]">
                                 <img
@@ -516,8 +516,7 @@ function CheckoutContent() {
                               {isCopied ? "Copied" : "Copy"}
                             </button>
                           </div>
-                        </div>
-                      )}
+                      </div>
                     </div>
 
                     {/* RIGHT SIDE: DETAILS & UTR */}
