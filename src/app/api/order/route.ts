@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
@@ -49,6 +50,11 @@ export async function POST(req: Request) {
           data: { name, phone, address, color, productName, productSlug, amount, upiRefId, status: 'Pending' },
         });
         savedOrderId = saved.id;
+        try {
+          revalidatePath('/admin/dashboard');
+        } catch (e) {
+          // Ignore revalidate error
+        }
       }
     } catch (dbErr) {
       console.warn('DB save skipped (no hosted DB configured):', dbErr);

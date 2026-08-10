@@ -52,7 +52,16 @@ export default async function DashboardPage({
 
       {/* Search and Filters */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-        <SearchOrders />
+        <div className="flex items-center gap-3">
+          <SearchOrders />
+          <button 
+            type="button"
+            className="px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-50 transition-colors"
+            title="Refresh Orders"
+          >
+            <a href="/admin/dashboard">Refresh</a>
+          </button>
+        </div>
         <div className="text-sm text-gray-500 font-medium">
           Showing {orders.length} orders
         </div>
