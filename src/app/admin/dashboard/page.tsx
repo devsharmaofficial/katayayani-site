@@ -30,7 +30,7 @@ export default async function DashboardPage({
 
   const totalOrders = orders.length;
   const totalRevenue = orders.reduce((sum: number, order: { amount: number }) => sum + order.amount, 0);
-  const pendingOrders = orders.filter(o => o.status === 'Pending').length;
+  const pendingOrders = orders.filter((o: any) => o.status === 'Pending').length;
 
   return (
     <div className="space-y-6">
@@ -79,7 +79,7 @@ export default async function DashboardPage({
                   <td colSpan={6} className="p-8 text-center text-gray-500">No orders found.</td>
                 </tr>
               ) : (
-                orders.map((order) => (
+                orders.map((order: any) => (
                   <tr key={order.id} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
                     <td className="p-4 font-mono text-xs text-gray-500">{order.id.slice(-6)}</td>
                     <td className="p-4">
