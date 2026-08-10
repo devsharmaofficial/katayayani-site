@@ -595,12 +595,12 @@ function CheckoutContent() {
               </div>
 
               {step === 3 && (
-                <div className="w-full p-5 sm:p-8 flex flex-col items-center max-w-lg mx-auto text-center">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-3">
+                <div className="w-full p-5 sm:p-8 max-w-lg mx-auto text-center">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3">
                     <ShieldCheck className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1.5">Verify your Payment</h3>
-                  <p className="text-sm text-gray-500 mb-6 max-w-sm">
+                  <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto">
                     Enter the 12-digit UTR or Reference Number from your UPI app's transaction history to confirm your order.
                   </p>
                   
@@ -612,7 +612,7 @@ function CheckoutContent() {
                           Enter UTR / Reference No.
                         </label>
                         <p className="text-[11px] text-gray-500 mb-4 font-medium leading-relaxed">
-                          Found in your UPI app's history after paying to <span className="font-mono text-gray-900 break-all">{UPI_ID}</span>
+                          Found in your UPI app's history after paying to <span className="font-mono text-gray-900 break-words">{UPI_ID}</span>
                         </p>
                         <div className="flex justify-center w-full overflow-hidden pb-1">
                           <OTPInput
