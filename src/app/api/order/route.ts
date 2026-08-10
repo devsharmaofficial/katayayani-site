@@ -77,12 +77,17 @@ export async function POST(req: Request) {
 
     // Send email using Resend
     if (process.env.RESEND_API_KEY) {
-      await resend.emails.send({
-        from: 'Website Orders <onboarding@resend.dev>',
-        to: ['agroindustriesmeerut@gmail.com'],
-        subject: `[NEW ORDER] ₹${amount.toLocaleString('en-IN')} for ${productName} - Ref: ${upiRefId}`,
-        html: emailHtml,
-      });
+      try {
+        await resend.emails.send({
+          from: 'Website Orders <onboarding@resend.dev>',
+          to: ['agroindustriesmeerut@gmail.com'],
+          subject: `[NEW ORDER] ₹${amount.toLocaleString('en-IN')} for ${productName} - Ref: ${upiRefId}`,
+          html: emailHtml,
+        });
+      } catch (emailErr) {
+        console.error('Failed to send email via Resend:', emailErr);
+        // Continue anyway since we might have saved it to the DB
+      }
     } else {
       console.log('RESEND_API_KEY not set. Order details:', { name, phone, productName, amount, upiRefId });
     }
