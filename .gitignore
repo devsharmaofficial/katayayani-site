@@ -69,3 +69,7 @@ stitch_design_system.md
 /*.py
 /*.mjs
 !next.config.ts
+
+/src/generated/prisma
+dev.db
+dev.db-journal

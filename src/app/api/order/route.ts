@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
+import { prisma } from '@/lib/prisma';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
@@ -22,10 +23,26 @@ export async function POST(req: Request) {
 
     const { name, phone, address, color, productName, productSlug, amount, upiRefId } = validatedData;
 
+    // Save order to the database
+    const savedOrder = await prisma.order.create({
+      data: {
+        name,
+        phone,
+        address,
+        color,
+        productName,
+        productSlug,
+        amount,
+        upiRefId,
+        status: 'Pending',
+      },
+    });
+
     const emailHtml = `
       <h2>New UPI Order Received!</h2>
       <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
         <h3>Product Details</h3>
+        <p><strong>Order ID:</strong> ${savedOrder.id}</p>
         <p><strong>Product:</strong> ${productName} (Slug: ${productSlug})</p>
         <p><strong>Color:</strong> ${color}</p>
         <p><strong>Amount Paid:</strong> ₹${amount.toLocaleString('en-IN')}</p>
@@ -54,12 +71,12 @@ export async function POST(req: Request) {
       console.log('RESEND_API_KEY not found. Simulating order email send:', emailHtml);
     }
 
-    return NextResponse.json({ success: true, message: 'Order submitted successfully' });
+    return NextResponse.json({ success: true, message: 'Order submitted successfully', orderId: savedOrder.id });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ success: false, message: 'Validation failed', errors: error.issues }, { status: 400 });
     }
-    console.error('Email API Error:', error);
+    console.error('Email/DB API Error:', error);
     return NextResponse.json({ success: false, message: 'Failed to submit order' }, { status: 500 });
   }
 }

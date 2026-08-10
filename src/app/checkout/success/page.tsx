@@ -14,7 +14,7 @@ function SuccessContent() {
 
   return (
     <div className="min-h-[80vh] bg-[#f5f7f6] pt-24 pb-20 flex items-center justify-center">
-      <div className="max-w-lg w-full mx-4">
+      <div className="mx-4" style={{ width: '100%', maxWidth: '32rem' }}>
 
         {/* ── Confetti-style success card ── */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden text-center">
