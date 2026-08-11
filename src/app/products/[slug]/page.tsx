@@ -309,7 +309,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
           }),
         }}
       />
-      <main className="flex-grow pt-28">
+      <main className="flex-grow pt-28 pb-24">
         <div className="max-w-[1280px] mx-auto px-[24px] pt-4 pb-12">
           {/* Breadcrumb */}
           <Breadcrumbs
@@ -320,9 +320,9 @@ function ProductDetailContent({ slug }: { slug: string }) {
             ]}
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-[48px]">
-            {/* Left: Image Gallery (3 cols) */}
-            <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Left: Image Gallery */}
+            <div>
               <ScrollReveal>
                 {/* Main Image */}
                 <div className="group/carousel relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/50 mb-[16px]">
@@ -468,8 +468,8 @@ function ProductDetailContent({ slug }: { slug: string }) {
               </ScrollReveal>
             </div>
 
-            {/* Right: Product Info + Sticky Enquiry (2 cols) */}
-            <div className="lg:col-span-2">
+            {/* Right: Product Info + Sticky Enquiry */}
+            <div>
               <ScrollReveal direction="right">
                 <div className="lg:sticky lg:top-[104px]">
                   {/* Product Name */}
@@ -488,29 +488,17 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   </div>
 
                   {/* Price Block */}
-                  <div className="mb-[24px] p-5 rounded-3xl bg-gradient-to-br from-emerald-500/5 via-transparent to-primary/5 border border-emerald-600/10 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none" />
-                    
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[9px] uppercase tracking-widest text-[#318664] font-black bg-[#318664]/10 px-2 py-0.5 rounded">Special Factory Price</span>
-                      <span className="text-[9px] uppercase tracking-widest text-amber-700 font-black bg-amber-500/10 px-2 py-0.5 rounded">Limited Offer</span>
-                    </div>
-
-                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <span className="text-[34px] font-black text-[#318664] tracking-tight">₹13,500</span>
-                      <span className="text-body-md text-on-surface-variant/60 line-through">₹18,000</span>
-                      <span className="text-body-sm font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Save ₹4,500 (25% off)</span>
-                    </div>
-
-                    <p className="text-[12px] text-on-surface-variant/80 mt-2 flex items-center gap-1 font-medium">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Inclusive of GST & All Taxes
-                    </p>
-
-                    <div className="mt-4 pt-3 border-t border-dashed border-gray-200/60 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-on-surface-variant/75 font-semibold">
-                      <span className="flex items-center gap-1">🟢 Fast Dispatch</span>
+                  <div className="mb-[24px]">
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-green-700 font-bold text-xl flex items-center tracking-tight">
+                        ↓25%
+                      </span>
+                      <span className="text-gray-500 line-through text-2xl font-medium tracking-tight">
+                        ₹18,000
+                      </span>
+                      <span className="text-gray-900 text-[40px] font-black tracking-tight ml-1">
+                        ₹13,500
+                      </span>
                     </div>
                   </div>
 
@@ -860,6 +848,25 @@ function ProductDetailContent({ slug }: { slug: string }) {
       </main>
       <Footer />
       <FloatingActions />
+      
+      {/* Sticky Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-2.5 z-[100] flex gap-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+        <Link
+          href={`https://wa.me/919358273054?text=${whatsappMessage}`}
+          target="_blank"
+          className="flex-1 flex items-center justify-center bg-white border border-gray-300 text-gray-900 font-bold rounded-lg py-2.5 hover:bg-gray-50 transition"
+        >
+          Add to cart
+        </Link>
+        <Link
+          href={`/checkout?product=${product.slug}`}
+          className="flex-1 flex flex-col items-center justify-center bg-[#FFC200] text-gray-900 font-bold rounded-lg py-1.5 hover:bg-[#F0B600] transition shadow-sm"
+        >
+          <span className="text-sm">Buy now</span>
+          <span className="text-[11px] leading-tight">at ₹13,500</span>
+        </Link>
+      </div>
+      
       {isLightboxOpen && (
         <div
           className="fixed inset-0 bg-black/95 backdrop-blur-md z-50 flex flex-col justify-between select-none animate-in fade-in duration-300"
