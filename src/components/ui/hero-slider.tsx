@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Play } from "lucide-react";
 import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 
@@ -88,10 +89,12 @@ export function HeroSlider() {
         className={`relative w-full h-full rounded-[28px] overflow-hidden group cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100/50`}
       >
         {/* High Res Thumbnail */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={media.thumbnail}
           alt={media.title}
+          fill
+          priority={!isVertical}
+          sizes={isVertical ? "(max-width: 768px) 50vw, 25vw" : "(max-width: 768px) 100vw, 50vw"}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
 

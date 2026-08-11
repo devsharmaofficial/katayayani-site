@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Play, Heart, MessageCircle, X, ExternalLink } from "lucide-react";
 
 const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/katayayani.enterprises/";
@@ -117,7 +118,7 @@ export default function InstagramSection() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="flex items-center gap-2 bg-[#e1306c] text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+              <span className="flex items-center gap-2 bg-[#c13584] text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
                 <InstagramIcon className="w-3.5 h-3.5" />
                 Instagram
               </span>
@@ -125,9 +126,9 @@ export default function InstagramSection() {
             </div>
             
             <h2 className="text-gray-900 text-[28px] sm:text-[36px] md:text-[40px] font-black leading-tight tracking-tight">
-              Trending on <span className="text-[#e1306c]">Instagram Reels</span>
+              Trending on <span className="text-[#c13584]">Instagram Reels</span>
             </h2>
-            <p className="text-gray-500 text-[14px] mt-2 max-w-[500px] leading-relaxed">
+            <p className="text-gray-600 text-[14px] mt-2 max-w-[500px] leading-relaxed">
               Explore our latest updates, customer tractor installations, and newly customized fiber hoods directly on our Instagram grid.
             </p>
           </div>
@@ -136,7 +137,7 @@ export default function InstagramSection() {
             href={INSTAGRAM_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#e1306c] hover:bg-[#c13584] text-white font-extrabold text-[14px] rounded-full transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#c13584] hover:bg-[#a12a6e] text-white font-extrabold text-[14px] rounded-full transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
           >
             <InstagramIcon className="w-4 h-4" />
             Follow on Instagram
@@ -149,7 +150,6 @@ export default function InstagramSection() {
           {REELS.map((reel) => {
             const liked = isLiked[reel.id];
             const currentLikes = likeCounts[reel.id] || getLikeCount(reel.id, reel.likes);
-            // Local high-quality downloaded thumbnail image
             const localThumbnailUrl = `/instagram/${reel.id}.jpg`;
 
             return (
@@ -158,12 +158,11 @@ export default function InstagramSection() {
                 onClick={() => setActiveReel(reel)}
                 className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100"
               >
-                {/* Local downloaded high-quality thumbnail */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={localThumbnailUrl}
                   alt={reel.title}
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
 
@@ -213,14 +212,14 @@ export default function InstagramSection() {
 
         {/* Footer row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-10 pt-6 border-t border-gray-200">
-          <span className="text-[12px] font-bold text-gray-500">
+          <span className="text-[12px] font-bold text-gray-600">
             @{INSTAGRAM_ID}
           </span>
           <a
             href={INSTAGRAM_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[13px] font-bold text-[#e1306c] hover:text-[#c13584] hover:underline inline-flex items-center gap-1.5 transition-colors"
+            className="text-[13px] font-bold text-[#c13584] hover:text-[#a12a6e] hover:underline inline-flex items-center gap-1.5 transition-colors"
           >
             Open Instagram Profile
             <ExternalLink className="w-3.5 h-3.5" />
@@ -248,15 +247,14 @@ export default function InstagramSection() {
             {/* Header info */}
             <div className="px-5 py-3 border-b border-gray-100 flex items-center justify-between bg-white">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e1306c] to-[#bc1888] p-[1.5px]">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f09433] via-[#c13584] to-[#bc1888] p-[1.5px]">
                   <div className="w-full h-full rounded-full bg-white p-[1px]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/favicon.ico" alt="Katayayani Enterprises Logo" className="w-full h-full object-cover rounded-full" />
+                    <Image src="/favicon.ico" alt="Katayayani Enterprises Logo" width={32} height={32} className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
                 <div>
                   <h3 className="text-[13px] font-bold text-gray-900 leading-none">{INSTAGRAM_ID}</h3>
-                  <span className="text-[10px] text-gray-500">Instagram Reel</span>
+                  <span className="text-[10px] text-gray-600">Instagram Reel</span>
                 </div>
               </div>
               <a

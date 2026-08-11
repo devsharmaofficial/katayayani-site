@@ -466,6 +466,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   </div>
                 )}
               </ScrollReveal>
+
             </div>
 
             {/* Right: Product Info + Sticky Enquiry */}
@@ -483,63 +484,61 @@ function ProductDetailContent({ slug }: { slug: string }) {
                       <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
-                      Verified Quality Manufacturer
+                      100% Original Katayayani Build
                     </span>
                   </div>
 
                   {/* Price Block */}
                   <div className="mb-[24px]">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-green-700 font-bold text-xl flex items-center tracking-tight">
+                    <div className="flex items-center gap-4">
+                      <span className="text-red-600 bg-red-50 border border-red-100 px-2.5 py-1 rounded-lg font-bold text-xl flex items-center tracking-tight shadow-sm">
                         ↓25%
                       </span>
-                      <span className="text-gray-500 line-through text-2xl font-medium tracking-tight">
+                      <span className="text-gray-400 line-through text-2xl font-medium tracking-tight">
                         ₹18,000
                       </span>
-                      <span className="text-gray-900 text-[40px] font-black tracking-tight ml-1">
+                      <span className="text-slate-900 text-[48px] font-[900] tracking-tighter drop-shadow-sm ml-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                         ₹13,500
                       </span>
                     </div>
                   </div>
 
-                  {/* Compatible Models - Natural height to fill space and align buttons */}
-                  <div className="mb-[24px] p-5 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 border border-primary/10 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none" />
-                    
-                    <h3 className="text-label-md font-bold text-primary uppercase tracking-wider mb-[10px] flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4" /> Perfect Fit Guarantee
-                    </h3>
-                    
-                    <p className="text-body-md text-on-surface font-semibold mb-[14px]">
-                      Engineered to fit <span className="text-primary font-black">EVERY SINGLE {product.brand.toUpperCase()}</span> tractor model seamlessly, with zero vibration.
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-[6px]">
-                      {product.compatibleModels.map((model) => (
-                        <span
-                          key={model}
-                          className="inline-flex items-center px-[10px] py-[4px] bg-white text-on-surface-variant hover:text-primary hover:border-primary/30 transition-colors rounded-lg text-label-sm border border-outline-variant/30 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
-                        >
-                          {model}
+                  {/* Compatible Models - Accordion */}
+                  <details className="mb-[24px] group bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 border border-primary/10 rounded-2xl overflow-hidden cursor-pointer shadow-sm transition-all">
+                    <summary className="p-5 flex items-center justify-between outline-none">
+                      <h3 className="text-label-md font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                        <ShieldCheck className="w-5 h-5" /> Perfect Fit Guarantee
+                      </h3>
+                      <ChevronDown className="w-5 h-5 text-primary transition-transform group-open:rotate-180" />
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <p className="text-body-md text-on-surface font-semibold mb-[14px]">
+                        Engineered to fit <span className="text-primary font-black">EVERY SINGLE {product.brand.toUpperCase()}</span> tractor model seamlessly, with zero vibration.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-[6px]">
+                        {product.compatibleModels.map((model) => (
+                          <span
+                            key={model}
+                            className="inline-flex items-center px-[10px] py-[4px] bg-white text-on-surface-variant hover:text-primary hover:border-primary/30 transition-colors rounded-lg text-label-sm border border-outline-variant/30 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                          >
+                            {model}
+                          </span>
+                        ))}
+                        <span className="inline-flex items-center px-[10px] py-[4px] bg-primary/10 text-primary font-bold rounded-lg text-label-sm border border-primary/20">
+                          & All Other {product.brand} Models
                         </span>
-                      ))}
-                      <span className="inline-flex items-center px-[10px] py-[4px] bg-primary/10 text-primary font-bold rounded-lg text-label-sm border border-primary/20">
-                        & All Other {product.brand} Models
-                      </span>
+                      </div>
                     </div>
-                  </div>
-
-                  <PincodeChecker />
-
-                  <div className="divider-gold mb-[16px] mt-6" />
+                  </details>
 
                   {/* CTA Buttons */}
-                  <div className="space-y-[12px]">
+                  <div className="space-y-[12px] mb-[24px]">
                     <Link
                       href={`https://wa.me/919358273054?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-full h-12 p-1 ps-6 pe-14 flex items-center justify-center text-sm font-medium rounded-full group transition-all duration-500 hover:ps-14 hover:pe-6 overflow-hidden cursor-pointer bg-primary text-on-primary hover:bg-primary-container"
+                      className="relative w-full h-12 p-1 ps-6 pe-14 flex items-center justify-center text-sm font-medium rounded-full group transition-all duration-500 hover:ps-14 hover:pe-6 overflow-hidden cursor-pointer bg-primary text-on-primary hover:bg-primary-container shadow-md"
                     >
                       <span className="relative z-10 transition-all duration-500 font-bold">
                         Buy at Best Price
@@ -549,28 +548,29 @@ function ProductDetailContent({ slug }: { slug: string }) {
                       </div>
                     </Link>
                     <Link
-                      href={`/checkout?product=${product.slug}`}
-                      className="w-full flex items-center justify-center gap-2 bg-[#6528F7] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#501EC7] transition-colors font-bold"
+                      href={`/payment-options?product=${product.slug}`}
+                      className="w-full flex items-center justify-center gap-2 bg-[#6528F7] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#501EC7] transition-colors font-bold shadow-md"
                     >
                       <ShieldCheck className="w-[18px] h-[18px]" />
                       Buy Now
                     </Link>
                     <Link
-                      href={`https://wa.me/919358273054?text=${whatsappMessage}`}
-                      target="_blank"
-                      className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#20BD5A] transition-colors font-bold"
-                    >
-                      <MessageCircle className="w-[18px] h-[18px]" />
-                      WhatsApp Us
-                    </Link>
-                    <Link
                       href="tel:+919358273054"
-                      className="w-full flex items-center justify-center gap-2 border border-secondary text-secondary text-label-md px-[24px] py-[14px] rounded-lg hover:bg-secondary/5 transition-colors font-bold"
+                      className="w-full flex items-center justify-center gap-2 border-2 border-secondary text-secondary text-label-md px-[24px] py-[14px] rounded-lg hover:bg-secondary/5 transition-colors font-bold shadow-sm"
                     >
                       <Phone className="w-[18px] h-[18px]" />
                       Call for Pricing
                     </Link>
                   </div>
+
+                  <div className="divider-gold mb-[24px]" />
+
+                  {/* Pincode Checker */}
+                  <div className="mb-[24px]">
+                    <PincodeChecker />
+                  </div>
+
+
                 </div>
               </ScrollReveal>
             </div>
@@ -578,34 +578,29 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
           {/* Detailed Product Information */}
           <div className="mt-[64px] space-y-[48px]">
-            {/* MOQ and Delivery Banner */}
+            {/* MOQ & Delivery Info - Full Width */}
             <ScrollReveal>
-              <div className="group relative flex flex-col sm:flex-row gap-8 justify-around bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 border border-primary/20 rounded-[32px] p-8 shadow-[0_8px_32px_rgba(31,38,135,0.04)] overflow-hidden transition-all duration-500 hover:shadow-[0_8px_40px_rgba(31,38,135,0.08)] hover:border-primary/40 backdrop-blur-md">
+              <div className="group relative flex items-center justify-around bg-gradient-to-r from-[#eef2ef] via-white to-[#f4efe8] border border-gray-200/60 rounded-[24px] p-8 shadow-sm overflow-hidden">
                  
-                 {/* Decorative background gradients */}
-                 <div className="absolute inset-0 bg-white/40 pointer-events-none" />
-                 <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 rounded-full blur-[80px] group-hover:bg-primary/30 transition-colors duration-700 pointer-events-none" />
-                 <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/20 rounded-full blur-[80px] group-hover:bg-secondary/30 transition-colors duration-700 pointer-events-none" />
-
                  <div className="relative flex items-center gap-6 z-10">
-                   <div className="w-16 h-16 bg-gradient-to-br from-white to-primary/5 rounded-2xl flex items-center justify-center text-primary shadow-sm border border-white/80 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                     <Package className="w-8 h-8 drop-shadow-sm" />
+                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100">
+                     <Package className="w-8 h-8" />
                    </div>
                    <div>
-                     <p className="text-label-sm text-on-surface-variant uppercase tracking-[0.2em] font-bold mb-1 opacity-80">Minimum Order Quantity</p>
-                     <p className="text-headline-md text-primary font-black drop-shadow-sm">1 Piece</p>
+                     <p className="text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-1">Minimum Order Quantity</p>
+                     <p className="text-2xl text-[#063b27] font-black">1 Piece</p>
                    </div>
                  </div>
                  
-                 <div className="w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent hidden sm:block relative z-10"></div>
+                 <div className="w-px h-16 bg-gray-200 relative z-10"></div>
                  
                  <div className="relative flex items-center gap-6 z-10">
-                   <div className="w-16 h-16 bg-gradient-to-br from-white to-primary/5 rounded-2xl flex items-center justify-center text-primary shadow-sm border border-white/80 transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
-                     <Truck className="w-8 h-8 drop-shadow-sm" />
+                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100">
+                     <Truck className="w-8 h-8" />
                    </div>
                    <div>
-                     <p className="text-label-sm text-on-surface-variant uppercase tracking-[0.2em] font-bold mb-1 opacity-80">Delivery Time</p>
-                     <p className="text-headline-md text-primary font-black drop-shadow-sm">10 - 12 Days</p>
+                     <p className="text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-1">Delivery Time</p>
+                     <p className="text-2xl text-[#063b27] font-black">10 - 12 Days</p>
                    </div>
                  </div>
               </div>

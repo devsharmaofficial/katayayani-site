@@ -302,10 +302,10 @@ function CheckoutContent() {
         )}
 
         {/* ── Two-column layout ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 lg:items-start">
 
           {/* ── LEFT: Steps ── */}
-          <div className="space-y-5">
+          <div className="space-y-5 w-full min-w-0">
 
             {/* ═══ STEP 1 ═══ */}
             <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 overflow-hidden ${step === 1 ? "border-primary ring-1 ring-primary" : "border-gray-200"}`}>
@@ -686,7 +686,7 @@ function CheckoutContent() {
           </div>
 
           {/* ── RIGHT: Order Summary (sticky) ── */}
-          <div className="lg:sticky lg:top-[108px]">
+          <div className="lg:sticky lg:top-[108px] w-full min-w-0">
             <OrderSummary product={product} color={formData.color} />
 
             {/* Delivery timeline card */}
