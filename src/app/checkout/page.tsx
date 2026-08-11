@@ -35,6 +35,8 @@ function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boo
 const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
 const PRICE = 13500;
+const GST = PRICE * 0.05;
+const TOTAL = PRICE + GST;
 
 /* ──────────────────────────────────────────
    Step Progress Bar
@@ -130,14 +132,14 @@ function OrderSummary({ product, color }: { product: Product; color: string }) {
             <span className="font-bold text-gray-500 text-[10px] sm:text-xs text-right leading-tight max-w-[140px]">May vary depending on carrier</span>
           </div>
           <div className="flex justify-between text-gray-600">
-            <span>GST (incl.)</span>
-            <span className="font-medium text-gray-900">Included</span>
+            <span>GST (5%)</span>
+            <span className="font-medium text-gray-900">₹{GST.toLocaleString("en-IN")}</span>
           </div>
         </div>
 
         <div className="flex justify-between items-center">
           <span className="font-black text-gray-900 text-base">Total</span>
-          <span className="text-2xl font-black text-primary">₹{PRICE.toLocaleString("en-IN")}</span>
+          <span className="text-2xl font-black text-primary">₹{TOTAL.toLocaleString("en-IN")}</span>
         </div>
 
         {/* Trust strip */}
@@ -202,15 +204,24 @@ function CheckoutContent() {
 
   // Generate QR after product is loaded
   useEffect(() => {
-    if (!product) return;
-    const upiUrl = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(BUSINESS_NAME)}&am=${PRICE}&tn=${encodeURIComponent("Order " + product.name)}&cu=INR`;
-    QRCode.toDataURL(upiUrl, { width: 280, margin: 2, errorCorrectionLevel: 'H', color: { dark: "#012d1d", light: "#ffffff" } })
-      .then(url => setQrDataUrl(url))
-      .catch(console.error);
-  }, [product]);
+    const generateQr = async () => {
+      if (!product) return;
+      const upiUrl = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(BUSINESS_NAME)}&am=${TOTAL}&tn=${encodeURIComponent("Order " + product.name)}&cu=INR`;
+      try {
+        setQrDataUrl(await QRCode.toDataURL(upiUrl, {
+          width: 300,
+          margin: 2,
+          color: { dark: "#0f172a", light: "#ffffff" }
+        }));
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    generateQr();
+  }, [product, step]);
 
   const upiUrl = product
-    ? `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(BUSINESS_NAME)}&am=${PRICE}&tn=${encodeURIComponent("Order " + product.name)}&cu=INR`
+    ? `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(BUSINESS_NAME)}&am=${TOTAL}&tn=${encodeURIComponent("Order " + product.name)}&cu=INR`
     : "";
 
   const copyUpiId = () => {
@@ -237,7 +248,7 @@ function CheckoutContent() {
       const res = await fetch("/api/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, productName: product!.name, productSlug: product!.slug, amount: PRICE, upiRefId }),
+        body: JSON.stringify({ ...formData, productName: product!.name, productSlug: product!.slug, amount: TOTAL, upiRefId }),
       });
       if (!res.ok) throw new Error();
       router.push(`/checkout/success?ref=${encodeURIComponent(upiRefId)}&name=${encodeURIComponent(formData.name)}`);
@@ -530,7 +541,7 @@ function CheckoutContent() {
                               AMOUNT PAYABLE 
                               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isBreakdownOpen ? "rotate-180" : ""}`} />
                             </p>
-                            <p className="font-black text-primary text-2xl">₹{PRICE.toLocaleString('en-IN')}</p>
+                            <p className="font-black text-primary text-2xl">₹{TOTAL.toLocaleString('en-IN')}</p>
                           </div>
                           <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-600 px-2.5 py-1.5 rounded-lg text-xs font-bold border border-red-100">
                             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -539,7 +550,7 @@ function CheckoutContent() {
                         </div>
 
                         {/* Breakdown Dropdown */}
-                        <div className={`overflow-hidden transition-all duration-300 ${isBreakdownOpen ? "max-h-40 mt-3 pt-3 border-t border-gray-200 opacity-100" : "max-h-0 opacity-0"}`}>
+                        <div className={`overflow-hidden transition-all duration-300 ${isBreakdownOpen ? "max-h-48 mt-3 pt-3 border-t border-gray-200 opacity-100" : "max-h-0 opacity-0"}`}>
                           <div className="space-y-2 text-xs">
                             <div className="flex justify-between text-gray-600">
                               <span>Subtotal</span>
@@ -549,9 +560,13 @@ function CheckoutContent() {
                               <span>Shipping</span>
                               <span className="font-bold text-gray-500 text-[10px] text-right max-w-[120px] leading-tight">May vary depending on carrier</span>
                             </div>
+                            <div className="flex justify-between text-gray-600 items-center">
+                              <span>GST (5%)</span>
+                              <span className="font-bold text-gray-900">₹{GST.toLocaleString('en-IN')}</span>
+                            </div>
                             <div className="flex justify-between font-bold text-sm text-gray-900 pt-2 border-t border-gray-100">
                               <span>Grand Total</span>
-                              <span className="text-primary">₹{PRICE.toLocaleString('en-IN')}</span>
+                              <span className="text-primary">₹{TOTAL.toLocaleString('en-IN')}</span>
                             </div>
                           </div>
                         </div>
@@ -571,7 +586,7 @@ function CheckoutContent() {
                           onClick={() => { setStep(3); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                           className="w-full py-3 rounded-lg font-bold text-sm text-white bg-primary hover:bg-primary-container transition-colors shadow-sm active:scale-[0.98]"
                         >
-                          Yes, I have paid ₹{PRICE.toLocaleString('en-IN')}
+                          Yes, I have paid ₹{TOTAL.toLocaleString('en-IN')}
                         </button>
                       </div>
 
