@@ -151,23 +151,20 @@ function PaymentOptionsContent() {
             <h2 className="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Customize Your Build</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, max: 2 },
-                { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, max: 4 },
-                { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, max: 1 },
-                { id: 'handles', name: 'Handles', icon: <Wrench className="w-4 h-4" />, max: 1 },
-                { id: 'siren', name: 'Siren Light', icon: <AlertCircle className="w-4 h-4" />, max: 1 },
-                { id: 'upipe', name: 'U Pipe', icon: <Wrench className="w-4 h-4" />, max: 1 },
-                { id: 'tailLights', name: 'Tail Lights', icon: <Lightbulb className="w-4 h-4" />, max: 2 },
-                { id: 'drl', name: 'DRL Lights', icon: <Lightbulb className="w-4 h-4" />, max: 2 },
-                { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, max: 1 },
+                { id: 'fan', name: 'Heavy Duty Fan', max: 2 },
+                { id: 'light', name: 'LED Projector Light', max: 4 },
+                { id: 'mirrors', name: 'Side Mirrors', max: 1 },
+                { id: 'handles', name: 'Handles', max: 1 },
+                { id: 'siren', name: 'Siren Light', max: 1 },
+                { id: 'upipe', name: 'U Pipe', max: 1 },
+                { id: 'tailLights', name: 'Tail Lights', max: 2 },
+                { id: 'drl', name: 'DRL Lights', max: 2 },
+                { id: 'speakers', name: 'Music Speakers', max: 1 },
               ].map((addon) => (
-                <div key={addon.id} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm">
+                <div key={addon.id} className="flex items-center justify-between py-2.5 px-4 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-700 border border-gray-100">
-                      {addon.icon}
-                    </div>
                     <div>
-                      <p className="text-[13px] font-bold text-gray-900 leading-none">{addon.name}</p>
+                      <p className="text-[14px] font-bold text-gray-900 leading-none">{addon.name}</p>
                     </div>
                   </div>
                   
@@ -194,7 +191,7 @@ function PaymentOptionsContent() {
               ))}
             </div>
           </div>
-        </div>
+          </div>
         </div>
 
         {/* RIGHT COLUMN: Payment Options */}
@@ -314,7 +311,6 @@ function PaymentOptionsContent() {
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );
