@@ -28,7 +28,8 @@ function PaymentOptionsContent() {
     siren: 1,
     upipe: 1,
     tailLights: 1,
-    drl: 1
+    drl: 1,
+    speakers: 0
   });
 
   const addonPrices = {
@@ -85,7 +86,7 @@ function PaymentOptionsContent() {
 
   return (
     <div className="min-h-screen bg-[#f5f7f6] pt-16 sm:pt-20 pb-10">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -99,9 +100,12 @@ function PaymentOptionsContent() {
           </Link>
         </div>
 
-        {/* Unified Order Configuration Box */}
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 mb-8 overflow-hidden">
-          {/* Product Summary */}
+        {/* Main Grid Wrapper */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 lg:gap-10 items-start">
+          
+          {/* LEFT COLUMN: Unified Order Configuration Box */}
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+            {/* Product Summary */}
           <div className="p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 border border-gray-200">
@@ -146,46 +150,45 @@ function PaymentOptionsContent() {
           {/* Customization Section */}
           <div className="p-5 sm:p-6 bg-gray-50/30">
             <h2 className="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Customize Your Build</h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, price: addonPrices.fan, max: 2 },
-                { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.light, max: 4 },
-                { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, price: addonPrices.speakers, max: 1 },
-                { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, price: addonPrices.mirrors, max: 1 },
-                { id: 'handles', name: 'Handles', icon: <Wrench className="w-4 h-4" />, price: addonPrices.handles, max: 1 },
-                { id: 'siren', name: 'Siren Light', icon: <AlertCircle className="w-4 h-4" />, price: addonPrices.siren, max: 1 },
-                { id: 'upipe', name: 'U Pipe', icon: <Wrench className="w-4 h-4" />, price: addonPrices.upipe, max: 1 },
-                { id: 'tailLights', name: 'Tail Lights', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.tailLights, max: 2 },
-                { id: 'drl', name: 'DRL Lights', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.drl, max: 2 },
+                { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, max: 2 },
+                { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, max: 4 },
+                { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, max: 1 },
+                { id: 'handles', name: 'Handles', icon: <Wrench className="w-4 h-4" />, max: 1 },
+                { id: 'siren', name: 'Siren Light', icon: <AlertCircle className="w-4 h-4" />, max: 1 },
+                { id: 'upipe', name: 'U Pipe', icon: <Wrench className="w-4 h-4" />, max: 1 },
+                { id: 'tailLights', name: 'Tail Lights', icon: <Lightbulb className="w-4 h-4" />, max: 2 },
+                { id: 'drl', name: 'DRL Lights', icon: <Lightbulb className="w-4 h-4" />, max: 2 },
+                { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, max: 1 },
               ].map((addon) => (
                 <div key={addon.id} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-700 border border-gray-100">
+                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-700 border border-gray-100">
                       {addon.icon}
                     </div>
                     <div>
-                      <p className="text-[14px] font-bold text-gray-900 leading-none">{addon.name}</p>
-                      <p className="text-[13px] text-primary font-bold mt-1">+₹{addon.price}</p>
+                      <p className="text-[13px] font-bold text-gray-900 leading-none">{addon.name}</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 shadow-inner">
+                  <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-0.5 shadow-inner">
                     <button
                       onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.max(0, prev[addon.id as keyof typeof prev] - 1) }))}
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
+                      className="w-6 h-6 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
                       disabled={addons[addon.id as keyof typeof addons] === 0}
                     >
-                      <Minus className="w-3.5 h-3.5" />
+                      <Minus className="w-3 h-3" />
                     </button>
-                    <span className="w-8 text-center font-black text-gray-900 text-sm">
+                    <span className="w-6 text-center font-black text-gray-900 text-[13px]">
                       {addons[addon.id as keyof typeof addons]}
                     </span>
                     <button
                       onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.min(addon.max, prev[addon.id as keyof typeof prev] + 1) }))}
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
+                      className="w-6 h-6 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
                       disabled={addons[addon.id as keyof typeof addons] >= addon.max}
                     >
-                      <Plus className="w-3.5 h-3.5" />
+                      <Plus className="w-3 h-3" />
                     </button>
                   </div>
                 </div>
@@ -193,9 +196,12 @@ function PaymentOptionsContent() {
             </div>
           </div>
         </div>
+        </div>
 
-        {/* Error Banner */}
-        {error && (
+        {/* RIGHT COLUMN: Payment Options */}
+        <div className="flex flex-col space-y-6">
+          {/* Error Banner */}
+          {error && (
           <div className="mb-4 flex items-center justify-center gap-2 bg-red-50 text-red-600 py-3 px-4 rounded-xl border border-red-100 animate-in fade-in zoom-in-95">
             <AlertCircle className="w-5 h-5 flex-shrink-0" />
             <p className="text-sm font-bold">{error}</p>
@@ -299,14 +305,15 @@ function PaymentOptionsContent() {
           </div>
         </div>
 
-        {/* Continue Button */}
-        <div className="mt-8">
-          <button
-            onClick={handleContinue}
-            className="w-full bg-primary text-white font-black text-lg py-4 rounded-xl shadow-lg hover:bg-primary-container transition-all active:scale-[0.98]"
-          >
-            Proceed to Checkout
-          </button>
+          {/* Continue Button */}
+          <div className="mt-8">
+            <button
+              onClick={handleContinue}
+              className="w-full bg-primary text-white font-black text-lg py-4 rounded-xl shadow-lg hover:bg-primary-container transition-all active:scale-[0.98]"
+            >
+              Proceed to Checkout
+            </button>
+          </div>
         </div>
 
       </div>
