@@ -15,6 +15,8 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 
 
+import { useSearchParams } from "next/navigation";
+
 // Consolidating all scraped media
 const MEDIA_POOL: MediaItem[] = [
   // Newly Scraped YouTube Videos & Shorts (21 items) - All high quality local thumbnails
@@ -54,9 +56,20 @@ const MEDIA_POOL: MediaItem[] = [
   { type: "reel", id: "Dbv_SG5hyOB", title: "Ultimate Canopy Setup for Farmers Walkaround", thumbnail: "/instagram/Dbv_SG5hyOB.jpg" }
 ];
 
+import { Suspense } from "react";
+
 export default function GalleryPage() {
+  return (
+    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+      <GalleryContent />
+    </Suspense>
+  );
+}
+
+function GalleryContent() {
+  const searchParams = useSearchParams();
   const allProducts = getAllProducts();
-  const [activeTab, setActiveTab] = useState<"photos" | "videos">("photos");
+  const [activeTab, setActiveTab] = useState<"photos" | "videos">(searchParams.get("tab") === "videos" ? "videos" : "photos");
 
   // Dynamically compile all images from our products
   const galleryItems = useMemo(() => {
@@ -225,9 +238,8 @@ export default function GalleryPage() {
               <span className="ml-auto text-gray-400 text-[13px]">{MEDIA_POOL.length} videos total</span>
             </div>
 
-            {/* STRUCTURED editorial 4-column grid */}
-            {/* Each 'block' is: 1 wide video (col-span-4) then 4 verticals per row */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-5">
+            {/* UNIFORM GRID LAYOUT */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {shuffledMedia.map((media, idx) => {
                 const isVideo = media.type === 'video';
                 const isReel = media.type === 'reel';
@@ -238,9 +250,7 @@ export default function GalleryPage() {
                   <div
                     key={media.id + idx}
                     onClick={() => setActiveVideo(media)}
-                    className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-gray-900 shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] ${
-                      isVideo ? 'col-span-2 sm:col-span-3 md:col-span-4 aspect-video' : 'col-span-1 aspect-[9/16]'
-                    }`}
+                    className="group relative overflow-hidden cursor-pointer rounded-2xl bg-gray-900 shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] aspect-[4/5] w-full"
                   >
                     {/* Thumbnail */}
                     <img
@@ -260,26 +270,16 @@ export default function GalleryPage() {
 
                     {/* Center play button */}
                     <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                      <div className={`flex items-center justify-center rounded-full shadow-2xl border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50 ${
-                        isVideo ? 'w-16 h-16 bg-black/40 group-hover:bg-red-600' : 'w-12 h-12 bg-black/40 group-hover:bg-white/20'
-                      }`}>
-                        <Play className="text-white fill-white ml-1" style={{ width: isVideo ? '24px' : '16px', height: isVideo ? '24px' : '16px' }} />
+                      <div className="w-14 h-14 flex items-center justify-center rounded-full shadow-2xl border border-white/20 backdrop-blur-sm bg-black/40 group-hover:bg-red-600 transition-all duration-300 group-hover:scale-110 group-hover:border-white/50">
+                        <Play className="text-white fill-white w-6 h-6 ml-1" />
                       </div>
                     </div>
 
                     {/* Bottom info block */}
-                    <div className="absolute bottom-0 left-0 right-0 z-10 p-3 md:p-4">
-                      <p className={`text-white font-bold leading-tight drop-shadow-lg ${
-                        isVideo ? 'text-[15px] md:text-[17px] line-clamp-2' : 'text-[12px] line-clamp-3'
-                      }`}>
+                    <div className="absolute bottom-0 left-0 right-0 z-10 p-4">
+                      <p className="text-white font-bold leading-snug drop-shadow-lg text-[14px] md:text-[15px] line-clamp-3">
                         {media.title}
                       </p>
-                      {isVideo && (
-                        <div className="flex items-center gap-2 mt-1.5">
-                          <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
-                          <span className="text-white/60 text-[11px] font-medium">Click to watch</span>
-                        </div>
-                      )}
                     </div>
 
                     {/* Hover shimmer border */}

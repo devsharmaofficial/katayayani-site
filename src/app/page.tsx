@@ -23,6 +23,7 @@ const ScrollReveal = dynamic(() => import("@/components/motion/ScrollReveal")); 
 const InfiniteSlider = dynamic(() => import("@/components/ui/infinite-slider").then(m => m.InfiniteSlider));
 const Testimonials = dynamic(() => import("@/components/ui/testimonials-columns-1").then(m => m.Testimonials));
 const ProductCard = dynamic(() => import("@/components/ui/ProductCard"));
+const VideoShowcaseTeaser = dynamic(() => import("@/components/ui/video-showcase-teaser").then(m => m.VideoShowcaseTeaser));
 
 const indianStates = [
   "Maharashtra", "Andhra Pradesh", "Rajasthan", "Tamil Nadu", "Bihar", 
@@ -169,6 +170,13 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
         </section>
+
+        {/* ================================================================
+            VIDEO SHOWCASE TEASER
+            ================================================================ */}
+        <ScrollReveal>
+          <VideoShowcaseTeaser />
+        </ScrollReveal>
 
 
         {/* ================================================================

@@ -4,7 +4,9 @@ import { SITE_URL, getAbsoluteImageUrl } from "@/config/site";
 import { useState, useEffect, use, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
+import { AntiMetalButton } from "@/components/ui/anti-metal-button";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -19,9 +21,13 @@ import {
   FileText,
   Star,
   CheckCircle2,
-  ShieldCheck
+  ShieldCheck,
+  Settings,
+  Sparkles,
+  Wrench
 } from "lucide-react";
 
+import { reviewCount, averageRating } from "@/lib/testimonials";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
@@ -34,6 +40,7 @@ import {
   getRelatedProducts,
   getAllProducts,
 } from "@/lib/products";
+const VideoShowcaseTeaser = dynamic(() => import("@/components/ui/video-showcase-teaser").then(m => m.VideoShowcaseTeaser));
 
 
 
@@ -48,6 +55,7 @@ export default function ProductDetailPage({
 }
 
 function ProductDetailContent({ slug }: { slug: string }) {
+  const router = useRouter();
   const product = getProductBySlug(slug);
 
   const allMedia = useMemo(() => {
@@ -325,7 +333,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
             <div>
               <ScrollReveal>
                 {/* Main Image */}
-                <div className="group/carousel relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/50 mb-[16px]">
+                <div className="group/carousel relative aspect-square md:aspect-[4/3] max-h-[50vh] md:max-h-[55vh] w-full rounded-xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/50 mb-[16px]">
                   
                   {/* Carousel Container */}
                   <div 
@@ -347,7 +355,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                           src={allMedia[selectedImage].data.src ?? "/placeholder.jpg"}
                           alt={allMedia[selectedImage].data.alt ?? product.name}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           sizes="(max-width: 1024px) 100vw, 60vw"
                           priority
                           fetchPriority="high"
@@ -422,7 +430,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
                 {/* Thumbnail Strip */}
                 {allMedia.length > 1 && (
-                  <div className="flex gap-[8px] overflow-x-auto pb-2 scrollbar-none snap-x">
+                  <div className="flex gap-[8px] overflow-x-auto pb-2 scrollbar-none snap-x mb-6">
                     {allMedia.map((media, idx) => (
                       <button
                         key={idx}
@@ -467,6 +475,13 @@ function ProductDetailContent({ slug }: { slug: string }) {
                 )}
               </ScrollReveal>
 
+              <ScrollReveal delay={0.1}>
+                {/* Embedded smaller version for the product page */}
+                <div className="hidden md:block">
+                  <VideoShowcaseTeaser compact />
+                </div>
+              </ScrollReveal>
+
             </div>
 
             {/* Right: Product Info + Sticky Enquiry */}
@@ -478,14 +493,26 @@ function ProductDetailContent({ slug }: { slug: string }) {
                     {product.name}
                   </h1>
 
-                  {/* Trust Badge */}
-                  <div className="flex flex-wrap items-center gap-y-2 gap-x-3 mb-[24px]">
-                    <span className="text-[12px] text-emerald-700 bg-emerald-50 border border-emerald-100/50 px-2 py-0.5 rounded-md font-bold flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                      100% Original Katayayani Build
-                    </span>
+                  {/* Trust Badge & Rating */}
+                  <div className="flex flex-col gap-3 mb-[24px]">
+                    <div className="flex flex-wrap items-center gap-y-2 gap-x-3">
+                      <span className="text-[13px] md:text-[14px] text-[#012d1d] bg-gradient-to-r from-[#d6f54a] to-[#c5ea2c] shadow-[0_4px_12px_rgba(214,245,74,0.3)] border border-[#c5ea2c] px-3.5 py-1.5 rounded-full font-black flex items-center gap-2 tracking-wide">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        CASH ON DELIVERY AVAILABLE
+                      </span>
+                    </div>
+                    
+                    <Link href="/store-rating" className="flex items-center gap-2 group max-w-fit px-3 py-1.5 -ml-3 rounded-full hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className={`w-[18px] h-[18px] ${star <= Math.round(Number(averageRating)) ? "text-amber-400 fill-amber-400" : "text-gray-200"}`} />
+                        ))}
+                      </div>
+                      <span className="text-sm font-semibold text-gray-700 group-hover:text-primary transition-colors">{averageRating} ({reviewCount} reviews)</span>
+                      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
+                    </Link>
                   </div>
 
                   {/* Price Block */}
@@ -504,28 +531,28 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   </div>
 
                   {/* Compatible Models - Accordion */}
-                  <details className="mb-[24px] group bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 border border-primary/10 rounded-2xl overflow-hidden cursor-pointer shadow-sm transition-all">
-                    <summary className="p-5 flex items-center justify-between outline-none">
-                      <h3 className="text-label-md font-bold text-primary uppercase tracking-wider flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5" /> Perfect Fit Guarantee
-                      </h3>
-                      <ChevronDown className="w-5 h-5 text-primary transition-transform group-open:rotate-180" />
+                  <details className="mb-[24px] group bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer hover:border-gray-300 transition-colors">
+                    <summary className="px-4 py-3.5 flex items-center justify-between outline-none list-none [&::-webkit-details-marker]:hidden">
+                      <span className="text-[13px] font-bold text-gray-800 tracking-wide uppercase">
+                        Perfect Fit Guarantee
+                      </span>
+                      <ChevronDown className="w-4 h-4 text-gray-500 transition-transform duration-300 group-open:-rotate-180" />
                     </summary>
-                    <div className="px-5 pb-5">
-                      <p className="text-body-md text-on-surface font-semibold mb-[14px]">
-                        Engineered to fit <span className="text-primary font-black">EVERY SINGLE {product.brand.toUpperCase()}</span> tractor model seamlessly, with zero vibration.
+                    <div className="px-4 pb-4 pt-2 border-t border-gray-100/50">
+                      <p className="text-[14px] text-gray-600 leading-relaxed mb-4">
+                        Engineered to fit <strong className="text-gray-900 font-bold">EVERY SINGLE {product.brand.toUpperCase()}</strong> tractor model seamlessly, with zero vibration.
                       </p>
                       
-                      <div className="flex flex-wrap gap-[6px]">
+                      <div className="flex flex-wrap gap-2">
                         {product.compatibleModels.map((model) => (
                           <span
                             key={model}
-                            className="inline-flex items-center px-[10px] py-[4px] bg-white text-on-surface-variant hover:text-primary hover:border-primary/30 transition-colors rounded-lg text-label-sm border border-outline-variant/30 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
+                            className="inline-flex items-center px-3 py-1.5 bg-white text-gray-600 text-[13px] font-medium rounded-full border border-gray-200 shadow-sm"
                           >
                             {model}
                           </span>
                         ))}
-                        <span className="inline-flex items-center px-[10px] py-[4px] bg-primary/10 text-primary font-bold rounded-lg text-label-sm border border-primary/20">
+                        <span className="inline-flex items-center px-3 py-1.5 bg-[#f5f5f5] text-gray-800 text-[13px] font-bold rounded-full">
                           & All Other {product.brand} Models
                         </span>
                       </div>
@@ -533,26 +560,23 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   </details>
 
                   {/* CTA Buttons */}
-                  <div className="space-y-[12px] mb-[24px]">
+                  <div className="space-y-[14px] mb-[24px]">
+                    <AntiMetalButton 
+                      onClick={() => router.push(`/payment-options?product=${product.slug}`)}
+                      label="Book Now"
+                    />
                     <Link
                       href={`https://wa.me/919358273054?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative w-full h-12 p-1 ps-6 pe-14 flex items-center justify-center text-sm font-medium rounded-full group transition-all duration-500 hover:ps-14 hover:pe-6 overflow-hidden cursor-pointer bg-primary text-on-primary hover:bg-primary-container shadow-md"
+                      className="relative w-full h-12 p-1 ps-6 pe-14 flex items-center justify-center text-sm font-medium rounded-full group transition-all duration-500 hover:ps-14 hover:pe-6 overflow-hidden cursor-pointer bg-[#25D366] text-white hover:bg-[#128C7E] shadow-md"
                     >
                       <span className="relative z-10 transition-all duration-500 font-bold">
-                        Buy at Best Price
+                        Chat on WhatsApp for best price
                       </span>
-                      <div className="absolute right-1 w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                        <ArrowUpRight className="w-4 h-4 text-primary" />
+                      <div className="absolute right-1 w-10 h-10 bg-white text-[#128C7E] rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                        <ArrowUpRight className="w-4 h-4 text-[#128C7E]" />
                       </div>
-                    </Link>
-                    <Link
-                      href={`/payment-options?product=${product.slug}`}
-                      className="w-full flex items-center justify-center gap-2 bg-[#6528F7] text-white text-label-md px-[24px] py-[14px] rounded-lg hover:bg-[#501EC7] transition-colors font-bold shadow-md"
-                    >
-                      <ShieldCheck className="w-[18px] h-[18px]" />
-                      Buy Now
                     </Link>
                     <Link
                       href="tel:+919358273054"
@@ -606,121 +630,126 @@ function ProductDetailContent({ slug }: { slug: string }) {
               </div>
             </ScrollReveal>
 
-            {/* Detailed Product Information: 3-Column Specifications & Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {/* Premium Minimalist Bento Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-12">
               
-              {/* Column 1: Technical Specifications */}
-              <ScrollReveal direction="up" delay={0.1}>
-                <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 border border-outline-variant/30 shadow-[0_8px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] hover:border-primary/20 transition-all duration-300 flex flex-col h-full">
-                  <h3 className="text-title-md text-primary mb-6 flex items-center gap-3 font-bold">
-                    <div className="p-2 bg-primary/10 rounded-xl text-primary flex items-center justify-center">
-                      <FileText className="w-5 h-5" />
+              {/* Main Technical Specs (Spans 8 cols) */}
+              <ScrollReveal direction="up" delay={0.1} className="lg:col-span-8">
+                <div className="bg-[#f9fafb] rounded-[2rem] p-8 md:p-10 border border-gray-100 h-full">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center border border-gray-100">
+                      <Settings className="w-5 h-5 text-gray-700" />
                     </div>
-                    <span>Technical Specifications</span>
-                  </h3>
+                    <h3 className="text-2xl font-black text-gray-900 tracking-tight">Technical Specs</h3>
+                  </div>
                   
-                  <div className="flex-grow flex flex-col justify-center">
-                    <div className="divide-y divide-outline-variant/10 text-body-sm">
-                      <div className="py-3 flex justify-between items-center">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Brand</span>
-                        <span className="text-primary font-black text-right">{product.brand}</span>
-                      </div>
-                      <div className="py-3 flex justify-between items-center">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Type of Part</span>
-                        <span className="text-on-surface font-semibold text-right">Tractor Roof Fibre Canopy</span>
-                      </div>
-                      <div className="py-3 flex justify-between items-center">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Frame Material</span>
-                        <span className="text-on-surface font-semibold text-right">Mild Steel</span>
-                      </div>
-                      <div className="py-3 flex justify-between items-center">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Surface Finish</span>
-                        <span className="text-on-surface font-semibold text-right">Paint Coated</span>
-                      </div>
-                      <div className="py-3 flex justify-between items-center">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Country of Origin</span>
-                        <span className="text-on-surface font-semibold flex items-center gap-1.5 justify-end">
-                          <span>Made in India</span>
-                          <span>🇮🇳</span>
-                        </span>
-                      </div>
-                      <div className="py-3 flex justify-between items-center border-none">
-                        <span className="text-on-surface-variant font-bold uppercase tracking-wider text-[11px] opacity-85">Available For</span>
-                        <span className="text-primary font-black text-right">All {product.brand} Models</span>
-                      </div>
+                  <div className="flex flex-col">
+                    <div className="flex justify-between items-center py-4 border-b border-gray-200/60">
+                      <span className="text-[15px] font-semibold text-gray-500">Brand</span>
+                      <span className="text-[15px] font-bold text-gray-900">{product.brand}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-4 border-b border-gray-200/60">
+                      <span className="text-[15px] font-semibold text-gray-500">Type</span>
+                      <span className="text-[15px] font-bold text-gray-900">Tractor Roof Fibre Canopy</span>
+                    </div>
+                    <div className="flex justify-between items-center py-4 border-b border-gray-200/60">
+                      <span className="text-[15px] font-semibold text-gray-500">Material</span>
+                      <span className="text-[15px] font-bold text-gray-900">Heavy Duty Mild Steel & FRP</span>
+                    </div>
+                    <div className="flex justify-between items-center py-4 border-b border-gray-200/60">
+                      <span className="text-[15px] font-semibold text-gray-500">Finish</span>
+                      <span className="text-[15px] font-bold text-gray-900">Weather-Resistant Paint</span>
+                    </div>
+                    <div className="flex justify-between items-center py-4 border-b border-gray-200/60">
+                      <span className="text-[15px] font-semibold text-gray-500">Origin</span>
+                      <span className="text-[15px] font-bold text-gray-900 flex items-center gap-1.5">Made in India 🇮🇳</span>
+                    </div>
+                    <div className="flex justify-between items-center py-4">
+                      <span className="text-[15px] font-semibold text-gray-500">Compatibility</span>
+                      <span className="text-[15px] font-black text-[#012d1d]">All {product.brand} Models</span>
                     </div>
                   </div>
                 </div>
               </ScrollReveal>
 
-              {/* Column 2: Premium Features */}
-              <ScrollReveal direction="up" delay={0.2}>
-                <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 border border-outline-variant/30 shadow-[0_8px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] hover:border-primary/20 transition-all duration-300 flex flex-col h-full">
-                  <h3 className="text-title-md text-primary mb-6 flex items-center gap-3 font-bold">
-                    <div className="p-2 bg-secondary/10 rounded-xl text-secondary flex items-center justify-center">
-                      <Star className="w-5 h-5 fill-secondary/20" />
-                    </div>
-                    <span>Premium Accessories</span>
-                  </h3>
+              {/* Included Features (Spans 4 cols) */}
+              <ScrollReveal direction="up" delay={0.2} className="lg:col-span-4">
+                <div className="bg-[#012d1d] rounded-[2rem] p-8 md:p-10 h-full text-white relative overflow-hidden group/box hover:shadow-xl transition-all duration-500">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#d6f54a]/10 rounded-full blur-3xl group-hover/box:bg-[#d6f54a]/20 transition-all duration-500" />
                   
-                  <div className="flex-grow flex flex-col justify-center">
-                    <ul className="space-y-3.5">
-                      {[
-                        "ToolBox with Lock & Key",
-                        "LED PREMIUM Indicator Lights",
-                        "PROJECTOR LED Lights",
-                        "Heavy Duty Fan",
-                        "Side Mirrors",
-                        "HANDLES",
-                        "Music Speakers (Custom Fit)"
-                      ].map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-body-sm text-on-surface font-semibold group/item">
-                          <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover/item:scale-110" />
-                          <span className="group-hover/item:text-primary transition-colors">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex items-center gap-3 mb-8 relative z-10">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md">
+                      <Package className="w-5 h-5 text-[#d6f54a]" />
+                    </div>
+                    <h3 className="text-2xl font-black tracking-tight text-white">What's Included</h3>
                   </div>
+                  
+                  <ul className="space-y-4 relative z-10">
+                    {[
+                      "ToolBox with Lock & Key",
+                      "LED Projector Lights",
+                      "Heavy Duty Fan",
+                      "Side Mirrors & Handles",
+                      "Custom Music Speakers"
+                    ].map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-3 group/item cursor-default">
+                        <CheckCircle2 className="w-5 h-5 text-[#d6f54a]/70 group-hover/item:text-[#d6f54a] group-hover/item:scale-110 group-hover/item:drop-shadow-[0_0_8px_rgba(214,245,74,0.5)] transition-all duration-300 flex-shrink-0" />
+                        <span className="text-[15px] font-medium text-gray-300 group-hover/item:text-white transition-colors duration-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </ScrollReveal>
 
-              {/* Column 3: Quality & Build */}
-              <ScrollReveal direction="up" delay={0.3}>
-                <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 border border-outline-variant/30 shadow-[0_8px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.04)] hover:border-primary/20 transition-all duration-300 flex flex-col h-full">
-                  <h3 className="text-title-md text-primary mb-6 flex items-center gap-3 font-bold">
-                    <div className="p-2 bg-primary/10 rounded-xl text-primary flex items-center justify-center">
-                      <ShieldCheck className="w-5 h-5" />
+              {/* FRP Quality & Build (Spans 12 cols, wide format) */}
+              <ScrollReveal direction="up" delay={0.3} className="lg:col-span-12">
+                <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-sm">
+                  <div className="flex flex-col gap-3 mb-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center">
+                        <ShieldCheck className="w-5 h-5 text-[#012d1d]" />
+                      </div>
+                      <h3 className="text-2xl font-black text-gray-900 tracking-tight">Build Quality</h3>
                     </div>
-                    <span>FRP Quality & Build</span>
-                  </h3>
+                    <p className="text-gray-500 text-[15px] font-medium leading-relaxed max-w-2xl">
+                      Engineered for the toughest farming conditions. Our fiber canopies ensure zero vibration and maximum longevity.
+                    </p>
+                  </div>
                   
-                  <div className="flex-grow flex flex-col justify-center">
-                    <ul className="space-y-3.5">
-                      {[
-                        "Heavy Duty Support Pipe",
-                        "High-Strength Fibre Canopy",
-                        "Interlocking Bolts (No Vibration)",
-                        "Guaranteed Precision Fitting"
-                      ].map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-body-sm text-on-surface font-semibold group/item">
-                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover/item:scale-110" />
-                          <span className="group-hover/item:text-primary transition-colors">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div className="p-6 rounded-2xl bg-[#f9fafb] border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center mb-4">
+                        <Wrench className="w-5 h-5 text-gray-700" />
+                      </div>
+                      <span className="block text-[15px] font-bold text-gray-900 leading-snug">Heavy Duty<br/>Support Pipe</span>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-[#f9fafb] border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center mb-4">
+                        <ShieldCheck className="w-5 h-5 text-gray-700" />
+                      </div>
+                      <span className="block text-[15px] font-bold text-gray-900 leading-snug">High-Strength<br/>Fibre Canopy</span>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-[#f9fafb] border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center mb-4">
+                        <Settings className="w-5 h-5 text-gray-700" />
+                      </div>
+                      <span className="block text-[15px] font-bold text-gray-900 leading-snug">Interlocking Bolts<br/><span className="text-gray-500 font-semibold">(No Vibration)</span></span>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-[#f9fafb] border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center mb-4">
+                        <CheckCircle2 className="w-5 h-5 text-gray-700" />
+                      </div>
+                      <span className="block text-[15px] font-bold text-gray-900 leading-snug">Guaranteed<br/>Precision Fitting</span>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
-
             </div>
 
-            {/* Customization Accent Footer */}
-            <ScrollReveal direction="up" delay={0.4}>
-              <div className="bg-white/30 backdrop-blur-sm rounded-2xl p-4 border border-outline-variant/20 flex items-center justify-center gap-3 text-xs sm:text-sm text-on-surface-variant font-bold uppercase tracking-wider text-center mt-6">
-                <span className="flex h-2.5 w-2.5 rounded-full bg-secondary animate-pulse flex-shrink-0" />
-                <span>✨ 100% Customizable — Get custom colors, lighting options, and sound setup as per your needs</span>
-              </div>
-            </ScrollReveal>
+
           </div>
 
           {/* Related Products */}

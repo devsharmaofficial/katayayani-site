@@ -34,9 +34,9 @@ function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boo
 
 const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
-const PRICE = 13500;
-const GST = PRICE * 0.05;
-const TOTAL = PRICE + GST;
+const BASE_PRICE = 13500;
+const BASE_GST = BASE_PRICE * 0.05;
+const BASE_TOTAL = BASE_PRICE + BASE_GST;
 
 /* ──────────────────────────────────────────
    Step Progress Bar
@@ -87,7 +87,10 @@ function StepBar({ step }: { step: number }) {
 /* ──────────────────────────────────────────
    Order Summary Card
 ────────────────────────────────────────── */
-function OrderSummary({ product, color }: { product: Product; color: string }) {
+function OrderSummary({ product, color, bookingAmount }: { product: Product; color: string; bookingAmount: number | null }) {
+  const isBooking = bookingAmount !== null && !isNaN(bookingAmount);
+  const TOTAL = isBooking ? bookingAmount : BASE_TOTAL;
+
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
       <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/70">
@@ -123,22 +126,41 @@ function OrderSummary({ product, color }: { product: Product; color: string }) {
 
         {/* Price rows */}
         <div className="space-y-2.5 text-sm pb-4 mb-4 border-b border-gray-100">
-          <div className="flex justify-between text-gray-600">
-            <span>Subtotal</span>
-            <span className="font-medium text-gray-900">₹{PRICE.toLocaleString("en-IN")}</span>
-          </div>
-          <div className="flex justify-between text-gray-600 items-center">
-            <span>Shipping</span>
-            <span className="font-bold text-gray-500 text-[10px] sm:text-xs text-right leading-tight max-w-[140px]">May vary depending on carrier</span>
-          </div>
-          <div className="flex justify-between text-gray-600">
-            <span>GST (5%)</span>
-            <span className="font-medium text-gray-900">₹{GST.toLocaleString("en-IN")}</span>
-          </div>
+          {!isBooking ? (
+            <>
+              <div className="flex justify-between text-gray-600">
+                <span>Subtotal</span>
+                <span className="font-medium text-gray-900">₹{BASE_PRICE.toLocaleString("en-IN")}</span>
+              </div>
+              <div className="flex justify-between text-gray-600 items-center">
+                <span>Shipping</span>
+                <span className="font-bold text-gray-500 text-[10px] sm:text-xs text-right leading-tight max-w-[140px]">May vary depending on carrier</span>
+              </div>
+              <div className="flex justify-between text-gray-600">
+                <span>GST (5%)</span>
+                <span className="font-medium text-gray-900">₹{BASE_GST.toLocaleString("en-IN")}</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex justify-between text-gray-600">
+                <span>Total Product Price</span>
+                <span className="font-medium text-gray-900">₹{BASE_TOTAL.toLocaleString("en-IN")}</span>
+              </div>
+              <div className="flex justify-between text-gray-600">
+                <span>Advance Booking</span>
+                <span className="font-medium text-gray-900">₹{bookingAmount.toLocaleString("en-IN")}</span>
+              </div>
+              <div className="flex justify-between text-gray-600 items-center">
+                <span>Remaining Balance (COD)</span>
+                <span className="font-bold text-gray-900 text-sm">₹{(BASE_TOTAL - bookingAmount).toLocaleString("en-IN")}</span>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="flex justify-between items-center">
-          <span className="font-black text-gray-900 text-base">Total</span>
+          <span className="font-black text-gray-900 text-base">{isBooking ? "To Pay Now" : "Total"}</span>
           <span className="text-2xl font-black text-primary">₹{TOTAL.toLocaleString("en-IN")}</span>
         </div>
 
@@ -168,6 +190,10 @@ function CheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const slug = searchParams.get("product");
+  const bookingAmountParam = searchParams.get("bookingAmount");
+  const parsedBookingAmount = bookingAmountParam ? parseInt(bookingAmountParam) : null;
+  const isBooking = parsedBookingAmount !== null && !isNaN(parsedBookingAmount);
+  const TOTAL = isBooking ? parsedBookingAmount : BASE_TOTAL;
 
   const [product, setProduct] = useState<Product | null>(null);
   const [step, setStep] = useState(1);
@@ -553,19 +579,23 @@ function CheckoutContent() {
                         <div className={`overflow-hidden transition-all duration-300 ${isBreakdownOpen ? "max-h-48 mt-3 pt-3 border-t border-gray-200 opacity-100" : "max-h-0 opacity-0"}`}>
                           <div className="space-y-2 text-xs">
                             <div className="flex justify-between text-gray-600">
-                              <span>Subtotal</span>
-                              <span className="font-bold text-gray-900">₹{PRICE.toLocaleString('en-IN')}</span>
+                              <span>Total Product Price</span>
+                              <span className="font-bold text-gray-900">₹{BASE_TOTAL.toLocaleString('en-IN')}</span>
                             </div>
-                            <div className="flex justify-between text-gray-600 items-center">
-                              <span>Shipping</span>
-                              <span className="font-bold text-gray-500 text-[10px] text-right max-w-[120px] leading-tight">May vary depending on carrier</span>
-                            </div>
-                            <div className="flex justify-between text-gray-600 items-center">
-                              <span>GST (5%)</span>
-                              <span className="font-bold text-gray-900">₹{GST.toLocaleString('en-IN')}</span>
-                            </div>
+                            {isBooking && (
+                              <>
+                                <div className="flex justify-between text-gray-600">
+                                  <span>Advance Booking</span>
+                                  <span className="font-bold text-gray-900">₹{TOTAL.toLocaleString('en-IN')}</span>
+                                </div>
+                                <div className="flex justify-between text-gray-600 items-center">
+                                  <span>Remaining Balance (COD)</span>
+                                  <span className="font-bold text-gray-900 text-sm">₹{(BASE_TOTAL - TOTAL).toLocaleString('en-IN')}</span>
+                                </div>
+                              </>
+                            )}
                             <div className="flex justify-between font-bold text-sm text-gray-900 pt-2 border-t border-gray-100">
-                              <span>Grand Total</span>
+                              <span>{isBooking ? "To Pay Now" : "Grand Total"}</span>
                               <span className="text-primary">₹{TOTAL.toLocaleString('en-IN')}</span>
                             </div>
                           </div>
@@ -687,7 +717,7 @@ function CheckoutContent() {
 
           {/* ── RIGHT: Order Summary (sticky) ── */}
           <div className="lg:sticky lg:top-[108px] w-full min-w-0">
-            <OrderSummary product={product} color={formData.color} />
+            <OrderSummary product={product} color={formData.color} bookingAmount={isBooking ? TOTAL : null} />
 
             {/* Delivery timeline card */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mt-4 p-5">

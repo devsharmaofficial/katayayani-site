@@ -111,11 +111,11 @@ export default function Navbar() {
             </a>
             <a
               href="tel:+919358273054"
-              className="flex items-center gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-full bg-[#012d1d] text-white font-semibold text-[13px] lg:text-[14px] hover:bg-[#023e29] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow whitespace-nowrap"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#012d1d] text-white font-medium text-[14px] hover:bg-[#024a31] transition-colors duration-200 shadow-sm border border-transparent hover:border-[#024a31]/50"
             >
-              <Phone className="w-3.5 h-3.5 text-[#ffc641]" />
-              <span className="hidden xl:inline">Call Us: +91 9358273054</span>
-              <span className="inline xl:hidden">Call Us</span>
+              <Phone className="w-4 h-4" />
+              <span className="hidden sm:inline tracking-wide">+91 9358273054</span>
+              <span className="inline sm:hidden tracking-wide">Call Us</span>
             </a>
           </div>
 
@@ -177,11 +177,11 @@ export default function Navbar() {
             </a>
             <a
               href="tel:+919358273054"
+              className="flex items-center justify-center gap-2 px-4 py-3.5 mt-2 rounded-lg bg-[#012d1d] text-white font-medium shadow-sm hover:bg-[#024a31] transition-colors"
               onClick={() => setMobileOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#012d1d] text-white font-semibold text-[15px] hover:bg-[#023e29] transition-all duration-300 shadow-sm min-h-[48px]"
             >
-              <Phone className="w-4 h-4 text-[#ffc641]" />
-              <span>Call Us: +91 9358273054</span>
+              <Phone className="w-4 h-4" />
+              <span className="tracking-wide">Call Us: +91 9358273054</span>
             </a>
           </div>
         </nav>

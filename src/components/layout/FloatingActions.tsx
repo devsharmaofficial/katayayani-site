@@ -11,7 +11,7 @@ const PHONE_NUMBER = "+919358273054";
 
 export default function FloatingActions() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+    <div className="fixed bottom-28 right-6 z-[110] flex flex-col gap-3 items-end">
       {/* Call Button */}
       <div className="floating-action-enter" style={{ animationDelay: "1s" }}>
         <Link

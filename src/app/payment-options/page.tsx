@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ShieldCheck, CreditCard, Wallet, AlertCircle } from "lucide-react";
+import { ArrowLeft, ShieldCheck, CreditCard, Wallet, AlertCircle, BadgeCheck, Truck } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getProductBySlug } from "@/lib/products";
@@ -17,6 +17,7 @@ function PaymentOptionsContent() {
 
   const [product, setProduct] = useState<Product | null>(null);
   const [bookingAmount, setBookingAmount] = useState<number | 'full'>('full');
+  const [error, setError] = useState("");
   
   useEffect(() => {
     if (slug) {
@@ -34,6 +35,11 @@ function PaymentOptionsContent() {
   }
 
   const handleContinue = () => {
+    if (bookingAmount !== 'full' && (typeof bookingAmount !== 'number' || bookingAmount < 3000)) {
+      setError("Booking amount must be at least ₹3,000.");
+      return;
+    }
+    setError("");
     const url = `/checkout?product=${product.slug}${bookingAmount !== 'full' ? `&bookingAmount=${bookingAmount}` : ''}`;
     router.push(url);
   };
@@ -72,74 +78,110 @@ function PaymentOptionsContent() {
           </div>
         </div>
 
+        {/* Error Banner */}
+        {error && (
+          <div className="mb-4 flex items-center justify-center gap-2 bg-red-50 text-red-600 py-3 px-4 rounded-xl border border-red-100 animate-in fade-in zoom-in-95">
+            <AlertCircle className="w-5 h-5 flex-shrink-0" />
+            <p className="text-sm font-bold">{error}</p>
+          </div>
+        )}
+
         {/* Payment Options */}
-        <div className="space-y-4">
+        <div className="space-y-5">
           
           {/* Option: Full Payment */}
           <div 
             onClick={() => setBookingAmount('full')}
-            className={`cursor-pointer bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${bookingAmount === 'full' ? 'border-primary ring-2 ring-primary/20 shadow-md scale-[1.02]' : 'border-gray-200 hover:border-gray-300 shadow-sm'}`}
+            className={`group cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 border-2 ${bookingAmount === 'full' ? 'bg-white border-primary shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-[1.02] ring-4 ring-primary/10' : 'bg-gray-50/50 border-gray-200 hover:bg-white hover:border-gray-300'}`}
           >
-            <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${bookingAmount === 'full' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>
-                <ShieldCheck className="w-6 h-6" />
+            <div className="flex items-center gap-4 sm:gap-5">
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${bookingAmount === 'full' ? 'bg-primary text-white scale-110' : 'bg-white text-gray-400 border border-gray-200 group-hover:scale-105'}`}>
+                <CreditCard className="w-7 h-7" strokeWidth={2.5} />
               </div>
               <div className="flex-1">
-                <h3 className={`text-lg font-black ${bookingAmount === 'full' ? 'text-gray-900' : 'text-gray-700'}`}>Pay Full Amount</h3>
-                <p className="text-sm text-gray-500 font-medium mt-0.5">Pay ₹13,500 + GST now. No hidden charges.</p>
+                <h3 
+                  className={`text-xl sm:text-2xl font-black mb-1 tracking-tight ${bookingAmount === 'full' ? 'text-gray-900' : 'text-gray-600'}`}
+                  style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
+                >
+                  Pay Full Amount
+                </h3>
+                <p className="text-sm text-gray-500 font-medium">Pay <span className="font-bold text-gray-700">₹13,500</span> now. No hidden charges.</p>
               </div>
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${bookingAmount === 'full' ? 'border-primary' : 'border-gray-300'}`}>
-                {bookingAmount === 'full' && <div className="w-3 h-3 bg-primary rounded-full" />}
+              <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 flex items-center justify-center transition-all ${bookingAmount === 'full' ? 'border-primary bg-primary' : 'border-gray-300 bg-white'}`}>
+                {bookingAmount === 'full' && <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-in zoom-in" />}
               </div>
             </div>
           </div>
 
-          {/* Option: Booking Amount ₹5000 */}
+          {/* Option: Custom Booking Amount */}
           <div 
-            onClick={() => setBookingAmount(5000)}
-            className={`cursor-pointer bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${bookingAmount === 5000 ? 'border-primary ring-2 ring-primary/20 shadow-md scale-[1.02]' : 'border-gray-200 hover:border-gray-300 shadow-sm'}`}
+            onClick={() => {
+              if (bookingAmount === 'full') setBookingAmount(5000);
+            }}
+            className={`group cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 border-2 ${bookingAmount !== 'full' ? 'bg-white border-primary shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-[1.02] ring-4 ring-primary/10' : 'bg-gray-50/50 border-gray-200 hover:bg-white hover:border-gray-300'}`}
           >
-            <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${bookingAmount === 5000 ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>
-                <CreditCard className="w-6 h-6" />
+            <div className="flex items-center gap-4 sm:gap-5">
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${bookingAmount !== 'full' ? 'bg-primary text-white scale-110' : 'bg-white text-gray-400 border border-gray-200 group-hover:scale-105'}`}>
+                <Truck className="w-7 h-7" strokeWidth={2.5} />
               </div>
               <div className="flex-1">
-                <h3 className={`text-lg font-black ${bookingAmount === 5000 ? 'text-gray-900' : 'text-gray-700'}`}>Pay ₹5,000 Booking</h3>
-                <p className="text-sm text-gray-500 font-medium mt-0.5">Pay ₹5,000 now. Rest Cash on Delivery.</p>
+                <h3 
+                  className={`text-xl sm:text-2xl font-black mb-1 tracking-tight ${bookingAmount !== 'full' ? 'text-gray-900' : 'text-gray-600'}`}
+                  style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
+                >
+                  Cash on Delivery
+                </h3>
+                {bookingAmount !== 'full' && bookingAmount ? (
+                  <p className="text-sm font-bold text-primary bg-primary/5 inline-block px-2 py-0.5 rounded-md mt-0.5">
+                    ₹{bookingAmount} booking charges + Cash on delivery
+                  </p>
+                ) : (
+                  <p className="text-sm text-gray-500 font-medium mt-0.5">Pay a small amount now, rest on delivery</p>
+                )}
               </div>
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${bookingAmount === 5000 ? 'border-primary' : 'border-gray-300'}`}>
-                {bookingAmount === 5000 && <div className="w-3 h-3 bg-primary rounded-full" />}
+              <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 flex items-center justify-center transition-all ${bookingAmount !== 'full' ? 'border-primary bg-primary' : 'border-gray-300 bg-white'}`}>
+                {bookingAmount !== 'full' && <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-in zoom-in" />}
               </div>
             </div>
-          </div>
 
-          {/* Option: Booking Amount ₹3000 */}
-          <div 
-            onClick={() => setBookingAmount(3000)}
-            className={`cursor-pointer bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${bookingAmount === 3000 ? 'border-primary ring-2 ring-primary/20 shadow-md scale-[1.02]' : 'border-gray-200 hover:border-gray-300 shadow-sm'}`}
-          >
-            <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${bookingAmount === 3000 ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>
-                <Wallet className="w-6 h-6" />
+            {bookingAmount !== 'full' && (
+              <div className="mt-8 pt-8 border-t border-gray-100 animate-in fade-in slide-in-from-top-4 flex flex-col items-center text-center">
+                
+                <p className="text-xs sm:text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-4">How much would you like to pay?</p>
+                
+                <div className="relative w-full max-w-[280px] mx-auto mb-8 group/input">
+                  <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-300 font-black text-3xl transition-colors group-focus-within/input:text-primary">₹</span>
+                  <input
+                    type="number"
+                    value={bookingAmount}
+                    onChange={(e) => {
+                      const val = parseInt(e.target.value);
+                      if (!isNaN(val)) setBookingAmount(val);
+                      else setBookingAmount('' as any);
+                    }}
+                    className="w-full bg-gray-50 border-2 border-gray-200 rounded-3xl py-5 pl-16 pr-6 text-gray-900 font-black text-4xl sm:text-5xl text-center focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all shadow-inner"
+                    placeholder="0"
+                  />
+                </div>
+                
+                <div className="flex gap-3 sm:gap-4 justify-center w-full">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setBookingAmount(3000); }}
+                    className={`flex-1 max-w-[140px] py-4 rounded-2xl text-xl font-black transition-all duration-300 border-2 shadow-sm ${bookingAmount === 3000 ? 'bg-primary text-white border-primary shadow-primary/20 scale-105' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-800 hover:bg-gray-50 hover:scale-105'}`}
+                  >
+                    ₹3,000
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setBookingAmount(5000); }}
+                    className={`flex-1 max-w-[140px] py-4 rounded-2xl text-xl font-black transition-all duration-300 border-2 shadow-sm ${bookingAmount === 5000 ? 'bg-primary text-white border-primary shadow-primary/20 scale-105' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-800 hover:bg-gray-50 hover:scale-105'}`}
+                  >
+                    ₹5,000
+                  </button>
+                </div>
               </div>
-              <div className="flex-1">
-                <h3 className={`text-lg font-black ${bookingAmount === 3000 ? 'text-gray-900' : 'text-gray-700'}`}>Pay ₹3,000 Booking</h3>
-                <p className="text-sm text-gray-500 font-medium mt-0.5">Pay ₹3,000 now. Rest Cash on Delivery.</p>
-              </div>
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${bookingAmount === 3000 ? 'border-primary' : 'border-gray-300'}`}>
-                {bookingAmount === 3000 && <div className="w-3 h-3 bg-primary rounded-full" />}
-              </div>
-            </div>
+            )}
           </div>
         </div>
-
-        {/* Warning Banner for COD */}
-        {bookingAmount !== 'full' && (
-          <div className="mt-6 flex items-start gap-3 bg-[#fff7ed] border border-[#ffedd5] text-[#9a3412] rounded-xl px-5 py-4">
-            <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-            <p className="text-sm font-semibold">By choosing a booking amount, you agree to pay the remaining balance in cash upon delivery.</p>
-          </div>
-        )}
 
         {/* Continue Button */}
         <div className="mt-8">
