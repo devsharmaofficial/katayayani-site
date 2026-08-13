@@ -563,7 +563,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   <div className="space-y-[14px] mb-[24px]">
                     <AntiMetalButton 
                       onClick={() => router.push(`/payment-options?product=${product.slug}`)}
-                      label="Book Now"
+                      label="Buy Now"
                     />
                     <Link
                       href={`https://wa.me/919358273054?text=${whatsappMessage}`}
