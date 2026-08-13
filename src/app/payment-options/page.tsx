@@ -87,89 +87,94 @@ function PaymentOptionsContent() {
           </Link>
         </div>
 
-        {/* Product Summary */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 border border-gray-200">
-              <Image
-                src={product.images[0]?.src ?? "/placeholder.jpg"}
-                alt={product.name}
-                fill
-                className="object-cover"
-                sizes="80px"
-              />
-            </div>
-            <div>
-              <p className="text-xs font-black text-primary uppercase tracking-widest mb-1">{product.brand}</p>
-              <p className="font-bold text-gray-900 text-sm leading-snug pr-4">{product.name}</p>
-              <p className="text-gray-500 font-bold text-sm mt-1">₹{unitPrice.toLocaleString('en-IN')} <span className="font-medium text-xs">/ each</span></p>
-            </div>
-          </div>
-
-          {/* Quantity Selector */}
-          <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 shadow-inner flex-shrink-0 self-end sm:self-auto">
-            <button
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95 disabled:opacity-50 disabled:hover:bg-transparent disabled:active:scale-100"
-              disabled={quantity <= 1}
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="w-10 text-center font-black text-gray-900 text-[15px] tabular-nums select-none">
-              {quantity}
-            </span>
-            <button
-              onClick={() => setQuantity(quantity + 1)}
-              className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Customization Section */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-6">
-          <h2 className="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Customize Your Build</h2>
-          <div className="space-y-3">
-            {[
-              { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, price: addonPrices.fan, max: 2 },
-              { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.light, max: 4 },
-              { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, price: addonPrices.speakers, max: 1 },
-              { id: 'toolbox', name: 'ToolBox w/ Lock', icon: <Package className="w-4 h-4" />, price: addonPrices.toolbox, max: 1 },
-              { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, price: addonPrices.mirrors, max: 1 },
-            ].map((addon) => (
-              <div key={addon.id} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors bg-gray-50/30">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-700 border border-gray-100">
-                    {addon.icon}
-                  </div>
-                  <div>
-                    <p className="text-[14px] font-bold text-gray-900 leading-none">{addon.name}</p>
-                    <p className="text-[13px] text-primary font-bold mt-1">+₹{addon.price}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-white border border-gray-200 rounded-full p-1 shadow-sm">
-                  <button
-                    onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.max(0, prev[addon.id as keyof typeof prev] - 1) }))}
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:shadow-inner transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
-                    disabled={addons[addon.id as keyof typeof addons] === 0}
-                  >
-                    <Minus className="w-3.5 h-3.5" />
-                  </button>
-                  <span className="w-8 text-center font-black text-gray-900 text-sm">
-                    {addons[addon.id as keyof typeof addons]}
-                  </span>
-                  <button
-                    onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.min(addon.max, prev[addon.id as keyof typeof prev] + 1) }))}
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:shadow-inner transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
-                    disabled={addons[addon.id as keyof typeof addons] >= addon.max}
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+        {/* Unified Order Configuration Box */}
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 mb-8 overflow-hidden">
+          {/* Product Summary */}
+          <div className="p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 border border-gray-200">
+                <Image
+                  src={product.images[0]?.src ?? "/placeholder.jpg"}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
               </div>
-            ))}
+              <div>
+                <p className="text-xs font-black text-primary uppercase tracking-widest mb-1">{product.brand}</p>
+                <p className="font-bold text-gray-900 text-sm leading-snug pr-4">{product.name}</p>
+                <p className="text-gray-500 font-bold text-sm mt-1">₹{unitPrice.toLocaleString('en-IN')} <span className="font-medium text-xs">/ each</span></p>
+              </div>
+            </div>
+
+            {/* Quantity Selector */}
+            <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 shadow-inner flex-shrink-0 self-end sm:self-auto">
+              <button
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95 disabled:opacity-50 disabled:hover:bg-transparent disabled:active:scale-100"
+                disabled={quantity <= 1}
+              >
+                <Minus className="w-4 h-4" />
+              </button>
+              <span className="w-10 text-center font-black text-gray-900 text-[15px] tabular-nums select-none">
+                {quantity}
+              </span>
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95"
+              >
+                <Plus className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="h-px w-full bg-gray-100" />
+
+          {/* Customization Section */}
+          <div className="p-5 sm:p-6 bg-gray-50/30">
+            <h2 className="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Customize Your Build</h2>
+            <div className="space-y-3">
+              {[
+                { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, price: addonPrices.fan, max: 2 },
+                { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.light, max: 4 },
+                { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, price: addonPrices.speakers, max: 1 },
+                { id: 'toolbox', name: 'ToolBox w/ Lock', icon: <Package className="w-4 h-4" />, price: addonPrices.toolbox, max: 1 },
+                { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, price: addonPrices.mirrors, max: 1 },
+              ].map((addon) => (
+                <div key={addon.id} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-700 border border-gray-100">
+                      {addon.icon}
+                    </div>
+                    <div>
+                      <p className="text-[14px] font-bold text-gray-900 leading-none">{addon.name}</p>
+                      <p className="text-[13px] text-primary font-bold mt-1">+₹{addon.price}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 shadow-inner">
+                    <button
+                      onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.max(0, prev[addon.id as keyof typeof prev] - 1) }))}
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
+                      disabled={addons[addon.id as keyof typeof addons] === 0}
+                    >
+                      <Minus className="w-3.5 h-3.5" />
+                    </button>
+                    <span className="w-8 text-center font-black text-gray-900 text-sm">
+                      {addons[addon.id as keyof typeof addons]}
+                    </span>
+                    <button
+                      onClick={() => setAddons(prev => ({ ...prev, [addon.id]: Math.min(addon.max, prev[addon.id as keyof typeof prev] + 1) }))}
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:shadow-sm transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-transparent"
+                      disabled={addons[addon.id as keyof typeof addons] >= addon.max}
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
