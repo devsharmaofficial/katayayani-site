@@ -22,7 +22,6 @@ function PaymentOptionsContent() {
   const [addons, setAddons] = useState({
     fan: 1,
     light: 1,
-    speakers: 1,
     mirrors: 1,
     handles: 1,
     siren: 1,
