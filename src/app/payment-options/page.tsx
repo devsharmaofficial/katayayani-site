@@ -16,7 +16,7 @@ function PaymentOptionsContent() {
   const slug = searchParams.get("product");
 
   const [product, setProduct] = useState<Product | null>(null);
-  const [bookingAmount, setBookingAmount] = useState<number | 'full'>('full');
+  const [bookingAmount, setBookingAmount] = useState<number | 'full' | ''>('full');
   const [error, setError] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [addons, setAddons] = useState({
@@ -61,6 +61,7 @@ function PaymentOptionsContent() {
   useEffect(() => {
     if (slug) {
       const p = getProductBySlug(slug);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (p) setProduct(p);
     }
   }, [slug]);
@@ -274,7 +275,7 @@ function PaymentOptionsContent() {
                     onChange={(e) => {
                       const val = parseInt(e.target.value);
                       if (!isNaN(val)) setBookingAmount(val);
-                      else setBookingAmount('' as any);
+                      else setBookingAmount('');
                     }}
                     className="w-full bg-gray-50 border-2 border-gray-200 rounded-3xl py-5 pl-16 pr-6 text-gray-900 font-black text-4xl sm:text-5xl text-center focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all shadow-inner"
                     placeholder="0"
