@@ -31,30 +31,9 @@ function PaymentOptionsContent() {
     speakers: 0
   });
 
-  const addonPrices = {
-    fan: 800,
-    light: 600,
-    speakers: 2500,
-    mirrors: 500,
-    handles: 200,
-    siren: 400,
-    upipe: 300,
-    tailLights: 500,
-    drl: 400
-  };
 
-  const basePrice = 7300; // Base canopy + Toolbox (13500 - 6200 for accessories)
-  
-  const unitPrice = basePrice + 
-    (addons.fan * addonPrices.fan) + 
-    (addons.light * addonPrices.light) + 
-    (addons.speakers * addonPrices.speakers) + 
-    (addons.mirrors * addonPrices.mirrors) + 
-    (addons.handles * addonPrices.handles) + 
-    (addons.siren * addonPrices.siren) + 
-    (addons.upipe * addonPrices.upipe) + 
-    (addons.tailLights * addonPrices.tailLights) + 
-    (addons.drl * addonPrices.drl);
+
+  const unitPrice = 13500;
 
   const totalPrice = unitPrice * quantity;
   
