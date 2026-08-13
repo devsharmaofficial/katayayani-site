@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ShieldCheck, CreditCard, Wallet, AlertCircle, BadgeCheck, Truck } from "lucide-react";
+import { ArrowLeft, ShieldCheck, CreditCard, Wallet, AlertCircle, BadgeCheck, Truck, Plus, Minus } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getProductBySlug } from "@/lib/products";
@@ -18,6 +18,9 @@ function PaymentOptionsContent() {
   const [product, setProduct] = useState<Product | null>(null);
   const [bookingAmount, setBookingAmount] = useState<number | 'full'>('full');
   const [error, setError] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const unitPrice = 13500;
+  const totalPrice = unitPrice * quantity;
   
   useEffect(() => {
     if (slug) {
@@ -40,7 +43,7 @@ function PaymentOptionsContent() {
       return;
     }
     setError("");
-    const url = `/checkout?product=${product.slug}${bookingAmount !== 'full' ? `&bookingAmount=${bookingAmount}` : ''}`;
+    const url = `/checkout?product=${product.slug}&qty=${quantity}${bookingAmount !== 'full' ? `&bookingAmount=${bookingAmount * quantity}` : ''}`;
     router.push(url);
   };
 
@@ -61,20 +64,42 @@ function PaymentOptionsContent() {
         </div>
 
         {/* Product Summary */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-6 flex items-center gap-4">
-          <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 border border-gray-200">
-            <Image
-              src={product.images[0]?.src ?? "/placeholder.jpg"}
-              alt={product.name}
-              fill
-              className="object-cover"
-              sizes="80px"
-            />
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 border border-gray-200">
+              <Image
+                src={product.images[0]?.src ?? "/placeholder.jpg"}
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="80px"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-black text-primary uppercase tracking-widest mb-1">{product.brand}</p>
+              <p className="font-bold text-gray-900 text-sm leading-snug pr-4">{product.name}</p>
+              <p className="text-gray-500 font-bold text-sm mt-1">₹{unitPrice.toLocaleString('en-IN')} <span className="font-medium text-xs">/ each</span></p>
+            </div>
           </div>
-          <div>
-            <p className="text-xs font-black text-primary uppercase tracking-widest mb-1">{product.brand}</p>
-            <p className="font-bold text-gray-900 text-sm leading-snug">{product.name}</p>
-            <p className="text-gray-500 font-bold text-sm mt-1">₹13,500</p>
+
+          {/* Quantity Selector */}
+          <div className="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 shadow-inner flex-shrink-0 self-end sm:self-auto">
+            <button
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95 disabled:opacity-50 disabled:hover:bg-transparent disabled:active:scale-100"
+              disabled={quantity <= 1}
+            >
+              <Minus className="w-4 h-4" />
+            </button>
+            <span className="w-10 text-center font-black text-gray-900 text-[15px] tabular-nums select-none">
+              {quantity}
+            </span>
+            <button
+              onClick={() => setQuantity(quantity + 1)}
+              className="w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:bg-white hover:text-gray-900 hover:shadow-sm transition-all active:scale-95"
+            >
+              <Plus className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
@@ -105,7 +130,7 @@ function PaymentOptionsContent() {
                 >
                   Pay Full Amount
                 </h3>
-                <p className="text-sm text-gray-500 font-medium">Pay <span className="font-bold text-gray-700">₹13,500</span> now. No hidden charges.</p>
+                <p className="text-sm text-gray-500 font-medium">Pay <span className="font-bold text-gray-700">₹{totalPrice.toLocaleString('en-IN')}</span> now. No hidden charges.</p>
               </div>
               <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 flex items-center justify-center transition-all ${bookingAmount === 'full' ? 'border-primary bg-primary' : 'border-gray-300 bg-white'}`}>
                 {bookingAmount === 'full' && <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-in zoom-in" />}
@@ -133,7 +158,7 @@ function PaymentOptionsContent() {
                 </h3>
                 {bookingAmount !== 'full' && bookingAmount ? (
                   <p className="text-sm font-bold text-primary bg-primary/5 inline-block px-2 py-0.5 rounded-md mt-0.5">
-                    ₹{bookingAmount} booking charges + Cash on delivery
+                    ₹{(bookingAmount * quantity).toLocaleString('en-IN')} booking charges + Cash on delivery
                   </p>
                 ) : (
                   <p className="text-sm text-gray-500 font-medium mt-0.5">Pay a small amount now, rest on delivery</p>
