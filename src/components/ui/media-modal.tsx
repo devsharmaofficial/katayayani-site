@@ -26,6 +26,7 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -50,6 +51,7 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
 
   useEffect(() => {
     if (media) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPrevMedia(media);
     }
   }, [media]);

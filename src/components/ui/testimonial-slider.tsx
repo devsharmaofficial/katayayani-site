@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Quote, Star } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
@@ -78,14 +79,17 @@ export function TestimonialCard({ review }: { review: typeof reviews[0] }) {
         ))}
       </div>
       <p className="text-[15px] mt-4 text-on-surface-variant font-medium min-h-[80px]">
-        "{review.text}"
+        &quot;{review.text}&quot;
       </p>
       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/5 w-full">
-        <img
-          className="h-10 w-10 rounded-full object-cover ring-2 ring-background"
-          src={review.avatar}
-          alt={review.name}
-        />
+        <div className="relative h-10 w-10 shrink-0">
+          <Image
+            className="rounded-full object-cover ring-2 ring-background"
+            src={review.avatar}
+            alt={review.name}
+            fill
+          />
+        </div>
         <div className="flex flex-col">
           <h2 className="text-[15px] text-primary font-bold leading-tight">
             {review.name}

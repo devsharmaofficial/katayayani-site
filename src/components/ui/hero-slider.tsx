@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Play } from "lucide-react";
 import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 
@@ -37,51 +38,24 @@ const SHORTS_POOL: MediaItem[] = [
 // Combine all vertical media for the side slots
 const VERTICAL_POOL = [...REELS_POOL, ...SHORTS_POOL];
 
-function shuffleArray<T>(array: T[]): T[] {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
+
 
 export function HeroSlider() {
   const [activeMedia, setActiveMedia] = useState<MediaItem | null>(null);
   
-  // State for the randomly selected grid items
-  const [centerVideo, setCenterVideo] = useState<MediaItem | null>(null);
-  const [leftTop, setLeftTop] = useState<MediaItem | null>(null);
-  const [leftBottom, setLeftBottom] = useState<MediaItem | null>(null);
-  const [rightTop, setRightTop] = useState<MediaItem | null>(null);
-  const [rightBottom, setRightBottom] = useState<MediaItem | null>(null);
-
-  // Pick random media on mount to avoid hydration mismatch
-  useEffect(() => {
-    // Pick 1 random horizontal video
-    const randomVideo = shuffleArray(VIDEO_POOL)[0];
-    
-    // Pick 4 random vertical medias (shorts or reels)
-    const randomVerticals = shuffleArray(VERTICAL_POOL).slice(0, 4);
-    
-    setCenterVideo(randomVideo);
-    setLeftTop(randomVerticals[0]);
-    setLeftBottom(randomVerticals[1]);
-    setRightTop(randomVerticals[2]);
-    setRightBottom(randomVerticals[3]);
-  }, []);
+  // Pick fixed initial media so LCP image renders immediately on server
+  // and matches on client to avoid hydration mismatch.
+  const [centerVideo, setCenterVideo] = useState<MediaItem>(VIDEO_POOL[1]);
+  const [leftTop, setLeftTop] = useState<MediaItem>(VERTICAL_POOL[0]);
+  const [leftBottom, setLeftBottom] = useState<MediaItem>(VERTICAL_POOL[1]);
+  const [rightTop, setRightTop] = useState<MediaItem>(VERTICAL_POOL[2]);
+  const [rightBottom, setRightBottom] = useState<MediaItem>(VERTICAL_POOL[3]);
 
   const handleMediaClick = (media: MediaItem) => {
     setActiveMedia(media);
   };
 
-  const renderGridCard = (media: MediaItem | null, isVertical: boolean) => {
-    if (!media) {
-      // Skeleton loader placeholder
-      return (
-        <div className={`w-full h-full bg-gray-100 rounded-3xl animate-pulse`}></div>
-      );
-    }
+  const renderGridCard = (media: MediaItem, isVertical: boolean) => {
 
     return (
       <div 
@@ -186,7 +160,7 @@ export function HeroSlider() {
 
       {/* Action Buttons Below the entire grid */}
       <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 mb-2">
-        <a
+        <Link
           href="/products"
           className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#0a2e1f] hover:bg-[#061d13] text-white text-[15px] font-bold transition-all shadow-md hover:shadow-lg active:scale-95 group"
         >
@@ -197,7 +171,7 @@ export function HeroSlider() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
-        </a>
+        </Link>
         <a
           href="/enquiry"
           className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white border border-gray-200 text-[#0a2e1f] text-[15px] font-bold hover:bg-gray-50 transition-all shadow-sm hover:shadow active:scale-95"
