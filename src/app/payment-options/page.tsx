@@ -191,7 +191,6 @@ function PaymentOptionsContent() {
               ))}
             </div>
           </div>
-          </div>
         </div>
 
         {/* RIGHT COLUMN: Payment Options */}
@@ -309,6 +308,7 @@ function PaymentOptionsContent() {
             >
               Proceed to Checkout
             </button>
+          </div>
           </div>
         </div>
       </div>
