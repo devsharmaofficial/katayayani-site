@@ -689,8 +689,13 @@ function ProductDetailContent({ slug }: { slug: string }) {
                       "ToolBox with Lock & Key",
                       "LED Projector Lights",
                       "Heavy Duty Fan",
-                      "Side Mirrors & Handles",
-                      "Custom Music Speakers"
+                      "Side Mirrors",
+                      "Handles",
+                      "Custom Music Speakers",
+                      "Siren Light",
+                      "U Pipe",
+                      "Tail Lights",
+                      "DRL Lights"
                     ].map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 group/item cursor-default">
                         <CheckCircle2 className="w-5 h-5 text-[#d6f54a]/70 group-hover/item:text-[#d6f54a] group-hover/item:scale-110 group-hover/item:drop-shadow-[0_0_8px_rgba(214,245,74,0.5)] transition-all duration-300 flex-shrink-0" />

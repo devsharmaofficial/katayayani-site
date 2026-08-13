@@ -23,26 +23,38 @@ function PaymentOptionsContent() {
     fan: 1,
     light: 1,
     speakers: 1,
-    toolbox: 1,
-    mirrors: 1
+    mirrors: 1,
+    handles: 1,
+    siren: 1,
+    upipe: 1,
+    tailLights: 1,
+    drl: 1
   });
 
   const addonPrices = {
     fan: 800,
     light: 600,
     speakers: 2500,
-    toolbox: 1200,
-    mirrors: 500
+    mirrors: 500,
+    handles: 200,
+    siren: 400,
+    upipe: 300,
+    tailLights: 500,
+    drl: 400
   };
 
-  const basePrice = 7900; // Base canopy price (13500 - 5600 for accessories)
+  const basePrice = 7300; // Base canopy + Toolbox (13500 - 6200 for accessories)
   
   const unitPrice = basePrice + 
     (addons.fan * addonPrices.fan) + 
     (addons.light * addonPrices.light) + 
     (addons.speakers * addonPrices.speakers) + 
-    (addons.toolbox * addonPrices.toolbox) + 
-    (addons.mirrors * addonPrices.mirrors);
+    (addons.mirrors * addonPrices.mirrors) + 
+    (addons.handles * addonPrices.handles) + 
+    (addons.siren * addonPrices.siren) + 
+    (addons.upipe * addonPrices.upipe) + 
+    (addons.tailLights * addonPrices.tailLights) + 
+    (addons.drl * addonPrices.drl);
 
   const totalPrice = unitPrice * quantity;
   
@@ -139,8 +151,12 @@ function PaymentOptionsContent() {
                 { id: 'fan', name: 'Heavy Duty Fan', icon: <Fan className="w-4 h-4" />, price: addonPrices.fan, max: 2 },
                 { id: 'light', name: 'LED Projector Light', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.light, max: 4 },
                 { id: 'speakers', name: 'Music Speakers', icon: <Speaker className="w-4 h-4" />, price: addonPrices.speakers, max: 1 },
-                { id: 'toolbox', name: 'ToolBox w/ Lock', icon: <Package className="w-4 h-4" />, price: addonPrices.toolbox, max: 1 },
                 { id: 'mirrors', name: 'Side Mirrors', icon: <Wrench className="w-4 h-4" />, price: addonPrices.mirrors, max: 1 },
+                { id: 'handles', name: 'Handles', icon: <Wrench className="w-4 h-4" />, price: addonPrices.handles, max: 1 },
+                { id: 'siren', name: 'Siren Light', icon: <AlertCircle className="w-4 h-4" />, price: addonPrices.siren, max: 1 },
+                { id: 'upipe', name: 'U Pipe', icon: <Wrench className="w-4 h-4" />, price: addonPrices.upipe, max: 1 },
+                { id: 'tailLights', name: 'Tail Lights', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.tailLights, max: 2 },
+                { id: 'drl', name: 'DRL Lights', icon: <Lightbulb className="w-4 h-4" />, price: addonPrices.drl, max: 2 },
               ].map((addon) => (
                 <div key={addon.id} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-white hover:border-gray-200 transition-colors shadow-sm">
                   <div className="flex items-center gap-3">
