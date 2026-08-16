@@ -122,11 +122,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
   category: "Agricultural Equipment, Tractor Parts, Tractor Fiber Hoods",
 };
 
