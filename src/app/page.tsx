@@ -24,6 +24,7 @@ const InfiniteSlider = dynamic(() => import("@/components/ui/infinite-slider").t
 const Testimonials = dynamic(() => import("@/components/ui/testimonials-columns-1").then(m => m.Testimonials));
 const ProductCard = dynamic(() => import("@/components/ui/ProductCard"));
 const VideoShowcaseTeaser = dynamic(() => import("@/components/ui/video-showcase-teaser").then(m => m.VideoShowcaseTeaser));
+const LeadCapturePopup = dynamic(() => import("@/components/ui/LeadCapturePopup"));
 
 const indianStates = [
   "Maharashtra", "Andhra Pradesh", "Rajasthan", "Tamil Nadu", "Bihar", 
@@ -197,6 +198,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <FloatingActions />
+      <LeadCapturePopup />
     </>
   );
 }

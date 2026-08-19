@@ -25,3 +25,16 @@ model Order {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model Lead {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  productName String
+  productSlug String?
+  page        String
+  source      String   @default("popup")
+  status      String   @default("New")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
