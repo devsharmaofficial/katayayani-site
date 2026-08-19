@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { X, ChevronDown, Phone, User, Package, CheckCircle, Sparkles } from "lucide-react";
+import { ChevronDown, CheckCircle2 } from "lucide-react";
 
 const ALL_PRODUCTS = [
   { name: "Swaraj Fiber Hood", slug: "swaraj-frp-canopy" },
@@ -44,10 +44,9 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const autoCloseRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const STORAGE_KEY = "kk_lead_popup_v2";
-  const SESSION_KEY = "kk_lead_popup_session_v2";
+  const STORAGE_KEY = "kk_lead_popup_v3";
+  const SESSION_KEY = "kk_lead_popup_session_v3";
   const SUPPRESSION_DAYS = 7;
 
   const shouldShow = useCallback(() => {
@@ -135,14 +134,14 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
 
   return (
     <>
-      {/* Backdrop — Blocking */}
+      {/* Backdrop — Blocking & Clean */}
       <div
         className="fixed inset-0 z-[998] pointer-events-auto"
         style={{
-          background: "rgba(0,0,0,0.7)",
-          backdropFilter: "blur(6px)",
+          background: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(4px)",
           opacity: isClosing ? 0 : 1,
-          transition: "opacity 0.4s ease",
+          transition: "opacity 0.3s ease",
         }}
       />
 
@@ -151,128 +150,91 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
         className="fixed inset-0 z-[999] flex items-center justify-center p-4 pointer-events-none"
       >
         <style>{`
-          @keyframes fadeInScale {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
-          @keyframes successPop {
-            0% { transform: scale(0.5); opacity: 0; }
-            70% { transform: scale(1.15); }
-            100% { transform: scale(1); opacity: 1; }
+          @keyframes slideUpFade {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
           }
           .lead-input {
             width: 100%;
-            padding: 10px 14px 10px 40px;
-            border-radius: 12px;
-            border: 1.5px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.07);
-            color: #fff;
-            font-size: 14px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            color: #111827;
+            font-size: 16px;
             font-weight: 500;
             outline: none;
-            transition: border-color 0.2s, background 0.2s;
-            backdrop-filter: blur(4px);
+            transition: all 0.2s;
           }
-          .lead-input::placeholder { color: rgba(255,255,255,0.4); }
+          .lead-input::placeholder { color: #9ca3af; font-weight: 400; }
           .lead-input:focus {
-            border-color: rgba(214,245,74,0.6);
-            background: rgba(255,255,255,0.1);
+            border-color: #012d1d;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(1,45,29,0.1);
           }
           .lead-select-btn {
             width: 100%;
-            padding: 10px 14px 10px 40px;
-            border-radius: 12px;
-            border: 1.5px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.07);
-            color: #fff;
-            font-size: 14px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            color: #111827;
+            font-size: 16px;
             font-weight: 500;
             text-align: left;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: border-color 0.2s, background 0.2s;
-            backdrop-filter: blur(4px);
+            transition: all 0.2s;
           }
           .lead-select-btn:hover {
-            border-color: rgba(214,245,74,0.6);
-            background: rgba(255,255,255,0.1);
+            background: #f3f4f6;
+          }
+          .lead-select-btn:focus {
+            border-color: #012d1d;
+            box-shadow: 0 0 0 4px rgba(1,45,29,0.1);
           }
         `}</style>
 
         <div
-          className="relative w-full max-w-[400px] overflow-hidden rounded-2xl shadow-2xl pointer-events-auto"
+          className="relative w-full max-w-[420px] bg-white rounded-2xl shadow-xl pointer-events-auto flex flex-col"
           style={{
-            transform: isClosing ? "scale(0.95)" : "scale(1)",
+            transform: isClosing ? "translateY(20px)" : "translateY(0)",
             opacity: isClosing ? 0 : 1,
-            transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease",
-            animation: isClosing ? "none" : "fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
-            background: "linear-gradient(145deg, #012d1d 0%, #0a3d26 50%, #021f14 100%)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            boxShadow: "0 -8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08), 0 0 60px rgba(1,45,29,0.5)",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            animation: isClosing ? "none" : "slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
           }}
         >
-          {/* Decorative glow */}
-          <div
-            className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle, rgba(214,245,74,0.12) 0%, transparent 70%)" }}
-          />
-          <div
-            className="absolute bottom-0 left-0 w-24 h-24 rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle, rgba(1,45,29,0.6) 0%, transparent 70%)" }}
-          />
-
           {submitted ? (
             /* Success State */
-            <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center min-h-[200px]">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                style={{
-                  background: "rgba(214,245,74,0.15)",
-                  animation: "successPop 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards",
-                }}
-              >
-                <CheckCircle className="w-8 h-8" style={{ color: "#d6f54a" }} />
-              </div>
-              <p className="text-white text-lg font-black mb-1">Thank you, {name.split(" ")[0]}! 🙏</p>
-              <p className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.55)" }}>
-                Our team will call you back shortly to share the best price!
+            <div className="flex flex-col items-center justify-center p-10 text-center">
+              <CheckCircle2 className="w-16 h-16 text-green-600 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank you!</h3>
+              <p className="text-gray-600">
+                We have received your details. Our team will call you shortly with the best price.
               </p>
             </div>
           ) : (
             /* Form State */
-            <div className="relative z-10 p-5">
-              {/* Header */}
-              <div className="flex items-center gap-2.5 mb-4">
-                <div
-                  className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(214,245,74,0.15)" }}
-                >
-                  <Sparkles className="w-4 h-4" style={{ color: "#d6f54a" }} />
-                </div>
-                <div>
-                  <p className="text-white font-black text-[15px] leading-tight">
-                    Get Best Price — Free Delivery 🚚
-                  </p>
-                  <p className="text-[11px] font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>
-                    We'll call you back with factory pricing
-                  </p>
-                </div>
+            <div className="p-6 sm:p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-black text-gray-900 mb-2">Check Factory Price</h2>
+                <p className="text-sm text-gray-500 font-medium">
+                  Please enter your details below to get the best price for your tractor hood.
+                </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-3" noValidate>
-                {/* Name Field */}
-                <div className="relative">
-                  <User
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
-                    style={{ color: "rgba(255,255,255,0.35)" }}
-                  />
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <div>
+                  <label htmlFor="lead-name" className="block text-sm font-bold text-gray-800 mb-1.5">
+                    Your Name
+                  </label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Your Name"
+                    placeholder="e.g. Ramesh Kumar"
                     className="lead-input"
                     autoComplete="name"
                     maxLength={50}
@@ -280,17 +242,15 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                   />
                 </div>
 
-                {/* Phone Field */}
-                <div className="relative">
-                  <Phone
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
-                    style={{ color: "rgba(255,255,255,0.35)" }}
-                  />
+                <div>
+                  <label htmlFor="lead-phone" className="block text-sm font-bold text-gray-800 mb-1.5">
+                    WhatsApp / Phone Number
+                  </label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="WhatsApp / Phone Number"
+                    placeholder="e.g. 9876543210"
                     className="lead-input"
                     autoComplete="tel"
                     maxLength={15}
@@ -299,105 +259,68 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                   />
                 </div>
 
-                {/* Product Dropdown */}
-                <div className="relative" ref={dropdownRef}>
-                  <Package
-                    className="absolute left-3 top-[11px] w-4 h-4 pointer-events-none z-10"
-                    style={{ color: "rgba(255,255,255,0.35)" }}
-                  />
-                  <button
-                    type="button"
-                    className="lead-select-btn"
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                  >
-                    <span className="truncate pr-2">{selectedProduct.name}</span>
-                    <ChevronDown
-                      className="w-4 h-4 flex-shrink-0 transition-transform duration-200"
-                      style={{
-                        color: "rgba(255,255,255,0.4)",
-                        transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-                      }}
-                    />
-                  </button>
-                  {dropdownOpen && (
-                    <div
-                      className="absolute bottom-full mb-1 left-0 right-0 rounded-xl overflow-y-auto z-20"
-                      style={{
-                        background: "linear-gradient(145deg, #012d1d, #0a3d26)",
-                        border: "1.5px solid rgba(255,255,255,0.12)",
-                        boxShadow: "0 -8px 30px rgba(0,0,0,0.4)",
-                        maxHeight: "200px",
-                      }}
+                <div>
+                  <label className="block text-sm font-bold text-gray-800 mb-1.5">
+                    Which product are you looking for?
+                  </label>
+                  <div className="relative" ref={dropdownRef}>
+                    <button
+                      type="button"
+                      className="lead-select-btn"
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
-                      {ALL_PRODUCTS.map((p) => (
-                        <button
-                          key={p.slug || "general"}
-                          type="button"
-                          onClick={() => {
-                            setSelectedProduct(p);
-                            setDropdownOpen(false);
-                          }}
-                          className="w-full text-left px-4 py-2.5 text-[13px] font-medium transition-colors duration-150"
-                          style={{
-                            color:
-                              selectedProduct.slug === p.slug
-                                ? "#d6f54a"
-                                : "rgba(255,255,255,0.75)",
-                            background:
-                              selectedProduct.slug === p.slug
-                                ? "rgba(214,245,74,0.08)"
-                                : "transparent",
-                          }}
-                          onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.background =
-                              "rgba(255,255,255,0.06)";
-                          }}
-                          onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.background =
-                              selectedProduct.slug === p.slug
-                                ? "rgba(214,245,74,0.08)"
-                                : "transparent";
-                          }}
-                        >
-                          {p.name}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                      <span className="truncate pr-2">{selectedProduct.name}</span>
+                      <ChevronDown
+                        className="w-5 h-5 text-gray-400 transition-transform duration-200"
+                        style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                      />
+                    </button>
+                    {dropdownOpen && (
+                      <div className="absolute top-full mt-2 left-0 right-0 bg-white border border-gray-200 rounded-xl shadow-xl overflow-y-auto z-20 max-h-[220px]">
+                        {ALL_PRODUCTS.map((p) => (
+                          <button
+                            key={p.slug || "general"}
+                            type="button"
+                            onClick={() => {
+                              setSelectedProduct(p);
+                              setDropdownOpen(false);
+                            }}
+                            className="w-full text-left px-4 py-3 text-sm font-semibold transition-colors hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
+                            style={{
+                              color: selectedProduct.slug === p.slug ? "#012d1d" : "#4b5563",
+                              backgroundColor: selectedProduct.slug === p.slug ? "#f0fdf4" : "transparent",
+                            }}
+                          >
+                            {p.name}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                {/* Error */}
                 {error && (
-                  <p
-                    className="text-[12px] font-semibold px-1"
-                    style={{ color: "#ff7070" }}
-                  >
+                  <p className="text-sm font-semibold text-red-600 bg-red-50 p-3 rounded-lg">
                     {error}
                   </p>
                 )}
 
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-3 rounded-xl text-[14px] font-black tracking-wide transition-all duration-200 active:scale-95 disabled:opacity-60"
-                  style={{
-                    background: loading
-                      ? "rgba(214,245,74,0.3)"
-                      : "linear-gradient(135deg, #d6f54a 0%, #c5ea2c 100%)",
-                    color: "#012d1d",
-                    boxShadow: loading ? "none" : "0 4px 20px rgba(214,245,74,0.3)",
-                  }}
-                >
-                  {loading ? "Submitting..." : "Get Best Price Now →"}
-                </button>
-
-                <p
-                  className="text-center text-[10px] font-medium"
-                  style={{ color: "rgba(255,255,255,0.3)" }}
-                >
-                  No spam. We'll call you once with pricing details.
-                </p>
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-4 rounded-xl text-base font-bold transition-all duration-200 active:scale-[0.98] disabled:opacity-70 flex justify-center items-center gap-2"
+                    style={{
+                      backgroundColor: "#012d1d",
+                      color: "#ffffff",
+                    }}
+                  >
+                    {loading ? "Submitting..." : "Show Price Now"}
+                  </button>
+                  <p className="text-center text-xs text-gray-400 mt-4 font-medium">
+                    🔒 100% secure. We don't share your details.
+                  </p>
+                </div>
               </form>
             </div>
           )}
