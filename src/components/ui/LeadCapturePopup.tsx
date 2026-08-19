@@ -74,7 +74,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
       if (!shouldShow()) return;
       setIsVisible(true);
       sessionStorage.setItem(SESSION_KEY, "1");
-    }, 8000);
+    }, 4000);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
