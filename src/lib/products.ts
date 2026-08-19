@@ -1365,10 +1365,10 @@ const products: Product[] = [
       { src: "https://img.youtube.com/vi/UL6jtWMHmtI/hqdefault.jpg", alt: "All Brands Tractor Fiber Hood Video Showcase", width: 800, height: 800 }
     ],
     videos: [
-      "https://youtube.com/shorts/UL6jtWMHmtI",
-      "https://youtube.com/shorts/gQT_ke2q5To",
-      "https://youtube.com/shorts/dmhwYUss980",
-      "https://youtube.com/shorts/ap38alCuUxY"
+      "https://youtube.com/shorts/ct35ydK7Z_g",
+      "https://youtube.com/shorts/-tSXzjKu17A",
+      "https://youtube.com/shorts/UhsBJOETVRI",
+      "https://youtube.com/shorts/UdOJf6It_TA"
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -1406,10 +1406,10 @@ const products: Product[] = [
       { src: "https://img.youtube.com/vi/c1hL6fj8VjQ/hqdefault.jpg", alt: "All Brands Tractor Fiber Chatri Video Showcase", width: 800, height: 800 }
     ],
     videos: [
-      "https://youtube.com/shorts/c1hL6fj8VjQ",
-      "https://youtube.com/shorts/gQT_ke2q5To",
-      "https://youtube.com/shorts/dmhwYUss980",
-      "https://youtube.com/shorts/UL6jtWMHmtI"
+      "https://youtube.com/shorts/sHBdDOuziVI",
+      "https://youtube.com/shorts/ct35ydK7Z_g",
+      "https://youtube.com/shorts/-tSXzjKu17A",
+      "https://youtube.com/shorts/UhsBJOETVRI"
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
@@ -1447,10 +1447,10 @@ const products: Product[] = [
       { src: "https://img.youtube.com/vi/ap38alCuUxY/hqdefault.jpg", alt: "All Brands Tractor Punjabi Hood Video Showcase", width: 800, height: 800 }
     ],
     videos: [
-      "https://youtube.com/shorts/ap38alCuUxY",
-      "https://youtube.com/shorts/gQT_ke2q5To",
-      "https://youtube.com/shorts/c1hL6fj8VjQ",
-      "https://youtube.com/shorts/UL6jtWMHmtI"
+      "https://youtube.com/shorts/UdOJf6It_TA",
+      "https://youtube.com/shorts/sHBdDOuziVI",
+      "https://youtube.com/shorts/ct35ydK7Z_g",
+      "https://youtube.com/shorts/-tSXzjKu17A"
     ],
     specifications: [
       { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
