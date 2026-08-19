@@ -36,7 +36,7 @@ export function VideoShowcaseTeaser({ compact = false }: { compact?: boolean }) 
              
              {/* Thumbnail 1 */}
              <div className="relative w-36 h-24 md:w-44 md:h-28 shrink-0 rounded-xl overflow-hidden shadow-md group-hover:scale-[1.03] transition-transform duration-500 snap-start border border-white/10">
-               <Image src="/youtube/0IoHCk3LOko.jpg" alt="Video 1" fill className="object-cover" />
+               <Image src="/youtube/0IoHCk3LOko.jpg" alt="Video 1" fill className="object-cover" sizes="(max-width: 768px) 150px, 176px" quality={60} />
                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-10 h-10 rounded-full bg-red-600/90 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
@@ -47,7 +47,7 @@ export function VideoShowcaseTeaser({ compact = false }: { compact?: boolean }) 
              
              {/* Thumbnail 2 */}
              <div className="relative w-36 h-24 md:w-44 md:h-28 shrink-0 rounded-xl overflow-hidden shadow-md group-hover:scale-[1.03] transition-transform duration-500 delay-75 snap-start border border-white/10">
-               <Image src="/youtube/8AwxVYJaLew.jpg" alt="Video 2" fill className="object-cover" />
+               <Image src="/youtube/8AwxVYJaLew.jpg" alt="Video 2" fill className="object-cover" sizes="(max-width: 768px) 150px, 176px" quality={60} />
                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-white/30 transition-colors">
@@ -58,7 +58,7 @@ export function VideoShowcaseTeaser({ compact = false }: { compact?: boolean }) 
              
              {/* Thumbnail 3 */}
              <div className="relative w-36 h-24 md:w-44 md:h-28 shrink-0 rounded-xl overflow-hidden shadow-md group-hover:scale-[1.03] transition-transform duration-500 delay-150 snap-start border border-white/10">
-               <Image src="/youtube/ubeivRfLExQ.jpg" alt="Video 3" fill className="object-cover" />
+               <Image src="/youtube/ubeivRfLExQ.jpg" alt="Video 3" fill className="object-cover" sizes="(max-width: 768px) 150px, 176px" quality={60} />
                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-white/30 transition-colors">

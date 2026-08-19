@@ -58,6 +58,8 @@ function ShortCard({ id, index }: { id: string; index: number }) {
             alt="Katayayani Enterprises Tractor Fiber Hood YouTube Short"
             width={175}
             height={311}
+            sizes="(max-width: 768px) 150px, 175px"
+            quality={60}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             unoptimized={false}
           />
