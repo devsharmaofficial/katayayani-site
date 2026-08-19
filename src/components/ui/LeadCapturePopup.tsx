@@ -219,10 +219,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
             /* Form State */
             <div className="p-6 sm:p-8">
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-black text-gray-900 mb-2">Check Factory Price</h2>
-                <p className="text-sm text-gray-500 font-medium">
-                  Please enter your details below to get the best price for your tractor hood.
-                </p>
+                <h2 className="text-2xl font-black text-gray-900 mb-2">Get the best price</h2>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
@@ -317,9 +314,6 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                   >
                     {loading ? "Submitting..." : "Show Price Now"}
                   </button>
-                  <p className="text-center text-xs text-gray-400 mt-4 font-medium">
-                    🔒 100% secure. We don't share your details.
-                  </p>
                 </div>
               </form>
             </div>
