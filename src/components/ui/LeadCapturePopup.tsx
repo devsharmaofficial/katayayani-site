@@ -46,8 +46,8 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const autoCloseRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const STORAGE_KEY = "kk_lead_popup";
-  const SESSION_KEY = "kk_lead_popup_session";
+  const STORAGE_KEY = "kk_lead_popup_v2";
+  const SESSION_KEY = "kk_lead_popup_session_v2";
   const SUPPRESSION_DAYS = 7;
 
   const shouldShow = useCallback(() => {
