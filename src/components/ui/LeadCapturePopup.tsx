@@ -65,39 +65,22 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
     setIsClosing(true);
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
     sessionStorage.setItem(SESSION_KEY, "1");
-    if (autoCloseRef.current) clearTimeout(autoCloseRef.current);
     setTimeout(() => setIsVisible(false), 400);
   }, []);
 
   useEffect(() => {
     if (!shouldShow()) return;
 
-    let scrolled = false;
-    const onScroll = () => {
-      const scrolled40 =
-        window.scrollY / (document.body.scrollHeight - window.innerHeight) > 0.35;
-      if (scrolled40 && !scrolled) {
-        scrolled = true;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    // Show after 25s but only if scrolled
     timerRef.current = setTimeout(() => {
       if (!shouldShow()) return;
       setIsVisible(true);
       sessionStorage.setItem(SESSION_KEY, "1");
-
-      // Auto-dismiss after 90s
-      autoCloseRef.current = setTimeout(() => dismiss(), 90000);
-    }, 25000);
+    }, 8000);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
       if (timerRef.current) clearTimeout(timerRef.current);
-      if (autoCloseRef.current) clearTimeout(autoCloseRef.current);
     };
-  }, [shouldShow, dismiss]);
+  }, [shouldShow]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -152,11 +135,12 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
 
   return (
     <>
-      {/* Backdrop — subtle, not blocking */}
+      {/* Backdrop — Blocking */}
       <div
-        className="fixed inset-0 z-[998] pointer-events-none"
+        className="fixed inset-0 z-[998] pointer-events-auto"
         style={{
-          background: "linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 50%)",
+          background: "rgba(0,0,0,0.7)",
+          backdropFilter: "blur(6px)",
           opacity: isClosing ? 0 : 1,
           transition: "opacity 0.4s ease",
         }}
@@ -164,17 +148,12 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
 
       {/* Popup Card */}
       <div
-        className="fixed z-[999] bottom-0 left-0 right-0 sm:bottom-5 sm:right-5 sm:left-auto"
-        style={{
-          transform: isClosing ? "translateY(110%)" : "translateY(0)",
-          transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
-          animation: isClosing ? "none" : "slideUpIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
-        }}
+        className="fixed inset-0 z-[999] flex items-center justify-center p-4 pointer-events-none"
       >
         <style>{`
-          @keyframes slideUpIn {
-            from { transform: translateY(110%); }
-            to { transform: translateY(0); }
+          @keyframes fadeInScale {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
           }
           @keyframes successPop {
             0% { transform: scale(0.5); opacity: 0; }
@@ -223,8 +202,12 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
         `}</style>
 
         <div
-          className="relative w-full sm:w-[360px] overflow-hidden rounded-t-2xl sm:rounded-2xl shadow-2xl"
+          className="relative w-full max-w-[400px] overflow-hidden rounded-2xl shadow-2xl pointer-events-auto"
           style={{
+            transform: isClosing ? "scale(0.95)" : "scale(1)",
+            opacity: isClosing ? 0 : 1,
+            transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease",
+            animation: isClosing ? "none" : "fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
             background: "linear-gradient(145deg, #012d1d 0%, #0a3d26 50%, #021f14 100%)",
             border: "1px solid rgba(255,255,255,0.1)",
             boxShadow: "0 -8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08), 0 0 60px rgba(1,45,29,0.5)",
@@ -239,16 +222,6 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
             className="absolute bottom-0 left-0 w-24 h-24 rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(1,45,29,0.6) 0%, transparent 70%)" }}
           />
-
-          {/* Close Button */}
-          <button
-            onClick={dismiss}
-            className="absolute top-3 right-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-            style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.5)" }}
-            aria-label="Close"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
 
           {submitted ? (
             /* Success State */
