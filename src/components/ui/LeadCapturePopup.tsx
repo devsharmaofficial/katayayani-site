@@ -99,7 +99,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
       setError("Please enter your name (at least 2 characters)");
       return;
     }
-    if (!/^\+?[0-9\s\-]{10,15}$/.test(phone.trim())) {
+    if (phone.length < 10) {
       setError("Please enter a valid 10-digit phone number");
       return;
     }
@@ -250,7 +250,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                   <input
                     type="tel"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                     placeholder="e.g. 9876543210"
                     className="lead-input"
                     autoComplete="tel"

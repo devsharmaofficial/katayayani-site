@@ -7,7 +7,10 @@ export function getLeadEmailHtml(
     page: string;
   }
 ) {
-  const phoneDigits = data.phone.replace(/\D/g, '');
+  let phoneDigits = data.phone.replace(/\D/g, '');
+  if (phoneDigits.length > 10) {
+    phoneDigits = phoneDigits.slice(-10);
+  }
   const waMessage = encodeURIComponent(
     `Hi ${data.name},\nThis is Katayayani Enterprises.\nWe noticed your inquiry for the ${data.productName}.\nHow can we help you today? 😊`
   );

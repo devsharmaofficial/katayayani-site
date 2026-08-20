@@ -33,7 +33,10 @@ export default async function LeadDetailPage({
     notFound();
   }
 
-  const phoneOnlyDigits = lead.phone.replace(/\D/g, '');
+  let phoneOnlyDigits = lead.phone.replace(/\D/g, '');
+  if (phoneOnlyDigits.length > 10) {
+    phoneOnlyDigits = phoneOnlyDigits.slice(-10);
+  }
   const waMessage = encodeURIComponent(
     `Hi ${lead.name},\nThis is Katayayani Enterprises.\nWe noticed your inquiry for the ${lead.productName}.\nHow can we help you today? 😊`
   );
