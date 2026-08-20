@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
+import { Resend } from 'resend';
+import { getLeadEmailHtml } from '@/lib/email-templates';
+
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
 const trackSchema = z.object({
   leadId: z.string(),
@@ -36,6 +40,29 @@ export async function POST(req: Request) {
         updatedAt: new Date(),
       },
     });
+
+    // Send email notification for Returning Lead
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const emailHtml = getLeadEmailHtml('RETURNING', {
+          name: updatedLead.name,
+          phone: updatedLead.phone,
+          productName: updatedLead.productName,
+          page: updatedLead.page,
+        });
+        
+        await resend.emails.send({
+          from: 'Katayayani Leads <onboarding@resend.dev>',
+          to: 'devsharmaofficial.id@gmail.com',
+          subject: `[Returning] 🔄 ${updatedLead.name} is looking at ${updatedLead.productName}`,
+          html: emailHtml,
+        });
+      } catch (emailErr) {
+        console.error('Failed to send returning lead email:', emailErr);
+      }
+    } else {
+      console.log('RESEND_API_KEY not set. Would have sent RETURNING lead email to devsharmaofficial.id@gmail.com for:', updatedLead.name);
+    }
 
     return NextResponse.json({ success: true, lead: updatedLead });
   } catch (error) {

@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
+import { Resend } from 'resend';
+import { getLeadEmailHtml } from '@/lib/email-templates';
+
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
 const leadSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -29,6 +33,29 @@ export async function POST(req: Request) {
         updatedAt: new Date(),
       },
     });
+
+    // Send email notification for New Lead
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const emailHtml = getLeadEmailHtml('NEW', {
+          name: lead.name,
+          phone: lead.phone,
+          productName: lead.productName,
+          page: lead.page,
+        });
+        
+        await resend.emails.send({
+          from: 'Katayayani Leads <onboarding@resend.dev>',
+          to: 'devsharmaofficial.id@gmail.com',
+          subject: `🔥 New Lead: ${lead.name} is looking for ${lead.productName}`,
+          html: emailHtml,
+        });
+      } catch (emailErr) {
+        console.error('Failed to send lead email:', emailErr);
+      }
+    } else {
+      console.log('RESEND_API_KEY not set. Would have sent NEW lead email to devsharmaofficial.id@gmail.com for:', lead.name);
+    }
 
     return NextResponse.json({ success: true, id: lead.id });
   } catch (error) {
