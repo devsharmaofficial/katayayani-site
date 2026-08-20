@@ -5,6 +5,8 @@ import { getLeadEmailHtml } from '@/lib/email-templates';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const leads = await prisma.lead.findMany({
@@ -16,7 +18,6 @@ export async function GET() {
       return NextResponse.json({
         success: false,
         message: 'RESEND_API_KEY is not set in Environment Variables',
-        leads,
       });
     }
 
@@ -25,24 +26,31 @@ async function sleep(ms: number) {
 }
 
     const results = [];
+    
+    // Process in batches of 5
+    for (let i = 0; i < leads.length; i += 5) {
+      const batch = leads.slice(i, i + 5);
+      const batchPromises = batch.map(async (lead) => {
+        const emailHtml = getLeadEmailHtml('NEW', {
+          name: lead.name,
+          phone: lead.phone,
+          productName: lead.productName,
+          page: lead.page,
+        });
 
-    for (const lead of leads) {
-      const emailHtml = getLeadEmailHtml('NEW', {
-        name: lead.name,
-        phone: lead.phone,
-        productName: lead.productName,
-        page: lead.page,
+        const res = await resend.emails.send({
+          from: 'Katayayani Leads <onboarding@resend.dev>',
+          to: 'agroindustriesmeerut@gmail.com',
+          subject: `🔥 [Past Lead] ${lead.name} - ${lead.productName}`,
+          html: emailHtml,
+        });
+        
+        return { lead: lead.name, result: res };
       });
-
-      const res = await resend.emails.send({
-        from: 'Katayayani Leads <onboarding@resend.dev>',
-        to: 'agroindustriesmeerut@gmail.com',
-        subject: `🔥 [Past Lead] ${lead.name} - ${lead.productName}`,
-        html: emailHtml,
-      });
-
-      results.push({ lead: lead.name, result: res });
-      await sleep(1000);
+      
+      const batchResults = await Promise.all(batchPromises);
+      results.push(...batchResults);
+      await sleep(500); // 500ms delay between batches
     }
 
     return NextResponse.json({ success: true, count: leads.length, results });
