@@ -9,12 +9,12 @@ export function getLeadEmailHtml(
 ) {
   const phoneDigits = data.phone.replace(/\D/g, '');
   const waMessage = encodeURIComponent(
-    `Namaste ${data.name} Ji,\nMain Katayayani Enterprises se baat kar raha hoon.\nAapne hamari website par ${data.productName} ke liye inquiry ki thi.\nKya main aapki iss baare mein kuch madad kar sakta hoon? 😊`
+    `Hi ${data.name},\nThis is Katayayani Enterprises.\nWe noticed your inquiry for the ${data.productName}.\nHow can we help you today? 😊`
   );
   const whatsappUrl = `https://wa.me/91${phoneDigits}?text=${waMessage}`;
   const telUrl = `tel:+91${phoneDigits}`;
 
-  const title = type === 'NEW' ? 'New Lead Captured' : 'Returning Customer Active';
+  const title = type === 'NEW' ? 'New Lead Captured' : 'Customer Seen Again';
   const color = type === 'NEW' ? '#012d1d' : '#2563eb'; // Greenish for new, Blue for returning
 
   return `

@@ -186,7 +186,7 @@ export default async function LeadsPage({
                     <td className="p-4">
                       <div className="flex flex-col gap-1">
                         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded-lg capitalize w-fit">
-                          {lead.source === 'returning_visitor' ? 'Returning' : lead.source}
+                          {lead.source === 'returning_visitor' ? 'Seen Again' : lead.source}
                         </span>
                         {lead.source === 'returning_visitor' && (
                           <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wide">

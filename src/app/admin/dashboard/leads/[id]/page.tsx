@@ -35,7 +35,7 @@ export default async function LeadDetailPage({
 
   const phoneOnlyDigits = lead.phone.replace(/\D/g, '');
   const waMessage = encodeURIComponent(
-    `Namaste ${lead.name} Ji,\nMain Katayayani Enterprises se baat kar raha hoon.\nAapne hamari website par ${lead.productName} ke liye inquiry ki thi.\nKya main aapki iss baare mein kuch madad kar sakta hoon? 😊`
+    `Hi ${lead.name},\nThis is Katayayani Enterprises.\nWe noticed your inquiry for the ${lead.productName}.\nHow can we help you today? 😊`
   );
   const whatsappUrl = `https://wa.me/91${phoneOnlyDigits}?text=${waMessage}`;
   const telUrl = `tel:+91${phoneOnlyDigits}`;
