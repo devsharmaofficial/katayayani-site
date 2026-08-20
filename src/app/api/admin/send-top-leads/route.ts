@@ -8,8 +8,8 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 export async function GET() {
   try {
     const leads = await prisma.lead.findMany({
-      take: 3,
-      orderBy: { updatedAt: 'desc' },
+      take: 100,
+      orderBy: { createdAt: 'desc' },
     });
 
     if (!process.env.RESEND_API_KEY) {
@@ -19,6 +19,10 @@ export async function GET() {
         leads,
       });
     }
+
+async function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
     const results = [];
 
@@ -33,11 +37,12 @@ export async function GET() {
       const res = await resend.emails.send({
         from: 'Katayayani Leads <onboarding@resend.dev>',
         to: 'agroindustriesmeerut@gmail.com',
-        subject: `🔥 [Top Lead] ${lead.name} - ${lead.productName}`,
+        subject: `🔥 [Past Lead] ${lead.name} - ${lead.productName}`,
         html: emailHtml,
       });
 
       results.push({ lead: lead.name, result: res });
+      await sleep(1000);
     }
 
     return NextResponse.json({ success: true, count: leads.length, results });
