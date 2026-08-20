@@ -53,7 +53,7 @@ export async function POST(req: Request) {
         
         await resend.emails.send({
           from: 'Katayayani Leads <onboarding@resend.dev>',
-          to: 'devsharmaofficial.id@gmail.com',
+          to: 'agroindustriesmeerut@gmail.com',
           subject: `[Seen Again] 🔄 ${updatedLead.name} is looking at ${updatedLead.productName}`,
           html: emailHtml,
         });

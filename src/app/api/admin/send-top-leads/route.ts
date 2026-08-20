@@ -32,7 +32,7 @@ export async function GET() {
 
       const res = await resend.emails.send({
         from: 'Katayayani Leads <onboarding@resend.dev>',
-        to: 'devsharmaofficial.id@gmail.com',
+        to: 'agroindustriesmeerut@gmail.com',
         subject: `🔥 [Top Lead] ${lead.name} - ${lead.productName}`,
         html: emailHtml,
       });
