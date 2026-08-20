@@ -21,49 +21,48 @@ export function getLeadEmailHtml(
   const color = type === 'NEW' ? '#012d1d' : '#2563eb'; // Greenish for new, Blue for returning
 
   return `
-    <div style="font-family: Arial, sans-serif; max-w: 600px; margin: 0 auto; background-color: #f9fafb; padding: 20px; border-radius: 12px;">
-      <div style="background-color: ${color}; padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
-        <h2 style="color: #ffffff; margin: 0; font-size: 24px;">${title}</h2>
-      </div>
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 500px; margin: 40px auto; background-color: #ffffff; padding: 40px 30px; border-radius: 16px; border: 1px solid #eaeaea; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
       
-      <div style="background-color: #ffffff; padding: 30px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
-        <h3 style="margin-top: 0; color: #111827; font-size: 20px; border-bottom: 2px solid #f3f4f6; padding-bottom: 10px;">
-          Customer Details
-        </h3>
-        
-        <table style="width: 100%; margin-bottom: 25px; border-collapse: collapse;">
-          <tr>
-            <td style="padding: 10px 0; color: #6b7280; font-weight: bold; width: 120px;">Name:</td>
-            <td style="padding: 10px 0; color: #111827; font-weight: bold; font-size: 16px;">${data.name}</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 0; color: #6b7280; font-weight: bold;">Phone:</td>
-            <td style="padding: 10px 0; color: #111827; font-weight: bold; font-size: 16px;">${data.phone}</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 0; color: #6b7280; font-weight: bold;">Product:</td>
-            <td style="padding: 10px 0; color: #111827; font-weight: bold; font-size: 16px;">${data.productName}</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 0; color: #6b7280; font-weight: bold;">Page:</td>
-            <td style="padding: 10px 0; color: #374151;">${data.page}</td>
-          </tr>
-        </table>
-
-        <div style="margin-top: 30px;">
-          <a href="${whatsappUrl}" style="display: block; width: 100%; background-color: #25D366; color: #ffffff; text-align: center; padding: 15px 0; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; margin-bottom: 15px;">
-            💬 Chat on WhatsApp
-          </a>
-          
-          <a href="${telUrl}" style="display: block; width: 100%; background-color: #3b82f6; color: #ffffff; text-align: center; padding: 15px 0; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
-            📞 Call Customer
-          </a>
+      <div style="text-align: center; margin-bottom: 30px;">
+        <div style="display: inline-block; background-color: ${type === 'NEW' ? '#ecfdf5' : '#eff6ff'}; color: ${color}; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase;">
+          ${title}
         </div>
       </div>
       
-      <p style="text-align: center; color: #9ca3af; font-size: 12px; margin-top: 20px;">
-        Sent automatically from Katayayani Enterprises Lead System
-      </p>
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #111827; font-size: 20px; font-weight: 700; margin: 0 0 24px 0;">Customer Details</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px 0;">Name</p>
+          <p style="color: #111827; font-size: 16px; font-weight: 600; margin: 0;">${data.name}</p>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px 0;">Phone</p>
+          <p style="color: #111827; font-size: 16px; font-weight: 600; margin: 0;">${data.phone}</p>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px 0;">Product Interest</p>
+          <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0; line-height: 1.5;">${data.productName}</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <a href="${whatsappUrl}" style="display: block; width: 100%; background-color: #25D366; color: #ffffff; text-align: center; padding: 16px 0; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; margin-bottom: 12px; box-sizing: border-box;">
+          💬 Chat on WhatsApp
+        </a>
+        
+        <a href="${telUrl}" style="display: block; width: 100%; background-color: #111827; color: #ffffff; text-align: center; padding: 16px 0; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; box-sizing: border-box;">
+          📞 Call Customer
+        </a>
+      </div>
+      
+      <div style="text-align: center; margin-top: 36px; padding-top: 24px; border-top: 1px solid #eaeaea;">
+        <p style="color: #9ca3af; font-size: 13px; font-weight: 500; margin: 0;">
+          Katayayani Enterprises CRM
+        </p>
+      </div>
     </div>
   `;
 }
