@@ -8,7 +8,10 @@ export function getLeadEmailHtml(
   }
 ) {
   const phoneDigits = data.phone.replace(/\D/g, '');
-  const whatsappUrl = `https://wa.me/91${phoneDigits}`;
+  const waMessage = encodeURIComponent(
+    `Namaste ${data.name} Ji,\nMain Katayayani Enterprises se baat kar raha hoon.\nAapne hamari website par ${data.productName} ke liye inquiry ki thi.\nKya main aapki iss baare mein kuch madad kar sakta hoon? 😊`
+  );
+  const whatsappUrl = `https://wa.me/91${phoneDigits}?text=${waMessage}`;
   const telUrl = `tel:+91${phoneDigits}`;
 
   const title = type === 'NEW' ? 'New Lead Captured' : 'Returning Customer Active';
