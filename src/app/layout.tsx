@@ -5,6 +5,7 @@ import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
+import LeadTracker from "@/components/ui/LeadTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -261,6 +262,7 @@ export default function RootLayout({
         <WebsiteBackground>
           {children}
         </WebsiteBackground>
+        <LeadTracker />
         <Analytics />
       </body>
     </html>

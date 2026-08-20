@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import Link from 'next/link';
 import LeadStatusChanger from './LeadStatusChanger';
 
 export const dynamic = 'force-dynamic';
@@ -45,10 +46,10 @@ export default async function LeadsPage({
 
   const leads = await prisma.lead.findMany({
     where,
-    orderBy: { createdAt: 'desc' },
+    orderBy: { updatedAt: 'desc' },
   });
 
-  const allLeads = await prisma.lead.findMany({ orderBy: { createdAt: 'desc' } });
+  const allLeads = await prisma.lead.findMany({ orderBy: { updatedAt: 'desc' } });
   const totalLeads = allLeads.length;
   const newLeads = allLeads.filter((l: any) => l.status === 'New').length;
   const contactedLeads = allLeads.filter((l: any) => l.status === 'Contacted').length;
@@ -158,9 +159,11 @@ export default async function LeadsPage({
                 </tr>
               ) : (
                 leads.map((lead: any) => (
-                  <tr key={lead.id} className="hover:bg-gray-50/60 transition-colors group">
+                  <tr key={lead.id} className={`transition-colors group ${lead.status === 'New' ? 'bg-blue-50/40 hover:bg-blue-50' : 'hover:bg-gray-50/60'}`}>
                     <td className="p-4">
-                      <div className="font-bold text-gray-900 text-sm">{lead.name}</div>
+                      <Link href={`/admin/dashboard/leads/${lead.id}`} className="font-bold text-gray-900 text-sm hover:text-[#012d1d] hover:underline block transition-colors">
+                        {lead.name}
+                      </Link>
                     </td>
                     <td className="p-4">
                       <a
@@ -181,26 +184,41 @@ export default async function LeadsPage({
                       </span>
                     </td>
                     <td className="p-4">
-                      <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded-lg capitalize">
-                        {lead.source}
-                      </span>
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded-lg capitalize w-fit">
+                          {lead.source === 'returning_visitor' ? 'Returning' : lead.source}
+                        </span>
+                        {lead.source === 'returning_visitor' && (
+                          <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wide">
+                            Active Again
+                          </span>
+                        )}
+                      </div>
                     </td>
                     <td className="p-4">
-                      <span className="text-sm text-gray-500 font-medium whitespace-nowrap">
-                        {new Date(lead.createdAt).toLocaleDateString('en-IN', {
+                      <span className="text-sm text-gray-500 font-medium whitespace-nowrap block">
+                        {new Date(lead.updatedAt).toLocaleDateString('en-IN', {
                           day: '2-digit',
                           month: 'short',
-                          year: '2-digit',
-                          hour: '2-digit',
-                          minute: '2-digit',
+                          year: 'numeric',
                         })}
                       </span>
+                      {lead.updatedAt > lead.createdAt && (
+                        <span className="text-xs font-bold text-green-600 mt-0.5 block">
+                          Updated
+                        </span>
+                      )}
                     </td>
                     <td className="p-4">
                       <StatusBadge status={lead.status} />
                     </td>
-                    <td className="p-4 text-center">
-                      <LeadStatusChanger leadId={lead.id} currentStatus={lead.status} />
+                    <td className="p-4">
+                      <div className="flex items-center justify-center gap-3">
+                        <Link href={`/admin/dashboard/leads/${lead.id}`} className="text-xs font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors">
+                          View
+                        </Link>
+                        <LeadStatusChanger leadId={lead.id} currentStatus={lead.status} />
+                      </div>
                     </td>
                   </tr>
                 ))

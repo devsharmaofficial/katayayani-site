@@ -118,6 +118,10 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
         }),
       });
       if (res.ok) {
+        const data = await res.json();
+        if (data.id) {
+          localStorage.setItem("kk_customer_lead_id", data.id);
+        }
         setSubmitted(true);
         setTimeout(() => dismiss(), 3500);
       } else {
