@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDown, CheckCircle2 } from "lucide-react";
 
 const ALL_PRODUCTS = [
@@ -23,12 +24,8 @@ const ALL_PRODUCTS = [
   { name: "General Enquiry", slug: "" },
 ];
 
-interface Props {
-  productName?: string;
-  productSlug?: string;
-}
-
-export default function LeadCapturePopup({ productName, productSlug }: Props) {
+export default function LeadCapturePopup() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -36,50 +33,57 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
   const [error, setError] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(
-    productName
-      ? { name: productName, slug: productSlug || "" }
-      : { name: "General Enquiry", slug: "" }
-  );
+  const [selectedProduct, setSelectedProduct] = useState({
+    name: "General Enquiry",
+    slug: "",
+  });
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasUserSelected = useRef(false);
 
-  const STORAGE_KEY = "kk_lead_popup_v3";
-  const SESSION_KEY = "kk_lead_popup_session_v3";
-  const SUPPRESSION_DAYS = 7;
+  const STORAGE_SUBMITTED_KEY = "kk_lead_submitted";
+  const SUPPRESSION_DAYS = 30; // Don't prompt already submitted leads for 30 days
 
-  const shouldShow = useCallback(() => {
+  // Check if lead was already submitted
+  const isAlreadySubmitted = useCallback(() => {
     if (typeof window === "undefined") return false;
-    if (sessionStorage.getItem(SESSION_KEY)) return false;
-    const lastShown = localStorage.getItem(STORAGE_KEY);
-    if (lastShown) {
-      const diff = Date.now() - parseInt(lastShown, 10);
-      if (diff < SUPPRESSION_DAYS * 24 * 60 * 60 * 1000) return false;
+    const submittedAt = localStorage.getItem(STORAGE_SUBMITTED_KEY);
+    if (submittedAt) {
+      const diff = Date.now() - parseInt(submittedAt, 10);
+      if (diff < SUPPRESSION_DAYS * 24 * 60 * 60 * 1000) return true;
     }
-    return true;
+    return false;
   }, []);
 
-  const dismiss = useCallback(() => {
-    setIsClosing(true);
-    localStorage.setItem(STORAGE_KEY, Date.now().toString());
-    sessionStorage.setItem(SESSION_KEY, "1");
-    setTimeout(() => setIsVisible(false), 400);
-  }, []);
-
+  // Update selected product automatically based on current URL slug if user hasn't manually picked
   useEffect(() => {
-    if (!shouldShow()) return;
+    if (hasUserSelected.current) return;
+    if (pathname && pathname.startsWith("/products/")) {
+      const slug = pathname.replace("/products/", "").split("/")[0];
+      const matched = ALL_PRODUCTS.find((p) => p.slug === slug);
+      if (matched) {
+        setSelectedProduct(matched);
+      }
+    }
+  }, [pathname]);
 
-    timerRef.current = setTimeout(() => {
-      if (!shouldShow()) return;
-      setIsVisible(true);
-      sessionStorage.setItem(SESSION_KEY, "1");
-    }, 4000);
+  // Initial trigger after landing: will open after 3.5 seconds and persist across page navigation
+  useEffect(() => {
+    if (isAlreadySubmitted()) return;
 
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [shouldShow]);
+    // Check if exempt path
+    if (pathname?.startsWith("/admin") || pathname?.startsWith("/checkout")) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      if (!isAlreadySubmitted()) {
+        setIsVisible(true);
+      }
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, [isAlreadySubmitted, pathname]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -92,9 +96,15 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const dismiss = useCallback(() => {
+    setIsClosing(true);
+    setTimeout(() => setIsVisible(false), 400);
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
     if (!name.trim() || name.trim().length < 2) {
       setError("Please enter your name (at least 2 characters)");
       return;
@@ -103,6 +113,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
       setError("Please enter a valid 10-digit phone number");
       return;
     }
+
     setLoading(true);
     try {
       const res = await fetch("/api/leads", {
@@ -117,13 +128,15 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
           source: "popup",
         }),
       });
+
       if (res.ok) {
         const data = await res.json();
         if (data.id) {
           localStorage.setItem("kk_customer_lead_id", data.id);
         }
+        localStorage.setItem(STORAGE_SUBMITTED_KEY, Date.now().toString());
         setSubmitted(true);
-        setTimeout(() => dismiss(), 3500);
+        setTimeout(() => dismiss(), 3000);
       } else {
         setError("Something went wrong. Please try again.");
       }
@@ -134,27 +147,32 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
     }
   };
 
+  // Hide on admin and checkout pages
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/checkout")) {
+    return null;
+  }
+
   if (!isVisible) return null;
 
   return (
     <>
-      {/* Backdrop — Blocking & Clean */}
+      {/* Backdrop — High Z-Index Blocking */}
       <div
-        className="fixed inset-0 z-[998] pointer-events-auto"
+        className="fixed inset-0 z-[9998] pointer-events-auto"
         style={{
-          background: "rgba(0,0,0,0.6)",
+          background: "rgba(0,0,0,0.65)",
           backdropFilter: "blur(4px)",
           opacity: isClosing ? 0 : 1,
           transition: "opacity 0.3s ease",
         }}
       />
 
-      {/* Popup Card */}
+      {/* Popup Modal */}
       <div
-        className="fixed inset-0 z-[999] flex items-center justify-center p-4 pointer-events-none"
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none"
       >
         <style>{`
-          @keyframes slideUpFade {
+          @keyframes leadSlideUpFade {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
           }
@@ -202,12 +220,12 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
         `}</style>
 
         <div
-          className="relative w-full max-w-[420px] bg-white rounded-2xl shadow-xl pointer-events-auto flex flex-col"
+          className="relative w-full max-w-[420px] bg-white rounded-2xl shadow-2xl pointer-events-auto flex flex-col overflow-hidden"
           style={{
             transform: isClosing ? "translateY(20px)" : "translateY(0)",
             opacity: isClosing ? 0 : 1,
             transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-            animation: isClosing ? "none" : "slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+            animation: isClosing ? "none" : "leadSlideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
           }}
         >
           {submitted ? (
@@ -223,7 +241,8 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
             /* Form State */
             <div className="p-6 sm:p-8">
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-black text-gray-900 mb-2">Get the best price</h2>
+                <h2 className="text-2xl font-black text-gray-900 mb-1.5">Get the best price</h2>
+                <p className="text-xs text-gray-500 font-medium">Direct Factory Price & Quick WhatsApp Quotation</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
@@ -283,6 +302,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                             key={p.slug || "general"}
                             type="button"
                             onClick={() => {
+                              hasUserSelected.current = true;
                               setSelectedProduct(p);
                               setDropdownOpen(false);
                             }}
@@ -310,7 +330,7 @@ export default function LeadCapturePopup({ productName, productSlug }: Props) {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 rounded-xl text-base font-bold transition-all duration-200 active:scale-[0.98] disabled:opacity-70 flex justify-center items-center gap-2"
+                    className="w-full py-4 rounded-xl text-base font-bold transition-all duration-200 active:scale-[0.98] disabled:opacity-70 flex justify-center items-center gap-2 shadow-lg"
                     style={{
                       backgroundColor: "#012d1d",
                       color: "#ffffff",

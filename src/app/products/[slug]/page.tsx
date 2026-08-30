@@ -41,7 +41,6 @@ import {
   getAllProducts,
 } from "@/lib/products";
 const VideoShowcaseTeaser = dynamic(() => import("@/components/ui/video-showcase-teaser").then(m => m.VideoShowcaseTeaser));
-const LeadCapturePopup = dynamic(() => import("@/components/ui/LeadCapturePopup"));
 
 
 
@@ -1054,7 +1053,6 @@ function ProductDetailContent({ slug }: { slug: string }) {
             </div>
           </div>
         )}
-      <LeadCapturePopup productName={product.name} productSlug={product.slug} />
     </>
   );
 }

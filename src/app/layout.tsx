@@ -6,6 +6,7 @@ import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
 import LeadTracker from "@/components/ui/LeadTracker";
+import LeadCapturePopup from "@/components/ui/LeadCapturePopup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -287,6 +288,7 @@ export default function RootLayout({
           {children}
         </WebsiteBackground>
         <LeadTracker />
+        <LeadCapturePopup />
         <Analytics />
       </body>
     </html>
