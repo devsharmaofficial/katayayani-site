@@ -100,10 +100,15 @@ export const TestimonialsColumn = (props: {
   );
 };
 
+// Limit DOM nodes: only show a subset for marquee performance
+// The marquee duplicates items once, so 12 items → 24 rendered nodes per column
+const MAX_MOBILE = 12;
+const MAX_DESKTOP_COL = 12;
+
 const thirdLength = Math.ceil(testimonials.length / 3);
-const firstColumn = testimonials.slice(0, thirdLength);
-const secondColumn = testimonials.slice(thirdLength, thirdLength * 2);
-const thirdColumn = testimonials.slice(thirdLength * 2);
+const firstColumn = testimonials.slice(0, thirdLength).slice(0, MAX_DESKTOP_COL);
+const secondColumn = testimonials.slice(thirdLength, thirdLength * 2).slice(0, MAX_DESKTOP_COL);
+const thirdColumn = testimonials.slice(thirdLength * 2).slice(0, MAX_DESKTOP_COL);
 
 export const Testimonials = () => {
   return (
@@ -117,9 +122,9 @@ export const Testimonials = () => {
           </h2>
         </ScrollReveal>
 
-        {/* Mobile View: Single column scrolling ALL reviews */}
+        {/* Mobile View: Single column scrolling subset of reviews */}
         <div className="block md:hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] overflow-hidden mt-10">
-          <TestimonialsColumn testimonials={testimonials} duration={120} />
+          <TestimonialsColumn testimonials={testimonials.slice(0, MAX_MOBILE)} duration={120} />
         </div>
 
         {/* Tablet & Desktop View: 3 columns with sliced reviews */}

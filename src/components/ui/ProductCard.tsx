@@ -98,8 +98,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                   alt={img.alt || product.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
-                  quality={50}
+                  sizes="(max-width: 640px) calc(50vw - 32px), (max-width: 1024px) calc(33vw - 24px), 280px"
+                  quality={priority && idx === 0 ? 60 : 35}
                   priority={priority && idx === 0}
                   loading={priority && idx === 0 ? undefined : "lazy"}
                 />

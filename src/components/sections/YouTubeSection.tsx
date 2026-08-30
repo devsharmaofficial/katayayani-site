@@ -59,7 +59,8 @@ function ShortCard({ id, index }: { id: string; index: number }) {
             width={175}
             height={311}
             sizes="(max-width: 768px) 150px, 175px"
-            quality={60}
+            quality={40}
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             unoptimized={false}
           />

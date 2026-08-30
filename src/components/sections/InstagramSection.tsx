@@ -163,7 +163,8 @@ export default function InstagramSection() {
                   alt={reel.title}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 250px"
-                  quality={60}
+                  quality={40}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
 
