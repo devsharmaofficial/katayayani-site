@@ -152,6 +152,11 @@ export default function LeadCapturePopup() {
     return null;
   }
 
+  // Remove lead capture wall for local development
+  if (process.env.NODE_ENV === "development") {
+    return null;
+  }
+
   if (!isVisible) return null;
 
   return (
