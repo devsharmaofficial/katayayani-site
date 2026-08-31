@@ -41,12 +41,21 @@ export default function Footer() {
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#795900] animate-pulse"></span>
           </Link>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-100/50 text-emerald-800 text-[11px] font-bold shadow-sm">
-            <svg className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>GSTIN: <span className="font-extrabold select-all">09BGDPS3254A1ZL</span></span>
-            <span className="text-[9px] uppercase tracking-wider text-emerald-800 font-black bg-emerald-100 px-1 py-0.2 rounded-sm ml-0.5">Verified</span>
+          <div className="flex flex-col gap-1.5 mt-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-emerald-50 border border-emerald-100/50 text-emerald-800 text-[11px] font-bold shadow-sm w-fit">
+              <svg className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>GSTIN: <span className="font-extrabold select-all">09BGDPS3254A1ZL</span></span>
+              <span className="text-[9px] uppercase tracking-wider text-emerald-800 font-black bg-emerald-100 px-1 py-0.2 rounded-sm ml-0.5">Verified</span>
+            </div>
+            <a href="/products/katayayani-enterprises.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-50 border border-blue-100/50 text-blue-800 text-[11px] font-bold shadow-sm w-fit hover:bg-blue-100 transition-colors group/iec">
+              <svg className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Govt. of India IEC: <span className="font-extrabold select-all">BGDPS3254A</span></span>
+              <span className="text-[9px] uppercase tracking-wider text-blue-800 font-black bg-blue-100 px-1 py-0.2 rounded-sm ml-0.5 group-hover/iec:bg-blue-200 transition-colors">Global Exporter</span>
+            </a>
           </div>
         </div>
 

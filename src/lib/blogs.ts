@@ -19,6 +19,48 @@ export interface BlogPost {
 
 export const blogs: BlogPost[] = [
   {
+    id: "4",
+    slug: "katayayani-enterprises-government-certified-iec-global-exporter",
+    title: "Katayayani Enterprises is Now a Certified Global Exporter! (IEC Registered)",
+    excerpt: "We are proud to announce that Katayayani Enterprises is now officially recognized by the Government of India as a certified Importer-Exporter with IEC: BGDPS3254A.",
+    content: `
+      <h2>Expanding Our Horizons: Global Exporter Certification</h2>
+      <p>At <strong>Katayayani Enterprises</strong>, we have always been committed to providing the highest quality <strong>tractor fiber hoods and punjabi chatris</strong> to our hardworking farmers across India. Today, we are thrilled to share a major milestone in our journey.</p>
+      <p>We are officially registered with the <strong>Directorate General of Foreign Trade (DGFT), Ministry of Commerce and Industry, Government of India</strong> as a certified Importer-Exporter! Our official Importer-Exporter Code (IEC) is <strong>BGDPS3254A</strong>.</p>
+
+      <h2>What This Means for Our Customers & Dealers</h2>
+      <p>This prestigious certification isn't just a document; it's a testament to our quality, reliability, and scale of operations. For years, we have been India's top manufacturer of premium FRP tractor canopies. Now, we are ready to take our world-class products to the global market.</p>
+      
+      <ul>
+        <li><strong>International Quality Standards:</strong> To be a certified exporter, our products meet rigorous quality and durability standards. When you buy from us, you're getting export-quality material.</li>
+        <li><strong>Global Dealership Opportunities:</strong> We are now officially opening our doors to international dealers, agricultural cooperatives, and traders who want to import our heavy-duty tractor hoods to their countries.</li>
+        <li><strong>Trust and Authenticity:</strong> Our IEC certification adds another layer of trust, alongside our verified GST (09BGDPS3254A1ZL) and IndiaMART Trust Seal. You are dealing with a fully authenticated and government-recognized manufacturing entity.</li>
+      </ul>
+
+      <h2>View Our Official IEC Certificate</h2>
+      <p>We believe in 100% transparency. You can view and download our official Government of India IEC Certificate directly from our website.</p>
+      <p style="margin-top: 1rem; margin-bottom: 2rem;">
+        <a href="/products/katayayani-enterprises.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #012d1d; color: white; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-decoration: none;">
+          View Govt. of India IEC Certificate &rarr;
+        </a>
+      </p>
+
+      <h2>Looking Ahead</h2>
+      <p>Whether you are a farmer in Punjab looking for a Swaraj 744 canopy, or an international dealer looking to source the best FRP tractor hoods in bulk, Katayayani Enterprises is your trusted partner.</p>
+      <p><em>Contact us today at +91-9358273054 to discuss bulk export orders or retail purchases!</em></p>
+    `,
+    author: "Katayayani Enterprises",
+    publishedAt: "2026-08-31",
+    readTime: "3 min read",
+    image: "/products/swaraj/awt13ljuuyjyavhnard5.avif",
+    tags: ["Global Exporter", "IEC Certified", "Company News", "Katayayani Enterprises"],
+    seo: {
+      title: "Katayayani Enterprises - Certified Global Exporter (IEC)",
+      description: "Katayayani Enterprises is now a Government of India certified Importer-Exporter (IEC: BGDPS3254A). We are ready for global export of tractor fiber hoods.",
+      keywords: ["Katayayani Enterprises", "IEC Certificate", "Global Exporter", "Tractor Hood Exporter", "FRP Canopy Export"]
+    }
+  },
+  {
     id: "2",
     slug: "how-to-install-fiber-hood-on-tractor",
     title: "How to Install a Fiber Hood on a Tractor: Step-by-Step Fitting Guide",

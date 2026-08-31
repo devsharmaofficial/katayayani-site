@@ -192,6 +192,26 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                         <span className="text-[11px] text-gray-500 font-medium">Govt. of India Taxpayer Identification</span>
                       </div>
                     </div>
+
+                    <div className="flex items-start gap-[16px] pt-4 border-t border-gray-100/50">
+                      <div className="w-[40px] h-[40px] rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-label-md text-blue-800 uppercase tracking-wider mb-[4px] font-bold flex items-center gap-1.5">
+                          <span>IEC Certified Exporter</span>
+                          <span className="text-[9px] uppercase tracking-wider text-blue-600 font-extrabold bg-blue-100 px-1 py-0.2 rounded-sm border border-blue-200">Global</span>
+                        </h3>
+                        <p className="text-body-lg font-black text-[#012d1d] select-all">
+                          BGDPS3254A
+                        </p>
+                        <a href="/products/katayayani-enterprises.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] text-blue-600 font-bold hover:underline mt-1 inline-block">
+                          View Govt. of India IEC Certificate →
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
