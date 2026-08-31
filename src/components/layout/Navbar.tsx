@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Phone, Menu, X, ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
+import { Phone, Menu, X, ArrowUpRight, MapPin, CheckCircle2, Globe } from "lucide-react";
 import NavHeader from "@/components/ui/nav-header";
 import { cn } from "@/lib/utils";
 
@@ -79,17 +79,21 @@ export default function Navbar() {
                 <span className="text-[#012d1d]">Katayayani</span> <span className="text-[#b36b00]">Enterprises</span>
               </div>
               <div className={cn(
-                "flex items-center gap-1.5 sm:gap-2 lg:gap-3 text-[8.5px] min-[360px]:text-[9px] sm:text-[10px] md:text-[11px] lg:text-[13px] text-gray-800 font-medium transition-all duration-300 whitespace-nowrap",
+                "flex flex-wrap items-center gap-1.5 sm:gap-2 lg:gap-3 text-[8.5px] min-[360px]:text-[9px] sm:text-[10px] md:text-[11px] lg:text-[13px] text-gray-800 font-medium transition-all duration-300",
                 scrolled ? "mt-0.5" : "mt-1 sm:mt-1.5"
               )}>
-                <span className="flex items-center gap-0.5 sm:gap-1">
+                <span className="flex items-center gap-0.5 sm:gap-1 whitespace-nowrap">
                   <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3 lg:w-4 lg:h-4 stroke-[2px]" />
                   Meerut, UP
                 </span>
-                <span className="flex items-center gap-0.5 sm:gap-1">
+                <span className="flex items-center gap-0.5 sm:gap-1 whitespace-nowrap">
                   <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3 lg:w-4 lg:h-4 text-emerald-500 stroke-[2.5px]" />
                   GST: <span className="font-extrabold">09BGDPS3254A1ZL</span>
                 </span>
+                <a href="/certificateOfIEC.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-0.5 sm:gap-1 whitespace-nowrap hover:text-blue-600 transition-colors">
+                  <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3 lg:w-4 lg:h-4 text-blue-500 stroke-[2.5px]" />
+                  IEC: <span className="font-extrabold">BGDPS3254A</span>
+                </a>
               </div>
             </div>
           </Link>
