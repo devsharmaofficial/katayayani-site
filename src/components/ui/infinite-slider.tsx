@@ -40,7 +40,7 @@ export function InfiniteSlider({
     const observer = new IntersectionObserver(
       ([entry]) => {
         // When off screen, pause. When visible, resume.
-        el.style.animationPlayState = entry.isIntersecting ? 'running' : 'running';
+        el.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
       },
       { threshold: 0 }
     );
