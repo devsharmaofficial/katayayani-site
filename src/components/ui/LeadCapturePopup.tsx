@@ -109,7 +109,7 @@ export default function LeadCapturePopup() {
       setError("Please enter your name (at least 2 characters)");
       return;
     }
-    if (phone.length < 10) {
+    if (!/^[6-9]\d{9}$/.test(phone)) {
       setError("Please enter a valid 10-digit phone number");
       return;
     }

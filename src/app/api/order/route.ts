@@ -22,7 +22,7 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
 const orderSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().min(10, "Please enter a valid 10-digit phone number"),
+  phone: z.string().regex(/^[6-9]\d{9}$/, "Please enter a valid 10-digit phone number"),
   address: z.string().min(10, "Please enter a complete address"),
   color: z.string().min(1, "Please select a color"),
   productName: z.string(),

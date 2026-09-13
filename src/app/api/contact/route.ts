@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().regex(/^\+?[0-9\s-]{10,15}$/, "Please enter a valid phone number"),
+  phone: z.string().regex(/^[6-9]\d{9}$/, "Please enter a valid 10-digit phone number"),
   message: z.string().min(10, "Message must be at least 10 characters"),
   type: z.string().optional(),
 });
