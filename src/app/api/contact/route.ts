@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
         from: 'Website Form <onboarding@resend.dev>', // Update this if a custom domain is verified in Resend
-        to: ['agroindustriesmeerut@gmail.com'], // The client's email
+        to: ['devsharmaofficial.id@gmail.com'], // The client's email
         subject: `[Website] New ${formType} from ${name}`,
         html: emailHtml,
       });
