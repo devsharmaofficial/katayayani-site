@@ -86,7 +86,7 @@ export async function POST(req: Request) {
       try {
         await resend.emails.send({
           from: 'Website Orders <onboarding@resend.dev>',
-          to: ['devsharmaofficial.id@gmail.com'],
+          to: ['agroindustriesmeerut@gmail.com'],
           subject: `[NEW ORDER] ₹${amount.toLocaleString('en-IN')} for ${productName} - Ref: ${upiRefId}`,
           html: emailHtml,
         });

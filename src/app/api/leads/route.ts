@@ -46,7 +46,7 @@ export async function POST(req: Request) {
         
         await resend.emails.send({
           from: 'Katayayani Leads <onboarding@resend.dev>',
-          to: 'devsharmaofficial.id@gmail.com',
+          to: 'agroindustriesmeerut@gmail.com',
           subject: `🔥 New Lead: ${lead.name} is looking for ${lead.productName}`,
           html: emailHtml,
         });
