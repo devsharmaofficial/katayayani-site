@@ -12,6 +12,7 @@ import FloatingActions from "@/components/layout/FloatingActions";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { getBlogBySlug } from "@/lib/blogs";
+import TractorPriceEstimator from "@/components/blog/TractorPriceEstimator";
 
 export default function BlogPostPage({
   params,
@@ -58,8 +59,29 @@ export default function BlogPostPage({
         }}
       />
 
+      {/* FAQPage JSON-LD Schema for Rich Snippets */}
+      {blog.faqs && blog.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: blog.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
+
       <main className="flex-grow pt-28 pb-20 bg-white min-h-screen">
-        <div className="max-w-[800px] mx-auto px-[24px]">
+        <div className="max-w-[880px] mx-auto px-[24px]">
           <div className="mb-8">
             <Breadcrumbs
               items={[
@@ -123,10 +145,29 @@ export default function BlogPostPage({
             </ScrollReveal>
 
             <ScrollReveal>
-              <div 
-                className="prose prose-lg prose-emerald max-w-none prose-headings:font-black prose-headings:text-[#012d1d] prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-[#012d1d]"
-                dangerouslySetInnerHTML={{ __html: blog.content }}
-              />
+              {blog.content.includes("<!-- PRICE_ESTIMATOR_COMPONENT -->") ? (
+                (() => {
+                  const [before, after] = blog.content.split("<!-- PRICE_ESTIMATOR_COMPONENT -->");
+                  return (
+                    <div>
+                      <div 
+                        className="prose prose-lg prose-emerald max-w-none prose-headings:font-black prose-headings:text-[#012d1d] prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-[#012d1d]"
+                        dangerouslySetInnerHTML={{ __html: before }}
+                      />
+                      <TractorPriceEstimator />
+                      <div 
+                        className="prose prose-lg prose-emerald max-w-none prose-headings:font-black prose-headings:text-[#012d1d] prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-[#012d1d]"
+                        dangerouslySetInnerHTML={{ __html: after }}
+                      />
+                    </div>
+                  );
+                })()
+              ) : (
+                <div 
+                  className="prose prose-lg prose-emerald max-w-none prose-headings:font-black prose-headings:text-[#012d1d] prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-[#012d1d]"
+                  dangerouslySetInnerHTML={{ __html: blog.content }}
+                />
+              )}
             </ScrollReveal>
           </article>
 

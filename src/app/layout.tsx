@@ -5,6 +5,7 @@ import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import LeadTracker from "@/components/ui/LeadTracker";
 import LeadCapturePopup from "@/components/ui/LeadCapturePopup";
 
@@ -258,6 +259,8 @@ export default function RootLayout({
 
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* Explicit favicon — force business logo, override any defaults */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -280,6 +283,21 @@ export default function RootLayout({
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JDL30B60KP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JDL30B60KP');
+          `}
+        </Script>
+
         <WebsiteBackground>
           {children}
         </WebsiteBackground>

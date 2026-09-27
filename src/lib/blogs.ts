@@ -15,9 +15,335 @@ export interface BlogPost {
     description: string;
     keywords: string[];
   };
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export const blogs: BlogPost[] = [
+  {
+    id: "5",
+    slug: "tractor-fiber-hood-prices-in-india-andhra-pradesh-tamil-nadu-karnataka",
+    title: "Tractor Fiber Hood Prices in India: Andhra Pradesh, Tamil Nadu & Karnataka City-Wise Guide (2026)",
+    excerpt: "Compare tractor fiber hood prices in India across Andhra Pradesh, Karnataka, and Tamil Nadu. Check city-wise rates for Guntur, Dharwad, Vijayawada, Coimbatore, Belagavi, Thanjavur, and use our interactive price finder for Swaraj, Mahindra, Sonalika & all major brands.",
+    content: `
+      <h2>Tractor Fiber Hood Prices in India: Why South Indian Farmers Are Upgrading</h2>
+      <p>Agricultural mechanization across South India is evolving rapidly. Whether you are farming chilli and cotton in <strong>Guntur</strong>, cultivating sugarcane in <strong>Belagavi</strong>, ploughing rich paddy deltas in <strong>Vijayawada</strong> and <strong>Thanjavur</strong>, or harvesting commercial crops in <strong>Dharwad</strong> and <strong>Coimbatore</strong>, a tractor is your most valuable asset.</p>
+      
+      <p>However, operating a tractor for 10 to 14 hours every day under blistering 40°C to 45°C summer heat or sudden torrential coastal monsoon downpours takes a heavy physical toll on operators. Moreover, relentless solar radiation degrades expensive digital dashboard consoles, steering controls, and electrical wiring. That is why thousands of farmers across <strong>Andhra Pradesh, Karnataka, and Tamil Nadu</strong> are upgrading from flimsy cloth umbrellas to heavy-duty <strong>tractor fiber hoods (also known as Punjabi chatris or FRP canopies)</strong>.</p>
+
+      <p>In this comprehensive guide, we reveal the actual <strong>tractor fiber hood prices in India</strong>, breakdown city-wise costs for top agricultural districts, and demonstrate how ordering factory-direct from <strong>Katayayani Enterprises</strong> saves you between <strong>₹3,500 and ₹5,500 per tractor</strong> compared to local middlemen.</p>
+
+      <img src="/products/swaraj/awt13ljuuyjyavhnard5.avif" alt="Tractor fiber hood price in India Andhra Pradesh Tamil Nadu Karnataka - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+
+      <!-- PRICE_ESTIMATOR_COMPONENT -->
+
+      <h2>Tractor Fiber Hood Price Overview in India (2026 Price Benchmark)</h2>
+      <p>The <strong>tractor fiber hood price in India</strong> generally ranges between <strong>₹8,500 and ₹14,500</strong> for standard to heavy-duty models, while deluxe customized Punjabi hoods equipped with sound system boxes, LED projector slots, and dual-tone aerodynamic wings range from <strong>₹13,500 to ₹17,500</strong>.</p>
+
+      <p>The price of a tractor fiber hood depends on four primary engineering factors:</p>
+      <ul>
+        <li><strong>FRP Layer Thickness:</strong> Single-layer budget hoods use less resin, whereas industrial heavy-duty hoods utilize dual-layer multi-axial glass roving mats with core reinforcement for high impact resistance.</li>
+        <li><strong>Automotive UV Gelcoat:</strong> Premium hoods use virgin isophthalic UV-stabilized gelcoat that prevents discoloration, fading, and micro-cracking under intense tropical sunlight.</li>
+        <li><strong>Mounting Hardware (Chimtas):</strong> Heavy-gauge structural iron pipe brackets (chimtas) and powder-coated steel clamps ensure vibration-free stability on bumpy village roads and uneven tilled fields.</li>
+        <li><strong>Tractor Model Customization:</strong> Exact mold shapes designed for specific tractor bonnets and fenders (e.g. Swaraj 744 FE, Mahindra 575 DI, Sonalika DI 750, Massey Ferguson 241 DI, New Holland 3630).</li>
+      </ul>
+
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="background-color: #012d1d; color: #ffffff;">
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Hood Category</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Factory-Direct Price (Katayayani)</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Local Retailer Price in South India</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Your Direct Factory Savings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Standard Single Layer FRP Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹8,500 – ₹9,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; text-decoration: line-through; color: #64748b;">₹12,500 – ₹14,000</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #047857; font-weight: bold;">Save ₹4,000 – ₹4,500</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Heavy-Duty Double Layer Punjabi Canopy</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹10,500 – ₹13,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; text-decoration: line-through; color: #64748b;">₹15,500 – ₹18,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #047857; font-weight: bold;">Save ₹5,000 – ₹5,500</td>
+            </tr>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Deluxe Punjabi Hood (With Speaker Box & Lights)</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹13,500 – ₹16,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; text-decoration: line-through; color: #64748b;">₹19,000 – ₹23,000</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #047857; font-weight: bold;">Save ₹5,500 – ₹6,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>State-Wise Tractor Fiber Hood Prices: Andhra Pradesh</h2>
+      <p>Andhra Pradesh is one of India's most intensive agricultural states, with massive concentrations of commercial crops like chilli, cotton, tobacco, paddy, and groundnut. The demand for <strong>tractor fiber hoods in Andhra Pradesh</strong> has surged as farmers recognize that cockpit shade increases daily productive operating hours during sweltering summers.</p>
+
+      <img src="/products/mahindra/v1784922285400_xwcktf6kjgjoomfck8hs.avif" alt="Mahindra tractor fiber hood price in Guntur Andhra Pradesh - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+
+      <h3>1. Guntur Tractor Fiber Hood Price</h3>
+      <p>As Asia's biggest chilli market and a colossal cotton and tobacco center, <strong>Guntur</strong> boasts one of the highest tractor densities in Andhra Pradesh. High-horsepower tractors like the <strong>Mahindra 575 DI</strong>, <strong>Swaraj 744 FE</strong>, and <strong>Sonalika DI 750</strong> work long hours in extreme summer temperatures touching 44°C. The factory-direct <strong>Mahindra tractor fiber hood price in Guntur</strong> starts around <strong>₹8,999 to ₹13,499</strong>. Our hoods are equipped with heat-reflective UV-shield gelcoat that reduces cabin ambient heat by up to 15°C.</p>
+
+      <h3>2. Vijayawada & Krishna Delta District</h3>
+      <p>The fertile Krishna River Delta surrounding <strong>Vijayawada</strong> is the rice bowl of Andhra Pradesh. Intensive wetland puddling and monsoon farming demand 100% rustproof canopies. Unlike local tin or mild-steel sheet hoods that quickly corrode in humid coastal conditions, our <strong>tractor fiber chatri price in Vijayawada</strong> starts at <strong>₹8,800</strong>, delivering zero-corrosion fiberglass longevity.</p>
+
+      <h3>3. Kurnool & Rayalaseema Belt</h3>
+      <p>In the red and black soils of <strong>Kurnool and Anantapur</strong>, groundnut and sunflower cultivation requires heavy deep-ploughing implements. Engine vibrations are intense. Katayayani Enterprises supplies heavy-duty brackets (chimtas) with vulcanized rubber anti-vibration damping pads. The <strong>tractor fiber hood price in Kurnool</strong> ranges between <strong>₹8,999 and ₹13,999</strong>.</p>
+
+      <h3>4. Rajahmundry & East/West Godavari</h3>
+      <p>The lush Godavari canal networks around <strong>Rajahmundry</strong> experience heavy seasonal rainfall. Our aerodynamic fiber roofs feature molded rain drainage channels that steer rainwater away from the operator's seating area and steering wheel. Factory-direct delivery reaches Rajahmundry transport godowns in just 3 to 4 days.</p>
+
+      <h2>State-Wise Tractor Fiber Hood Prices: Karnataka</h2>
+      <p>Karnataka's diverse agricultural topography spans the dryland plains of the North, the irrigated sugarcane belts, and the high-rainfall Malnad region. Farmers seeking the best <strong>tractor fiber hood price in Karnataka</strong> can take advantage of our direct transport logistics to all major regional hubs.</p>
+
+      <img src="/products/sonalika/v1784922285400_hero_image_sonalika.png" alt="Sonalika tractor fiber hood price in Dharwad Karnataka - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+
+      <h3>1. Dharwad & Hubli Agricultural Hub</h3>
+      <p>Home to the prestigious University of Agricultural Sciences (UAS Dharwad), <strong>Dharwad</strong> is the technological and operational heart of North Karnataka's soybean, cotton, and pulse cultivation. Farmers in Dharwad frequently operate <strong>Swaraj 744 FE</strong>, <strong>Swaraj 855 FE</strong>, and <strong>John Deere 5050 D</strong>. The <strong>Swaraj 744 fiber hood price in Dharwad</strong> starts at <strong>₹8,999</strong> for heavy single layer and <strong>₹13,999</strong> for deluxe Punjabi double-layer models.</p>
+
+      <h3>2. Belagavi (Belgaum) Sugarcane Belt</h3>
+      <p><strong>Belagavi</strong> is the undisputed sugarcane capital of Karnataka, with dozens of active sugar factories and high-capacity tractor trolley haulage. Hauling heavy sugarcane loads across rough rural tracks demands an ultra-rigid canopy that will not wobble or crack. The <strong>punjabi tractor hood price in Belagavi</strong> starts from <strong>₹9,200</strong>, with specialized tall mounting brackets designed for unrestricted trolley visibility.</p>
+
+      <h3>3. Davanagere — Central Karnataka Rice & Maize Epicenter</h3>
+      <p>Located in the heart of Karnataka along the Bhadra canal system, <strong>Davanagere</strong> is a powerhouse of paddy, maize, and cotton. Tractor drivers require all-weather shade that survives blistering summer afternoons and unexpected squalls. The <strong>massey ferguson fiber hood price in Davanagere</strong> is <strong>₹8,999 to ₹13,699</strong> at direct factory rates.</p>
+
+      <h3>4. Shimoga (Shivamogga) — Malnad Arecanut & Paddy Zone</h3>
+      <p>In the Malnad gateway of <strong>Shimoga</strong>, annual rainfall can be relentless. Our composite FRP hoods are 100% waterproof and impervious to fungal decay, moss build-up, and chemical fertilizer vapors. Shipped directly to Shimoga within 4 business days.</p>
+
+      <h3>5. Mandya & Ballari Districts</h3>
+      <p>From the Cauvery-fed sugarcane fields of <strong>Mandya</strong> to the dryland cotton and sunflower acreages of <strong>Ballari (Bellary)</strong>, Katayayani Enterprises delivers model-matching hoods for Eicher, Kubota, Farmtrac, and Mahindra tractors directly to local farmers and cooperative societies.</p>
+
+      <h2>State-Wise Tractor Fiber Hood Prices: Tamil Nadu</h2>
+      <p>Tamil Nadu combines progressive farm mechanization with intensive multi-cropping. High humidity along the coast and searing temperatures in the interior plains make a tractor sunshade roof an absolute necessity. Katayayani Enterprises provides seamless transport delivery to every district in Tamil Nadu.</p>
+
+      <img src="/products/massey-ferguson/v1784922285400_hero_image.avif" alt="Massey Ferguson tractor fiber hood price in Coimbatore Tamil Nadu - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+
+      <h3>1. Coimbatore & Pollachi Agro-Machinery Center</h3>
+      <p><strong>Coimbatore</strong> is known across India for engineering prowess, precision agricultural pumps, and high-efficiency farming. Farmers in Coimbatore, Pollachi, and Tirupur demand sleek, aerodynamically balanced tractor canopies that minimize road wind resistance during inter-farm transit. The <strong>fiber hood for tractor price in Coimbatore</strong> ranges from <strong>₹8,999 to ₹13,999</strong>, complete with powder-coated mounting kits.</p>
+
+      <h3>2. Thanjavur — Cauvery Delta Rice Granary</h3>
+      <p><strong>Thanjavur</strong> and the surrounding Cauvery Delta (Tiruvarur, Mayiladuthurai, Nagapattinam) represent South India's historic rice granary. Working tractors in wet, waterlogged paddy mud (puddling) creates constant saltwater and mud splatter. Metal canopies rust through within two seasons; our <strong>sonalika tractor fiber hood price in Thanjavur</strong> starts from <strong>₹8,799</strong>, offering an indestructible, rust-free composite body that lasts over a decade.</p>
+
+      <h3>3. Salem & Erode Agricultural Centers</h3>
+      <p><strong>Salem</strong> (famed for tapioca, mangoes, and agricultural implements) and <strong>Erode</strong> (the world-famous Turmeric City) are thriving agricultural trade hubs. Farmers operating <strong>Massey Ferguson 241 DI</strong>, <strong>Mahindra 475 DI</strong>, and <strong>Eicher 380</strong> can procure exact color-matched hoods with direct factory billing starting at <strong>₹8,699</strong>.</p>
+
+      <h3>4. Madurai, Trichy & Tirunelveli</h3>
+      <p>Whether navigating the banana plantations of <strong>Tiruchirappalli (Trichy)</strong>, the dryland pulse acreages of <strong>Madurai</strong>, or the Thamirabarani river basin in <strong>Tirunelveli</strong>, Katayayani Enterprises delivers reliable, export-quality tractor fiber chatris with safe transit insurance and zero damage guarantee.</p>
+
+      <h2>Brand-Wise Tractor Fiber Hood Price Comparison (All Major Brands)</h2>
+      <p>Katayayani Enterprises manufactures exact-fit FRP canopies for every tractor brand sold in India. The table below details popular tractor brands, models, and their factory-direct prices:</p>
+
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="background-color: #012d1d; color: #ffffff;">
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Tractor Brand</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Popular Matching Models</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">Factory Price Range</th>
+              <th style="padding: 12px 16px; border: 1px solid #024a30;">OEM Color Matching</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Mahindra Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Mahindra 575 DI, 475 DI, 275 DI, Arjun 605, Yuvo Tech+</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹8,999 – ₹13,499</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Mahindra Signature Deep Red</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Swaraj Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Swaraj 744 FE, Swaraj 855 FE, 735 FE, 963 FE</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹8,999 – ₹13,999</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Swaraj Royal Blue & Alpine White</td>
+            </tr>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Sonalika Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Sonalika DI 750 III, DI 35, DI 60, Tiger 50/55</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹8,799 – ₹13,499</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Sonalika Metallic Blue</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Massey Ferguson Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">MF 241 DI Maha Shakti, MF 1035 DI, MF 9500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹8,999 – ₹13,699</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Massey Ferguson Crimson Red</td>
+            </tr>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">John Deere Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">JD 5050 D, JD 5310, JD 5045 D, 5210 GearPro</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹9,499 – ₹14,499</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">John Deere Classic Green & Ag-Yellow</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">New Holland Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">New Holland 3630 TX Super, 3230, Excel 4710</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹9,199 – ₹13,999</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">New Holland Brilliant Blue</td>
+            </tr>
+            <tr style="background-color: #f9fbf9;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Eicher Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Eicher 380, Eicher 485, Eicher 551, 557 Super Plus</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹8,699 – ₹13,299</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Eicher Heritage Silver / Royal Blue</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Kubota Tractor Fiber Hood</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Kubota MU4501, Kubota MU5501 4WD, L4508</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold; color: #012d1d;">₹9,499 – ₹14,499</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0;">Kubota High-Gloss Orange</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why Buy Factory-Direct from Katayayani Enterprises?</h2>
+      <p>Many tractor owners in South India make the mistake of buying cheap local fiber hoods from wayside mechanics or local retail shops. Here is why buying factory-direct from Katayayani Enterprises is significantly smarter:</p>
+
+      <ul>
+        <li><strong>Direct Wholesale Savings:</strong> Local retailers mark up tractor accessories by 35% to 50% to cover multiple distributor commissions and showroom overheads. When you order from Katayayani Enterprises, you pay true manufacturing cost.</li>
+        <li><strong>Govt of India Certified Exporter:</strong> We are an officially certified Importer-Exporter (IEC: BGDPS3254A) and GST registered enterprise (09BGDPS3254A1ZL). You receive a genuine GST tax invoice with full warranty backing.</li>
+        <li><strong>IndiaMART Trust Certificate:</strong> Verified manufacturer credentials ensuring zero fraud, authentic materials, and transparent payment processing.</li>
+        <li><strong>No Cheap Fillers or Chalk Powder:</strong> Local copycat manufacturers mix cheap chalk powder (calcium carbonate) into the resin to add fake weight. Those hoods become brittle and crack within 6 months. Katayayani Enterprises uses 100% pure virgin fiberglass roving and premium polyester resins.</li>
+        <li><strong>Precision Bolt-On Fitment:</strong> All brackets (chimtas) are pre-engineered to match the exact factory mounting holes on your tractor. No dangerous welding or drilling into your tractor body is ever required.</li>
+      </ul>
+
+      <img src="/products/swaraj/v1784922285400_e2uvnt1arv4lducfykig.avif" alt="Heavy duty swaraj tractor fiber hood punjabi chatri with factory fitting - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+
+      <h2>Safe Logistics & Delivery to South India: How We Ship</h2>
+      <p>We routinely deliver tractor fiber hoods to agricultural customers across <strong>Andhra Pradesh, Karnataka, Tamil Nadu, Telangana, and Kerala</strong>. Here is how our seamless transport process works:</p>
+
+      <ol>
+        <li><strong>Multi-Layer Shockproof Packaging:</strong> Each canopy is encased in 5-ply heavy corrugated wrap, surrounded by high-density polyethylene air bubble film, and fortified with reinforced corner protectors to eliminate transit scuffs.</li>
+        <li><strong>Dispatch Within 24 to 48 Hours:</strong> Standard and popular models for Swaraj, Mahindra, and Sonalika are kept in ready stock and dispatched within 24–48 hours of order confirmation.</li>
+        <li><strong>Trusted Transport Networks:</strong> We partner with India's leading logistics providers, including VRL Logistics, TCI Freight, SafeXpress, ARC, and Orange Logistics. Consignments are tracked until they arrive safely at your nearest city depot or transport godown.</li>
+        <li><strong>Delivery Transit Time:</strong> Typically <strong>3 to 5 business days</strong> to Guntur, Vijayawada, Dharwad, Belagavi, Coimbatore, Thanjavur, and all major South Indian districts.</li>
+      </ol>
+
+      <h2>How to Order Your Tractor Fiber Hood in 3 Easy Steps</h2>
+      <p>Ordering directly from the factory has never been easier:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Call or WhatsApp our customer care desk at <strong>+91-9358273054</strong> or <strong>+91-8077004688</strong>.</li>
+        <li><strong>Step 2:</strong> Tell us your tractor brand, model (e.g. Swaraj 744 FE or Mahindra 575 DI), and your delivery city (e.g. Guntur, Dharwad, Coimbatore). We will instantly share photos, color options, and an exact all-inclusive factory quotation.</li>
+        <li><strong>Step 3:</strong> Confirm your order via secure digital payment (UPI / NEFT / Bank Transfer). We pack and dispatch your tractor fiber hood, sharing the transport consignment receipt and tracking number immediately.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Q: What is the price of a tractor fiber hood in India?</h3>
+      <p><strong>A:</strong> The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the tractor brand and whether you choose a single-layer or heavy-duty double-layer canopy. Deluxe models with integrated speaker consoles and LED light mounts cost between ₹13,500 and ₹17,500.</p>
+
+      <h3>Q: What is the Mahindra tractor fiber hood price in Guntur, Andhra Pradesh?</h3>
+      <p><strong>A:</strong> At Katayayani Enterprises, factory-direct Mahindra tractor fiber hood prices for delivery to Guntur start at ₹8,999 for models like the Mahindra 575 DI, 475 DI, and Arjun 605. Local retailers in Guntur typically charge ₹14,000 or more, so buying factory-direct saves you over ₹4,500.</p>
+
+      <h3>Q: What is the Swaraj 744 fiber hood price in Dharwad, Karnataka?</h3>
+      <p><strong>A:</strong> The Swaraj 744 fiber hood price in Dharwad starts from ₹8,999 for the heavy single-layer canopy and ₹13,999 for the deluxe Punjabi model. It includes matching Swaraj blue/white gelcoat and heavy-gauge mounting pipe brackets.</p>
+
+      <h3>Q: Can you deliver a tractor fiber hood directly to Coimbatore or Thanjavur in Tamil Nadu?</h3>
+      <p><strong>A:</strong> Yes, Katayayani Enterprises ships directly to Coimbatore, Thanjavur, Salem, Madurai, and all districts in Tamil Nadu via leading transport services like VRL and TCI. Delivery typically takes 3 to 5 business days, fully insured against transit damage.</p>
+
+      <h3>Q: Does the tractor fiber hood come with mounting brackets and bolts?</h3>
+      <p><strong>A:</strong> Yes. Every tractor fiber hood shipped by Katayayani Enterprises includes a complete mounting kit: heavy-gauge structural iron pipe brackets (chimtas), vibration-absorbing rubber washers, and high-tensile zinc-plated bolts engineered for an exact bolt-on fit without any welding.</p>
+
+      <h3>Q: How long does an FRP tractor fiber canopy last?</h3>
+      <p><strong>A:</strong> Made from Grade-A Fibre Reinforced Plastic (FRP) with UV-stabilized isophthalic gelcoat, our tractor canopies typically last 8 to 12 years under intensive agricultural field conditions without cracking, rusting, or fading.</p>
+
+      <h2>Contact Katayayani Enterprises — India's Premier Fiber Hood Manufacturer</h2>
+      <p>Upgrade your tractor today with India's most trusted, durable, and weather-resistant <strong>tractor fiber hood</strong>. Contact our factory team directly:</p>
+      <ul>
+        <li>📞 <strong>Call / WhatsApp:</strong> +91-9358273054 / +91-8077004688</li>
+        <li>📧 <strong>Email:</strong> agroindustriesmeerut@gmail.com</li>
+        <li>📍 <strong>Factory Address:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002</li>
+        <li>🌐 <strong>Official Website:</strong> katayayanienterprises.online</li>
+      </ul>
+      <p><em>Order direct from the factory today and enjoy wholesale pricing, prompt dispatch, and guaranteed quality for your tractor!</em></p>
+    `,
+    author: "Katayayani Enterprises",
+    publishedAt: "2026-09-27",
+    readTime: "8 min read",
+    image: "/products/swaraj/awt13ljuuyjyavhnard5.avif",
+    images: [
+      "/products/mahindra/v1784922285400_xwcktf6kjgjoomfck8hs.avif",
+      "/products/sonalika/v1784922285400_hero_image_sonalika.png",
+      "/products/massey-ferguson/v1784922285400_hero_image.avif",
+      "/products/swaraj/v1784922285400_e2uvnt1arv4lducfykig.avif"
+    ],
+    tags: [
+      "Tractor Fiber Hood Price",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Tamil Nadu",
+      "Fiber Chatri",
+      "Guntur",
+      "Dharwad",
+      "Vijayawada",
+      "Coimbatore",
+      "Punjabi Hood",
+      "Mahindra Tractor",
+      "Swaraj 744",
+      "Factory Direct"
+    ],
+    seo: {
+      title: "Tractor Fiber Hood Prices in India: AP, TN & Karnataka City Guide (2026)",
+      description: "Compare tractor fiber hood prices in India across Andhra Pradesh, Karnataka & Tamil Nadu. City-wise rates for Guntur, Dharwad, Vijayawada, Coimbatore, Belagavi & interactive price finder.",
+      keywords: [
+        "tractor fiber hood price",
+        "fiber hood prices in india",
+        "tractor fiber hood price in india",
+        "tractor fiber hood price in andhra pradesh",
+        "tractor fiber hood price in karnataka",
+        "tractor fiber hood price in tamil nadu",
+        "mahindra tractor fiber hood price in guntur",
+        "swaraj 744 fiber hood price in dharwad",
+        "tractor fiber chatri price in vijayawada",
+        "punjabi tractor hood price in belagavi",
+        "fiber hood for tractor price in coimbatore",
+        "sonalika tractor fiber hood price in thanjavur",
+        "massey ferguson fiber hood price in davanagere",
+        "eicher tractor fiber hood price in salem",
+        "tractor fiber hood price in kurnool",
+        "fiber hood price in rajahmundry",
+        "punjabi hood tractor price in mandya",
+        "tractor fiber canopy price south india",
+        "fiber chatri manufacturer direct delivery",
+        "swaraj 855 fiber hood price",
+        "fiber hood for tractor price",
+        "Katayayani Enterprises tractor hood"
+      ]
+    },
+    faqs: [
+      {
+        question: "What is the price of a tractor fiber hood in India?",
+        answer: "The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the brand and single-layer vs heavy-duty double-layer construction. Deluxe models with speaker console and LED slots cost between ₹13,500 and ₹17,500."
+      },
+      {
+        question: "What is the Mahindra tractor fiber hood price in Guntur, Andhra Pradesh?",
+        answer: "At Katayayani Enterprises, Mahindra tractor fiber hood price for Guntur delivery starts at ₹8,999 for models like Mahindra 575 DI, 475 DI, and Arjun 605, saving over ₹4,500 compared to local retailers."
+      },
+      {
+        question: "What is the Swaraj 744 fiber hood price in Dharwad, Karnataka?",
+        answer: "The Swaraj 744 fiber hood price in Dharwad starts from ₹8,999 for heavy single-layer and ₹13,999 for the deluxe Punjabi canopy, including matching Swaraj blue/white paint and mounting brackets."
+      },
+      {
+        question: "Can Katayayani Enterprises deliver a tractor fiber hood directly to Coimbatore or Thanjavur in Tamil Nadu?",
+        answer: "Yes, Katayayani Enterprises delivers directly to Coimbatore, Thanjavur, Salem, Madurai, and all districts in Tamil Nadu via leading logistics providers within 3 to 5 business days."
+      },
+      {
+        question: "Does the tractor fiber hood come with mounting brackets and bolts?",
+        answer: "Yes, every tractor fiber hood shipped includes heavy-gauge steel pipe brackets (chimtas), vibration-damping rubber washers, and zinc-plated high-tensile bolts for an exact bolt-on fit."
+      },
+      {
+        question: "How long does an FRP tractor fiber canopy last?",
+        answer: "Engineered from Grade-A Fibre Reinforced Plastic (FRP) with UV-stabilized isophthalic gelcoat, our canopies last 8 to 12 years under intensive agricultural conditions without cracking or rusting."
+      }
+    ]
+  },
   {
     id: "4",
     slug: "top-tractor-fiber-hood-exporter-india-katayayani-enterprises",
