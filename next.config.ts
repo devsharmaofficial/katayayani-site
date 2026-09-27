@@ -114,6 +114,34 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Force redirect old domains to new domain for SEO
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "katayayanienterprises.vercel.app",
+          },
+        ],
+        destination: "https://katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.katayayanienterprises.com",
+          },
+        ],
+        destination: "https://katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   // Redirect trailing slashes for canonical URL consistency
   trailingSlash: false,
 };
