@@ -66,7 +66,7 @@ export default function Footer() {
           <Link href="/blogs" className="hover:text-[#012d1d] transition-colors py-1">Blogs</Link>
           <Link href="/about" className="hover:text-[#012d1d] transition-colors py-1">About</Link>
           <Link href="/gallery" className="hover:text-[#012d1d] transition-colors py-1">Gallery</Link>
-          <a href="https://www.katayayanienterprises.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#012d1d] transition-colors font-bold flex items-center gap-1 text-[#012d1d] py-1">
+          <a href="https://katayayanienterprises.online/" target="_blank" rel="noopener noreferrer" className="hover:text-[#012d1d] transition-colors font-bold flex items-center gap-1 text-[#012d1d] py-1">
             Full Catalog <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>

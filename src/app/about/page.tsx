@@ -118,7 +118,7 @@ export default function AboutPage() {
                     At Katayayani Enterprises, we prioritize transparency and reliability. We are honored to be awarded the <strong className="text-on-surface">IndiaMART Certificate of Trust</strong>, reflecting our steadfast commitment to genuine business operations, financial integrity, and product quality.
                   </p>
                   <p className="text-body-lg text-on-surface-variant leading-relaxed mt-3">
-                    Explore our comprehensive <a href="https://www.katayayanienterprises.com/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Official Business Catalog</a> to discover our full range of premium fiber hoods, complete with detailed specifications and wholesale pricing options tailored for dealers and farmers across India.
+                    Explore our comprehensive <a href="https://katayayanienterprises.online/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Official Business Catalog</a> to discover our full range of premium fiber hoods, complete with detailed specifications and wholesale pricing options tailored for dealers and farmers across India.
                   </p>
                 </ScrollReveal>
 
@@ -250,7 +250,7 @@ export default function AboutPage() {
 
                     {/* Official Business Catalog Card */}
                     <a
-                      href="https://www.katayayanienterprises.com/"
+                      href="https://katayayanienterprises.online/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:border-[#012d1d]/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all duration-300 cursor-pointer sm:col-span-2 lg:col-span-2"

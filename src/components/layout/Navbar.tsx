@@ -111,7 +111,7 @@ export default function Navbar() {
           {/* Desktop Call to Actions */}
           <div className="hidden md:flex items-center gap-2 lg:gap-3">
             <a
-              href="https://www.katayayanienterprises.com/"
+              href="https://katayayanienterprises.online/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-gray-200 text-[#012d1d] font-semibold text-[14px] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm"
@@ -178,7 +178,7 @@ export default function Navbar() {
           <div className="h-[1px] bg-gray-100 mt-2 mb-4" />
           <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3">
             <a
-              href="https://www.katayayanienterprises.com/"
+              href="https://katayayanienterprises.online/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gray-50 text-[#012d1d] font-bold text-[15px] border border-gray-200 active:scale-95 transition-all min-h-[48px]"
