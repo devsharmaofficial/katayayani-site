@@ -5,6 +5,7 @@ import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import LeadTracker from "@/components/ui/LeadTracker";
 import LeadCapturePopup from "@/components/ui/LeadCapturePopup";
 
@@ -251,21 +252,6 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${inter.variable} ${outfit.variable} h-full`}>
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ3EFJ4G81" />
-        <script
-          id="google-tag-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-NQ3EFJ4G81');
-              gtag('config', 'G-JDL30B60KP');
-            `,
-          }}
-        />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -297,6 +283,22 @@ export default function RootLayout({
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NQ3EFJ4G81"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NQ3EFJ4G81');
+            gtag('config', 'G-JDL30B60KP');
+          `}
+        </Script>
+
         <WebsiteBackground>
           {children}
         </WebsiteBackground>
