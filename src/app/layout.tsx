@@ -125,6 +125,15 @@ export const metadata: Metadata = {
     },
   },
   category: "Agricultural Equipment, Tractor Parts, Tractor Fiber Hoods",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-64.png", type: "image/png", sizes: "64x64" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico",
+  },
 };
 
 // JSON-LD Structured Data — Organization + LocalBusiness + WebSite
@@ -249,6 +258,12 @@ export default function RootLayout({
 
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
+        {/* Explicit favicon — force business logo, override any defaults */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         {/* Force Google site name */}
         <meta name="application-name" content="Katayayani Enterprises" />
         {/* Additional SEO Meta Tags */}
