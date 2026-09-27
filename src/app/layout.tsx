@@ -252,7 +252,7 @@ export default function RootLayout({
     <html lang="en-IN" className={`${inter.variable} ${outfit.variable} h-full`}>
       <head>
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDL30B60KP" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ3EFJ4G81" />
         <script
           id="google-tag-init"
           dangerouslySetInnerHTML={{
@@ -260,6 +260,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', 'G-NQ3EFJ4G81');
               gtag('config', 'G-JDL30B60KP');
             `,
           }}
