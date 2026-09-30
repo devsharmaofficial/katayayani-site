@@ -40,7 +40,7 @@ export const blogs: BlogPost[] = [
       <!-- PRICE_ESTIMATOR_COMPONENT -->
 
       <h2>Tractor Fiber Hood Price Overview in India (2026 Price Benchmark)</h2>
-      <p>The <strong>tractor fiber hood price in India</strong> generally ranges between <strong>₹8,500 and ₹14,500</strong> for standard to heavy-duty models, while deluxe customized Punjabi hoods equipped with sound system boxes, LED projector slots, and dual-tone aerodynamic wings range from <strong>₹13,500 to ₹17,500</strong>.</p>
+      <p>The <strong>tractor fiber hood price in India</strong> generally ranges between <strong>₹8,500 and ₹14,500</strong> for standard to heavy-duty models, while deluxe customized Punjabi hoods equipped with sound system boxes, LED projector slots, and dual-tone aerodynamic wings range from <strong>₹14,500 to ₹18,500</strong>.</p>
 
       <p>The price of a tractor fiber hood depends on four primary engineering factors:</p>
       <ul>
@@ -69,13 +69,13 @@ export const blogs: BlogPost[] = [
             </tr>
             <tr style="background-color: #ffffff;">
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Heavy-Duty Double Layer Punjabi Canopy</td>
-              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹10,500 – ₹13,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹11,500 – ₹14,500</td>
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; text-decoration: line-through; color: #64748b;">₹15,500 – ₹18,500</td>
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #047857; font-weight: bold;">Save ₹5,000 – ₹5,500</td>
             </tr>
             <tr style="background-color: #f9fbf9;">
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; font-weight: bold;">Deluxe Punjabi Hood (With Speaker Box & Lights)</td>
-              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹13,500 – ₹16,500</td>
+              <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #012d1d; font-weight: bold;">₹14,500 – ₹17,500</td>
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; text-decoration: line-through; color: #64748b;">₹19,000 – ₹23,000</td>
               <td style="padding: 12px 16px; border: 1px solid #e2e8f0; color: #047857; font-weight: bold;">Save ₹5,500 – ₹6,500</td>
             </tr>
@@ -237,7 +237,7 @@ export const blogs: BlogPost[] = [
       <h2>Frequently Asked Questions (FAQ)</h2>
 
       <h3>Q: What is the price of a tractor fiber hood in India?</h3>
-      <p><strong>A:</strong> The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the tractor brand and whether you choose a single-layer or heavy-duty double-layer canopy. Deluxe models with integrated speaker consoles and LED light mounts cost between ₹13,500 and ₹17,500.</p>
+      <p><strong>A:</strong> The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the tractor brand and whether you choose a single-layer or heavy-duty double-layer canopy. Deluxe models with integrated speaker consoles and LED light mounts cost between ₹14,500 and ₹18,500.</p>
 
       <h3>Q: What is the Mahindra tractor fiber hood price in Guntur, Andhra Pradesh?</h3>
       <p><strong>A:</strong> At Katayayani Enterprises, factory-direct Mahindra tractor fiber hood prices for delivery to Guntur start at ₹8,999 for models like the Mahindra 575 DI, 475 DI, and Arjun 605. Local retailers in Guntur typically charge ₹14,000 or more, so buying factory-direct saves you over ₹4,500.</p>
@@ -320,7 +320,7 @@ export const blogs: BlogPost[] = [
     faqs: [
       {
         question: "What is the price of a tractor fiber hood in India?",
-        answer: "The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the brand and single-layer vs heavy-duty double-layer construction. Deluxe models with speaker console and LED slots cost between ₹13,500 and ₹17,500."
+        answer: "The factory-direct tractor fiber hood price in India ranges from ₹8,500 to ₹14,500 depending on the brand and single-layer vs heavy-duty double-layer construction. Deluxe models with speaker console and LED slots cost between ₹14,500 and ₹18,500."
       },
       {
         question: "What is the Mahindra tractor fiber hood price in Guntur, Andhra Pradesh?",
@@ -365,13 +365,8 @@ export const blogs: BlogPost[] = [
         <li><strong>Wholesale & Container Shipping:</strong> We specialize in bulk manufacturing and can efficiently handle Full Container Load (FCL) and Less than Container Load (LCL) shipments to major international ports.</li>
       </ul>
 
-      <h2>View Our Official IEC Export Certificate</h2>
-      <p>Transparency is the cornerstone of international trade. You can verify our official Government of India Importer-Exporter Code (IEC) Certificate right here.</p>
-      <p style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
-        <a href="/certificateOfIEC.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #012d1d; color: white; padding: 14px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 6px rgba(1,45,29,0.2);">
-          Download IEC Certificate (PDF) &rarr;
-        </a>
-      </p>
+      <h2>Government of India IEC Registration Details</h2>
+      <p>Transparency is the cornerstone of international trade. Katayayani Enterprises is officially registered with the Directorate General of Foreign Trade (DGFT), Ministry of Commerce and Industry, Government of India under <strong>IEC Code: BGDPS3254A</strong> and <strong>GSTIN: 09BGDPS3254A1ZL</strong>.</p>
 
       <h2>Partner with India's Best Tractor Canopy Exporter</h2>
       <p>Are you an international dealer looking to import high-quality, durable, and cost-effective <strong>tractor fiber hoods from India</strong>? Partner with Katayayani Enterprises to expand your product catalog with the best FRP canopies on the market.</p>

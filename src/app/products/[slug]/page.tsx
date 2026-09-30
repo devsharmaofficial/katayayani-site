@@ -245,7 +245,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
             ],
             offers: {
               "@type": "Offer",
-              price: "13500",
+              price: "14500",
               priceCurrency: "INR",
               priceValidUntil: "2027-12-31",
               validFrom: "2025-01-01",
@@ -522,10 +522,10 @@ function ProductDetailContent({ slug }: { slug: string }) {
                         ↓25%
                       </span>
                       <span className="text-gray-400 line-through text-2xl font-medium tracking-tight">
-                        ₹18,000
+                        ₹19,500
                       </span>
                       <span className="text-slate-900 text-[48px] font-[900] tracking-tighter drop-shadow-sm ml-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                        ₹13,500
+                        ₹14,500
                       </span>
                     </div>
                   </div>
@@ -892,7 +892,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
           className="flex-1 flex flex-col items-center justify-center bg-[#FFC200] text-gray-900 font-bold rounded-lg py-1.5 hover:bg-[#F0B600] transition shadow-sm"
         >
           <span className="text-sm">Buy now</span>
-          <span className="text-[11px] leading-tight">at ₹13,500</span>
+          <span className="text-[11px] leading-tight">at ₹14,500</span>
         </Link>
       </div>
       

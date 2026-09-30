@@ -34,7 +34,7 @@ function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boo
 
 const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
-const BASE_PRICE = 13500;
+const BASE_PRICE = 14500;
 const BASE_GST = BASE_PRICE * 0.05;
 const BASE_TOTAL = BASE_PRICE + BASE_GST;
 

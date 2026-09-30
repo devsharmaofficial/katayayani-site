@@ -90,17 +90,10 @@ export default function Navbar() {
                   <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3 lg:w-4 lg:h-4 text-emerald-500 stroke-[2.5px]" />
                   GST: <span className="font-extrabold">09BGDPS3254A1ZL</span>
                 </span>
-                <div 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.open('/certificateOfIEC.pdf', '_blank');
-                  }}
-                  className="flex items-center gap-0.5 sm:gap-1 whitespace-nowrap hover:text-blue-600 transition-colors cursor-pointer"
-                >
+                <span className="flex items-center gap-0.5 sm:gap-1 whitespace-nowrap">
                   <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3 lg:w-4 lg:h-4 text-blue-500 stroke-[2.5px]" />
                   IEC: <span className="font-extrabold">BGDPS3254A</span>
-                </div>
+                </span>
               </div>
             </div>
           </Link>

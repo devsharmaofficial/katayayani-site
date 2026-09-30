@@ -207,9 +207,9 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
                         <p className="text-body-lg font-black text-[#012d1d] select-all">
                           BGDPS3254A
                         </p>
-                        <a href="/certificateOfIEC.pdf" target="_blank" rel="noopener noreferrer" className="text-[11px] text-blue-600 font-bold hover:underline mt-1 inline-block">
-                          View Govt. of India IEC Certificate →
-                        </a>
+                        <p className="text-[11px] text-gray-500 font-medium mt-0.5">
+                          Govt. of India Certified (DGFT)
+                        </p>
                       </div>
                     </div>
                   </div>

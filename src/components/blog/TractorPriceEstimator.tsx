@@ -59,15 +59,15 @@ interface BrandOption {
 }
 
 const TRACTOR_BRANDS: BrandOption[] = [
-  { name: "Mahindra", popularModels: "575 DI, 475 DI, 275 DI, Arjun 605, Yuvo Tech+", basePrice: 8999, deluxePrice: 13499, colorName: "Mahindra Signature Red" },
-  { name: "Swaraj", popularModels: "Swaraj 744 FE, 855 FE, 735 FE, 963 FE", basePrice: 8999, deluxePrice: 13999, colorName: "Swaraj True Blue / White" },
-  { name: "Sonalika", popularModels: "DI 750 III, DI 35, DI 60, Tiger Series", basePrice: 8799, deluxePrice: 13499, colorName: "Sonalika Deep Blue" },
-  { name: "Massey Ferguson", popularModels: "241 DI Maha Shakti, 1035 DI, 9500", basePrice: 8999, deluxePrice: 13699, colorName: "Massey Heritage Red" },
-  { name: "John Deere", popularModels: "5050 D, 5310, 5045 D, 5210 GearPro", basePrice: 9499, deluxePrice: 14499, colorName: "Classic Green & Yellow" },
-  { name: "New Holland", popularModels: "3630 TX Super, 3230, Excel 4710", basePrice: 9199, deluxePrice: 13999, colorName: "New Holland Royal Blue" },
-  { name: "Eicher", popularModels: "Eicher 380, 485, 551, 557 Super Plus", basePrice: 8699, deluxePrice: 13299, colorName: "Eicher Silver Metallic / Blue" },
-  { name: "Kubota", popularModels: "MU4501, MU5501 4WD, L4508", basePrice: 9499, deluxePrice: 14499, colorName: "Kubota Dynamic Orange" },
-  { name: "Farmtrac / Powertrac", popularModels: "Farmtrac 60 Powermaxx, 45, Euro 50", basePrice: 8799, deluxePrice: 13499, colorName: "Classic Black / Euro Blue" },
+  { name: "Mahindra", popularModels: "575 DI, 475 DI, 275 DI, Arjun 605, Yuvo Tech+", basePrice: 8999, deluxePrice: 14500, colorName: "Mahindra Signature Red" },
+  { name: "Swaraj", popularModels: "Swaraj 744 FE, 855 FE, 735 FE, 963 FE", basePrice: 8999, deluxePrice: 14500, colorName: "Swaraj True Blue / White" },
+  { name: "Sonalika", popularModels: "DI 750 III, DI 35, DI 60, Tiger Series", basePrice: 8799, deluxePrice: 14500, colorName: "Sonalika Deep Blue" },
+  { name: "Massey Ferguson", popularModels: "241 DI Maha Shakti, 1035 DI, 9500", basePrice: 8999, deluxePrice: 14500, colorName: "Massey Heritage Red" },
+  { name: "John Deere", popularModels: "5050 D, 5310, 5045 D, 5210 GearPro", basePrice: 9499, deluxePrice: 14500, colorName: "Classic Green & Yellow" },
+  { name: "New Holland", popularModels: "3630 TX Super, 3230, Excel 4710", basePrice: 9199, deluxePrice: 14500, colorName: "New Holland Royal Blue" },
+  { name: "Eicher", popularModels: "Eicher 380, 485, 551, 557 Super Plus", basePrice: 8699, deluxePrice: 14500, colorName: "Eicher Silver Metallic / Blue" },
+  { name: "Kubota", popularModels: "MU4501, MU5501 4WD, L4508", basePrice: 9499, deluxePrice: 14500, colorName: "Kubota Dynamic Orange" },
+  { name: "Farmtrac / Powertrac", popularModels: "Farmtrac 60 Powermaxx, 45, Euro 50", basePrice: 8799, deluxePrice: 14500, colorName: "Classic Black / Euro Blue" },
 ];
 
 export default function TractorPriceEstimator() {

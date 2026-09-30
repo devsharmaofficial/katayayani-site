@@ -33,7 +33,7 @@ function PaymentOptionsContent() {
 
 
 
-  const unitPrice = 13500;
+  const unitPrice = 14500;
 
   const totalPrice = unitPrice * quantity;
   
