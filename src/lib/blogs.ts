@@ -25,177 +25,182 @@ export const blogs: BlogPost[] = [
   {
     id: "6",
     slug: "best-tractor-fiber-hood-manufacturer-in-meerut-india-price-list",
-    title: "Best Tractor Fiber Hood Manufacturer in Meerut & India: Factory Rates, Plant Location & IndiaMart Verified Guide",
-    excerpt: "Looking for the best tractor fiber hood manufacturer in Meerut & India? Discover Katayayani Enterprises — IndiaMart verified factory-direct manufacturer of heavy-duty Punjabi hoods, fiber chatri, and tractor canopies at the best price of ₹14,500. Visit our Meerut plant or order via WhatsApp with pan-India delivery.",
+    title: "Best Tractor Fiber Hood Manufacturer in Meerut: Factory Price List & Direct Order Guide (2026)",
+    excerpt: "Looking for the best tractor fiber hood manufacturer in Meerut? Katayayani Enterprises is an IndiaMart verified manufacturer supplying heavy-duty Punjabi hoods and fiber chatris directly from our Baghpat Road factory at ₹14,500. Check models, factory address, and pan-India delivery details.",
     content: `
-      <h2>Best Tractor Fiber Hood Manufacturer in Meerut & India: The Complete Factory Guide</h2>
-      <p>When Indian farmers and agricultural contractors search for the <strong>best tractor fiber hood manufacturer in Meerut</strong> or the <strong>top tractor fiber hood manufacturer in India</strong>, one name consistently ranks at the top: <strong>Katayayani Enterprises</strong>. Operating from the historic industrial manufacturing belt of Baghpat Road, Meerut (Uttar Pradesh), Katayayani Enterprises has earned a nationwide reputation for engineering India's most durable, weather-resistant, and aesthetically striking FRP (Fiber Reinforced Polymer) tractor canopies.</p>
+      <h2>Tractor Fiber Hood Manufacturing in Meerut: What Farmers & Dealers Need to Know</h2>
+      <p>If you own a tractor in India, a sturdy fiber hood (also called a Punjabi hood, fiber chatri, or FRP tractor canopy) is one of the most practical investments you can make. Working long hours in open fields under intense summer heat or heavy monsoon rain is physically draining, and direct weather exposure quickly damages digital meters, steering controls, and electrical wiring.</p>
 
-      <p>Whether you call it a <strong>tractor fiber hood</strong>, <strong>tractor punjabi hood</strong>, <strong>fiber chatri</strong>, or <strong>tractor canopy</strong>, an agricultural sunshade is no longer a luxury — it is an essential piece of farm safety equipment. Under blistering 45°C Indian summers, torrential monsoon rains, and dusty harvesting conditions, a heavy-duty composite hood protects both the tractor driver and expensive dashboard electronics from premature breakdown.</p>
+      <p>Meerut in Uttar Pradesh is the main manufacturing center for tractor fiber hoods and agricultural implements in North India. Among manufacturers on Baghpat Road, <strong>Katayayani Enterprises</strong> has built a direct supply network across India, providing heavy-duty composite hoods directly from our factory floor to farmers, custom tractor workshops, and regional dealers.</p>
 
-      <div style="background: linear-gradient(135deg, #012d1d 0%, #064e3b 100%); color: #ffffff; padding: 28px; border-radius: 20px; margin: 2rem 0; box-shadow: 0 10px 25px -5px rgba(1, 45, 29, 0.3); border: 1px solid rgba(255,255,255,0.15);">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; border-b: 1px solid rgba(255,255,255,0.2); padding-bottom: 12px;">
-          <h3 style="color: #ffc641; margin: 0; font-size: 1.4rem; font-weight: 800;">🏭 Katayayani Enterprises — Verified Manufacturer Details</h3>
-          <span style="background-color: #ffc641; color: #012d1d; font-weight: 800; font-size: 0.75rem; padding: 4px 10px; rounded-full: 9999px; text-transform: uppercase; border-radius: 20px;">IndiaMart Verified Exporter</span>
+      <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; margin: 2rem 0; box-shadow: 0 4px 12px -2px rgba(0,0,0,0.06);">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
+          <div>
+            <h3 style="color: #0f172a; margin: 0; font-size: 1.25rem; font-weight: 800;">Katayayani Enterprises</h3>
+            <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.875rem;">Direct Manufacturer of Heavy-Duty Tractor Fiber Hoods & Canopies</p>
+          </div>
+          <span style="display: inline-block; background-color: #f0fdf4; color: #166534; font-weight: 700; font-size: 0.8rem; padding: 5px 12px; border-radius: 9999px; border: 1px solid #bbf7d0;">
+            IndiaMart Verified Manufacturer
+          </span>
         </div>
-        <p style="margin: 0 0 12px 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0;">
-          <strong>🏢 Factory & Office Location:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh - 250002, India.<br />
-          <strong>📍 Landmark:</strong> Near Baghpat Road By-Pass, Tirupati Complex / Sabun Godam Industrial Zone.<br />
-          <strong>📞 Primary Sales Hotline:</strong> <a href="tel:+919358273054" style="color: #ffc641; text-decoration: underline; font-weight: bold;">+91-9358273054</a><br />
-          <strong>📱 Secondary Support:</strong> <a href="tel:+918077004688" style="color: #ffc641; text-decoration: underline; font-weight: bold;">+91-8077004688</a><br />
-          <strong>✉️ Official Business Email:</strong> <a href="mailto:agroindustriesmeerut@gmail.com" style="color: #ffc641; text-decoration: underline;">agroindustriesmeerut@gmail.com</a><br />
-          <strong>🌐 Official Business Website:</strong> <a href="https://katayayanienterprises.online" style="color: #ffc641; text-decoration: underline;">https://katayayanienterprises.online</a><br />
-          <strong>🕒 Plant Visiting Hours:</strong> Monday – Saturday: 9:00 AM – 6:00 PM (Visitors & Dealers Welcome)
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
-          <a href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises,%20I%20want%20to%20inquire%20about%20tractor%20fiber%20hood%20factory%20prices" target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 10px 20px; border-radius: 9999px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
-            💬 Chat on WhatsApp (+91-9358273054)
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; font-size: 0.9rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">
+          <div>
+            <strong style="color: #0f172a; display: block; margin-bottom: 4px;">Factory & Office Location</strong>
+            <p style="margin: 0; color: #475569;">30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh – 250002, India</p>
+            <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.825rem;">Landmark: Near Baghpat Road Bypass, Sabun Godam Industrial Belt</p>
+          </div>
+          <div>
+            <strong style="color: #0f172a; display: block; margin-bottom: 4px;">Direct Factory Contact</strong>
+            <p style="margin: 0;">Phone: <a href="tel:+919358273054" style="color: #166534; font-weight: 700; text-decoration: underline;">+91-9358273054</a> / <a href="tel:+918077004688" style="color: #166534; font-weight: 700; text-decoration: underline;">+91-8077004688</a></p>
+            <p style="margin: 3px 0 0 0;">Email: <a href="mailto:agroindustriesmeerut@gmail.com" style="color: #475569; text-decoration: underline;">agroindustriesmeerut@gmail.com</a></p>
+            <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.825rem;">Factory Visiting Hours: Monday to Saturday, 9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #f1f5f9;">
+          <a href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises,%20I%20want%20to%20inquire%20about%20tractor%20fiber%20hood%20factory%20prices" target="_blank" rel="noopener noreferrer" style="background-color: #166534; color: #ffffff; padding: 9px 18px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.85rem;">
+            WhatsApp (+91-9358273054)
           </a>
-          <a href="https://www.indiamart.com/katayayanienterprises/" target="_blank" rel="noopener noreferrer" style="background-color: #2e3192; color: #ffffff; padding: 10px 20px; border-radius: 9999px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(46, 49, 146, 0.3);">
-            ⭐ View IndiaMart Verified Profile
+          <a href="https://www.indiamart.com/katayayanienterprises/" target="_blank" rel="noopener noreferrer" style="background-color: #0f172a; color: #ffffff; padding: 9px 18px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.85rem;">
+            IndiaMart Profile
           </a>
-          <a href="tel:+919358273054" style="background-color: #ffc641; color: #012d1d; padding: 10px 20px; border-radius: 9999px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem;">
-            📞 Call Factory Manager
+          <a href="tel:+919358273054" style="background-color: #f8fafc; color: #0f172a; padding: 9px 18px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.85rem; border: 1px solid #e2e8f0;">
+            Call Direct
           </a>
         </div>
       </div>
 
-      <h2>Why Meerut Is the Tractor Fiber Hood Capital of India</h2>
-      <p>For decades, <strong>Meerut (Uttar Pradesh)</strong> has been celebrated as the hub of agricultural machinery manufacturing and advanced FRP composite fabrication in North India. Located conveniently along the Delhi-Meerut Expressway and the historic Baghpat agricultural corridor, Meerut provides immediate access to precision steel casting, high-grade virgin chemical resins, and experienced artisans who specialize in custom automotive metal and fiber work.</p>
+      <h2>How We Manufacture Tractor Fiber Hoods in Our Meerut Factory</h2>
+      <p>Many cheap canopies sold in local markets crack within a single season. This happens because roadside fabricators use low-grade recycled polyester resin and cut corners on glass mat density. When tractors operate on uneven furrows and village roads, the continuous engine and ground vibrations cause thin fiberglass to crack near the bolt joints.</p>
 
-      <p>While local roadside fabricators in other states produce thin, single-layer canopies using cheap unsaturated polyester resin that cracks within six months, <strong>Katayayani Enterprises in Meerut</strong> adheres to rigorous automotive OEM quality standards. Every fiber hood that rolls out of our Baghpat Road factory undergoes strict quality testing for UV resistance, impact deflection, and vibration stability.</p>
-
-      <img src="/products/swaraj/swaraj_hero_v3.avif" alt="Best tractor fiber hood manufacturer in Meerut India - Katayayani Enterprises factory direct" style="border-radius: 16px; margin: 2rem 0; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);" />
-
-      <h2>What Makes Katayayani Enterprises the #1 Tractor Fiber Hood Manufacturer?</h2>
-      <p>Farmers from Punjab, Haryana, Rajasthan, Uttar Pradesh, Madhya Pradesh, Gujarat, Maharashtra, Karnataka, Andhra Pradesh, and Tamil Nadu prefer Katayayani Enterprises over generic suppliers because of five decisive structural advantages:</p>
+      <p>At Katayayani Enterprises, our manufacturing process focuses on three practical essentials:</p>
 
       <ul>
-        <li><strong>100% Virgin Isophthalic UV-Gelcoat:</strong> Cheap hoods turn yellow, chalk, and lose their gloss after three months of sun exposure. We use imported, UV-stabilized isophthalic gelcoat that reflects 92% of solar heat and maintains its mirror-finish factory shine for 5+ years.</li>
-        <li><strong>Dual-Layer Reinforced Glass Roving Matting:</strong> Our fiber hoods feature woven multi-axial fiberglass roving combined with structural reinforcement ribs. This design absorbs high tractor engine vibrations and prevents hairline cracking during rough field cultivation and haulage.</li>
-        <li><strong>Aerodynamic Wind Channeling:</strong> Engineered with aerodynamic contours and water-channel gutters, our canopies ensure zero tractor drag at highway trolley speeds and redirect heavy rainfall away from the driver's seat.</li>
-        <li><strong>Heavy-Gauge Solid Steel Mounting Chimtas:</strong> A canopy is only as good as its mounting brackets. We supply heavy-duty powder-coated iron pipe brackets (chimtas) and hardened fasteners that bolt directly onto your tractor's mudguards and ROPS frame with zero wobbling.</li>
-        <li><strong>Exact OEM Paint & Color Matching:</strong> Whether you own a classic Swaraj Blue, Mahindra Crimson Red, Sonalika Royal Blue, John Deere Green, or New Holland Deep Blue, our computerized pigmentation guarantees a 100% factory color match.</li>
+        <li><strong>Virgin Isophthalic Resin & UV-Stable Gelcoat:</strong> We apply a thick, high-gloss isophthalic gelcoat on precision molds before laying fiberglass. This prevents yellowing, chalking, and sun-bleaching, even under prolonged 45°C summer heat.</li>
+        <li><strong>Multi-Axial Fiberglass Matting with Reinforced Ribs:</strong> We build up the canopy structure using multiple layers of woven glass roving and heavy-duty resin. Molded reinforcement ribs along the roof prevent sagging, flutter at highway speeds, and stress cracks.</li>
+        <li><strong>Solid Heavy-Gauge Iron Pipe Brackets (Chimtas):</strong> A canopy must be anchored securely. We manufacture heavy-duty iron mounting chimtas designed for your specific tractor model, finished in anti-corrosion powder coating to prevent rust.</li>
+        <li><strong>Factory Paint Shade Matching:</strong> Every hood is color-matched to the tractor manufacturer's original shade — including Swaraj Blue, Mahindra Crimson Red, Sonalika Royal Blue, Eicher Blue/Silver, New Holland Deep Blue, and John Deere Green.</li>
       </ul>
 
-      <img src="/products/mahindra/mahindra_hero_v3.avif" alt="Mahindra tractor fiber hood price manufacturer in Meerut - Katayayani Enterprises" style="border-radius: 16px; margin: 2rem 0; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);" />
+      <img src="/products/swaraj/swaraj_hero_v3.avif" alt="Swaraj tractor fiber hood manufactured by Katayayani Enterprises Meerut" style="border-radius: 14px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.08);" />
 
-      <h2>Transparent Factory Price List: Best Price Tractor Fiber Hood (2026 Rate Card)</h2>
-      <p>One of the biggest pain points for farmers is broker and retailer markup. Regional dealers typically add <strong>₹4,000 to ₹7,000 in middlemen commissions</strong> for tractor hoods transported from Meerut. By purchasing directly from <strong>Katayayani Enterprises</strong>, you receive genuine factory wholesale rates:</p>
+      <h2>Factory Price vs. Retail Dealer Price (2026 Price List)</h2>
+      <p>Local accessory shops and regional dealers typically add <strong>₹4,000 to ₹5,500 in retail commissions</strong> when reselling hoods brought from Meerut. By ordering directly from our factory, farmers and contractors pay direct wholesale rates:</p>
 
-      <div style="overflow-x: auto; margin: 2rem 0; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+      <div style="overflow-x: auto; margin: 2rem 0; border-radius: 12px; border: 1px solid #e2e8f0;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
           <thead>
             <tr style="background-color: #012d1d; color: #ffffff;">
-              <th style="padding: 14px 16px; border-bottom: 2px solid #024a30;">Tractor Brand & Models</th>
-              <th style="padding: 14px 16px; border-bottom: 2px solid #024a30;">Hood Type</th>
-              <th style="padding: 14px 16px; border-bottom: 2px solid #024a30;">Retail Market Price</th>
-              <th style="padding: 14px 16px; border-bottom: 2px solid #024a30;">Katayayani Factory Direct Price</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #024a30;">Tractor Brand & Common Models</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #024a30;">Hood Type</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #024a30;">Market Retail Price</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #024a30;">Direct Factory Offer</th>
             </tr>
           </thead>
           <tbody>
             <tr style="background-color: #ffffff;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">Swaraj (744 FE, 855 FE, 735, 963 FE)</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Heavy Deluxe Punjabi Hood</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">Swaraj (744 FE, 855 FE, 735, 963 FE)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Heavy Punjabi Hood / Chatri</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹19,500</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹5,000)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #f8fafc;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">Mahindra (575 DI, 475 DI, Arjun Novo, 275)</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Heavy Deluxe Fiber Chatri</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">Mahindra (575 DI, 475 DI, Arjun Novo, 275)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Deluxe Fiber Hood / Canopy</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹19,500</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹5,000)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #ffffff;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">Sonalika (DI 750, Tiger 50/55, Sikander)</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Custom Molded Aerodynamic Hood</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">Sonalika (DI 750, Tiger 50/55, Sikander)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Aerodynamic Fiber Hood</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹19,500</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹5,000)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #f8fafc;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">Eicher (380, 485, 551, 242)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">Eicher (380, 485, 551, 242)</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Heavy Duty Fiber Canopy</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹19,000</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹4,500)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #ffffff;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">New Holland (3630 TX, 3230, Excel)</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Contoured Deluxe Punjabi Hood</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">New Holland (3630 TX, 3230, Excel)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Deluxe Contoured Punjabi Hood</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹20,000</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹5,500)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #f8fafc;">
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #012d1d;">Massey Ferguson (1035 DI, 241 DI, 7250)</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Reinforced Weatherproof Canopy</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #0f172a;">Massey Ferguson (1035 DI, 241 DI, 7250)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9;">Weatherproof Heavy Canopy</td>
               <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; text-decoration: line-through; color: #94a3b8;">₹19,000</td>
-              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹4,500)</td>
+              <td style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
             <tr style="background-color: #ffffff;">
-              <td style="padding: 12px 16px; font-weight: bold; color: #012d1d;">Farmtrac, Powertrac, Solis, John Deere, Kubota</td>
-              <td style="padding: 12px 16px;">Universal Heavy-Duty FRP Hood</td>
+              <td style="padding: 12px 16px; font-weight: bold; color: #0f172a;">Farmtrac, Powertrac, Solis, John Deere, Kubota</td>
+              <td style="padding: 12px 16px;">Universal FRP Tractor Hood</td>
               <td style="padding: 12px 16px; text-decoration: line-through; color: #94a3b8;">₹19,500</td>
-              <td style="padding: 12px 16px; color: #166534; font-weight: 900; font-size: 1.05rem;">₹14,500 (Save ₹5,000)</td>
+              <td style="padding: 12px 16px; color: #166534; font-weight: 800;">₹14,500</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p style="font-size: 0.9rem; color: #64748b; font-style: italic;">*Note: All direct factory orders come complete with heavy-duty mounting pipe brackets (chimtas), rubber dampeners, anti-rust nuts, bolts, and safe transport packaging.*</p>
+      <p style="font-size: 0.875rem; color: #64748b;">Every factory order includes the main fiberglass canopy, heavy-gauge steel mounting chimtas, rubber anti-vibration bushes, and high-tensile nuts and bolts.</p>
 
-      <img src="/products/sonalika/sonalika_hero_v3.avif" alt="Sonalika tractor fiber hood price manufacturer in Meerut India - Katayayani Enterprises" style="border-radius: 16px; margin: 2rem 0; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);" />
+      <img src="/products/mahindra/mahindra_hero_v3.avif" alt="Mahindra tractor fiber canopy manufacturer in Meerut UP" style="border-radius: 14px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.08);" />
 
-      <h2>How Pan-India Transport & Doorstep Delivery Works</h2>
-      <p>Farmers from distant states like Karnataka, Andhra Pradesh, Tamil Nadu, Bihar, and Maharashtra often ask: <em>"How does a large fiber hood reach our farm safely from Meerut?"</em></p>
+      <h2>How We Ship Safely Across India from Our Meerut Factory</h2>
+      <p>A common question from farmers in states like Karnataka, Andhra Pradesh, Tamil Nadu, Maharashtra, Rajasthan, and Madhya Pradesh is whether large fiberglass hoods can be shipped safely without transit damage.</p>
 
-      <p>Katayayani Enterprises operates a streamlined 4-step dispatch system:</p>
-      <ol style="line-height: 1.8;">
-        <li><strong>Step 1: Order Confirmation & Color Selection</strong> — Call our hotline at <a href="tel:+919358273054" style="color: #012d1d; font-weight: bold;">+91-9358273054</a> or message on <a href="https://wa.me/919358273054" style="color: #25D366; font-weight: bold;">WhatsApp</a>. Share your tractor brand, model, and color preference.</li>
-        <li><strong>Step 2: Live Video Verification</strong> — Before packing, our dispatch team can send you a live WhatsApp video showing your completed fiber hood, mounting chimtas, and hardware.</li>
-        <li><strong>Step 3: Multi-Layer Shockproof Wooden Packing</strong> — The hood is bubble-wrapped with edge guards and secured in a reinforced wooden frame to prevent scratches or transit damage.</li>
-        <li><strong>Step 4: Dispatch via Trusted Transport Logistics</strong> — Shipped via premier logistics partners (V-Trans, TCI Freight, Safexpress, Delhivery, or regional transport godowns) with an online tracking consignment number (Bilty). Goods arrive within 3 to 5 business days anywhere in India.</li>
+      <p>We use a proven four-step packing and dispatch method:</p>
+      <ol style="line-height: 1.8; color: #334155;">
+        <li><strong>Order & Color Confirmation:</strong> Contact us via WhatsApp (+91-9358273054) or phone call. Confirm your tractor brand, model, and preferred color scheme.</li>
+        <li><strong>Pre-Dispatch Video:</strong> Before packing, our dispatch team can send you a short video of your finished hood, mounting brackets, and hardware.</li>
+        <li><strong>Shockproof Protective Packaging:</strong> The hood is wrapped in multi-layer bubble wrap, edge protectors, and secured inside a rigid wooden transport frame to prevent scratches or handling impact.</li>
+        <li><strong>Transport Dispatch with Bilty:</strong> Dispatched via reliable road transport (such as V-Trans, TCI Freight, Safexpress, or state transport godowns). We provide the tracking consignment note (Bilty) immediately upon dispatch. Delivery takes between 3 and 5 working days depending on your district.</li>
       </ol>
 
-      <img src="/products/new-holland/new_holland_hero_v3.avif" alt="New Holland tractor fiber hood manufacturer in Meerut - Katayayani Enterprises" style="border-radius: 16px; margin: 2rem 0; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);" />
+      <img src="/products/new-holland/new_holland_hero_v3.avif" alt="New Holland tractor fiber hood dispatch from Meerut factory" style="border-radius: 14px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.08);" />
 
-      <h2>How to Visit Our Factory in Meerut</h2>
-      <p>If you live in Uttar Pradesh, Haryana, Delhi NCR, Uttarakhand, or Rajasthan, you are warmly invited to visit our manufacturing facility in person. Seeing the precision molds, high-grade resin mixing, and manual finishing gives farmers 100% confidence in our craftsmanship.</p>
+      <h2>Visiting Our Factory in Meerut</h2>
+      <p>Farmers, tractor workshop owners, and dealership managers from Western UP, Haryana, Delhi NCR, and Rajasthan are always welcome to visit our factory floor in person. Seeing the molding process, resin quality, and mounting brackets in person ensures complete peace of mind.</p>
 
-      <div style="background-color: #f8fafc; border-left: 4px solid #012d1d; padding: 20px; border-radius: 0 14px 14px 0; margin: 2rem 0;">
-        <h4 style="margin: 0 0 10px 0; color: #012d1d; font-size: 1.15rem; font-weight: 800;">📍 Directions to Katayayani Enterprises Factory:</h4>
+      <div style="background-color: #f8fafc; border-left: 4px solid #166534; padding: 18px 20px; border-radius: 0 12px 12px 0; margin: 2rem 0;">
+        <strong style="color: #0f172a; display: block; margin-bottom: 6px;">How to Reach Our Factory:</strong>
         <p style="margin: 0; color: #475569; line-height: 1.6;">
-          Head toward <strong>Baghpat Road</strong> in Meerut. Near the <strong>Sabun Godam</strong> intersection, turn into <strong>Tirupati Complex Wali Gali</strong>. Our plant is located at <strong>30,9A</strong> with visible Katayayani Enterprises signage and display units. If you need navigation assistance, call <a href="tel:+919358273054" style="color: #012d1d; font-weight: bold;">+91-9358273054</a> and our plant coordinator will guide you directly to the gate.
+          Reach <strong>Baghpat Road</strong> in Meerut. Near the <strong>Sabun Godam</strong> crossing, enter <strong>Tirupati Complex Wali Gali</strong>. Our manufacturing unit is located at <strong>30,9A</strong> with visible Katayayani Enterprises signage. If you need navigation help, call <a href="tel:+919358273054" style="color: #166534; font-weight: 700; text-decoration: underline;">+91-9358273054</a> and our factory manager will guide you directly.
         </p>
       </div>
 
-      <h2>Verified IndiaMart Trust & Corporate Credentials</h2>
-      <p>For tractor dealerships, custom modifier shops, and agricultural cooperative societies looking to purchase in bulk, Katayayani Enterprises is an established, verified supplier on <strong>IndiaMart</strong>:</p>
+      <h2>Verified IndiaMart Business Credentials</h2>
+      <p>For tractor dealerships and bulk buyers, Katayayani Enterprises is an established, verified supplier on IndiaMart with verified GST and corporate business documentation:</p>
       <ul>
-        <li>Official IndiaMart Profile: <a href="https://www.indiamart.com/katayayanienterprises/" target="_blank" rel="noopener noreferrer" style="color: #2e3192; font-weight: bold; text-decoration: underline;">https://www.indiamart.com/katayayanienterprises/</a></li>
-        <li>Over a decade of manufacturing excellence with verified GST and corporate business registration.</li>
-        <li>Bulk order discounts available for tractor dealerships and accessories retailers across India.</li>
+        <li>Official IndiaMart Profile: <a href="https://www.indiamart.com/katayayanienterprises/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: 700; text-decoration: underline;">https://www.indiamart.com/katayayanienterprises/</a></li>
+        <li>Over 10 years of continuous manufacturing experience in FRP tractor canopies and agricultural hoods.</li>
+        <li>Wholesale pricing available for dealers purchasing multiple units per shipment.</li>
       </ul>
 
-      <div style="text-align: center; margin: 3rem 0; padding: 28px; background-color: #f0fdf4; border: 2px dashed #166534; border-radius: 20px;">
-        <h3 style="color: #166534; font-size: 1.5rem; font-weight: 900; margin: 0 0 12px 0;">Order Factory Direct & Save ₹5,000 Today</h3>
-        <p style="color: #374151; max-width: 550px; margin: 0 auto 20px auto; font-size: 1rem;">
-          Get your genuine Katayayani Enterprises heavy-duty tractor fiber hood at the exclusive factory offer of <strong>₹14,500</strong>. Available for all brands with pan-India transport delivery.
+      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; margin: 2.5rem 0; text-align: center;">
+        <h3 style="color: #0f172a; font-size: 1.35rem; font-weight: 800; margin: 0 0 8px 0;">Order Directly from the Factory Floor</h3>
+        <p style="color: #64748b; margin: 0 auto 18px auto; max-width: 500px; font-size: 0.95rem;">
+          Get your genuine heavy-duty tractor fiber hood at the direct factory price of <strong>₹14,500</strong>. Available for all brands with pan-India transport dispatch.
         </p>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;">
-          <a href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises,%20I%20want%20to%20order%20a%20tractor%20fiber%20hood" target="_blank" rel="noopener noreferrer" style="background-color: #25D366; color: #ffffff; padding: 12px 28px; border-radius: 9999px; font-weight: bold; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">
-            📲 WhatsApp Us Now (+91-9358273054)
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+          <a href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises,%20I%20want%20to%20order%20a%20tractor%20fiber%20hood" target="_blank" rel="noopener noreferrer" style="background-color: #166534; color: #ffffff; padding: 10px 22px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.9rem;">
+            Order on WhatsApp (+91-9358273054)
           </a>
-          <a href="tel:+919358273054" style="background-color: #012d1d; color: #ffffff; padding: 12px 28px; border-radius: 9999px; font-weight: bold; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 14px rgba(1, 45, 29, 0.3);">
-            📞 Call +91-9358273054
+          <a href="tel:+919358273054" style="background-color: #012d1d; color: #ffffff; padding: 10px 22px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.9rem;">
+            Call +91-9358273054
           </a>
-          <a href="/products" style="background-color: #ffffff; color: #012d1d; border: 2px solid #012d1d; padding: 12px 28px; border-radius: 9999px; font-weight: bold; font-size: 1rem; text-decoration: none;">
-            🔍 View All Products Online
+          <a href="/products" style="background-color: #ffffff; color: #0f172a; border: 1px solid #cbd5e1; padding: 10px 22px; border-radius: 9999px; font-weight: 700; text-decoration: none; font-size: 0.9rem;">
+            Browse All Products
           </a>
         </div>
       </div>
     `,
     author: "Katayayani Enterprises Technical Team",
     publishedAt: "2026-10-19",
-    readTime: "10 min read",
+    readTime: "8 min read",
     image: "/products/swaraj/swaraj_hero_v3.avif",
     images: [
       "/products/swaraj/swaraj_hero_v3.avif",
@@ -212,8 +217,8 @@ export const blogs: BlogPost[] = [
       "Tractor Fiber Chatri Factory Price"
     ],
     seo: {
-      title: "Best Tractor Fiber Hood Manufacturer in Meerut & India | Best Price | Katayayani Enterprises",
-      description: "Katayayani Enterprises is India's #1 tractor fiber hood manufacturer in Meerut UP. IndiaMart verified, factory-direct best price ₹14,500 for Swaraj, Mahindra, Sonalika, Eicher & all brands. Visit Baghpat Road plant or WhatsApp +91-9358273054.",
+      title: "Best Tractor Fiber Hood Manufacturer in Meerut | Direct Factory Price ₹14,500",
+      description: "Katayayani Enterprises is a leading tractor fiber hood manufacturer in Meerut UP. IndiaMart verified, factory-direct price ₹14,500 for Swaraj, Mahindra, Sonalika & all brands. Visit Baghpat Road factory or WhatsApp +91-9358273054.",
       keywords: [
         "best tractor fiber hood manufacturer in meerut",
         "tractor fiber hood manufacturer in india",
@@ -230,27 +235,27 @@ export const blogs: BlogPost[] = [
     faqs: [
       {
         question: "Who is the best tractor fiber hood manufacturer in Meerut, India?",
-        answer: "Katayayani Enterprises, located on Baghpat Road in Meerut (Uttar Pradesh), is widely recognized as the leading tractor fiber hood manufacturer in India. The company manufactures heavy-duty, double-layer FRP Punjabi hoods, fiber chatris, and tractor canopies with virgin isophthalic UV gelcoat and heavy-gauge mounting brackets for all major tractor brands."
+        answer: "Katayayani Enterprises, located on Baghpat Road in Meerut (Uttar Pradesh), is one of the most trusted manufacturers of heavy-duty FRP Punjabi hoods, fiber chatris, and tractor canopies in India. The factory uses virgin isophthalic resin, UV-stabilized gelcoat, and heavy-gauge steel mounting chimtas for all tractor brands."
       },
       {
         question: "What is the factory direct price of a tractor fiber hood in Meerut?",
-        answer: "The factory-direct offer price at Katayayani Enterprises is ₹14,500 across all tractor models (including Swaraj, Mahindra, Sonalika, Eicher, Massey Ferguson, and New Holland). By buying factory-direct, farmers save ₹4,000 to ₹5,500 compared to local retail dealer prices."
+        answer: "The direct factory price at Katayayani Enterprises is ₹14,500 across all tractor models (including Swaraj, Mahindra, Sonalika, Eicher, Massey Ferguson, and New Holland). Ordering directly from the factory saves farmers ₹4,000 to ₹5,500 compared to local retail dealer prices."
       },
       {
         question: "Where is Katayayani Enterprises factory located in Meerut?",
-        answer: "The factory and administrative office are located at 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh - 250002, India. Visitors, farmers, and wholesale dealers can visit the plant Monday through Saturday between 9:00 AM and 6:00 PM."
+        answer: "The factory and office are located at 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh - 250002, India. Farmers and wholesale dealers can visit the factory Monday through Saturday between 9:00 AM and 6:00 PM."
       },
       {
         question: "Is Katayayani Enterprises a verified seller on IndiaMart?",
-        answer: "Yes, Katayayani Enterprises is a verified supplier and manufacturer on IndiaMart (https://www.indiamart.com/katayayanienterprises/) with official business registration, GST compliance, and nationwide shipping track record."
+        answer: "Yes, Katayayani Enterprises is a verified supplier and manufacturer on IndiaMart (https://www.indiamart.com/katayayanienterprises/) with official GST compliance, business registration, and verified buyer reviews."
       },
       {
-        question: "How can I order a tractor fiber hood from Katayayani Enterprises via WhatsApp?",
-        answer: "You can place an order directly by sending a WhatsApp message to +91-9358273054 with your tractor make and model. Our team will share color options, live video of completed hoods, and arrange secure wooden crate transport to your nearest district godown or doorstep anywhere in India."
+        question: "How can I order a tractor fiber hood directly from the factory via WhatsApp?",
+        answer: "You can send a WhatsApp message to +91-9358273054 specifying your tractor make and model. Our factory team will confirm color options, share dispatch details, and arrange secure wooden frame transport to your nearest district godown or doorstep."
       },
       {
         question: "Which tractor brands and models are compatible with Katayayani fiber hoods?",
-        answer: "Katayayani Enterprises manufactures exact-fit fiber hoods for all Indian tractor brands, including Swaraj (744 FE, 855 FE, 735 FE, 963 FE), Mahindra (575 DI, 475 DI, Arjun Novo, 275), Sonalika (DI 750, Tiger 50/55), Eicher (380, 485, 551), New Holland (3630 TX), Massey Ferguson (1035 DI, 241 DI), Farmtrac, Powertrac, John Deere, Kubota, Solis, and Deutz Fahr."
+        answer: "Katayayani Enterprises manufactures exact-fit fiber hoods for all tractor models in India, including Swaraj (744 FE, 855 FE, 735 FE, 963 FE), Mahindra (575 DI, 475 DI, Arjun Novo, 275), Sonalika (DI 750, Tiger 50/55), Eicher (380, 485, 551), New Holland (3630 TX), Massey Ferguson (1035 DI, 241 DI), Farmtrac, Powertrac, John Deere, Kubota, Solis, and Deutz Fahr."
       }
     ]
   },
