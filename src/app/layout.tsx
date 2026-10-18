@@ -250,15 +250,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        {/* Preload the mobile LCP hero image directly for instant paint */}
-        <link
-          rel="preload"
-          as="image"
-          href="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=384&q=75"
-          imageSrcSet="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=384&q=75 384w, /_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=750&q=75 750w"
-          imageSizes="(max-width: 640px) calc(100vw - 32px), 50vw"
-          fetchPriority="high"
-        />
+
         {/* Preload critical font to eliminate render-blocking waterfall */}
         <link
           rel="preload"

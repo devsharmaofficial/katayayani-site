@@ -226,9 +226,9 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
         {/* Price Row */}
         <div className="mt-3 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 px-0.5">
-          <span className="text-[20px] font-black text-[#318664]">₹14,500</span>
+          <span className="text-[20px] font-black text-[#166534]">₹14,500</span>
           <span className="text-[13px] text-gray-500 line-through">₹19,500</span>
-          <span className="text-[11px] font-bold text-[#318664] bg-[#318664]/10 px-1.5 py-0.5 rounded">25% OFF</span>
+          <span className="text-[11px] font-bold text-[#14532d] bg-[#14532d]/10 px-1.5 py-0.5 rounded">25% OFF</span>
           <span className="text-[11px] text-gray-500 font-semibold block w-full mt-0.5">Free Delivery • Inclusive of GST</span>
         </div>
 
