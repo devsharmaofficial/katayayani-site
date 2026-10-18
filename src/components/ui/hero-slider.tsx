@@ -8,7 +8,7 @@ import MediaModal, { MediaItem } from "@/components/ui/media-modal";
 
 const VIDEO_POOL: MediaItem[] = [
   { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "/youtube/8AwxVYJaLew.jpg" },
-  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "/youtube/0IoHCk3LOko.jpg" },
+  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "/youtube/tractor_canopy_hero_v2.jpg" },
 ];
 
 const REELS_POOL: MediaItem[] = [
@@ -69,7 +69,7 @@ export function HeroSlider() {
           priority={!isVertical}
           fetchPriority={!isVertical ? "high" : "auto"}
           loading={!isVertical ? undefined : "lazy"}
-          sizes={isVertical ? "(max-width: 640px) 180px, 25vw" : "(max-width: 640px) 280px, 50vw"}
+          sizes={isVertical ? "(max-width: 640px) 180px, 25vw" : "(max-width: 640px) calc(100vw - 32px), 50vw"}
           quality={!isVertical ? 75 : 35}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />

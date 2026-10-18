@@ -260,7 +260,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/_next/image?url=%2Fyoutube%2F0IoHCk3LOko.jpg&w=750&q=75"
+          href="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v2.jpg&w=750&q=75"
           fetchPriority="high"
         />
         {/* Explicit favicon — force business logo, override any defaults */}

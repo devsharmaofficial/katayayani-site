@@ -103,7 +103,7 @@ export const blogs: BlogPost[] = [
       <h2>State-Wise Tractor Fiber Hood Prices: Karnataka</h2>
       <p>Karnataka's diverse agricultural topography spans the dryland plains of the North, the irrigated sugarcane belts, and the high-rainfall Malnad region. Farmers seeking the best <strong>tractor fiber hood price in Karnataka</strong> can take advantage of our direct transport logistics to all major regional hubs.</p>
 
-      <img src="/products/sonalika/v1784922285400_hero_image_sonalika.png" alt="Sonalika tractor fiber hood price in Dharwad Karnataka - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
+      <img src="/products/sonalika/sonalika_hero_v2.avif" alt="Sonalika tractor fiber hood price in Dharwad Karnataka - Katayayani Enterprises" style="border-radius: 12px; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);" />
 
       <h3>1. Dharwad & Hubli Agricultural Hub</h3>
       <p>Home to the prestigious University of Agricultural Sciences (UAS Dharwad), <strong>Dharwad</strong> is the technological and operational heart of North Karnataka's soybean, cotton, and pulse cultivation. Farmers in Dharwad frequently operate <strong>Swaraj 744 FE</strong>, <strong>Swaraj 855 FE</strong>, and <strong>John Deere 5050 D</strong>. The <strong>Swaraj 744 fiber hood price in Dharwad</strong> starts at <strong>₹8,999</strong> for heavy single layer and <strong>₹13,999</strong> for deluxe Punjabi double-layer models.</p>
@@ -270,7 +270,7 @@ export const blogs: BlogPost[] = [
     image: "/products/swaraj/awt13ljuuyjyavhnard5.avif",
     images: [
       "/products/mahindra/v1784922285400_xwcktf6kjgjoomfck8hs.avif",
-      "/products/sonalika/v1784922285400_hero_image_sonalika.png",
+      "/products/sonalika/sonalika_hero_v2.avif",
       "/products/massey-ferguson/v1784922285400_hero_image.avif",
       "/products/swaraj/v1784922285400_e2uvnt1arv4lducfykig.avif"
     ],
@@ -581,7 +581,7 @@ export const blogs: BlogPost[] = [
     readTime: "9 min read",
     image: "/products/mahindra/v1784922285400_xwcktf6kjgjoomfck8hs.avif",
     images: [
-      "/products/sonalika/v1784922285400_hero_image_sonalika.png",
+      "/products/sonalika/sonalika_hero_v2.avif",
       "/products/mahindra/v1784922285400_xwcktf6kjgjoomfck8hs.avif"
     ],
     tags: [
