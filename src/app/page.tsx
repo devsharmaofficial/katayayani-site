@@ -26,12 +26,9 @@ const ProductCard = dynamic(() => import("@/components/ui/ProductCard"));
 const VideoShowcaseTeaser = dynamic(() => import("@/components/ui/video-showcase-teaser").then(m => m.VideoShowcaseTeaser));
 
 const indianStates = [
-  "Maharashtra", "Andhra Pradesh", "Rajasthan", "Tamil Nadu", "Bihar", 
-  "Uttar Pradesh", "Mizoram", "Assam", "Karnataka", "Kerala", 
-  "Madhya Pradesh", "Telangana", "Chhattisgarh", "Gujarat", "Punjab", 
-  "Haryana", "West Bengal", "Odisha", "Jharkhand", "Uttarakhand", 
-  "Himachal Pradesh", "Goa", "Tripura", "Meghalaya", "Manipur", 
-  "Nagaland", "Arunachal Pradesh", "Sikkim"
+  "Punjab", "Haryana", "Uttar Pradesh", "Rajasthan", "Madhya Pradesh", 
+  "Gujarat", "Maharashtra", "Andhra Pradesh", "Karnataka", "Tamil Nadu", 
+  "Telangana", "Bihar", "West Bengal", "Odisha"
 ];
 
 
@@ -153,7 +150,7 @@ export default function HomePage() {
                   key={product.id}
                   className="w-[290px] min-[375px]:w-[320px] sm:w-[350px] md:w-[370px] shrink-0"
                 >
-                  <ProductCard product={product} priority={idx < 4} />
+                  <ProductCard product={product} priority={false} />
                 </div>
               ))}
             </InfiniteSlider>

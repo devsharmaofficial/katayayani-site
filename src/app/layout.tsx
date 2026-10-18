@@ -10,14 +10,12 @@ import Script from "next/script";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -258,7 +256,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Preload the mobile LCP hero image directly for instant paint */}
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fyoutube%2F0IoHCk3LOko.jpg&w=640&q=75"
+          fetchPriority="high"
+        />
         {/* Explicit favicon — force business logo, override any defaults */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -281,12 +285,12 @@ export default function RootLayout({
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - loaded lazyOnload to prioritize LCP & critical path */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQ3EFJ4G81"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

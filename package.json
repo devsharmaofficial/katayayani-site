@@ -58,10 +58,16 @@
     "typescript": "^5"
   },
   "browserslist": [
-    "chrome >= 61",
-    "edge >= 16",
-    "firefox >= 60",
-    "safari >= 11",
-    "ios >= 11"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions",
+    "Chrome >= 95",
+    "Safari >= 15.4",
+    "iOS >= 15.4",
+    "Firefox >= 95",
+    "Edge >= 95",
+    "not dead"
   ]
 }

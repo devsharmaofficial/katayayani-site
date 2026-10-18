@@ -16,11 +16,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   const [particles, setParticles] = useState<{ id: number; x: number; y: number; size: number; color: string; angle: number }[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (product.images.length <= 1) return;
+    setHasInteracted(true);
     setDirection(-1);
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
   };
@@ -29,6 +31,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
     e.preventDefault();
     e.stopPropagation();
     if (product.images.length <= 1) return;
+    setHasInteracted(true);
     setDirection(1);
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
   };
@@ -74,9 +77,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         <div className="relative w-full h-full overflow-hidden">
           {product.images.map((img, idx) => {
             const total = product.images.length;
-            // Only render prev, current, and next to avoid loading all images
-            const isPrev = idx === (currentImageIndex - 1 + total) % total;
             const isCurr = idx === currentImageIndex;
+
+            // Prior to user interaction, only mount the active slide to conserve DOM and network
+            if (!hasInteracted && !isCurr) return null;
+
+            // When interacted, render prev, current, and next for smooth transitions
+            const isPrev = idx === (currentImageIndex - 1 + total) % total;
             const isNext = idx === (currentImageIndex + 1) % total;
             if (!isPrev && !isCurr && !isNext && total > 3) return null;
 
@@ -98,8 +105,8 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                   alt={img.alt || product.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={priority && idx === 0 ? 60 : 35}
+                  sizes="(max-width: 640px) 360px, (max-width: 1024px) 380px, 380px"
+                  quality={priority && idx === 0 ? 55 : 35}
                   priority={priority && idx === 0}
                   loading={priority && idx === 0 ? undefined : "lazy"}
                 />
@@ -178,7 +185,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </span>
 
         {/* CSS Particles */}
-        {particles.map((p) => (
+        {isLiked && particles.map((p) => (
           <span
             key={p.id}
             className="absolute pointer-events-none"

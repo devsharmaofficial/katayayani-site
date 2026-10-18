@@ -67,7 +67,8 @@ export const TestimonialsColumn = (props: {
                           width={500}
                           height={500}
                           quality={20}
-                          sizes="(max-width: 640px) 100px, 500px"
+                          loading="lazy"
+                          sizes="(max-width: 640px) 100px, 350px"
                           className="w-full h-auto object-contain hover:scale-[1.02] transition-transform duration-300 rounded-[16px]"
                         />
                       </div>
@@ -100,10 +101,9 @@ export const TestimonialsColumn = (props: {
   );
 };
 
-// Limit DOM nodes: only show a subset for marquee performance
-// The marquee duplicates items once, so 12 items → 24 rendered nodes per column
-const MAX_MOBILE = 12;
-const MAX_DESKTOP_COL = 12;
+// Limit DOM nodes: keep marquee smooth while avoiding excessive DOM nodes
+const MAX_MOBILE = 6;
+const MAX_DESKTOP_COL = 4;
 
 const thirdLength = Math.ceil(testimonials.length / 3);
 const firstColumn = testimonials.slice(0, thirdLength).slice(0, MAX_DESKTOP_COL);
