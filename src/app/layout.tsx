@@ -5,7 +5,7 @@ import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -260,7 +260,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/_next/image?url=%2Fyoutube%2F0IoHCk3LOko.jpg&w=640&q=75"
+          href="/_next/image?url=%2Fyoutube%2F0IoHCk3LOko.jpg&w=750&q=75"
           fetchPriority="high"
         />
         {/* Explicit favicon — force business logo, override any defaults */}
@@ -285,21 +285,8 @@ export default function RootLayout({
         <meta name="classification" content="Agricultural Equipment, Tractor Parts" />
       </head>
       <body className="min-h-full flex flex-col antialiased text-on-surface">
-        {/* Google tag (gtag.js) - loaded lazyOnload to prioritize LCP & critical path */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NQ3EFJ4G81"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-NQ3EFJ4G81');
-            gtag('config', 'G-JDL30B60KP');
-          `}
-        </Script>
+        {/* Google Analytics deferred to user interaction to eliminate TBT & main-thread blocking */}
+        <GoogleAnalytics />
 
         <WebsiteBackground>
           {children}

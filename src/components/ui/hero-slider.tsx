@@ -69,7 +69,7 @@ export function HeroSlider() {
           priority={!isVertical}
           fetchPriority={!isVertical ? "high" : "auto"}
           loading={!isVertical ? undefined : "lazy"}
-          sizes={isVertical ? "(max-width: 640px) 180px, (max-width: 1024px) 25vw, 25vw" : "(max-width: 640px) 640px, (max-width: 1024px) 50vw, 50vw"}
+          sizes={isVertical ? "(max-width: 640px) 180px, 25vw" : "(max-width: 640px) 280px, 50vw"}
           quality={!isVertical ? 75 : 35}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
