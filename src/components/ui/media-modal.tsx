@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import dynamic from "next/dynamic";
 import { X, ExternalLink, Play } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const YouTube = dynamic(() => import("react-youtube"), { ssr: false });
 
@@ -65,16 +64,12 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
   const isVideo = currentMedia?.type === "video";
 
   const modalJSX = (
-    <AnimatePresence>
+    <>
       {media && currentMedia && (
         <div key="media-modal" className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
           {/* Backdrop Blur Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-3xl cursor-pointer z-[999998]"
+          <div
+            className="fixed inset-0 bg-black/95 backdrop-blur-3xl cursor-pointer z-[999998] transition-opacity duration-300 animate-in fade-in"
             onClick={(e) => {
               e.stopPropagation();
               onClose();
@@ -82,29 +77,21 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
           />
 
           {/* Top-Right Screen Close Button */}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.5, rotate: 90 }}
-            transition={{ type: "spring", damping: 20, stiffness: 300, duration: 0.3 }}
+          <button
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
               onClose();
             }}
-            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1000001] p-3.5 rounded-full bg-white/15 hover:bg-red-600 active:scale-90 text-white transition-all duration-300 backdrop-blur-xl border border-white/30 shadow-[0_0_30px_rgba(255,0,0,0.1)] hover:shadow-[0_0_30px_rgba(255,0,0,0.5)] cursor-pointer pointer-events-auto group"
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1000001] p-3.5 rounded-full bg-white/15 hover:bg-red-600 active:scale-90 text-white transition-all duration-300 backdrop-blur-xl border border-white/30 shadow-[0_0_30px_rgba(255,0,0,0.1)] hover:shadow-[0_0_30px_rgba(255,0,0,0.5)] cursor-pointer pointer-events-auto group animate-in fade-in zoom-in-75"
             title="Close Video (Esc)"
           >
             <X className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110 duration-300" />
-          </motion.button>
+          </button>
 
-          {/* Animated Modal Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 30 }}
-            transition={{ type: "spring", damping: 25, stiffness: 400 }}
-            className={`relative w-full z-[1000000] flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:rounded-[24px] bg-[#0d0d0f] shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/10 ${
+          {/* Modal Container */}
+          <div
+            className={`relative w-full z-[1000000] flex flex-col items-center justify-center overflow-hidden rounded-2xl sm:rounded-[24px] bg-[#0d0d0f] shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/10 transition-all duration-300 animate-in fade-in zoom-in-95 ${
               isVideo
                 ? "max-w-[1000px] aspect-video"
                 : "max-w-[420px] h-[88vh] max-h-[780px]"
@@ -130,63 +117,62 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    Reel
+                    <span>Instagram Reel</span>
                   </div>
                 ) : (
                   <div className="shrink-0 flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-[11px] font-bold uppercase tracking-wider">
-                    <Play className="w-3.5 h-3.5 fill-red-400 text-red-400" />
-                    {isShort ? "Short" : "Video"}
+                    <Play className="w-3.5 h-3.5 fill-red-400" />
+                    <span>{isShort ? "YouTube Short" : "YouTube Video"}</span>
                   </div>
                 )}
-                <span className="text-white/90 text-sm font-medium truncate">
+                <span className="text-white/80 font-medium text-xs sm:text-sm truncate drop-shadow">
                   {currentMedia.title}
                 </span>
               </div>
 
-              {/* Header Close Button */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onClose();
-                }}
-                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-red-600 text-white/80 hover:text-white text-[12px] font-bold transition-all border border-white/10 cursor-pointer active:scale-95 shadow-md"
+              {/* External Link Pill */}
+              <a
+                href={
+                  isReel
+                    ? `https://www.instagram.com/reel/${currentMedia.id}/`
+                    : isShort
+                    ? `https://www.youtube.com/shorts/${currentMedia.id}`
+                    : `https://www.youtube.com/watch?v=${currentMedia.id}`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/90 text-[11px] font-medium border border-white/15 transition-all duration-200"
               >
-                <X className="w-3.5 h-3.5" />
-                Close
-              </button>
+                <span>Watch on {isReel ? "Insta" : "YouTube"}</span>
+                <ExternalLink className="w-3 h-3 text-white/70" />
+              </a>
             </div>
 
-            {/* Modal Body Content */}
-            <div className="flex-1 w-full relative overflow-hidden bg-black flex flex-col">
+            {/* Video Player Box Area */}
+            <div className="w-full flex-1 relative flex items-center justify-center bg-black overflow-hidden">
               {isReel ? (
-                // Official Instagram Reel Embed Container
-                <div className="w-full h-full bg-[#121212] relative overflow-hidden flex flex-col">
-                  <div className="flex-1 w-full relative bg-white">
-                    <iframe
-                      src={`https://www.instagram.com/reel/${currentMedia.id}/embed/`}
-                      title={currentMedia.title || "Instagram Reel"}
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen
-                      scrolling="no"
-                      className="absolute inset-0 w-full h-full border-0"
-                      style={{ background: "white" }}
-                    />
-                  </div>
-                  <div className="p-3 bg-[#18181b] border-t border-white/5 shrink-0">
-                    <a
-                      href={`https://www.instagram.com/reel/${currentMedia.id}/`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-95 text-white text-[13px] font-black tracking-wide uppercase flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all active:scale-[0.98]"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-white">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                      Watch on Instagram
-                      <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
-                    </a>
+                // Clean Instagram Embed Frame
+                <iframe
+                  src={`https://www.instagram.com/reel/${currentMedia.id}/embed/`}
+                  className="w-full h-full border-0 absolute inset-0"
+                  allowTransparency
+                  allow="autoplay; encrypted-media"
+                  title={currentMedia.title}
+                />
+              ) : isShort ? (
+                // Clean YouTube Shorts Embed Frame
+                <div className="w-full h-full relative bg-black flex items-center justify-center">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${currentMedia.id}?autoplay=1&playsinline=1&rel=0&modestbranding=1&controls=1&loop=1&playlist=${currentMedia.id}`}
+                    className="w-full h-full max-w-[420px] aspect-[9/16] border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={currentMedia.title}
+                  />
+                  <div className="absolute top-2 left-2 z-10 pointer-events-none">
+                    <span className="bg-red-600/90 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                      Short
+                    </span>
                   </div>
                 </div>
               ) : (
@@ -212,10 +198,10 @@ export default function MediaModal({ media, onClose }: MediaModalProps) {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       )}
-    </AnimatePresence>
+    </>
   );
 
   return createPortal(modalJSX, document.body);

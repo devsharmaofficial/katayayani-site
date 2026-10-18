@@ -198,7 +198,7 @@ function PaymentOptionsContent() {
               <div className="flex-1">
                 <h3 
                   className={`text-xl sm:text-2xl font-black mb-1 tracking-tight ${bookingAmount === 'full' ? 'text-gray-900' : 'text-gray-600'}`}
-                  style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
+                  style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
                 >
                   Pay Full Amount
                 </h3>
@@ -224,7 +224,7 @@ function PaymentOptionsContent() {
               <div className="flex-1">
                 <h3 
                   className={`text-xl sm:text-2xl font-black mb-1 tracking-tight ${bookingAmount !== 'full' ? 'text-gray-900' : 'text-gray-600'}`}
-                  style={{ fontFamily: 'var(--font-outfit), system-ui, sans-serif' }}
+                  style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
                 >
                   Cash on Delivery
                 </h3>

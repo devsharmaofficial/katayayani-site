@@ -3,12 +3,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Play } from "lucide-react";
-import MediaModal, { MediaItem } from "@/components/ui/media-modal";
+import type { MediaItem } from "@/components/ui/media-modal";
+
+const MediaModal = dynamic(() => import("@/components/ui/media-modal"), { ssr: false });
 
 const VIDEO_POOL: MediaItem[] = [
   { type: "video", id: "8AwxVYJaLew", title: "Katayayani Enterprises Manufacturing Plant Tour", thumbnail: "/youtube/8AwxVYJaLew.jpg" },
-  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "/youtube/tractor_canopy_hero_v2.jpg" },
+  { type: "video", id: "0IoHCk3LOko", title: "Premium Tractor Canopy Installations", thumbnail: "/youtube/tractor_canopy_hero_v3.jpg" },
 ];
 
 const REELS_POOL: MediaItem[] = [

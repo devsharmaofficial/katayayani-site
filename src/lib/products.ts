@@ -23,7 +23,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/swaraj/swaraj_hero_v2.avif", alt: "Swaraj Fiber Hood (Tractor Punjabi Hood) - View 1", width: 800, height: 800 },
+      { src: "/products/swaraj/swaraj_hero_v3.avif", alt: "Swaraj Fiber Hood (Tractor Punjabi Hood) - View 1", width: 800, height: 800 },
       { src: "/products/swaraj/v1784922285400_dygexvh1h3aemaysr10k.avif", alt: "Swaraj Fiber Hood (Tractor Punjabi Hood) - View 2", width: 800, height: 800 },
       { src: "/products/swaraj/v1784922285400_qp4lyo5f2uaymjplv8a6.avif", alt: "Swaraj Fiber Hood (Tractor Punjabi Hood) - View 3", width: 800, height: 800 },
       { src: "/products/swaraj/v1784922285400_lznr5bngfgu5fqrk0dzi.avif", alt: "Swaraj Fiber Hood (Tractor Punjabi Hood) - View 4", width: 800, height: 800 },
@@ -110,7 +110,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/mahindra/mahindra_hero_v2.avif", alt: "Mahindra Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/mahindra/mahindra_hero_v3.avif", alt: "Mahindra Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/mahindra/v1784922285400_kkcebd7ebtt6zn2rirby.avif", alt: "Mahindra Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
       { src: "/products/mahindra/v1784922285400_t8g4o9voxgqpr4h5jap5.avif", alt: "Mahindra Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/mahindra/v1784922285400_ptqbhtobbcy9lvowwyok.avif", alt: "Mahindra Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 },
@@ -190,7 +190,7 @@ const products: Product[] = [
       { name: "Green", hex: "#15803d", slug: "green" },
     ],
     images: [
-      { src: "/products/sonalika/sonalika_hero_v2.avif", alt: "Sonalika Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/sonalika/sonalika_hero_v3.avif", alt: "Sonalika Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/sonalika/v1784922285400_dygexvh1h3aemaysr10k.avif", alt: "Sonalika Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
       { src: "/products/sonalika/v1784922285400_v4lhippqeckcj43s2kka.avif", alt: "Sonalika Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/sonalika/v1784922285400_fjeb.avif", alt: "Sonalika Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 },
@@ -263,7 +263,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/eicher/eicher_hero_v2.avif", alt: "Eicher Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/eicher/eicher_hero_v3.avif", alt: "Eicher Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/eicher/v1784922285400_xtr5abzcmxqdxfg5l3qb.avif", alt: "Eicher Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
       { src: "/products/eicher/v1784922285400_uyekew7cdguandqrrrmw.avif", alt: "Eicher Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/eicher/v1784922285400_nuta1tnzorq5yp4ylfgb.avif", alt: "Eicher Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 }
@@ -330,7 +330,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" },
     ],
     images: [
-      { src: "/products/new-holland/new_holland_hero_v2.avif", alt: "New Holland Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/new-holland/new_holland_hero_v3.avif", alt: "New Holland Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/new-holland/v1784922285400_n6y7ggmmrz9skjxbwpc4.avif", alt: "New Holland Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
       { src: "/products/new-holland/v1784922285400_kggfoknspdrvmmjlho6x.avif", alt: "New Holland Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/new-holland/v1784922285400_cmfkh5ewaoeh9wsuesv6.avif", alt: "New Holland Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 }
@@ -395,7 +395,7 @@ const products: Product[] = [
       { name: "Grey", hex: "#6b7280", slug: "grey" },
     ],
     images: [
-      { src: "/products/massey-ferguson/massey_hero_v2.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/massey-ferguson/massey_hero_v3.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_rd1kd9mrbs19ysivbhe9.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 4", width: 800, height: 800 },
       { src: "/products/massey-ferguson/v1784922285400_Screenshot_2026-07-01_at_11.50.46_AM.png", alt: "Massey Ferguson Fiber Hood (Tractor Fiber Chatri) - View 5", width: 800, height: 800 },
@@ -460,7 +460,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/deutz-fahr/deutz_hero_v2.avif", alt: "Deutz Fahr Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/deutz-fahr/deutz_hero_v3.avif", alt: "Deutz Fahr Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/deutz-fahr/ChatGPT_Image_Jun_22,_2026,_12_37_42_PM.avif", alt: "Deutz Fahr Fiber Chatri Price - View 2", width: 800, height: 800 },
       { src: "/products/deutz-fahr/deutz_fahr_hero_image.avif", alt: "Deutz Fahr Fiber Hood - View 3", width: 800, height: 800 },
       { src: "/products/deutz-fahr/deutz_fahr_hero_image_(1).avif", alt: "Deutz Fahr Fiber Hood - View 4", width: 800, height: 800 },
@@ -561,7 +561,7 @@ const products: Product[] = [
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "/products/solis/solis_hero_v2.avif", alt: "Solis Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
+      { src: "/products/solis/solis_hero_v3.avif", alt: "Solis Fiber Hood (Tractor Fiber Chatri) - View 1", width: 800, height: 800 },
       { src: "/products/solis/v1784922285400_t4qr1nxceooabu3fst8z.avif", alt: "Solis Fiber Hood (Tractor Fiber Chatri) - View 2", width: 800, height: 800 },
       { src: "/products/solis/v1784922285400_jqasjqithjxn5mfcnsd9.avif", alt: "Solis Fiber Hood (Tractor Fiber Chatri) - View 3", width: 800, height: 800 }
     ],

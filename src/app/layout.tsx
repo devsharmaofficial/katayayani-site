@@ -1,6 +1,6 @@
 import { SITE_URL } from "@/config/site";
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { WebsiteBackground } from "@/components/ui/website-background";
 import FloatingActions from "@/components/layout/FloatingActions";
@@ -9,12 +9,6 @@ import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
@@ -246,7 +240,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN" className={`${inter.variable} ${outfit.variable} h-full`}>
+    <html lang="en-IN" className={`${inter.variable} h-full`}>
       <head>
         <script
           type="application/ld+json"
@@ -260,8 +254,18 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v2.jpg&w=750&q=75"
+          href="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=384&q=75"
+          imageSrcSet="/_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=384&q=75 384w, /_next/image?url=%2Fyoutube%2Ftractor_canopy_hero_v3.jpg&w=750&q=75 750w"
+          imageSizes="(max-width: 640px) calc(100vw - 32px), 50vw"
           fetchPriority="high"
+        />
+        {/* Preload critical font to eliminate render-blocking waterfall */}
+        <link
+          rel="preload"
+          href="/_next/static/media/1bffadaabf893a1e-s.3-6t-g6q0vh0a.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
         {/* Explicit favicon — force business logo, override any defaults */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
