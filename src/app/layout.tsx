@@ -191,6 +191,7 @@ const jsonLd = {
         },
       ],
       sameAs: [
+        `https://www.katayayanienterprises.com/`,
         `https://katayayanienterprises.online/`,
         `https://www.indiamart.com/katayayanienterprises/`,
         `https://wa.me/919358273054`,

@@ -809,7 +809,7 @@ export const blogs: BlogPost[] = [
         <li>📞 <strong>Call / WhatsApp:</strong> +91-9358273054</li>
         <li>📍 <strong>Factory Address:</strong> 30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun Godam, Meerut, Uttar Pradesh — 250002</li>
         <li>🌐 <strong>Website:</strong> katayayanienterprises.online</li>
-        <li>🛒 <strong>Business Catalog:</strong> katayayanienterprises.online</li>
+        <li>🛒 <strong>Business Catalog:</strong> <a href="https://www.katayayanienterprises.com/" target="_blank" rel="noopener noreferrer">katayayanienterprises.com</a></li>
       </ul>
       <p><em>We are open Monday to Saturday, 9:00 AM to 6:00 PM IST. For urgent orders, WhatsApp us any time and we will respond promptly.</em></p>
     `,
