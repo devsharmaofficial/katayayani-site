@@ -118,11 +118,19 @@ export const metadata: Metadata = {
   category: "Agricultural Equipment, Tractor Parts, Tractor Fiber Hoods",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-144x144.png", type: "image/png", sizes: "144x144" },
+      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon-512x512.png", type: "image/png", sizes: "512x512" },
       { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
       { url: "/favicon-64.png", type: "image/png", sizes: "64x64" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
   },
 };
@@ -135,17 +143,17 @@ const jsonLd = {
       "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: BUSINESS_NAME,
-      alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises"],
+      alternateName: ["Katayayani Agro Industries", "Katayayani Enterprises", "Katayayani Enterprises Meerut"],
       vatID: "09BGDPS3254A1ZL",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/katayayani-enterprises-logo.png`,
-        width: 200,
-        height: 200,
+        width: 512,
+        height: 512,
         caption: "Katayayani Enterprises Logo - FRP Tractor Canopy Manufacturer",
       },
-      image: `${SITE_URL}/og-image.jpg`,
+      image: `${SITE_URL}/katayayani-enterprises-logo.png`,
       description:
         "Katayayani Enterprises is India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, Uttar Pradesh. Best price tractor fiber hood for Mahindra, Swaraj 744/855, Sonalika, Eicher, New Holland, Massey Ferguson, Farmtrac & all brands. Buy online with home delivery across India.",
       foundingDate: "2010",
@@ -219,6 +227,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: BUSINESS_NAME,
+      alternateName: ["Katayayani Enterprises Meerut", "Katayayani Agro Industries", "katayayanienterprises.online"],
       description: "India's #1 FRP Tractor Canopy Manufacturer — Meerut, Uttar Pradesh",
       publisher: { "@id": `${SITE_URL}/#organization` },
       potentialAction: {
@@ -259,12 +268,15 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* Explicit favicon — force business logo, override any defaults */}
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        {/* Explicit Google Search & Browser Favicon Specification (Multiples of 48px square) */}
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144x144.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         {/* Force Google site name */}
         <meta name="application-name" content="Katayayani Enterprises" />
         {/* Additional SEO Meta Tags */}
