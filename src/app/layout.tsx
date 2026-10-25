@@ -192,7 +192,7 @@ const jsonLd = {
       ],
       sameAs: [
         `https://www.katayayanienterprises.com/`,
-        `https://katayayanienterprises.online/`,
+        `https://www.katayayanienterprises.online/`,
         `https://www.indiamart.com/katayayanienterprises/`,
         `https://wa.me/919358273054`,
       ],
@@ -261,14 +261,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-        {/* Preload critical font to eliminate render-blocking waterfall */}
-        <link
-          rel="preload"
-          href="/_next/static/media/1bffadaabf893a1e-s.3-6t-g6q0vh0a.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         {/* Explicit Google Search & Browser Favicon Specification (Multiples of 48px square) */}
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" sizes="any" />

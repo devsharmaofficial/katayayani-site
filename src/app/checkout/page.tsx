@@ -35,8 +35,7 @@ function Slot(props: { char: string | null; hasFakeCaret: boolean; isActive: boo
 const UPI_ID = "katayayanienterprises123@okicici";
 const BUSINESS_NAME = "Katayayani Enterprises";
 const BASE_PRICE = 14500;
-const BASE_GST = BASE_PRICE * 0.05;
-const BASE_TOTAL = BASE_PRICE + BASE_GST;
+const BASE_TOTAL = BASE_PRICE; // 5% GST already included in the ₹14,500 direct factory price
 
 /* ──────────────────────────────────────────
    Step Progress Bar
@@ -136,16 +135,19 @@ function OrderSummary({ product, color, bookingAmount }: { product: Product; col
                 <span>Shipping</span>
                 <span className="font-bold text-gray-500 text-[10px] sm:text-xs text-right leading-tight max-w-[140px]">May vary depending on carrier</span>
               </div>
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between text-gray-600 items-center">
                 <span>GST (5%)</span>
-                <span className="font-medium text-gray-900">₹{BASE_GST.toLocaleString("en-IN")}</span>
+                <span className="font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-xs">Included in Price</span>
               </div>
             </>
           ) : (
             <>
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between text-gray-600 items-center">
                 <span>Total Product Price</span>
-                <span className="font-medium text-gray-900">₹{BASE_TOTAL.toLocaleString("en-IN")}</span>
+                <div className="text-right">
+                  <span className="font-medium text-gray-900">₹{BASE_TOTAL.toLocaleString("en-IN")}</span>
+                  <span className="block text-[10px] font-semibold text-emerald-700">Incl. 5% GST</span>
+                </div>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Advance Booking</span>
@@ -160,7 +162,10 @@ function OrderSummary({ product, color, bookingAmount }: { product: Product; col
         </div>
 
         <div className="flex justify-between items-center">
-          <span className="font-black text-gray-900 text-base">{isBooking ? "To Pay Now" : "Total"}</span>
+          <div>
+            <span className="font-black text-gray-900 text-base">{isBooking ? "To Pay Now" : "Total"}</span>
+            <p className="text-[11px] text-gray-500 font-medium">Inclusive of all taxes & 5% GST</p>
+          </div>
           <span className="text-2xl font-black text-primary">₹{TOTAL.toLocaleString("en-IN")}</span>
         </div>
 
@@ -578,9 +583,12 @@ function CheckoutContent() {
                         {/* Breakdown Dropdown */}
                         <div className={`overflow-hidden transition-all duration-300 ${isBreakdownOpen ? "max-h-48 mt-3 pt-3 border-t border-gray-200 opacity-100" : "max-h-0 opacity-0"}`}>
                           <div className="space-y-2 text-xs">
-                            <div className="flex justify-between text-gray-600">
+                            <div className="flex justify-between text-gray-600 items-center">
                               <span>Total Product Price</span>
-                              <span className="font-bold text-gray-900">₹{BASE_TOTAL.toLocaleString('en-IN')}</span>
+                              <div className="text-right">
+                                <span className="font-bold text-gray-900">₹{BASE_TOTAL.toLocaleString('en-IN')}</span>
+                                <span className="ml-1.5 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">Incl. 5% GST</span>
+                              </div>
                             </div>
                             {isBooking && (
                               <>
@@ -594,9 +602,12 @@ function CheckoutContent() {
                                 </div>
                               </>
                             )}
-                            <div className="flex justify-between font-bold text-sm text-gray-900 pt-2 border-t border-gray-100">
+                            <div className="flex justify-between font-bold text-sm text-gray-900 pt-2 border-t border-gray-100 items-center">
                               <span>{isBooking ? "To Pay Now" : "Grand Total"}</span>
-                              <span className="text-primary">₹{TOTAL.toLocaleString('en-IN')}</span>
+                              <div className="text-right">
+                                <span className="text-primary">₹{TOTAL.toLocaleString('en-IN')}</span>
+                                <span className="block text-[10px] text-gray-400 font-normal">Incl. 5% GST</span>
+                              </div>
                             </div>
                           </div>
                         </div>

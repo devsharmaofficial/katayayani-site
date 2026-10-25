@@ -17,39 +17,66 @@ export default function ScrollReveal({
   className,
   direction = "up",
   delay = 0,
-  duration = 0.6,
+  duration = 0.5,
   once = true,
-  amount = 0.02,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  // Default to true on initial render to prevent blank/unrendered pages on SSR and Googlebot crawls
+  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    setMounted(true);
     const el = ref.current;
     if (!el) return;
+
+    // Check if element is already inside or near viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 150) {
+      setVisible(true);
+      return;
+    }
+
+    // If it's below the fold, smoothly hide it initially for scroll animation
+    setVisible(false);
+
+    // Guaranteed safety fallback: reveal after 300ms if intersection observer is slow/throttled
+    const fallbackTimer = setTimeout(() => {
+      setVisible(true);
+    }, 300);
+
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      return () => clearTimeout(fallbackTimer);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          clearTimeout(fallbackTimer);
           if (once) observer.disconnect();
         } else if (!once) {
           setVisible(false);
         }
       },
-      { threshold: amount }
+      { threshold: 0, rootMargin: "120px 0px" }
     );
+
     observer.observe(el);
-    return () => observer.disconnect();
-  }, [once, amount]);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
+  }, [once]);
 
   const getTransform = () => {
-    if (visible) return "translate3d(0,0,0)";
+    if (!mounted || visible) return "translate3d(0,0,0)";
     switch (direction) {
-      case "up":    return "translate3d(0,40px,0)";
-      case "down":  return "translate3d(0,-40px,0)";
-      case "left":  return "translate3d(40px,0,0)";
-      case "right": return "translate3d(-40px,0,0)";
+      case "up":    return "translate3d(0,25px,0)";
+      case "down":  return "translate3d(0,-25px,0)";
+      case "left":  return "translate3d(25px,0,0)";
+      case "right": return "translate3d(-25px,0,0)";
       default:      return "translate3d(0,0,0)";
     }
   };
@@ -59,10 +86,10 @@ export default function ScrollReveal({
       ref={ref}
       className={className}
       style={{
-        opacity: visible ? 1 : 0,
+        opacity: !mounted || visible ? 1 : 0,
         transform: getTransform(),
-        transition: `opacity ${duration}s ease, transform ${duration}s ease`,
-        transitionDelay: `${delay}s`,
+        transition: mounted ? `opacity ${duration}s ease, transform ${duration}s ease` : "none",
+        transitionDelay: mounted ? `${delay}s` : "0s",
         willChange: "opacity, transform",
       }}
     >
@@ -71,33 +98,18 @@ export default function ScrollReveal({
   );
 }
 
-// Stagger container — pure CSS, no framer-motion
+// Stagger container — reliable CSS render
 export function StaggerContainer({
   children,
   className,
-  staggerDelay = 0.1,
 }: {
   children: ReactNode;
   className?: string;
   staggerDelay?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.02 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className={className}>
-      {visible ? children : <div style={{ opacity: 0 }}>{children}</div>}
+    <div className={className}>
+      {children}
     </div>
   );
 }

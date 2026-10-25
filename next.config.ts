@@ -121,7 +121,7 @@ const nextConfig: NextConfig = {
             value: "katayayanienterprises.vercel.app",
           },
         ],
-        destination: "https://katayayanienterprises.online/:path*",
+        destination: "https://www.katayayanienterprises.online/:path*",
         permanent: true,
       },
       {
@@ -129,10 +129,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "www.katayayanienterprises.com",
+            value: "katayayanienterprises.online",
           },
         ],
-        destination: "https://katayayanienterprises.online/:path*",
+        destination: "https://www.katayayanienterprises.online/:path*",
         permanent: true,
       },
     ];
