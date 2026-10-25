@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "rm -rf .next && prisma generate && next build",
     "start": "next start",
+    "deploy": "node scripts/deploy.mjs",
     "lint": "eslint"
   },
   "dependencies": {
