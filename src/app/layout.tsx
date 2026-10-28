@@ -116,6 +116,9 @@ export const metadata: Metadata = {
     },
   },
   category: "Agricultural Equipment, Tractor Parts, Tractor Fiber Hoods",
+  verification: {
+    google: "YiO-Pvs2bDvVO9OVe0pQWzmuT2OYSosnlC1cBlpQYhE",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
