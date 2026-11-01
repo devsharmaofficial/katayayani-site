@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowUpRight
+  ArrowUpRight,
+  Phone,
+  MessageCircle,
+  Truck,
+  Award,
+  ShieldCheck,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -41,9 +46,57 @@ export default function HomePage() {
     <>
       <Navbar />
       <main className="flex-grow pt-0">
-        <section className="relative w-full bg-white pt-[96px] md:pt-[100px] pb-[40px] overflow-hidden">
+        <section className="relative w-full bg-gradient-to-b from-[#f9fbf9] via-white to-white pt-[96px] md:pt-[110px] pb-[36px] overflow-hidden">
           <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
-             <HeroSlider />
+            {/* Primary Hero Heading — Dominant Semantic Anchor for Google Ranking */}
+            <div className="text-center max-w-[960px] mx-auto mb-8 md:mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#012d1d]/8 border border-[#012d1d]/15 text-[#012d1d] text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.14em] px-4 py-1.5 rounded-full mb-4 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Factory-Direct Manufacturer &bull; Meerut, Uttar Pradesh
+              </div>
+              <h1 className="text-[30px] sm:text-[42px] md:text-[52px] lg:text-[58px] font-black text-[#012d1d] tracking-tight leading-[1.1] mb-4">
+                Tractor Fiber Hood Price &amp; Punjabi Hood Manufacturer
+              </h1>
+              <p className="text-[15px] sm:text-[17px] md:text-[19px] text-gray-700 font-medium max-w-[820px] mx-auto leading-relaxed mb-6">
+                India&apos;s #1 factory manufacturer of heavy-duty FRP <strong className="text-[#012d1d]">tractor fiber hood</strong>, <strong className="text-[#012d1d]">punjabi hood</strong>, and <strong className="text-[#012d1d]">fiber chatri</strong>. Precision custom fitment for Swaraj 744/855, Mahindra, Sonalika, Massey &amp; all tractor brands at best direct factory rates with safe all-India home delivery.
+              </p>
+
+              {/* Quick Action CTAs */}
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm font-semibold mb-6">
+                <Link
+                  href="/products"
+                  className="inline-flex items-center gap-2 bg-[#012d1d] text-white px-7 py-3.5 rounded-full hover:bg-[#104e33] transition-all shadow-md hover:shadow-lg text-[14px]"
+                >
+                  Explore All Fiber Hoods
+                  <ArrowRight size={16} />
+                </Link>
+                <a
+                  href="https://wa.me/919358273054?text=Hello%20Katayayani%20Enterprises%2C%20I%20am%20interested%20in%20tractor%20fiber%20hood%20prices%20and%20models."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#25D366] text-[#012d1d] px-6 py-3.5 rounded-full hover:bg-[#20ba59] hover:text-white transition-all shadow-md font-bold text-[14px]"
+                >
+                  <MessageCircle size={16} />
+                  WhatsApp Catalog
+                </a>
+                <a
+                  href="tel:+919358273054"
+                  className="inline-flex items-center gap-2 bg-white text-[#012d1d] border border-gray-300 px-6 py-3.5 rounded-full hover:bg-gray-50 transition-all shadow-2xs text-[14px]"
+                >
+                  <Phone size={16} />
+                  Call: +91-9358273054
+                </a>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] sm:text-[13px] text-gray-500 font-medium">
+                <span className="flex items-center gap-1.5"><Truck size={14} className="text-[#012d1d]" /> Pan-India Home Delivery</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-[#012d1d]" /> 100% Genuine Heavy FRP</span>
+                <span className="flex items-center gap-1.5"><Award size={14} className="text-[#012d1d]" /> Factory Price (₹14,500 Incl. GST)</span>
+              </div>
+            </div>
+
+            <HeroSlider />
           </div>
         </section>
 

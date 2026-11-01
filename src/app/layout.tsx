@@ -22,7 +22,7 @@ const BUSINESS_ADDRESS = "30,9A, Tirupati Complex Wali Gali, Baghpat Road, Sabun
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Katayayani Enterprises | Tractor Fiber Hood & Punjabi Hood Manufacturer",
+    default: "Tractor Fiber Hood Price | Punjabi Hood & Fiber Chatri Manufacturer Meerut — Katayayani Enterprises",
     template: `%s | Katayayani Enterprises`,
   },
   description:

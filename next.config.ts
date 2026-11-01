@@ -110,7 +110,7 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Force redirect old domains to new domain for SEO
+  // Force redirect old domains to new domain for SEO and PageRank transfer
   async redirects() {
     return [
       {
@@ -118,7 +118,51 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
+            value: "katayayani-site.vercel.app",
+          },
+        ],
+        destination: "https://www.katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "katayayani-site-mac19.vercel.app",
+          },
+        ],
+        destination: "https://www.katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
             value: "katayayanienterprises.vercel.app",
+          },
+        ],
+        destination: "https://www.katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "katayayanienterprises.com",
+          },
+        ],
+        destination: "https://www.katayayanienterprises.online/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.katayayanienterprises.com",
           },
         ],
         destination: "https://www.katayayanienterprises.online/:path*",

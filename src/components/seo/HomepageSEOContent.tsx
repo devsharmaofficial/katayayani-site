@@ -161,9 +161,9 @@ export default function HomepageSEOContent() {
               <Award size={13} />
               India's #1 Tractor Fiber Hood Manufacturer
             </div>
-            <h1 className="text-[28px] md:text-[38px] font-black text-[#012d1d] leading-tight mb-4">
-              Tractor Fiber Hood Price in India
-            </h1>
+            <h2 className="text-[28px] md:text-[38px] font-black text-[#012d1d] leading-tight mb-4">
+              Tractor Fiber Hood Price Guide &amp; Technical Specifications
+            </h2>
             <p className="text-[24px] md:text-[20px] font-semibold text-[#795900] mb-5">
               Punjabi Hood · Fiber Chatri · All Brands
             </p>
