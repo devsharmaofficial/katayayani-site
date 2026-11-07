@@ -29,6 +29,17 @@ export const metadata: Metadata = {
     "Best price tractor fiber hood (punjabi hood / fiber chatri) in India. Katayayani Enterprises — factory-direct tractor fiber hood manufacturer in Meerut UP. Download our corporate catalogue PDF & watch official video showcases on our YouTube channel. Fits Swaraj, Mahindra, Sonalika & all brands. Call +91-9358273054.",
   keywords: [
     // ── TIER 1: HIGH INTENT COMMERCIAL (Exact Match from Data) ──
+    "mahindra tractor fiber hood roof canopy",
+    "swaraj tractor fiber roof canopy",
+    "heavy duty double pipe tractor punjabi hood",
+    "double pipe tractor fiber hood",
+    "swaraj tractor fiber hood with fan",
+    "tractor music system fiber hood",
+    "universal tractor fiber roof canopy",
+    "john deere tractor fiber hood roof canopy",
+    "sonalika tractor fiber roof canopy",
+    "new holland tractor fiber roof canopy",
+    "massey ferguson tractor fiber roof canopy",
     "tractor fiber hood price",
     "fiber hood for tractor",
     "mahindra tractor fiber hood price",
