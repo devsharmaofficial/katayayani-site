@@ -317,8 +317,8 @@ function ProductDetailContent({ slug }: { slug: string }) {
           }),
         }}
       />
-      <main className="flex-grow pt-28 pb-24">
-        <div className="max-w-[1280px] mx-auto px-[24px] pt-4 pb-12">
+      <main className="flex-grow pt-24 sm:pt-28 pb-24 w-full max-w-full overflow-x-clip">
+        <div className="max-w-[1280px] mx-auto px-3.5 sm:px-6 lg:px-[24px] pt-4 pb-12 w-full max-w-full">
           {/* Breadcrumb */}
           <Breadcrumbs
             items={[
@@ -328,9 +328,9 @@ function ProductDetailContent({ slug }: { slug: string }) {
             ]}
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full max-w-full">
             {/* Left: Image Gallery */}
-            <div>
+            <div className="w-full max-w-full min-w-0">
               <ScrollReveal>
                 {/* Main Image */}
                 <div className="group/carousel relative aspect-square md:aspect-[4/3] max-h-[50vh] md:max-h-[55vh] w-full rounded-xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/50 mb-[16px]">
@@ -430,7 +430,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
                 {/* Thumbnail Strip */}
                 {allMedia.length > 1 && (
-                  <div className="flex gap-[8px] overflow-x-auto pb-2 scrollbar-none snap-x mb-6">
+                  <div className="flex gap-[8px] overflow-x-auto pb-2 scrollbar-none snap-x mb-6 max-w-full">
                     {allMedia.map((media, idx) => (
                       <button
                         key={idx}
@@ -485,18 +485,18 @@ function ProductDetailContent({ slug }: { slug: string }) {
             </div>
 
             {/* Right: Product Info + Sticky Enquiry */}
-            <div>
+            <div className="w-full max-w-full min-w-0">
               <ScrollReveal direction="right">
                 <div className="lg:sticky lg:top-[104px]">
                   {/* Product Name */}
-                  <h1 className="text-headline-md text-on-surface mb-[8px]">
+                  <h1 className="text-2xl sm:text-3xl lg:text-headline-md font-bold text-on-surface mb-[8px] break-words">
                     {product.name}
                   </h1>
 
                   {/* Trust Badge & Rating */}
-                  <div className="flex flex-col gap-3 mb-[24px]">
+                  <div className="flex flex-col gap-3 mb-[24px] w-full max-w-full">
                     <div className="flex flex-wrap items-center gap-y-2 gap-x-3">
-                      <span className="text-[13px] md:text-[14px] text-[#012d1d] bg-gradient-to-r from-[#d6f54a] to-[#c5ea2c] shadow-[0_4px_12px_rgba(214,245,74,0.3)] border border-[#c5ea2c] px-3.5 py-1.5 rounded-full font-black flex items-center gap-2 tracking-wide">
+                      <span className="text-[12px] sm:text-[13px] md:text-[14px] text-[#012d1d] bg-gradient-to-r from-[#d6f54a] to-[#c5ea2c] shadow-[0_4px_12px_rgba(214,245,74,0.3)] border border-[#c5ea2c] px-3 sm:px-3.5 py-1.5 rounded-full font-black flex items-center gap-2 tracking-wide shrink-0">
                         <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -516,15 +516,15 @@ function ProductDetailContent({ slug }: { slug: string }) {
                   </div>
 
                   {/* Price Block */}
-                  <div className="mb-[24px]">
-                    <div className="flex items-center gap-4">
-                      <span className="text-red-600 bg-red-50 border border-red-100 px-2.5 py-1 rounded-lg font-bold text-xl flex items-center tracking-tight shadow-sm">
+                  <div className="mb-[24px] w-full max-w-full">
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
+                      <span className="text-red-600 bg-red-50 border border-red-100 px-2 sm:px-2.5 py-1 rounded-lg font-bold text-base sm:text-xl flex items-center tracking-tight shadow-sm shrink-0">
                         ↓25%
                       </span>
-                      <span className="text-gray-400 line-through text-2xl font-medium tracking-tight">
+                      <span className="text-gray-400 line-through text-lg sm:text-2xl font-medium tracking-tight shrink-0">
                         ₹19,500
                       </span>
-                      <span className="text-slate-900 text-[48px] font-[900] tracking-tighter drop-shadow-sm ml-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      <span className="text-slate-900 text-[32px] min-[360px]:text-[38px] sm:text-[44px] md:text-[48px] font-[900] tracking-tighter drop-shadow-sm leading-none shrink-0" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                         ₹14,500
                       </span>
                     </div>
@@ -604,27 +604,28 @@ function ProductDetailContent({ slug }: { slug: string }) {
           <div className="mt-[64px] space-y-[48px]">
             {/* MOQ & Delivery Info - Full Width */}
             <ScrollReveal>
-              <div className="group relative flex items-center justify-around bg-gradient-to-r from-[#eef2ef] via-white to-[#f4efe8] border border-gray-200/60 rounded-[24px] p-8 shadow-sm overflow-hidden">
+              <div className="group relative flex flex-col sm:flex-row items-stretch sm:items-center justify-around bg-gradient-to-r from-[#eef2ef] via-white to-[#f4efe8] border border-gray-200/60 rounded-[20px] sm:rounded-[24px] p-5 sm:p-8 shadow-sm overflow-hidden gap-5 sm:gap-4">
                  
-                 <div className="relative flex items-center gap-6 z-10">
-                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100">
-                     <Package className="w-8 h-8" />
+                 <div className="relative flex items-center gap-4 sm:gap-6 z-10">
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 shrink-0">
+                     <Package className="w-6 h-6 sm:w-8 sm:h-8" />
                    </div>
                    <div>
-                     <p className="text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-1">Minimum Order Quantity</p>
-                     <p className="text-2xl text-[#063b27] font-black">1 Piece</p>
+                     <p className="text-[11px] sm:text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-0.5 sm:mb-1">Minimum Order Quantity</p>
+                     <p className="text-xl sm:text-2xl text-[#063b27] font-black">1 Piece</p>
                    </div>
                  </div>
                  
-                 <div className="w-px h-16 bg-gray-200 relative z-10"></div>
+                 <div className="hidden sm:block w-px h-16 bg-gray-200 relative z-10"></div>
+                 <div className="sm:hidden w-full h-px bg-gray-200/60 relative z-10"></div>
                  
-                 <div className="relative flex items-center gap-6 z-10">
-                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100">
-                     <Truck className="w-8 h-8" />
+                 <div className="relative flex items-center gap-4 sm:gap-6 z-10">
+                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-[#063b27] shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 shrink-0">
+                     <Truck className="w-6 h-6 sm:w-8 sm:h-8" />
                    </div>
                    <div>
-                     <p className="text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-1">Delivery Time</p>
-                     <p className="text-2xl text-[#063b27] font-black">10 - 12 Days</p>
+                     <p className="text-[11px] sm:text-xs text-gray-500 uppercase tracking-widest font-extrabold mb-0.5 sm:mb-1">Delivery Time</p>
+                     <p className="text-xl sm:text-2xl text-[#063b27] font-black">10 - 12 Days</p>
                    </div>
                  </div>
               </div>
@@ -635,7 +636,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
               
               {/* Main Technical Specs (Spans 8 cols) */}
               <ScrollReveal direction="up" delay={0.1} className="lg:col-span-8">
-                <div className="bg-[#f9fafb] rounded-[2rem] p-8 md:p-10 border border-gray-100 h-full">
+                <div className="bg-[#f9fafb] rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border border-gray-100 h-full">
                   <div className="flex items-center gap-3 mb-8">
                     <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center border border-gray-100">
                       <Settings className="w-5 h-5 text-gray-700" />
@@ -674,7 +675,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
               {/* Included Features (Spans 4 cols) */}
               <ScrollReveal direction="up" delay={0.2} className="lg:col-span-4">
-                <div className="bg-[#012d1d] rounded-[2rem] p-8 md:p-10 h-full text-white relative overflow-hidden group/box hover:shadow-xl transition-all duration-500">
+                <div className="bg-[#012d1d] rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 h-full text-white relative overflow-hidden group/box hover:shadow-xl transition-all duration-500">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#d6f54a]/10 rounded-full blur-3xl group-hover/box:bg-[#d6f54a]/20 transition-all duration-500" />
                   
                   <div className="flex items-center gap-3 mb-8 relative z-10">
@@ -708,7 +709,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
 
               {/* FRP Quality & Build (Spans 12 cols, wide format) */}
               <ScrollReveal direction="up" delay={0.3} className="lg:col-span-12">
-                <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-sm">
+                <div className="bg-white rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 border border-gray-100 shadow-sm">
                   <div className="flex flex-col gap-3 mb-10">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center">
@@ -830,7 +831,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
           )}
           {/* ── SEO CONTENT BLOCK — Keyword-rich visible text for Google ── */}
           <ScrollReveal>
-            <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-8">
+            <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-5 sm:p-8">
               <h2 className="text-[20px] font-black text-[#012d1d] mb-3">
                 {product.brand} Fiber Hood Price | {product.brand} Fiber Chatri
               </h2>
@@ -853,7 +854,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
             </div>
 
             {/* ── Brand-Specific SEO FAQ ── */}
-            <div className="mt-6 bg-white border border-[#012d1d]/10 rounded-2xl p-8">
+            <div className="mt-6 bg-white border border-[#012d1d]/10 rounded-2xl p-5 sm:p-8">
               <h3 className="text-[18px] font-black text-[#012d1d] mb-5">
                 Frequently Asked Questions about {product.name}
               </h3>
@@ -879,20 +880,20 @@ function ProductDetailContent({ slug }: { slug: string }) {
       <FloatingActions />
       
       {/* Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-2.5 z-[100] flex gap-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+      <div className="fixed bottom-0 left-0 right-0 w-full max-w-full bg-white border-t border-gray-200 p-2 sm:p-2.5 z-[100] flex gap-2 sm:gap-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] box-border">
         <Link
           href={`https://wa.me/919358273054?text=${whatsappMessage}`}
           target="_blank"
-          className="flex-1 flex items-center justify-center bg-white border border-gray-300 text-gray-900 font-bold rounded-lg py-2.5 hover:bg-gray-50 transition"
+          className="flex-1 flex items-center justify-center bg-white border border-gray-300 text-gray-900 font-bold rounded-lg py-2.5 hover:bg-gray-50 transition text-sm sm:text-base text-center"
         >
           Add to cart
         </Link>
         <Link
           href={`/checkout?product=${product.slug}`}
-          className="flex-1 flex flex-col items-center justify-center bg-[#FFC200] text-gray-900 font-bold rounded-lg py-1.5 hover:bg-[#F0B600] transition shadow-sm"
+          className="flex-1 flex flex-col items-center justify-center bg-[#FFC200] text-gray-900 font-bold rounded-lg py-1.5 hover:bg-[#F0B600] transition shadow-sm text-center"
         >
-          <span className="text-sm">Buy now</span>
-          <span className="text-[11px] leading-tight">at ₹14,500</span>
+          <span className="text-xs sm:text-sm">Buy now</span>
+          <span className="text-[10px] sm:text-[11px] leading-tight">at ₹14,500</span>
         </Link>
       </div>
       

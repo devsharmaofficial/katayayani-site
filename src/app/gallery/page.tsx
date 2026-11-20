@@ -138,7 +138,7 @@ function GalleryContent() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-28 md:pt-36 w-full max-w-[1280px] mx-auto px-[24px] pb-24">
+      <main className="flex-grow pt-28 md:pt-36 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px] pb-24 overflow-x-clip">
         {/* Visual Breadcrumb Trail */}
         <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Product Gallery", url: "/gallery" }]} />
 

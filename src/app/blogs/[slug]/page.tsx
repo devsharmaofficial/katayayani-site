@@ -80,8 +80,8 @@ export default function BlogPostPage({
         />
       )}
 
-      <main className="flex-grow pt-28 pb-20 bg-white min-h-screen">
-        <div className="max-w-[880px] mx-auto px-[24px]">
+      <main className="flex-grow pt-28 pb-20 bg-white min-h-screen w-full max-w-full overflow-x-clip">
+        <div className="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-[24px]">
           <div className="mb-8">
             <Breadcrumbs
               items={[

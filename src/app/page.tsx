@@ -45,7 +45,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-0">
+      <main className="flex-grow pt-0 w-full max-w-full overflow-x-clip">
         <section className="relative w-full bg-gradient-to-b from-[#f9fbf9] via-white to-white pt-[96px] md:pt-[110px] pb-[36px] overflow-hidden">
           <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
             {/* Primary Hero Heading — Dominant Semantic Anchor for Google Ranking */}
@@ -143,7 +143,7 @@ export default function HomePage() {
             SUPPLY NETWORK / STATES SLIDER
             ================================================================ */}
         <section className="relative py-[36px] md:py-[48px] overflow-hidden bg-transparent">
-          <div className="max-w-[1280px] mx-auto px-[24px]">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px]">
             <ScrollReveal>
               <div className="text-center mb-[24px]">
                 <h2 className="text-headline-md text-primary">
@@ -174,10 +174,10 @@ export default function HomePage() {
             ALL PRODUCTS SLIDER
             ================================================================ */}
         <section
-          className="py-[48px] bg-transparent"
+          className="py-[48px] bg-transparent overflow-hidden"
           aria-label="Tractor Fiber Hood Products — All Brands"
         >
-          <div className="max-w-[1280px] mx-auto px-[24px]">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px]">
             <ScrollReveal>
               <div className="text-center mb-[24px]">
                 <h2 className="text-headline-md text-primary">

@@ -48,9 +48,9 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-32">
+      <main className="flex-grow pt-28 sm:pt-32 w-full max-w-full overflow-x-clip">
         {/* Visual Breadcrumb Trail */}
-        <div className="max-w-[1280px] mx-auto px-[24px] pt-4">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px] pt-4">
           <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "About Us", url: "/about" }]} />
         </div>
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="max-w-[1280px] mx-auto px-[24px]">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-[48px] items-start">
               
               {/* Left Column: Visual Certificate representation */}
@@ -282,7 +282,7 @@ export default function AboutPage() {
 
         {/* Business Info Section */}
         <section className="py-[48px] bg-white border-t border-gray-100">
-          <div className="max-w-[1280px] mx-auto px-[24px]">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px]">
             <ScrollReveal>
               <div className="max-w-4xl mx-auto bg-white border border-[#795900]/10 rounded-3xl p-6 sm:p-10 shadow-[0_10px_35px_rgba(121,89,0,0.04)] relative overflow-hidden">
                 {/* Visual badge highlight */}

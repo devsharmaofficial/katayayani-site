@@ -15,8 +15,8 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 
 export function LogoCloud({ brands, className, ...props }: LogoCloudProps) {
   return (
-    <div className="w-full">
-      <section className="relative mx-auto grid max-w-7xl">
+    <div className="w-full max-w-full overflow-hidden">
+      <section className="relative mx-auto grid max-w-7xl overflow-hidden">
         <div
           className={cn(
             "relative grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 border-x border-[#012d1d]/10",
@@ -24,7 +24,7 @@ export function LogoCloud({ brands, className, ...props }: LogoCloudProps) {
           )}
           {...props}
         >
-          <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-[#012d1d]/10" />
+          <div className="pointer-events-none absolute inset-x-0 -top-px border-t border-[#012d1d]/10" />
 
           {brands.map((brand, index) => {
             const isLastInRowMd = (index + 1) % 4 === 0;
@@ -52,7 +52,7 @@ export function LogoCloud({ brands, className, ...props }: LogoCloudProps) {
             );
           })}
 
-          <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b border-[#012d1d]/10" />
+          <div className="pointer-events-none absolute inset-x-0 -bottom-px border-b border-[#012d1d]/10" />
         </div>
       </section>
     </div>

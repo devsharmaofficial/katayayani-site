@@ -103,13 +103,13 @@ export default function ContactPage({ isEnquiry = false }: ContactPageProps) {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-32">
+      <main className="flex-grow pt-28 sm:pt-32 w-full max-w-full overflow-x-clip">
         {/* Visual Breadcrumb Trail */}
-        <div className="max-w-[1280px] mx-auto px-[24px] pt-4">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px] pt-4">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
-        <div className="max-w-[1280px] mx-auto px-[24px] pb-[48px]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px] pb-[48px]">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-[64px]">
               <h1 className="text-[26px] md:text-[36px] font-black text-[#012d1d] leading-tight mb-[16px]">

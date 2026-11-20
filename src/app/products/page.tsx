@@ -69,7 +69,7 @@ export default function ProductsPage() {
       />
 
       <Navbar />
-      <main className="flex-grow pt-28 w-full max-w-[1280px] mx-auto px-[24px] pb-12">
+      <main className="flex-grow pt-24 sm:pt-28 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-[24px] pb-12 overflow-x-clip">
         {/* Visual Breadcrumb Trail */}
         <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Products", url: "/products" }]} />
 
@@ -94,7 +94,7 @@ export default function ProductsPage() {
 
         {/* ── SEO FOOTER TEXT ── Keyword-rich paragraph below product grid */}
         <ScrollReveal>
-          <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-8 text-center">
+          <div className="mt-16 bg-gradient-to-br from-[#f0faf5] to-white border border-[#012d1d]/10 rounded-2xl p-5 sm:p-8 text-center">
             <h2 className="text-[20px] md:text-[24px] font-black text-[#012d1d] mb-3">
               India&apos;s Best Tractor Fiber Hood Manufacturer
             </h2>
