@@ -1,6 +1,14 @@
 import { execSync } from "child_process";
 
-const TOKEN = process.env.VERCEL_TOKEN || "vcp_4qz3PrA9jzfNskhQDTpNnFJC0kRVNoQP9ze3e6aLakrC7p2oAD1HHTgC";
+const TOKEN = process.env.VERCEL_TOKEN;
+if (!TOKEN) {
+  console.error(
+    "❌ VERCEL_TOKEN is not set.\n" +
+      "Create a token at https://vercel.com/account/tokens, then run:\n" +
+      "  VERCEL_TOKEN=your_token npm run deploy"
+  );
+  process.exit(1);
+}
 const TEAM_ID = "team_0nfmu6CYlt282HsXpJbdRirN";
 const PROJECT_ID = "prj_XaUdfJ71RsK6f7S6rf2T4PAQeF1K";
 const PROJECT_NAME = "katayayani-site";
