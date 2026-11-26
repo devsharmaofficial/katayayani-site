@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Empirical Consumer Satisfaction Indices (Store Rating) | Katayayani Enterprises",
+  title: { absolute: "Empirical Consumer Satisfaction Indices (Store Rating) | Katayayani Enterprises" },
   description: "Aggregated empirical consumer satisfaction indices and evaluative metrics.",
   robots: {
     index: false,

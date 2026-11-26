@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Tractor Fiber Hood Price | Buy Punjabi Hood | Fiber Chatri All Brands — Katayayani Enterprises",
+  title: { absolute: "Tractor Fiber Hood Price | Buy Punjabi Hood | Fiber Chatri All Brands — Katayayani Enterprises" },
   description:
     "Buy tractor fiber hood (punjabi hood / fiber chatri) at best factory price in India. All brands: Swaraj 744/855, Mahindra 575, Sonalika DI 750, Eicher, New Holland, Massey, Farmtrac. Home delivery across India. Call +91-9358273054 for price.",
   keywords: [

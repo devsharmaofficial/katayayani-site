@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | Katayayani Enterprises — Tractor Fiber Hood Manufacturer",
+  title: { absolute: "Page Not Found | Katayayani Enterprises — Tractor Fiber Hood Manufacturer" },
   description:
     "The page you are looking for could not be found. Visit Katayayani Enterprises for the best price tractor fiber hood, punjabi hood & fiber chatri for all tractor brands. Call +91-9358273054.",
   robots: {

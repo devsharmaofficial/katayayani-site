@@ -8,12 +8,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!blog) {
     return {
-      title: "Blog Not Found | Katayayani Enterprises",
+      title: { absolute: "Blog Not Found | Katayayani Enterprises" },
     };
   }
 
   return {
-    title: `${blog.seo.title} | Katayayani Enterprises`,
+    title: { absolute: `${blog.seo.title} | Katayayani Enterprises` },
     description: blog.seo.description,
     keywords: blog.seo.keywords,
     alternates: {

@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Katayayani Enterprises",
+  title: { absolute: "Terms & Conditions | Katayayani Enterprises" },
   description: "Terms and conditions for Katayayani Enterprises.",
   alternates: {
     canonical: `${SITE_URL}/terms-and-conditions`,

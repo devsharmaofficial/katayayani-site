@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Request Tractor Fiber Hood Price Quote | Fast Response | Katayayani Enterprises Meerut",
+  title: { absolute: "Request Tractor Fiber Hood Price Quote | Fast Response | Katayayani Enterprises Meerut" },
   description:
     "Submit your enquiry for tractor fiber hood (punjabi hood / fiber chatri) price from Katayayani Enterprises. Get the best factory-direct quote for Swaraj 744/855, Mahindra, Sonalika & all tractor brands. 24-hour response guaranteed. Call +91-9358273054.",
   keywords: [

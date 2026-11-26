@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "About Katayayani Enterprises | India's #1 Tractor Fiber Hood Manufacturer Meerut UP",
+  title: { absolute: "About Katayayani Enterprises | India's #1 Tractor Fiber Hood Manufacturer Meerut UP" },
   description:
     "Katayayani Enterprises — India's #1 tractor fiber hood (punjabi hood / fiber chatri) manufacturer in Meerut, UP. IndiaMART TrustSEAL verified & GST compliant. Download our corporate product catalogue PDF & watch official video showcases on our YouTube channel. Factory-direct pricing. Call +91-9358273054.",
   keywords: [
