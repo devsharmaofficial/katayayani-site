@@ -170,7 +170,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: `${product.brand} Tractor Fiber Hood (Punjabi Hood / Fiber Chatri)`,
+            name: product.name,
             alternateName: [
               `${product.brand} fiber hood`,
               `${product.brand} fiber chatri`,
@@ -201,48 +201,6 @@ function ProductDetailContent({ slug }: { slug: string }) {
                 addressCountry: "IN",
               },
             },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              bestRating: "5",
-              worstRating: "1",
-              ratingCount: "148",
-              reviewCount: "124",
-            },
-            review: [
-              {
-                "@type": "Review",
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: "5",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-                name: `Best ${product.brand} fiber hood at factory price`,
-                reviewBody: `Excellent quality fiber hood for my ${product.brand} tractor. Perfect fit, durable material and delivered in 5 days. Highly recommend Katayayani Enterprises.`,
-                datePublished: "2025-11-15",
-                author: {
-                  "@type": "Person",
-                  name: "Rajesh Kumar",
-                },
-              },
-              {
-                "@type": "Review",
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: "5",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-                name: `${product.brand} tractor punjabi hood — superb quality`,
-                reviewBody: `Bought the fiber chatri for my ${product.brand} tractor. Build quality is very strong and price is the best in India. Pan India delivery was fast too.`,
-                datePublished: "2025-12-20",
-                author: {
-                  "@type": "Person",
-                  name: "Suresh Singh",
-                },
-              },
-            ],
             offers: {
               "@type": "Offer",
               price: "14500",
@@ -510,7 +468,7 @@ function ProductDetailContent({ slug }: { slug: string }) {
                           <Star key={star} className={`w-[18px] h-[18px] ${star <= Math.round(Number(averageRating)) ? "text-amber-400 fill-amber-400" : "text-gray-200"}`} />
                         ))}
                       </div>
-                      <span className="text-sm font-semibold text-gray-700 group-hover:text-primary transition-colors">{averageRating} ({reviewCount} reviews)</span>
+                      <span className="text-sm font-semibold text-gray-700 group-hover:text-primary transition-colors">{averageRating} ({reviewCount} verified reviews)</span>
                       <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
                     </Link>
                   </div>

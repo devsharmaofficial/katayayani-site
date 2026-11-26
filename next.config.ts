@@ -113,6 +113,40 @@ const nextConfig: NextConfig = {
   // Force redirect old domains to new domain for SEO and PageRank transfer
   async redirects() {
     return [
+      // Consolidated duplicate keyword pages into their brand hubs (301).
+      // Each of these targeted the same query as the brand hub, splitting signals.
+      // `statusCode: 301` is used instead of `permanent: true` because Next.js
+      // maps `permanent: true` to 308; a literal 301 matches the migration plan.
+      {
+        source: "/products/swaraj-tractor-fiber-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/swaraj-frp-canopy",
+        statusCode: 301,
+      },
+      {
+        source: "/products/mahindra-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/mahindra-frp-canopy",
+        statusCode: 301,
+      },
+      {
+        source: "/products/sonalika-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/sonalika-frp-canopy",
+        statusCode: 301,
+      },
+      {
+        source: "/products/john-deere-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/john-deere-frp-canopy",
+        statusCode: 301,
+      },
+      {
+        source: "/products/massey-ferguson-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/massey-ferguson-frp-canopy",
+        statusCode: 301,
+      },
+      {
+        source: "/products/new-holland-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
+        destination: "/products/new-holland-frp-canopy",
+        statusCode: 301,
+      },
       {
         source: "/:path*",
         has: [

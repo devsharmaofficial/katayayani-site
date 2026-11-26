@@ -1348,21 +1348,27 @@ const products: Product[] = [
     createdAt: "2024-07-12",
   },
   {
-    id: "universal-tractor-hood-1",
+    id: "john-deere-frp-canopy",
     slug: "john-deere-frp-canopy",
-    name: "All Brands Tractor Fiber Hood — Premium Quality",
-    shortName: "All Brands Fiber Hood",
-    description: "Premium All Brands Tractor Fiber Hood (Fiber Chatri / Punjabi Hood) compatible with all major tractor brands. Features a heavy-duty FRP build with excellent UV resistance for long-lasting durability. Check the tractor fiber hood price and watch our YouTube shorts to see the incredible quality and fitment in real life!",
-    shortDescription: "Premium tractor fiber hood compatible with all major tractor brands at the best price.",
-    brand: "All Brands",
-    brandSlug: "all-brands",
-    compatibleModels: ["All Brands", "Universal Fit"],
+    name: "John Deere Fiber Hood (Tractor Fiber Chatri)",
+    shortName: "John Deere Fiber Hood",
+    description:
+      "Buy a John Deere tractor fiber hood (fiber chatri / punjabi hood) at the best factory-direct price from Katayayani Enterprises, Meerut. Molded for John Deere 5050 D, 5310, 5045 D, 5210, 5410, 5036 D, 5105 and 5405 tractors, our heavy-duty FRP canopy uses multi-layer glass fibre, UV-stabilised gelcoat and reinforced MS pipe pillars for a vibration-free fit. It protects the operator, dashboard and wiring from sun, rain and hail while keeping the cabin noticeably cooler. Pan-India delivery in 7-12 days, COD available. Call or WhatsApp +91-9358273054 for the current John Deere fiber hood price.",
+    shortDescription:
+      "Best price John Deere tractor fiber hood & fiber chatri. Fits John Deere 5050 D, 5310, 5045 D, 5210, 5410 & all models. Factory-direct from Meerut with pan-India delivery.",
+    brand: "John Deere",
+    brandSlug: "john-deere",
+    compatibleModels: [
+      "John Deere 5050 D", "John Deere 5310", "John Deere 5045 D",
+      "John Deere 5210", "John Deere 5410", "John Deere 5036 D",
+      "John Deere 5105", "John Deere 5405", "John Deere 3028", "John Deere 3036"
+    ],
     colorVariants: [
       { name: "Green", hex: "#16a34a", slug: "green" },
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "https://img.youtube.com/vi/UL6jtWMHmtI/hqdefault.jpg", alt: "All Brands Tractor Fiber Hood Video Showcase", width: 800, height: 800 }
+      { src: "https://img.youtube.com/vi/UL6jtWMHmtI/hqdefault.jpg", alt: "John Deere tractor fiber hood fitted on John Deere 5050 D", width: 800, height: 800 }
     ],
     videos: [
       "https://youtube.com/shorts/ct35ydK7Z_g",
@@ -1371,39 +1377,66 @@ const products: Product[] = [
       "https://youtube.com/shorts/UdOJf6It_TA"
     ],
     specifications: [
-      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
-      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut" },
+      { label: "Product Type", value: "John Deere Fiber Hood / Fiber Chatri" },
+      { label: "Material", value: "Multi-layer FRP with UV-stabilised gelcoat" },
+      { label: "Frame", value: "Reinforced MS pipe pillars (chimtas)" },
+      { label: "Fitment", value: "John Deere 5050 D, 5310, 5045 D, 5210, 5410, 5036 D, 5105, 5405" },
+      { label: "Mounting", value: "Bolt-on with anti-vibration rubber bushes" },
+      { label: "Delivery", value: "Pan-India home delivery in 7-12 days" },
+      { label: "Price", value: "₹14,500 incl. GST (MRP ₹19,500)" }
     ],
-    features: ["Heavy Duty", "UV Protected", "Universal Fit", "Factory Price"],
-    featureTags: ["All Brands", "Premium", "Best Price"],
-    category: "FRP Canopies",
+    features: [
+      "Factory-direct John Deere fiber hood - no dealer commission",
+      "Multi-layer FRP shell with UV-stabilised gelcoat",
+      "Reinforced MS pipe pillars for a zero-vibration fitment",
+      "Heat-resistant canopy keeps the cabin cooler in summer",
+      "Weatherproof protection for the dashboard, wiring and operator",
+      "Available in John Deere green, yellow and white",
+      "COD and pan-India home delivery",
+      "Bulk and dealer pricing available"
+    ],
+    featureTags: ["John Deere", "Factory Direct", "Pan-India Delivery", "Heavy Duty"],
+    category: "Tractor Fiber Hoods",
     seo: {
-      title: "All Brands Tractor Fiber Hood Price | Premium Canopy | Katayayani Enterprises",
-      description: "Buy premium all brands tractor fiber hood. Compatible with all tractor brands. Get the best tractor fiber hood price and fiber hood for tractor directly from manufacturer.",
-      keywords: ["tractor fiber hood price", "fiber hood for tractor", "tractor canopy", "all brands tractor hood", "tractor fiber hood"]
+      title: "John Deere Tractor Fiber Hood Price | John Deere Fiber Chatri",
+      description:
+        "Buy a John Deere tractor fiber hood (fiber chatri / punjabi hood) at factory price. Fits John Deere 5050 D, 5310, 5045 D, 5210 & 5410. Meerut manufacturer, pan-India delivery.",
+      keywords: [
+        "john deere tractor fiber hood price",
+        "john deere fiber hood",
+        "john deere fiber chatri",
+        "john deere punjabi hood",
+        "john deere 5050 fiber hood price",
+        "john deere 5310 fiber hood price",
+        "john deere tractor canopy",
+        "fiber hood for john deere tractor"
+      ]
     },
     galleryImages: [],
-    isFeatured: false,
-    isNew: true,
+    isFeatured: true,
+    isNew: false,
     createdAt: "2024-08-01"
   },
   {
-    id: "universal-tractor-hood-2",
+    id: "john-deere-5050d-fiber-hood",
     slug: "john-deere-5050d-fiber-hood",
-    name: "All Brands Tractor Fiber Chatri — Heavy Duty",
-    shortName: "All Brands Fiber Chatri",
-    description: "Heavy Duty All Brands Tractor Fiber Chatri compatible with all major tractor brands. Features a durable FRP canopy build to protect from harsh weather. Check our unbeatable tractor fiber chatri prices. Watch our YouTube shorts to see the incredible quality and fitment in real life!",
-    shortDescription: "Heavy Duty tractor fiber chatri compatible with all major tractor brands at factory price.",
-    brand: "All Brands",
-    brandSlug: "all-brands",
-    compatibleModels: ["All Brands", "Universal Fit"],
+    name: "John Deere 5050 D Fiber Hood (Punjabi Hood)",
+    shortName: "John Deere 5050 D Fiber Hood",
+    description:
+      "The John Deere 5050 D is one of India's most popular 50 HP tractors, and our 5050 D fiber hood is molded specifically for its bonnet and fender geometry. The canopy uses a heavy-duty FRP shell, UV-stabilised gelcoat and reinforced MS pipe pillars that bolt onto the existing mounting points without drilling. Farmers using the 5050 D for paddy, wheat, sugarcane and haulage get reliable shade, rain protection and a cooler cabin during long field days. Available in John Deere green, yellow and white with pan-India delivery. Call +91-9358273054 for the latest 5050 D fiber hood price.",
+    shortDescription:
+      "John Deere 5050 D fiber hood (punjabi hood / fiber chatri) at factory price. Model-specific fit, heavy-duty FRP, UV gelcoat and pan-India delivery.",
+    brand: "John Deere",
+    brandSlug: "john-deere",
+    compatibleModels: ["John Deere 5050 D", "John Deere 5050 D 4WD", "John Deere 5050 E"],
     colorVariants: [
       { name: "Green", hex: "#16a34a", slug: "green" },
       { name: "Red", hex: "#ef4444", slug: "red" },
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "https://img.youtube.com/vi/c1hL6fj8VjQ/hqdefault.jpg", alt: "All Brands Tractor Fiber Chatri Video Showcase", width: 800, height: 800 }
+      { src: "https://img.youtube.com/vi/c1hL6fj8VjQ/hqdefault.jpg", alt: "John Deere 5050 D tractor fiber hood and punjabi hood fitment", width: 800, height: 800 }
     ],
     videos: [
       "https://youtube.com/shorts/sHBdDOuziVI",
@@ -1412,39 +1445,64 @@ const products: Product[] = [
       "https://youtube.com/shorts/UhsBJOETVRI"
     ],
     specifications: [
-      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
-      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+      { label: "Compatible Model", value: "John Deere 5050 D / 5050 D 4WD / 5050 E" },
+      { label: "Product Type", value: "Model-specific fiber hood / punjabi hood" },
+      { label: "Material", value: "Heavy-duty multi-layer FRP" },
+      { label: "Finish", value: "UV-stabilised automotive gelcoat" },
+      { label: "Frame", value: "Reinforced MS pipe pillars" },
+      { label: "Mounting", value: "Bolt-on, no drilling" },
+      { label: "Delivery", value: "7-12 days, pan-India" },
+      { label: "Price", value: "₹14,500 incl. GST" }
     ],
-    features: ["Heavy Duty", "UV Protected", "Universal Fit"],
-    featureTags: ["All Brands", "Heavy Duty", "Fiber Chatri"],
-    category: "FRP Canopies",
+    features: [
+      "Molded specifically for the John Deere 5050 D bonnet and fenders",
+      "Bolt-on fitment using the existing mounting points",
+      "Multi-layer FRP shell with UV-stabilised gelcoat",
+      "Reinforced MS pipe pillars reduce vibration on rough fields",
+      "Shade and rain protection for long paddy and wheat shifts",
+      "Keeps the dashboard and wiring cooler in summer",
+      "Available in John Deere green, yellow and white",
+      "COD and pan-India home delivery"
+    ],
+    featureTags: ["John Deere 5050 D", "Model-Specific Fit", "Heavy Duty", "Factory Price"],
+    category: "Tractor Fiber Hoods",
     seo: {
-      title: "All Brands Tractor Fiber Chatri | Heavy Duty Canopy | Katayayani Enterprises",
-      description: "Buy heavy duty all brands tractor fiber chatri. Compatible with all tractor brands. Get the best tractor fiber hood price and fiber hood for tractor.",
-      keywords: ["tractor fiber chatri", "fiber hood for tractor", "tractor canopy", "all brands tractor chatri"]
+      title: "John Deere 5050 D Fiber Hood Price | 5050 D Punjabi Hood",
+      description:
+        "John Deere 5050 D fiber hood (punjabi hood / fiber chatri) at factory price. Model-specific fit, heavy-duty FRP, UV gelcoat and pan-India delivery.",
+      keywords: [
+        "john deere 5050 d fiber hood",
+        "john deere 5050 fiber hood price",
+        "john deere 5050 d punjabi hood",
+        "john deere 5050 fiber chatri",
+        "5050 d tractor canopy",
+        "john deere 5050 d roof canopy"
+      ]
     },
     galleryImages: [],
     isFeatured: false,
-    isNew: true,
+    isNew: false,
     createdAt: "2024-08-01"
   },
   {
-    id: "universal-tractor-hood-3",
+    id: "john-deere-5310-fiber-hood",
     slug: "john-deere-5310-fiber-hood",
-    name: "All Brands Tractor Punjabi Hood — Custom Fit",
-    shortName: "All Brands Punjabi Hood",
-    description: "All Brands Tractor Punjabi Hood compatible with all major tractor brands. Adjustable mounting brackets for a perfect fit. Get the best punjabi tractor hood price directly from the manufacturer. Watch our YouTube shorts to see the incredible quality and fitment in real life!",
-    shortDescription: "Tractor punjabi hood compatible with all major tractor brands at factory direct price.",
-    brand: "All Brands",
-    brandSlug: "all-brands",
-    compatibleModels: ["All Brands", "Universal Fit"],
+    name: "John Deere 5310 Fiber Hood (Punjabi Hood)",
+    shortName: "John Deere 5310 Fiber Hood",
+    description:
+      "Our John Deere 5310 fiber hood is built for the 5310's wider bonnet and heavy-duty fenders, with a mold profile that follows the tractor's original lines. The canopy combines a multi-layer FRP shell, UV-stabilised gelcoat and reinforced MS pipe pillars for a rattle-free fit on bunds and uneven fields. It gives 5310 owners dependable overhead shade, monsoon protection and a cooler cabin without hiding the tractor's original look. Choose John Deere green, yellow or white. Pan-India delivery in 7-12 days with COD available. Call +91-9358273054 for the 5310 fiber hood price.",
+    shortDescription:
+      "John Deere 5310 fiber hood (punjabi hood / fiber chatri) at factory price. Wide-bonnet fit, heavy-duty FRP, UV gelcoat and pan-India delivery.",
+    brand: "John Deere",
+    brandSlug: "john-deere",
+    compatibleModels: ["John Deere 5310", "John Deere 5310 4WD", "John Deere 5310 E"],
     colorVariants: [
       { name: "Green", hex: "#16a34a", slug: "green" },
       { name: "Blue", hex: "#3b82f6", slug: "blue" },
       { name: "White", hex: "#ffffff", slug: "white" }
     ],
     images: [
-      { src: "https://img.youtube.com/vi/ap38alCuUxY/hqdefault.jpg", alt: "All Brands Tractor Punjabi Hood Video Showcase", width: 800, height: 800 }
+      { src: "https://img.youtube.com/vi/ap38alCuUxY/hqdefault.jpg", alt: "John Deere 5310 tractor fiber hood and punjabi hood fitment", width: 800, height: 800 }
     ],
     videos: [
       "https://youtube.com/shorts/UdOJf6It_TA",
@@ -1453,192 +1511,46 @@ const products: Product[] = [
       "https://youtube.com/shorts/-tSXzjKu17A"
     ],
     specifications: [
-      { label: "Material", value: "Fiber Reinforced Plastic (FRP)" },
-      { label: "Compatibility", value: "Universal Fit (All Brands)" }
+      { label: "Compatible Model", value: "John Deere 5310 / 5310 4WD / 5310 E" },
+      { label: "Product Type", value: "Model-specific fiber hood / punjabi hood" },
+      { label: "Material", value: "Heavy-duty multi-layer FRP" },
+      { label: "Finish", value: "UV-stabilised automotive gelcoat" },
+      { label: "Frame", value: "Reinforced MS pipe pillars" },
+      { label: "Mounting", value: "Bolt-on, no drilling" },
+      { label: "Delivery", value: "7-12 days, pan-India" },
+      { label: "Price", value: "₹14,500 incl. GST" }
     ],
-    features: ["Heavy Duty", "UV Protected", "Universal Fit", "Punjabi Design"],
-    featureTags: ["All Brands", "Punjabi Hood", "Custom Fit"],
-    category: "FRP Canopies",
+    features: [
+      "Wide-bonnet mold profile designed for the John Deere 5310",
+      "Bolt-on fitment using the existing mounting points",
+      "Multi-layer FRP shell with UV-stabilised gelcoat",
+      "Reinforced MS pipe pillars for a rattle-free fit",
+      "Overhead shade and monsoon protection for long field days",
+      "Keeps the dashboard and wiring cooler in summer",
+      "Available in John Deere green, yellow and white",
+      "COD and pan-India home delivery"
+    ],
+    featureTags: ["John Deere 5310", "Model-Specific Fit", "Heavy Duty", "Factory Price"],
+    category: "Tractor Fiber Hoods",
     seo: {
-      title: "All Brands Tractor Punjabi Hood Price | Custom Fit Canopy | Katayayani Enterprises",
-      description: "Buy all brands tractor punjabi hood. Compatible with all tractor brands. Check the best punjabi tractor hood price and factory direct tractor fiber hood price.",
-      keywords: ["punjabi tractor hood price", "punjabi hood", "tractor fiber hood price", "fiber hood for tractor", "all brands punjabi hood"]
+      title: "John Deere 5310 Fiber Hood Price | 5310 Punjabi Hood",
+      description:
+        "John Deere 5310 fiber hood (punjabi hood / fiber chatri) at factory price. Wide-bonnet fit, heavy-duty FRP, UV gelcoat and pan-India delivery.",
+      keywords: [
+        "john deere 5310 fiber hood",
+        "john deere 5310 fiber hood price",
+        "john deere 5310 punjabi hood",
+        "john deere 5310 fiber chatri",
+        "5310 tractor canopy",
+        "john deere 5310 roof canopy"
+      ]
     },
     galleryImages: [],
     isFeatured: false,
-    isNew: true,
+    isNew: false,
     createdAt: "2024-08-01"
   },
-  {
-    id: "mahindra-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    slug: "mahindra-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    name: "Mahindra Tractor Fiber Hood Roof Canopy / Fiber Chatri / Punjabi Hood",
-    shortName: "Mahindra Fiber Hood Roof Canopy",
-    description:
-      "Buy Mahindra tractor fiber hood roof canopy, fiber chatri, and punjabi hood at direct factory price from Katayayani Enterprises, Meerut. Engineered specifically for Mahindra 575 DI, 475 DI, Arjun Novo, Yuvo Tech+, 585 DI Sarpanch, and Oja series. Manufactured with multi-layer heavy-duty Fiber-Reinforced Plastic (FRP) and reinforced MS pipe support pillars, providing all-weather protection against blistering heat, rain, and hail. Features a built-in heat insulation layer that reduces cabin temperature by up to 15°C. Safe, insured home delivery across Punjab, Haryana, UP, Rajasthan, MP, Maharashtra, Gujarat, and all over India. Call +91-9358273054 or WhatsApp to order.",
-    shortDescription:
-      "Heavy duty Mahindra tractor fiber hood roof canopy & fiber chatri (punjabi hood). Custom-molded for Mahindra 575, 475, Arjun Novo, Yuvo & all models. Factory price ₹14,500 incl. GST.",
-    brand: "Mahindra",
-    brandSlug: "mahindra",
-    compatibleModels: [
-      "Mahindra 575 DI",
-      "Mahindra 475 DI",
-      "Mahindra Arjun Novo 605",
-      "Mahindra 585 DI Sarpanch",
-      "Mahindra Yuvo Tech+ 575",
-      "Mahindra 275 DI TU",
-      "Mahindra OJA 4WD",
-      "Mahindra JIVO 245"
-    ],
-    colorVariants: [
-      { name: "Mahindra Red", hex: "#dc2626", slug: "red" },
-      { name: "Gloss Yellow", hex: "#facc15", slug: "yellow" },
-      { name: "Pure White", hex: "#ffffff", slug: "white" },
-      { name: "Forest Green", hex: "#15803d", slug: "green" },
-    ],
-    images: [
-      { src: "/products/mahindra/mahindra_hero_v3.avif", alt: "Mahindra Tractor Fiber Hood Roof Canopy (Fiber Chatri / Punjabi Hood) - Front View", width: 800, height: 800 },
-      { src: "/products/mahindra/v1784922285400_hero_image.avif", alt: "Mahindra Tractor Fiber Roof Canopy Fitting and Quality - Side Angle", width: 800, height: 800 },
-      { src: "/products/mahindra/v1784922285400_ehgbiq2ts92ishq5kkf8.avif", alt: "Mahindra Tractor Punjabi Hood Chatri - Rear View", width: 800, height: 800 },
-      { src: "/products/mahindra/v1784922285400_kkcebd7ebtt6zn2rirby.avif", alt: "Mahindra Fiber Hood Support Pipe Structure", width: 800, height: 800 },
-      { src: "/products/mahindra/v1784922285400_ptqbhtobbcy9lvowwyok.avif", alt: "Mahindra Tractor Canopy Surface Finish & Heat Shield", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/watch?v=0IoHCk3LOko",
-      "https://youtube.com/shorts/gQT_ke2q5To"
-    ],
-    specifications: [
-      { label: "Product Name", value: "Mahindra Tractor Fiber Hood Roof Canopy / Fiber Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Build Material", value: "100% Virgin Grade FRP (Fiber-Reinforced Plastic)" },
-      { label: "Mounting Frame", value: "Heavy-Gauge Mild Steel Tubular Frame (Zero Vibration)" },
-      { label: "Color Finish", value: "High-Gloss UV-Stabilized Automotive PU Gel Coat" },
-      { label: "Heat Shield", value: "Multi-Layer Thermal Barrier (-15°C Cabin Temp)" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "Insured Pan-India Home Delivery (4–6 Days)" },
-    ],
-    features: [
-      "Top-rated Mahindra tractor fiber hood roof canopy directly from factory in Meerut",
-      "Best price guaranteed on Mahindra tractor fiber chatri & punjabi hood in India",
-      "Engineered for Mahindra 575 DI, 475 DI, Arjun Novo, Yuvo & all series",
-      "Aerodynamic punjabi hood styling with rain drainage channels & sun shade extension",
-      "Heavy duty anti-vibration rubber bush mounting ensures silent, rattle-free driving",
-      "Factory direct pricing — order online or via WhatsApp with pan-India transport",
-    ],
-    featureTags: ["Mahindra Fit", "Top Rated", "Fiber Roof Canopy", "Punjabi Hood", "Factory Direct", "Home Delivery"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "Mahindra Tractor Fiber Hood Roof Canopy | Fiber Chatri & Punjabi Hood Price",
-      description:
-        "Buy Mahindra tractor fiber hood roof canopy & fiber chatri (punjabi hood) at best factory-direct price in India. Fits Mahindra 575 DI, 475 DI, Arjun Novo & all models. High grade FRP, UV resistant, pan-India delivery. Call +91-9358273054.",
-      keywords: [
-        "mahindra tractor fiber hood roof canopy",
-        "mahindra tractor fiber hood price",
-        "mahindra tractor fiber chatri price",
-        "mahindra tractor punjabi hood",
-        "mahindra tractor fiber roof price",
-        "mahindra tractor fiber canopy",
-        "fiber hood for mahindra tractor",
-        "mahindra 575 tractor fiber hood price",
-        "mahindra 475 di fiber chatri price",
-        "mahindra arjun novo fiber hood",
-        "mahindra tractor punjabi hood price in punjab",
-        "mahindra fiber hood manufacturer meerut",
-        "tractor fiber hood price",
-        "punjabi tractor hood price",
-        "tractor fiber chatri",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: true,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
-    id: "swaraj-tractor-fiber-roof-canopy-chatri-punjabi-hood",
-    slug: "swaraj-tractor-fiber-roof-canopy-chatri-punjabi-hood",
-    name: "Swaraj Tractor Fiber Roof Canopy / Fiber Chatri / Punjabi Hood (744 & 855)",
-    shortName: "Swaraj Fiber Roof Canopy Chatri",
-    description:
-      "Buy Swaraj tractor fiber roof canopy, fiber chatri, and punjabi hood for Swaraj 744 FE, Swaraj 855 FE, Swaraj 744 XT, Swaraj 963 FE, and Swaraj 735 FE at unbeatable factory price from Katayayani Enterprises, Meerut. Built with ultra-thick high-tensile Fiber-Reinforced Plastic and heavy double-welded MS mounting pipes. Tested across harsh farming environments for superior shock absorption, weather resistance, and crack-free longevity. Safe doorstep delivery across Punjab, Haryana, Rajasthan, UP, MP, and pan-India. Call +91-9358273054 or message us on WhatsApp to order.",
-    shortDescription:
-      "Heavy duty Swaraj tractor fiber roof canopy & fiber chatri (punjabi hood) for Swaraj 744, 855, 963 & 735. Direct factory price ₹14,500 incl. GST.",
-    brand: "Swaraj",
-    brandSlug: "swaraj",
-    compatibleModels: [
-      "Swaraj 744 FE",
-      "Swaraj 855 FE",
-      "Swaraj 744 XT",
-      "Swaraj 855 XM",
-      "Swaraj 963 FE",
-      "Swaraj 735 FE",
-      "Swaraj 742 XT",
-      "Swaraj 724 XM",
-      "Swaraj 825 XM"
-    ],
-    colorVariants: [
-      { name: "Swaraj Red", hex: "#dc2626", slug: "red" },
-      { name: "Swaraj Blue", hex: "#2563eb", slug: "blue" },
-      { name: "Swaraj Orange", hex: "#f97316", slug: "orange" },
-      { name: "Pure White", hex: "#ffffff", slug: "white" },
-    ],
-    images: [
-      { src: "/products/swaraj/swaraj_hero_v3.avif", alt: "Swaraj Tractor Fiber Roof Canopy / Fiber Chatri / Punjabi Hood - Main Angle", width: 800, height: 800 },
-      { src: "/products/swaraj/swaraj_hero_v2.avif", alt: "Swaraj 744 855 Tractor Fiber Hood Canopy Fitment - Factory View", width: 800, height: 800 },
-      { src: "/products/swaraj/v1784922285400_qp4lyo5f2uaymjplv8a6.avif", alt: "Swaraj Tractor Punjabi Hood Side Angle View", width: 800, height: 800 },
-      { src: "/products/swaraj/v1784922285400_lznr5bngfgu5fqrk0dzi.avif", alt: "Swaraj Tractor Fiber Chatri Bracket Fitting", width: 800, height: 800 },
-      { src: "/products/swaraj/v1784922285400_awt13ljuuyjyavhnard5.avif", alt: "Swaraj Tractor Roof Canopy Rear Profile", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/watch?v=8AwxVYJaLew",
-      "https://youtube.com/shorts/ct35ydK7Z_g"
-    ],
-    specifications: [
-      { label: "Product Name", value: "Swaraj Tractor Fiber Roof Canopy / Punjabi Hood / Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Material Composition", value: "Virgin Heavy FRP with UV Gel Coating" },
-      { label: "Chassis Support", value: "Heavy MS Bumper & Fender Pipe Mounts" },
-      { label: "Models Supported", value: "Swaraj 744 FE, 855 FE, 744 XT, 735 FE, 963 FE" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "Fast All-India Transport (Insured)" },
-    ],
-    features: [
-      "Top-rated Swaraj tractor fiber roof canopy directly from manufacturer in Meerut",
-      "Authentic Punjabi hood styling preferred by farmers across Punjab and Haryana",
-      "Custom laser-aligned mounting brackets for Swaraj 744 FE & Swaraj 855 FE",
-      "High gloss non-fading automotive PU paint matching genuine Swaraj colors",
-      "Heavy duty double-gauge pipes resist high speed wind and rough field vibration",
-      "Pan-India home delivery — order online or connect on WhatsApp",
-    ],
-    featureTags: ["Swaraj 744/855", "Fiber Roof Canopy", "Punjabi Hood", "Fiber Chatri", "Factory Price", "Top Rated"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "Swaraj Tractor Fiber Roof Canopy | Swaraj 744 855 Fiber Chatri & Punjabi Hood Price",
-      description:
-        "Best price Swaraj tractor fiber roof canopy & fiber chatri (punjabi hood) for Swaraj 744 FE, 855 FE, 744 XT, 735 FE. Direct from factory manufacturer in Meerut. Home delivery all India. Call +91-9358273054.",
-      keywords: [
-        "swaraj tractor fiber roof canopy",
-        "swaraj 744 fiber hood price",
-        "swaraj 855 fiber hood price",
-        "swaraj tractor fiber chatri price",
-        "swaraj tractor punjabi hood",
-        "swaraj fiber roof price in india",
-        "fiber hood for tractor swaraj",
-        "swaraj 744 tractor fiber chatri price",
-        "swaraj 855 fiber chatri price",
-        "swaraj tractor canopy price in punjab",
-        "swaraj 855 punjabi hood modification",
-        "swaraj 744 xt fiber canopy",
-        "tractor fiber hood price",
-        "punjabi hood price",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: true,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
+      {
     id: "swaraj-tractor-fiber-hood-with-fan-and-led-lights",
     slug: "swaraj-tractor-fiber-hood-with-fan-and-led-lights",
     name: "Swaraj Tractor Fiber Hood / Roof Canopy with 12V High Speed Fan & LED Cabin Lights",
@@ -1798,306 +1710,7 @@ const products: Product[] = [
     isNew: true,
     createdAt: "2024-11-01",
   },
-  {
-    id: "sonalika-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    slug: "sonalika-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    name: "Sonalika Tractor Fiber Hood Roof Canopy / Fiber Chatri / Punjabi Hood",
-    shortName: "Sonalika Fiber Hood Roof Canopy",
-    description:
-      "Buy Sonalika tractor fiber hood roof canopy, fiber chatri, and punjabi hood at direct factory price from Katayayani Enterprises, Meerut. Specifically engineered for Sonalika DI 750 III, Sonalika Tiger 50, Tiger 55, DI 60, DI 35, and Sikander series. Made from heavy-density FRP material with high-gloss automotive PU coating that resists fading, chipping, and weathering. Custom mounting brackets ensure seamless fitment without altering tractor original body panels. Safe insured doorstep transport across Punjab, Haryana, UP, MP, Rajasthan, and pan-India. Call +91-9358273054 or message us on WhatsApp.",
-    shortDescription:
-      "Heavy duty Sonalika tractor fiber hood roof canopy & fiber chatri (punjabi hood). Custom-fit for Sonalika DI 750, Tiger 50/55 & Sikander. Factory price ₹14,500 incl. GST.",
-    brand: "Sonalika",
-    brandSlug: "sonalika",
-    compatibleModels: [
-      "Sonalika DI 750 III",
-      "Sonalika Tiger 50",
-      "Sonalika Tiger 55",
-      "Sonalika DI 60",
-      "Sonalika DI 35",
-      "Sonalika Sikander DI 745",
-      "Sonalika Sikander RX 50",
-      "Sonalika GT 26"
-    ],
-    colorVariants: [
-      { name: "Sonalika Blue", hex: "#2563eb", slug: "blue" },
-      { name: "Sonalika Red", hex: "#dc2626", slug: "red" },
-      { name: "Arctic White", hex: "#ffffff", slug: "white" },
-      { name: "Emerald Green", hex: "#15803d", slug: "green" },
-    ],
-    images: [
-      { src: "/products/sonalika/sonalika_hero_v3.avif", alt: "Sonalika Tractor Fiber Hood Roof Canopy (Fiber Chatri / Punjabi Hood) - Front Profile", width: 800, height: 800 },
-      { src: "/products/sonalika/v1784922285400_hero_image.avif", alt: "Sonalika Tractor Fiber Roof Canopy Fitting Quality", width: 800, height: 800 },
-      { src: "/products/sonalika/v1784922285400_dygexvh1h3aemaysr10k.avif", alt: "Sonalika Punjabi Hood Chatri - Side View", width: 800, height: 800 },
-      { src: "/products/sonalika/v1784922285400_v4lhippqeckcj43s2kka.avif", alt: "Sonalika Fiber Hood Bracket Mount Detail", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/watch?v=0IoHCk3LOko"
-    ],
-    specifications: [
-      { label: "Product Name", value: "Sonalika Tractor Fiber Hood Roof Canopy / Fiber Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Body Composition", value: "Heavy-Gauge Fiber-Reinforced Plastic (FRP)" },
-      { label: "Support Pillars", value: "Thick MS Tubular Pipe with Anti-Rust Primer" },
-      { label: "Fitment", value: "Direct Bolt-on for Sonalika DI 750, Tiger 50/55 & Sikander" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "All-India Safe Transit Home Delivery (4–6 Days)" },
-    ],
-    features: [
-      "Top-rated Sonalika tractor fiber hood roof canopy directly from factory in Meerut",
-      "Best price guaranteed on Sonalika tractor fiber chatri & punjabi hood in India",
-      "Precision custom fitment for Sonalika DI 750 III, Tiger 50/55, and Sikander series",
-      "Aerodynamic punjabi hood canopy design deflects rain and shields operator from harsh sun",
-      "Heavy duty anti-vibration mount prevents bonnet rattling on uneven farmland",
-      "Order online with doorstep home delivery anywhere across India",
-    ],
-    featureTags: ["Sonalika Fit", "Fiber Roof Canopy", "Punjabi Hood", "Fiber Chatri", "Factory Direct", "Home Delivery"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "Sonalika Tractor Fiber Hood Roof Canopy | Fiber Chatri & Punjabi Hood Price",
-      description:
-        "Buy Sonalika tractor fiber hood roof canopy & fiber chatri (punjabi hood) at best factory price. Fits Sonalika DI 750, Tiger 50/55 & Sikander. Home delivery across India. Call +91-9358273054.",
-      keywords: [
-        "sonalika tractor fiber roof canopy",
-        "sonalika tractor fiber hood price",
-        "sonalika tractor fiber chatri price",
-        "sonalika punjabi hood price",
-        "sonalika di 750 fiber hood price",
-        "sonalika tiger 50 fiber canopy",
-        "fiber roof for sonalika tractor",
-        "sonalika tractor fiber hood manufacturer",
-        "sonalika tractor canopy online",
-        "tractor fiber hood price",
-        "punjabi tractor hood price",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: false,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
-    id: "john-deere-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    slug: "john-deere-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    name: "John Deere Tractor Fiber Hood Roof Canopy / Fiber Chatri / Punjabi Hood",
-    shortName: "John Deere Fiber Hood Roof Canopy",
-    description:
-      "Buy John Deere tractor fiber hood roof canopy, fiber chatri, and punjabi hood at best factory-direct price from Katayayani Enterprises, Meerut. Precision-molded for John Deere 5050D, John Deere 5310, John Deere 5105, John Deere 5210, John Deere 5405, and John Deere 5045D series. Engineered using premium UV-resistant FRP with reinforced MS steel frame pillars. Protects operator from intense sun rays, dust, and rainfall while giving the tractor a commanding, premium look. Insured delivery across Punjab, Haryana, Rajasthan, UP, MP, Karnataka, and pan-India. Call +91-9358273054 or WhatsApp us.",
-    shortDescription:
-      "Heavy duty John Deere tractor fiber hood roof canopy & fiber chatri (punjabi hood). Custom-fit for John Deere 5050D, 5310, 5105 & 5405. Factory price ₹14,500 incl. GST.",
-    brand: "All Brands",
-    brandSlug: "all-brands",
-    compatibleModels: [
-      "John Deere 5050D",
-      "John Deere 5310 GearPro",
-      "John Deere 5105",
-      "John Deere 5210",
-      "John Deere 5405 PowerTech",
-      "John Deere 5045D",
-      "John Deere 5055E"
-    ],
-    colorVariants: [
-      { name: "John Deere Green", hex: "#16a34a", slug: "green" },
-      { name: "John Deere Yellow", hex: "#facc15", slug: "yellow" },
-      { name: "Pure White", hex: "#ffffff", slug: "white" },
-    ],
-    images: [
-      { src: "https://img.youtube.com/vi/UL6jtWMHmtI/hqdefault.jpg", alt: "John Deere Tractor Fiber Hood Roof Canopy - Video Showcase View", width: 800, height: 800 },
-      { src: "https://img.youtube.com/vi/c1hL6fj8VjQ/hqdefault.jpg", alt: "John Deere Tractor Fiber Chatri Fitment and Quality", width: 800, height: 800 },
-      { src: "https://img.youtube.com/vi/ap38alCuUxY/hqdefault.jpg", alt: "John Deere Tractor Punjabi Hood Canopy Profile", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/shorts/ct35ydK7Z_g",
-      "https://youtube.com/shorts/-tSXzjKu17A"
-    ],
-    specifications: [
-      { label: "Product Name", value: "John Deere Tractor Fiber Hood Roof Canopy / Fiber Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Material Composition", value: "Virgin FRP (Fiber Reinforced Plastic) with UV Gel Coat" },
-      { label: "Frame Structure", value: "Heavy-Gauge Mild Steel Tubular Mounting Frame" },
-      { label: "Models Supported", value: "John Deere 5050D, 5310, 5105, 5210, 5405, 5045D" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "Pan-India Home Delivery (4–6 Days)" },
-    ],
-    features: [
-      "Top-rated John Deere tractor fiber hood roof canopy manufactured in Meerut",
-      "Matches genuine John Deere green and yellow styling with high-gloss automotive finish",
-      "Precision fit for John Deere 5050D, 5310 GearPro, 5105, 5210 and all series",
-      "Heavy duty MS mounting frame ensures complete vibration dampening during fieldwork",
-      "Built-in sun shade extension and rain drainage lip keep operator comfortable all day",
-      "Order directly from factory with pan-India doorstep transport",
-    ],
-    featureTags: ["John Deere Fit", "Fiber Roof Canopy", "Punjabi Hood", "Fiber Chatri", "Factory Price", "Top Rated"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "John Deere Tractor Fiber Hood Roof Canopy | Fiber Chatri & Punjabi Hood Price",
-      description:
-        "Best price John Deere tractor fiber hood roof canopy & fiber chatri (punjabi hood). Fits John Deere 5050D, 5310, 5105 & 5405. Meerut factory direct. Call +91-9358273054.",
-      keywords: [
-        "john deere tractor fiber hood",
-        "john deere tractor fiber roof canopy",
-        "john deere tractor fiber chatri price",
-        "john deere 5050d fiber hood price",
-        "john deere 5310 punjabi hood",
-        "fiber hood for john deere tractor",
-        "john deere tractor canopy price in india",
-        "john deere fiber hood price",
-        "tractor fiber hood price",
-        "punjabi tractor hood price",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: false,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
-    id: "massey-ferguson-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    slug: "massey-ferguson-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    name: "Massey Ferguson Tractor Fiber Hood Roof Canopy / Fiber Chatri / Punjabi Hood",
-    shortName: "Massey Ferguson Fiber Hood Canopy",
-    description:
-      "Buy Massey Ferguson tractor fiber hood roof canopy, fiber chatri, and punjabi hood at best factory-direct price from Katayayani Enterprises, Meerut. Custom-molded for Massey Ferguson 1035 DI, Massey 241 DI Maha Shakti, Massey 7250 PowerUp, Massey 9500 Smart, and Massey 245 DI. Constructed with thick industrial-grade FRP that never dents, rusts, or rattles. Designed to withstand heavy agricultural vibration while providing optimal shade and rain deflection. Delivered safely to your doorstep across Punjab, Haryana, Rajasthan, UP, MP, Gujarat, and pan-India. Call +91-9358273054 or order via WhatsApp.",
-    shortDescription:
-      "Heavy duty Massey Ferguson tractor fiber hood roof canopy & fiber chatri (punjabi hood). Fits Massey 1035, 241, 7250 & all models. Factory price ₹14,500 incl. GST.",
-    brand: "Massey Ferguson",
-    brandSlug: "massey-ferguson",
-    compatibleModels: [
-      "Massey Ferguson 1035 DI",
-      "Massey Ferguson 241 DI Maha Shakti",
-      "Massey Ferguson 7250 PowerUp",
-      "Massey Ferguson 9500 Smart",
-      "Massey Ferguson 245 DI",
-      "Massey Ferguson 244 DI"
-    ],
-    colorVariants: [
-      { name: "Massey Red", hex: "#b91c1c", slug: "red" },
-      { name: "Metallic Grey", hex: "#6b7280", slug: "grey" },
-      { name: "Pure White", hex: "#ffffff", slug: "white" },
-    ],
-    images: [
-      { src: "/products/massey-ferguson/massey_hero_v3.avif", alt: "Massey Ferguson Tractor Fiber Hood Roof Canopy - Front View", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_hero_image.avif", alt: "Massey Ferguson Tractor Fiber Roof Canopy Fitting Quality", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_ft98tfplf5vf6jyrcglm.avif", alt: "Massey Ferguson Punjabi Hood Chatri - Side Profile", width: 800, height: 800 },
-      { src: "/products/massey-ferguson/v1784922285400_khzfkbhvckvyqmrvzusk.avif", alt: "Massey Ferguson Fiber Hood Pipe Support Frame", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/watch?v=0IoHCk3LOko"
-    ],
-    specifications: [
-      { label: "Product Name", value: "Massey Ferguson Tractor Fiber Hood Roof Canopy / Fiber Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Material Composition", value: "Heavy Duty Multi-Layer FRP with Thermal Insulation" },
-      { label: "Pillar Structure", value: "Heavy MS Tubular Pipe Frame with Anti-Rust Coating" },
-      { label: "Compatibility", value: "Massey Ferguson 1035 DI, 241 DI, 7250, 9500, 245 DI" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "All-India Safe Transit Home Delivery" },
-    ],
-    features: [
-      "Top-rated Massey Ferguson tractor fiber hood roof canopy manufactured in Meerut",
-      "Best price guaranteed on Massey tractor fiber chatri & punjabi hood in India",
-      "Custom bolt-on brackets engineered specifically for Massey Ferguson mudguards and chassis",
-      "Multi-layer FRP construction deflects intense sunlight and heavy monsoon rains",
-      "Rubber isolated mounts ensure smooth, vibration-free ride across rugged fields",
-      "Order online with safe doorstep transport anywhere in India",
-    ],
-    featureTags: ["Massey Ferguson Fit", "Fiber Roof Canopy", "Punjabi Hood", "Fiber Chatri", "Factory Direct", "Home Delivery"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "Massey Ferguson Tractor Fiber Hood Roof Canopy | Fiber Chatri & Punjabi Hood Price",
-      description:
-        "Buy Massey Ferguson tractor fiber hood roof canopy & fiber chatri (punjabi hood). Fits Massey 1035 DI, 241 DI, 7250. Direct factory price from Meerut manufacturer. Call +91-9358273054.",
-      keywords: [
-        "massey ferguson tractor fiber roof canopy",
-        "massey tractor fiber hood price",
-        "massey ferguson fiber chatri price",
-        "massey 1035 di fiber hood price",
-        "massey 241 di fiber chatri",
-        "punjabi hood for massey tractor",
-        "fiber hood for massey ferguson tractor",
-        "massey tractor canopy price",
-        "tractor fiber hood price",
-        "punjabi tractor hood price",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: false,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
-    id: "new-holland-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    slug: "new-holland-tractor-fiber-hood-roof-canopy-chatri-punjabi-hood",
-    name: "New Holland Tractor Fiber Hood Roof Canopy / Fiber Chatri / Punjabi Hood",
-    shortName: "New Holland Fiber Hood Roof Canopy",
-    description:
-      "Buy New Holland tractor fiber hood roof canopy, fiber chatri, and punjabi hood at best factory-direct price from Katayayani Enterprises, Meerut. Engineered for New Holland 3630 TX Special Edition, New Holland 3630 TX Super, New Holland 5620 TX Plus, and New Holland 3230 NX. Manufactured using premium virgin FRP with high-gloss automotive PU finish that matches genuine New Holland blue colors. Heavy-duty mild steel pipe framework provides unmatched stability at highway transport speeds and during strenuous tilling operations. Doorstep delivery across all Indian states. Call +91-9358273054 or message us on WhatsApp.",
-    shortDescription:
-      "Heavy duty New Holland tractor fiber hood roof canopy & fiber chatri (punjabi hood). Custom-fit for New Holland 3630 TX, 5620 & 3230. Factory price ₹14,500 incl. GST.",
-    brand: "New Holland",
-    brandSlug: "new-holland",
-    compatibleModels: [
-      "New Holland 3630 TX Special Edition",
-      "New Holland 3630 TX Super",
-      "New Holland 5620 TX Plus",
-      "New Holland 3230 NX",
-      "New Holland 3037 TX",
-      "New Holland Excel 4710"
-    ],
-    colorVariants: [
-      { name: "New Holland Blue", hex: "#1d4ed8", slug: "blue" },
-      { name: "Arctic White", hex: "#ffffff", slug: "white" },
-    ],
-    images: [
-      { src: "/products/new-holland/new_holland_hero_v3.avif", alt: "New Holland Tractor Fiber Hood Roof Canopy - Front Three-Quarter View", width: 800, height: 800 },
-      { src: "/products/new-holland/v1784922285400_cmfkh5ewaoeh9wsuesv6.avif", alt: "New Holland Tractor Fiber Roof Canopy Fitting and Quality", width: 800, height: 800 },
-      { src: "/products/new-holland/v1784922285400_kggfoknspdrvmmjlho6x.avif", alt: "New Holland Punjabi Hood Chatri - Side View", width: 800, height: 800 },
-      { src: "/products/new-holland/v1784922285400_n6y7ggmmrz9skjxbwpc4.avif", alt: "New Holland Fiber Hood Mounting Pipe Setup", width: 800, height: 800 },
-    ],
-    videos: [
-      "https://youtube.com/watch?v=0IoHCk3LOko"
-    ],
-    specifications: [
-      { label: "Product Name", value: "New Holland Tractor Fiber Hood Roof Canopy / Fiber Chatri" },
-      { label: "Manufacturer", value: "Katayayani Enterprises, Meerut (UP)" },
-      { label: "Material Composition", value: "Virgin High-Density FRP (Fiber-Reinforced Plastic)" },
-      { label: "Support Framing", value: "Heavy-Gauge Mild Steel Tubular Pipe with Primer Coating" },
-      { label: "Fitment", value: "Direct Bolt-on for New Holland 3630 TX, 5620 TX, 3230 NX" },
-      { label: "Price", value: "₹14,500 (5% GST & Heavy Pipe Included)" },
-      { label: "Delivery", value: "Insured Pan-India Home Delivery (4–6 Days)" },
-    ],
-    features: [
-      "Top-rated New Holland tractor fiber hood roof canopy directly from manufacturer in Meerut",
-      "Best price guaranteed on New Holland 3630 TX fiber chatri & punjabi hood in India",
-      "Flawless color matching with genuine New Holland gloss blue and white styling",
-      "Reinforced roof shell withstands heavy tree branches, rain, and dust",
-      "Zero vibration mounting hardware keeps tractor ride comfortable and quiet",
-      "Order online with fast doorstep shipping across all Indian states",
-    ],
-    featureTags: ["New Holland Fit", "Fiber Roof Canopy", "Punjabi Hood", "Fiber Chatri", "Factory Direct", "Home Delivery"],
-    category: "Tractor Fiber Hoods",
-    seo: {
-      title: "New Holland Tractor Fiber Hood Roof Canopy | 3630 TX Fiber Chatri & Punjabi Hood",
-      description:
-        "Best price New Holland tractor fiber hood roof canopy & fiber chatri (punjabi hood). Fits 3630 TX, 5620 TX, 3230 NX. Manufacturer direct in Meerut. Pan-India home delivery. Call +91-9358273054.",
-      keywords: [
-        "new holland tractor fiber roof canopy",
-        "new holland 3630 fiber hood price",
-        "new holland tractor fiber chatri price",
-        "new holland punjabi hood",
-        "new holland 3630 tx super fiber canopy",
-        "fiber hood for new holland tractor",
-        "new holland tractor canopy price in india",
-        "tractor fiber hood price",
-        "punjabi tractor hood price",
-      ],
-    },
-    galleryImages: [],
-    isFeatured: false,
-    isNew: true,
-    createdAt: "2024-11-01",
-  },
-  {
+          {
     id: "tractor-music-system-fiber-hood-dj-canopy-punjabi-chatri",
     slug: "tractor-music-system-fiber-hood-dj-canopy-punjabi-chatri",
     name: "Tractor Music System Fiber Hood / DJ Canopy / Punjabi Hood / Fiber Chatri",

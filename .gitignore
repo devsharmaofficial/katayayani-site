@@ -65,6 +65,7 @@ stitch_design_system.md
 *.json
 *.diff
 *.txt
+!public/llms.txt
 /*.js
 /*.py
 /*.mjs
@@ -74,3 +75,8 @@ stitch_design_system.md
 dev.db
 dev.db-journal
 .npm-cache
+
+# Local agent tooling / context (not part of the deployed site)
+/.opencode/
+/.agents/
+/.seo-audit/

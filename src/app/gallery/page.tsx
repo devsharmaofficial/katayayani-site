@@ -15,7 +15,6 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 
 
-import { useSearchParams } from "next/navigation";
 
 // Consolidating all scraped media
 const MEDIA_POOL: MediaItem[] = [
@@ -56,20 +55,22 @@ const MEDIA_POOL: MediaItem[] = [
   { type: "reel", id: "Dbv_SG5hyOB", title: "Ultimate Canopy Setup for Farmers Walkaround", thumbnail: "/instagram/Dbv_SG5hyOB.jpg" }
 ];
 
-import { Suspense } from "react";
 
 export default function GalleryPage() {
-  return (
-    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
-      <GalleryContent />
-    </Suspense>
-  );
+  return <GalleryContent />;
 }
 
 function GalleryContent() {
-  const searchParams = useSearchParams();
   const allProducts = getAllProducts();
-  const [activeTab, setActiveTab] = useState<"photos" | "videos">(searchParams.get("tab") === "videos" ? "videos" : "photos");
+  const [activeTab, setActiveTab] = useState<"photos" | "videos">("photos");
+
+  // Read the ?tab= query on the client so the page can still be server-rendered.
+  // Using useSearchParams here would opt the whole page out of static rendering
+  // and ship an empty "Loading..." document to crawlers.
+  useEffect(() => {
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    if (tab === "videos") setActiveTab("videos");
+  }, []);
 
   // Dynamically compile all images from our products
   const galleryItems = useMemo(() => {

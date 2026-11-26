@@ -192,7 +192,6 @@ const jsonLd = {
           "@type": "ContactPoint",
           telephone: BUSINESS_PHONE_PRIMARY,
           contactType: "customer service",
-          contactOption: "TollFree",
           areaServed: "IN",
           availableLanguage: ["Hindi", "English"],
         },
@@ -206,8 +205,9 @@ const jsonLd = {
       ],
       sameAs: [
         `https://www.katayayanienterprises.com/`,
-        `https://www.katayayanienterprises.online/`,
         `https://www.indiamart.com/katayayanienterprises/`,
+        `https://youtube.com/@katayayanienterprises.meerut`,
+        `https://www.instagram.com/katayayani.enterprises/`,
         `https://wa.me/919358273054`,
       ],
       openingHoursSpecification: [

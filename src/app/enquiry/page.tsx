@@ -1,12 +1,16 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { useEffect, useState } from "react";
 import ContactPage from "../contact/page";
 
 function EnquiryContent() {
-  const searchParams = useSearchParams();
-  const productSlug = searchParams.get("product");
+  // Read ?product= on the client so the page can be server-rendered.
+  // useSearchParams would force a client-only "Loading..." document.
+  const [productSlug, setProductSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    setProductSlug(new URLSearchParams(window.location.search).get("product"));
+  }, []);
 
   // In a real app we'd pass this down to the contact form to pre-fill it.
   // For now, since ContactPage handles its own state, we'll just reuse the Contact page layout
@@ -25,9 +29,5 @@ function EnquiryContent() {
 }
 
 export default function EnquiryPage() {
-  return (
-    <Suspense fallback={<div className="pt-20 text-center">Loading...</div>}>
-      <EnquiryContent />
-    </Suspense>
-  );
+  return <EnquiryContent />;
 }
